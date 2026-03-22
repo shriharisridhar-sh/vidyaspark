@@ -226,7 +226,7 @@ function CohortCard({ cohort, onCopyLink, onExportCsv }) {
                     <tr className="border-b border-border">
                       <th className="text-left py-2 text-text-secondary font-medium text-xs">Name</th>
                       <th className="text-left py-2 text-text-secondary font-medium text-xs">Email</th>
-                      <th className="text-center py-2 text-text-secondary font-medium text-xs">Completed</th>
+                      <th className="text-center py-2 text-text-secondary font-medium text-xs">Modules Practiced</th>
                       <th className="text-right py-2 text-text-secondary font-medium text-xs">Last Active</th>
                     </tr>
                   </thead>

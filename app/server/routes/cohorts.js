@@ -63,7 +63,18 @@ router.get('/', requireAdmin, (req, res) => {
   try {
     const cohorts = database.getAllCohorts();
     const result = cohorts.map(c => {
-      const members = database.getCohortMembers(c.id);
+      const rawMembers = database.getCohortMembers(c.id);
+      const members = rawMembers.map(m => {
+        const sessions = database.getUserSessions(m.id);
+        const completedModules = new Set(sessions.map(s => s.scenarioId)).size;
+        const lastActive = sessions.length > 0 ? sessions[0].timestamp : m.enrolled_at;
+        return {
+          ...m,
+          modulesCompleted: completedModules,
+          lastActive,
+          sessionCount: sessions.length,
+        };
+      });
       return {
         ...c,
         modules: database.getCohortModules(c.id),
