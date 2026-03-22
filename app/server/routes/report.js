@@ -37,7 +37,7 @@ router.post('/', async (req, res) => {
         return res.status(404).json({ error: 'Session not found' });
       }
 
-      const moduleId = session.scenarioId || 'price-war';
+      const moduleId = session.scenarioId || 'abl-p7-force-pressure';
 
       // Pass full COACH model state to report generator
       report = await generateReport({

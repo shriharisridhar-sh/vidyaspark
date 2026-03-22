@@ -131,7 +131,7 @@ PRESSURE BEHAVIOR (high intensity):
 
 function buildCustomerPrompt(difficulty = 'medium', sessionWeights = null, moduleId = null) {
   // If a non-default module is specified, try to build from module config
-  if (moduleId && moduleId !== 'price-war') {
+  if (moduleId && moduleId !== 'abl-p7-force-pressure') {
     const mod = loadModule(moduleId);
     if (mod && mod.customerPersona) {
       return buildModuleCustomerPrompt(mod, difficulty);

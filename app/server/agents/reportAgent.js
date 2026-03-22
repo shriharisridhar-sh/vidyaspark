@@ -32,7 +32,7 @@ async function generateReport(sessionData) {
     weightPrediction = null,
   } = sessionData;
 
-  const moduleId = sessionData.moduleId || 'price-war';
+  const moduleId = sessionData.moduleId || 'abl-p7-force-pressure';
 
   // Build the report prompt with COACH model state injection
   const systemPrompt = buildReportPrompt({
@@ -127,7 +127,7 @@ Generate the diagnostic report.`,
 
 function buildSessionContext(transcript, coachingInterventions, initialChoice, config, moduleId) {
   const { loadModule } = require('../modules/ModuleRegistry');
-  const mod = loadModule(moduleId || 'price-war');
+  const mod = loadModule(moduleId || 'abl-p7-force-pressure');
 
   const dimInfo = mod ? mod.dimensions.map(d =>
     `${d.name}: ${mod.importanceWeights[d.shortName] || 0}%`
@@ -170,7 +170,7 @@ NEGOTIATION TRANSCRIPT:
 
 function buildFallbackReport(initialChoice, moduleId) {
   const { loadModule } = require('../modules/ModuleRegistry');
-  const mod = loadModule(moduleId || 'price-war');
+  const mod = loadModule(moduleId || 'abl-p7-force-pressure');
   const fallbackInsight = mod ? (mod.narrative?.coreInsight || mod.description) : 'The customer\'s satisfaction is driven primarily by reliability and HSE compliance, not pricing. Halliburton leads on the dimensions that matter most.';
 
   return {

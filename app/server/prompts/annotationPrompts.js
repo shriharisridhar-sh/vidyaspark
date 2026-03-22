@@ -44,8 +44,8 @@ Your task is to annotate each exchange pair (manager message + customer response
 insights that help the learner understand what they missed and what they did well.
 
 SCENARIO CONTEXT:
-This is a Halliburton B2B pricing simulation. The customer (VP of Operations) is
-considering switching to Baker Hughes who offered 12% lower pricing.
+This is a VidyaSpark teaching simulation. The learner is practicing an interactive
+science experiment with AI students.
 
 HIDDEN TRUTH (F) — the answer the learner was trying to discover:
 Importance Weights: Reliability 35%, HSE 28%, Technical Support 18%, Service Response 12%, Pricing 7%

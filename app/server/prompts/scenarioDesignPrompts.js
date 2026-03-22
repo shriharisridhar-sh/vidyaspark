@@ -71,7 +71,7 @@ RULES:
 - Ask ONE question at a time
 - After each answer, summarize what you've captured in a structured block
 - Use the professor's language — mirror their industry terminology
-- If they seem unsure, provide examples from the default Halliburton scenario as reference
+- If they seem unsure, provide examples from the default scenario as reference
 - At the end, output the complete scenario as a JSON block wrapped in \`\`\`json ... \`\`\`
 - The JSON must include all fields needed to instantiate a COACH model simulation
 

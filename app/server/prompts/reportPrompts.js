@@ -43,7 +43,7 @@ function buildReportPrompt(coachModelState = {}, scenarioWeights = null) {
     : 'No trajectory data available';
 
   const { loadModule } = require('../modules/ModuleRegistry');
-  const mod = loadModule(coachModelState.moduleId || 'price-war');
+  const mod = loadModule(coachModelState.moduleId || 'abl-p7-force-pressure');
   const scenarioDesc = mod ? `${mod.name}: ${mod.description}` : 'a Halliburton pricing challenge';
   const roleName = mod?.roles?.H1?.label || 'sales professional';
   const counterpartName = mod?.customerPersona?.name || 'the customer';

@@ -38,7 +38,7 @@ function buildCoachPrompt(coachState = {}, moduleId = null) {
 
   // COACH 2.0: Module-aware coaching prompt
   const { loadModule } = require('../modules/ModuleRegistry');
-  const mod = (moduleId && moduleId !== 'price-war') ? loadModule(moduleId) : null;
+  const mod = (moduleId && moduleId !== 'abl-p7-force-pressure') ? loadModule(moduleId) : null;
 
   if (mod) {
     return buildModuleCoachPrompt(mod, coachState);

@@ -631,7 +631,7 @@ function getContextForModule(moduleId) {
 }
 
 function getDimensionKeywords(moduleId) {
-  const mod = loadModule(moduleId || 'price-war');
+  const mod = loadModule(moduleId || 'abl-p7-force-pressure');
   if (!mod || !mod.dimensions) return DIMENSION_KEYWORDS; // fallback
 
   const keywords = {};

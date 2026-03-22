@@ -50,7 +50,7 @@ the manager controls strategy, not the coach.`;
     return role + ': ' + m.content;
   }).join('\n');
 
-  return `You are a text polishing assistant for a Halliburton account manager in a live contract renewal negotiation with a VP of Operations.
+  return `You are a text polishing assistant for a learner in a live simulation conversation.
 
 YOUR SOLE JOB: Take the manager's rough notes/bullet points and turn them into a natural, professional negotiation message.
 

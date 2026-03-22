@@ -32,7 +32,7 @@ router.post('/', optionalAuth, (req, res) => {
     userName: userName || null,
     userGroup: userGroup || null,
     difficulty: difficulty || 'medium',
-    scenarioId: scenarioId || 'price-war',
+    scenarioId: scenarioId || 'abl-p7-force-pressure',
     userId: req.user ? req.user.id : null,
   });
 

@@ -83,7 +83,7 @@ router.get('/:sessionId/pdf', async (req, res) => {
     const exported = sessionStore.exportSession(sessionId);
     const reportData = session.report || {};
 
-    const moduleId = session.scenarioId || exported?.coachModelMetrics?.scenarioId || 'price-war';
+    const moduleId = session.scenarioId || exported?.coachModelMetrics?.scenarioId || 'abl-p7-force-pressure';
     const pdfBuffer = await generateSessionPDF(exported, reportData, moduleId);
 
     const safeName = (session.userName || 'participant').replace(/[^a-zA-Z0-9]/g, '_');
