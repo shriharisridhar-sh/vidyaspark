@@ -182,13 +182,10 @@ router.get('/:sessionId/download', async (req, res) => {
       // pdfReport not available — fall back to JSON download
     }
 
-    if (pdfReport && typeof pdfReport.generatePDF === 'function') {
-      const pdfBuffer = await pdfReport.generatePDF({
-        sessionId,
-        report,
-        config: session.config,
-        scenarioId: session.scenarioId,
-      });
+    if (pdfReport && typeof pdfReport.generateSessionPDF === 'function') {
+      const exported = sessionStore.exportSession(sessionId);
+      const moduleId = session.scenarioId || 'abl-p7-force-pressure';
+      const pdfBuffer = await pdfReport.generateSessionPDF(exported, report, moduleId);
       res.setHeader('Content-Type', 'application/pdf');
       res.setHeader('Content-Disposition', `attachment; filename="VidyaSpark-Report-${sessionId.slice(0, 8)}.pdf"`);
       return res.send(pdfBuffer);

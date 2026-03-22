@@ -51,9 +51,9 @@ router.post('/:sessionId', optionalAuth, async (req, res) => {
 
   // ── Step 3: Format transcript for the prompt ─────────────
   const transcriptText = session.transcript
-    .filter(entry => entry.role === 'manager' || entry.role === 'customer')
+    .filter(entry => entry.role === 'manager' || entry.role === 'classroom' || entry.role === 'customer')
     .map(entry => {
-      const role = entry.role === 'manager' ? 'Ignator' : 'Student';
+      const role = entry.role === 'manager' ? 'Ignator' : 'Students';
       return `${role}: ${entry.content}`;
     })
     .join('\n');
@@ -124,7 +124,7 @@ Generate 4 comprehension questions (recall, understanding, application, analysis
   try {
     // ── Step 5: Call Claude API ───────────────────────────────
     const response = await client.messages.create({
-      model: 'claude-sonnet-4-5-20241022',
+      model: 'claude-sonnet-4-5-20250514',
       max_tokens: 4096,
       system: systemPrompt,
       messages: [{ role: 'user', content: userMessage }],

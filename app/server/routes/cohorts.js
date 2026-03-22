@@ -19,18 +19,26 @@ function isAdmin(email) {
  */
 router.post('/', requireAdmin, (req, res) => {
   try {
-    const { name, description, code, moduleIds } = req.body;
-    if (!name || !code) {
-      return res.status(400).json({ error: 'name and code are required' });
+    const { name, description, moduleIds } = req.body;
+    if (!name) {
+      return res.status(400).json({ error: 'name is required' });
+    }
+
+    // Auto-generate a unique 6-char uppercase code if not provided
+    let code = req.body.code;
+    if (!code) {
+      code = name.trim().toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 4)
+        + crypto.randomUUID().slice(0, 2).toUpperCase();
     }
 
     const existing = database.getCohortByCode(code);
     if (existing) {
-      return res.status(409).json({ error: 'Cohort code already in use' });
+      // Append random chars to make unique
+      code = code.slice(0, 4) + crypto.randomUUID().slice(0, 4).toUpperCase();
     }
 
     const cohortId = crypto.randomUUID();
-    database.createCohort(cohortId, name, description, code, req.user.id);
+    database.createCohort(cohortId, name, description || '', code, req.user.id);
 
     if (moduleIds && moduleIds.length > 0) {
       database.addCohortModules(cohortId, moduleIds);
@@ -184,7 +192,7 @@ router.post('/join', (req, res) => {
 
     if (!user) {
       const userId = crypto.randomUUID();
-      const role = isAdmin(email) ? 'admin' : 'student';
+      const role = isAdmin(email) ? 'admin' : 'ignator';
       database.createUser(userId, email, name, role, token, expiresAt);
       user = { id: userId, email: email.toLowerCase(), name, role };
 
@@ -214,6 +222,43 @@ router.post('/join', (req, res) => {
   } catch (e) {
     console.error('[Cohorts] Join error:', e.message);
     res.status(500).json({ error: 'Failed to join cohort' });
+  }
+});
+
+/**
+ * GET /api/cohorts/users - Get all users across all cohorts (admin only)
+ */
+router.get('/users', requireAdmin, (req, res) => {
+  try {
+    const cohorts = database.getAllCohorts();
+    const userMap = new Map();
+
+    for (const cohort of cohorts) {
+      const members = database.getCohortMembers(cohort.id);
+      for (const m of members) {
+        if (!userMap.has(m.email)) {
+          userMap.set(m.email, {
+            name: m.name,
+            email: m.email,
+            cohorts: [cohort.name],
+            sessionCount: m.sessionCount || 0,
+            lastActive: m.lastActive || null,
+          });
+        } else {
+          const existing = userMap.get(m.email);
+          existing.cohorts.push(cohort.name);
+          existing.sessionCount = Math.max(existing.sessionCount, m.sessionCount || 0);
+          if (m.lastActive && (!existing.lastActive || m.lastActive > existing.lastActive)) {
+            existing.lastActive = m.lastActive;
+          }
+        }
+      }
+    }
+
+    res.json({ users: Array.from(userMap.values()) });
+  } catch (e) {
+    console.error('[Cohorts] Users error:', e.message);
+    res.status(500).json({ error: 'Failed to get users' });
   }
 });
 

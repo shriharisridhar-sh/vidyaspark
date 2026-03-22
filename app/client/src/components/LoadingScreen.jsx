@@ -50,6 +50,8 @@ export default function LoadingScreen({ sessionId, onReportReady, moduleId }) {
     return () => { cancelled = true; };
   }, [sessionId]); // eslint-disable-line react-hooks/exhaustive-deps
 
+  const [promptIndex, setPromptIndex] = useState(0);
+
   const reflectionPrompts = [
     'Analyzing your teaching session...',
     'Evaluating student engagement patterns...',
@@ -58,14 +60,12 @@ export default function LoadingScreen({ sessionId, onReportReady, moduleId }) {
     'Generating your personalized Tapovan report...',
   ];
 
-  const [promptIndex, setPromptIndex] = useState(0);
-
   useEffect(() => {
     const timer = setInterval(() => {
-      setPromptIndex(prev => (prev + 1) % reflectionPrompts.length);
+      setPromptIndex(prev => (prev + 1) % 5);
     }, 3500);
     return () => clearInterval(timer);
-  }, [reflectionPrompts.length]);
+  }, []);
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center px-6">

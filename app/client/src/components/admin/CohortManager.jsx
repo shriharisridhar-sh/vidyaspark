@@ -136,7 +136,7 @@ export default function CohortManager() {
                         if (e.target.checked) setSelectedModules(prev => [...prev, mod.id]);
                         else setSelectedModules(prev => prev.filter(id => id !== mod.id));
                       }}
-                      className="accent-emerald-500"
+                      className="accent-orange-600"
                     />
                     <span className="text-text-primary text-sm">{mod.name}</span>
                   </label>
@@ -146,7 +146,7 @@ export default function CohortManager() {
             <button
               type="submit"
               disabled={creating || !newName.trim()}
-              className="px-6 py-2.5 rounded-xl text-sm font-semibold bg-accent text-black hover:bg-accent/90 disabled:opacity-40 transition-colors"
+              className="px-6 py-2.5 rounded-xl text-sm font-semibold bg-accent text-white hover:bg-accent/90 disabled:opacity-40 transition-colors"
             >
               {creating ? 'Creating...' : 'Create Cohort'}
             </button>

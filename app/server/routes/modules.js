@@ -95,7 +95,8 @@ router.get('/:id', (req, res) => {
     // Fall back to moduleStore (user-created modules)
     const module = moduleStore.getById(req.params.id);
     if (!module) return res.status(404).json({ error: 'Module not found' });
-    res.json({ module });
+    // Return unwrapped to match scenario registry format (ManagerFlow expects direct object)
+    res.json(module);
   } catch (err) {
     res.status(500).json({ error: err.message });
   }

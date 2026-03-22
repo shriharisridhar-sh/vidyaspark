@@ -56,12 +56,12 @@ export default function AdminPage() {
     }),
   }));
 
-  // Any sessions without a matching module go under "The Price Trap" (legacy)
+  // Any sessions without a matching module go under the default ABL module
   const assignedSessionIds = new Set(moduleGroups.flatMap(g => g.sessions.map(s => s.sessionId)));
   const unassigned = sessions.filter(s => !assignedSessionIds.has(s.sessionId));
-  const priceWarGroup = moduleGroups.find(g => g.id === 'abl-p7-force-pressure');
-  if (priceWarGroup && unassigned.length > 0) {
-    priceWarGroup.sessions = [...priceWarGroup.sessions, ...unassigned];
+  const defaultGroup = moduleGroups.find(g => g.id === 'abl-p7-force-pressure');
+  if (defaultGroup && unassigned.length > 0) {
+    defaultGroup.sessions = [...defaultGroup.sessions, ...unassigned];
   }
 
   return (
@@ -97,7 +97,7 @@ export default function AdminPage() {
         <div className="flex items-center justify-between mb-6">
           <div>
             <h1 className="text-xl font-bold text-text-primary">Admin Portal</h1>
-            <p className="text-text-secondary text-sm mt-1">Manage simulations, cohorts, and users</p>
+            <p className="text-text-secondary text-sm mt-1">Manage training sessions, cohorts, and Ignators</p>
           </div>
           <div className="flex items-center gap-3">
             <button onClick={refresh} className="btn-secondary text-xs px-3 py-1.5 rounded-lg border border-border text-text-secondary hover:text-text-primary transition-colors">
@@ -114,7 +114,7 @@ export default function AdminPage() {
           {[
             { id: 'sessions', label: 'Sessions' },
             { id: 'cohorts', label: 'Cohorts' },
-            { id: 'users', label: 'Users' },
+            { id: 'users', label: 'Ignators' },
           ].map(tab => (
             <button
               key={tab.id}
@@ -168,11 +168,11 @@ export default function AdminPage() {
         {/* Users tab */}
         {activeTab === 'users' && (
           <div>
-            <h2 className="text-lg font-bold text-text-primary mb-4">All Users</h2>
+            <h2 className="text-lg font-bold text-text-primary mb-4">All Ignators</h2>
             {usersLoading ? (
               <div className="text-center py-12">
                 <div className="w-8 h-8 border-2 border-accent border-t-transparent rounded-full animate-spin mx-auto mb-3" />
-                <p className="text-text-secondary text-sm">Loading users...</p>
+                <p className="text-text-secondary text-sm">Loading Ignators...</p>
               </div>
             ) : allUsers.length > 0 ? (
               <div className="card">
@@ -203,7 +203,7 @@ export default function AdminPage() {
               </div>
             ) : (
               <div className="card text-center py-8">
-                <p className="text-text-secondary text-sm">No users found.</p>
+                <p className="text-text-secondary text-sm">No Ignators found.</p>
               </div>
             )}
           </div>

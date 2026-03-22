@@ -7,9 +7,10 @@ const SUBJECT_COLORS = {
   Physics:     { bg: 'bg-[#2196F3]/10', text: 'text-[#2196F3]', border: 'border-[#2196F3]/30', solid: '#2196F3' },
   Chemistry:   { bg: 'bg-[#9C27B0]/10', text: 'text-[#9C27B0]', border: 'border-[#9C27B0]/30', solid: '#9C27B0' },
   Mathematics: { bg: 'bg-[#FF9800]/10', text: 'text-[#FF9800]', border: 'border-[#FF9800]/30', solid: '#FF9800' },
+  Biology:     { bg: 'bg-[#4CAF50]/10', text: 'text-[#4CAF50]', border: 'border-[#4CAF50]/30', solid: '#4CAF50' },
 };
 
-const TABS = ['All', 'Physics', 'Chemistry', 'Mathematics'];
+const TABS = ['All', 'Physics', 'Chemistry', 'Biology', 'Mathematics'];
 
 export default function Dashboard() {
   const { user, logout } = useAuth();
@@ -162,16 +163,16 @@ export default function Dashboard() {
                 />
                 <StatCard
                   label="Modules Practiced"
-                  value={userStats?.completedModules ?? userStats?.modulesCompleted ?? 0}
+                  value={userStats?.modulesPracticed ?? userStats?.completedModules ?? userStats?.modulesCompleted ?? 0}
                 />
                 <StatCard
                   label="Avg Spark Score"
-                  value={userStats?.avgSparkScore != null ? userStats.avgSparkScore + '%' : '--'}
+                  value={(userStats?.avgSpark ?? userStats?.avgSparkScore) != null ? (userStats.avgSpark ?? userStats.avgSparkScore) + '%' : '--'}
                   color="text-accent"
                 />
                 <StatCard
                   label="Avg Reach Score"
-                  value={userStats?.avgReachScore != null ? userStats.avgReachScore + '%' : '--'}
+                  value={(userStats?.avgReach ?? userStats?.avgReachScore) != null ? (userStats.avgReach ?? userStats.avgReachScore) + '%' : '--'}
                   color="text-emerald-400"
                 />
               </div>
@@ -246,7 +247,7 @@ export default function Dashboard() {
                             {session.moduleName || session.module?.name || 'Session'}
                           </p>
                           <p className="text-text-secondary text-xs mt-0.5">
-                            {session.date ? new Date(session.date).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }) : ''}
+                            {(session.date || session.timestamp) ? new Date(session.date || session.timestamp).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }) : ''}
                           </p>
                         </div>
                       </div>
@@ -254,9 +255,9 @@ export default function Dashboard() {
                         {session.archetype && (
                           <span className="text-text-secondary text-xs hidden sm:block">{session.archetype}</span>
                         )}
-                        {session.score != null && (
-                          <span className={'text-sm font-mono font-bold ' + (session.score >= 60 ? 'text-emerald-400' : session.score >= 40 ? 'text-yellow-400' : 'text-red-400')}>
-                            {session.score}%
+                        {(session.score ?? session.compositeScore) != null && (
+                          <span className={'text-sm font-mono font-bold ' + ((session.score ?? session.compositeScore) >= 60 ? 'text-emerald-400' : (session.score ?? session.compositeScore) >= 40 ? 'text-yellow-400' : 'text-red-400')}>
+                            {session.score ?? session.compositeScore}%
                           </span>
                         )}
                       </div>

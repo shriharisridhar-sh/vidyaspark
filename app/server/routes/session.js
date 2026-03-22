@@ -313,6 +313,32 @@ router.post('/:id/briefing', (req, res) => {
 });
 
 /**
+ * POST /api/session/:id/mentor-request - Request human mentor review
+ * Body: { mentorRequested: true }
+ */
+router.post('/:id/mentor-request', (req, res) => {
+  const session = sessionStore.getSession(req.params.id);
+  if (!session) {
+    return res.status(404).json({ error: 'Session not found' });
+  }
+
+  if (!session.metadata) session.metadata = {};
+  session.metadata.mentorRequested = {
+    requested: true,
+    timestamp: new Date().toISOString(),
+  };
+
+  // Notify coach via WebSocket if connected
+  sessionStore.sendToRole(req.params.id, 'coach', {
+    type: 'mentor_review_requested',
+    sessionId: session.id,
+    timestamp: new Date().toISOString(),
+  });
+
+  res.json({ status: 'ok', mentorRequested: true });
+});
+
+/**
  * POST /api/session/:id/end - End the session
  */
 router.post('/:id/end', (req, res) => {

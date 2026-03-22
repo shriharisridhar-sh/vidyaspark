@@ -15,7 +15,7 @@ export default function MentorPause({ sessionId, onComplete }) {
     setChoice('ai');
     setLoading(true);
     try {
-      const res = await fetch(`${API_BASE}/api/coaching/intervention`, {
+      const res = await fetch(`${API_BASE}/api/coaching/request`, {
         credentials: 'include',
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -23,41 +23,47 @@ export default function MentorPause({ sessionId, onComplete }) {
       });
       if (!res.ok) throw new Error('Failed to get feedback');
 
-      // Stream the response
-      const reader = res.body.getReader();
-      const decoder = new TextDecoder();
-      let fullText = '';
-      let buffer = '';
+      const data = await res.json();
 
-      while (true) {
-        const { done, value } = await reader.read();
-        if (done) break;
-        buffer += decoder.decode(value, { stream: true });
-        const lines = buffer.split('\n');
-        buffer = lines.pop() || '';
-        for (const line of lines) {
-          if (!line.startsWith('data: ')) continue;
-          try {
-            const data = JSON.parse(line.slice(6));
-            if (data.type === 'token') fullText += data.token;
-            if (data.type === 'done' && data.feedback) {
-              setFeedback(data.feedback);
-            }
-          } catch (_) {}
+      // The coaching/request endpoint returns { status, coaching, intervention }
+      // coaching has { coaching: string, focus: string }
+      // intervention has { content, source, focus, timestamp }
+      if (data.coaching || data.intervention) {
+        const coachingText = data.coaching?.coaching || data.intervention?.content || '';
+        const focus = data.coaching?.focus || data.intervention?.focus || '';
+
+        // Structure feedback items from the coaching text
+        const feedbackItems = [];
+        if (coachingText) {
+          // Split coaching text into bullet points or paragraphs for display
+          const lines = coachingText.split('\n').filter(l => l.trim());
+          for (const line of lines) {
+            const isStrength = /strength|well|good|great|excellent/i.test(line);
+            feedbackItems.push({
+              type: isStrength ? 'strength' : 'suggestion',
+              message: line.replace(/^[-*•]\s*/, ''),
+              moment: focus || 'Session',
+            });
+          }
         }
-      }
 
-      // If no structured feedback came through, parse from text
-      if (!feedback && fullText) {
-        try {
-          const parsed = JSON.parse(fullText);
-          setFeedback(parsed);
-        } catch (_) {
-          setFeedback({
-            feedback: [{ type: 'note', message: fullText, moment: 'Session' }],
-            overallNote: 'Review complete.',
+        if (feedbackItems.length === 0) {
+          feedbackItems.push({
+            type: 'note',
+            message: coachingText || 'Feedback generated successfully.',
+            moment: 'Session',
           });
         }
+
+        setFeedback({
+          feedback: feedbackItems,
+          overallNote: focus ? `Focus area: ${focus}` : 'Review complete.',
+        });
+      } else {
+        setFeedback({
+          feedback: [{ type: 'note', message: 'Feedback generated. Continue teaching with renewed focus.', moment: 'Session' }],
+          overallNote: 'Review complete.',
+        });
       }
     } catch (err) {
       setFeedback({
