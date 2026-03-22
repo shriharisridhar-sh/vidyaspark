@@ -181,14 +181,18 @@ Generate 10 comprehension questions (3 recall, 3 understanding, 2 application, 2
     let totalCorrect = 0;
     let studentCount = 0;
 
+    // Cap each student's score at the actual number of questions generated
     students.forEach(name => {
       if (assessment.studentResults && assessment.studentResults[name]) {
-        totalCorrect += assessment.studentResults[name].score || 0;
+        const rawScore = assessment.studentResults[name].score || 0;
+        const cappedScore = Math.min(rawScore, totalQuestions);
+        assessment.studentResults[name].score = cappedScore;
+        totalCorrect += cappedScore;
         studentCount++;
       }
     });
 
-    const maxPossible = studentCount * totalQuestions; // 5 students × 10 questions = 50
+    const maxPossible = studentCount * totalQuestions; // 5 students × actual questions
     const studentAchievement = maxPossible > 0 ? (totalCorrect / maxPossible) * 100 : 0;
     const classAverage = studentCount > 0
       ? Math.round((totalCorrect / studentCount) * 10) / 10
@@ -211,6 +215,7 @@ Generate 10 comprehension questions (3 recall, 3 understanding, 2 application, 2
       classAverage,
       totalCorrect,
       maxPossible,
+      totalQuestions,
       studentAchievement: Math.round(studentAchievement * 10) / 10,
       compositeScore,
     });
