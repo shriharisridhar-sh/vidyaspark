@@ -1,0 +1,117 @@
+{
+  "id": "abl-c1-states-of-matter",
+  "name": "States of Matter — Does Air Occupy Space?",
+  "description": "Students discover that air is matter by observing that paper stuffed inside an inverted test tube stays dry when submerged in water — because air occupies the space inside.",
+  "category": "Chemistry",
+  "subject": "Chemistry",
+  "handbook": "C1 — States of Matter",
+  "ablCode": "ABL 1.1b",
+  "difficulty": "medium",
+  "estimatedMinutes": 15,
+  "version": "1.0",
+  "gradeLevel": "6-8",
+  "materials": ["Test tube (wide mouth)", "Paper or tissue", "Glass trough or plastic tub", "Water"],
+
+  "pointA": {
+    "assumption": "Students think air is 'nothing' — it has no mass and does not take up space",
+    "blindspot": "They don't realize that air is matter because they cannot see, touch, or easily feel it"
+  },
+  "pointB": {
+    "insight": "Air is matter — it has mass and occupies space. The air trapped in the inverted test tube prevents water from reaching the paper.",
+    "evidence": "Students can explain why the paper stayed dry and connect it to air occupying space inside the test tube"
+  },
+
+  "tutorial": [
+    {
+      "title": "Learning Objective",
+      "content": "In this experiment, students will discover that air occupies space and is therefore matter. This builds on ABL 1.1 where students learn the definition of matter (anything that has mass and occupies space). By demonstrating that invisible air can block water, students gain concrete proof that air is real matter."
+    },
+    {
+      "title": "Materials & Setup",
+      "content": "You need: 1 glass trough or plastic tub filled with water up to the brim, 1 wide-mouth test tube, and a small sheet of paper or tissue crumpled into a ball. Fill the trough with water before the class begins and place it where all learners can see it clearly."
+    },
+    {
+      "title": "The Procedure",
+      "content": "Step 1: Begin by recapping that matter has mass and occupies space. Ask if air is matter. Step 2: Crumple a sheet of paper into a ball and stuff it tightly into the bottom of the test tube. Step 3: Invert the test tube and push it straight down into the water trough — do NOT tilt it. Step 4: Have students come up and observe the paper through the glass. Step 5: Remove the test tube (keeping it straight) and take out the paper — it is still dry!"
+    },
+    {
+      "title": "Key Messages",
+      "content": "1. Air occupies space — the air trapped in the test tube prevented water from entering and wetting the paper. 2. Because air occupies space and has mass, air is matter. 3. Just because we cannot see something does not mean it is not there."
+    },
+    {
+      "title": "Common Misconceptions",
+      "content": "Students often think air is 'empty' or 'nothing' because they cannot see it. Some may think the paper stayed dry because of a 'magic trick' rather than a scientific principle. Others may believe only solid and liquid things are matter, excluding gases entirely."
+    }
+  ],
+
+  "procedure": "1. Start by recapping ABL 1.1: Everything around us is matter. Matter has mass and occupies space. All matter is made up of tiny particles called atoms. 2. Ask the class: Is air matter? Wait for their responses — many will say 'no' because they cannot see it. 3. Tell the class you will prove that air is indeed matter. Fill the trough with water up to the brim. 4. Take a wide-mouth test tube. Crumple a sheet of paper into a ball and stuff it tightly into the bottom of the test tube. Make sure it is wedged firmly so it does not fall out when inverted. 5. Invert the test tube with the paper inside. Push it straight down into the water trough. IMPORTANT: Do not tilt the test tube while submerging it. Make the mouth of the test tube touch the bottom of the tub. 6. Ask all learners to come up to the table and observe the test tube in the water. Ask them to predict: will the paper be wet or dry? 7. Slowly remove the test tube, keeping it straight — do not tilt while removing. 8. Take out the ball of paper and pass it around. It is completely dry! 9. Ask: How did the paper stay dry? Guide the discussion: the air trapped inside the test tube occupied the space above the paper and prevented water from entering. 10. Conclude: Air occupies space. Because air has mass and occupies space, air is matter.",
+
+  "canvasSteps": [
+    {
+      "step": 1,
+      "title": "Setup",
+      "description": "A water trough filled to the brim. A test tube and a sheet of paper sit on the table beside it.",
+      "svgId": "setup"
+    },
+    {
+      "step": 2,
+      "title": "Paper Stuffed in Test Tube",
+      "description": "The paper is crumpled into a ball and stuffed tightly into the bottom of the test tube. The test tube is held upright showing the paper lodged at the closed end.",
+      "svgId": "paper-stuffed"
+    },
+    {
+      "step": 3,
+      "title": "Inverted and Submerged",
+      "description": "The test tube is inverted and pushed straight down into the water trough. Air is trapped inside above the paper. Water cannot enter because air occupies the space.",
+      "svgId": "inverted-in-water"
+    },
+    {
+      "step": 4,
+      "title": "Paper is Dry!",
+      "description": "The test tube is removed and the paper ball is taken out. It is completely dry! The trapped air prevented water from reaching the paper, proving air occupies space.",
+      "svgId": "paper-dry"
+    }
+  ],
+
+  "leadingQuestions": [
+    "Is air matter? How can you tell if something you cannot see is still matter?",
+    "What do you think will happen to the paper when we push the test tube into the water?",
+    "The paper is dry! How is that possible — the test tube was completely under water?",
+    "What was occupying the space inside the test tube that kept the water out?"
+  ],
+
+  "keyMessages": [
+    "Air occupies space — the trapped air inside the test tube prevented water from entering and kept the paper dry",
+    "Air is matter because it has mass and occupies space, even though we cannot see it",
+    "Everything around us — solids, liquids, and gases — is matter made up of tiny particles called atoms"
+  ],
+
+  "misconceptions": [
+    "Air is 'nothing' or 'empty space' because it is invisible",
+    "Only things you can see and touch (solids and liquids) are matter",
+    "The paper stayed dry due to some trick, not because air physically blocked the water"
+  ],
+
+  "dimensions": [
+    { "id": "D1", "name": "Curiosity Sparking", "shortName": "curiosity", "weight": 0.30, "keywords": ["why", "what if", "surprise", "predict", "guess", "wonder", "prove", "how"] },
+    { "id": "D2", "name": "Student Engagement", "shortName": "engagement", "weight": 0.25, "keywords": ["lakshmi", "arjun", "everyone", "what do you think", "come up", "come and see", "pass it around"] },
+    { "id": "D3", "name": "Concept Clarity", "shortName": "clarity", "weight": 0.20, "keywords": ["matter", "mass", "space", "air", "atoms", "particles", "occupies"] },
+    { "id": "D4", "name": "Facilitation Quality", "shortName": "facilitation", "weight": 0.15, "keywords": ["observe", "notice", "look carefully", "touch the paper", "see for yourself", "now watch"] },
+    { "id": "D5", "name": "Questioning & Listening", "shortName": "questioning", "weight": 0.10, "keywords": ["why do you think", "tell me more", "good question", "interesting", "what else", "who can explain"] }
+  ],
+
+  "importanceWeights": { "D1": 0.30, "D2": 0.25, "D3": 0.20, "D4": 0.15, "D5": 0.10 },
+
+  "skills": [
+    { "id": "S1", "name": "Spark", "description": "Creating curiosity, wonder, and scientific questioning", "category": "engagement" },
+    { "id": "S2", "name": "Reach", "description": "Engaging every student, especially quiet and disengaged", "category": "inclusion" }
+  ],
+
+  "archetypes": [
+    { "id": "ignitor", "name": "The Ignitor", "description": "Spark >= 70 AND Reach >= 70", "indicators": ["spark_high", "reach_high"] },
+    { "id": "performer", "name": "The Performer", "description": "Spark >= 60, Reach < 50", "indicators": ["spark_high", "reach_low"] },
+    { "id": "caretaker", "name": "The Caretaker", "description": "Reach >= 60, Spark < 50", "indicators": ["spark_low", "reach_high"] },
+    { "id": "lecturer", "name": "The Lecturer", "description": "Both < 50, Clarity > 60", "indicators": ["spark_low", "reach_low", "clarity_high"] },
+    { "id": "learner", "name": "The Learner", "description": "Both < 40", "indicators": ["spark_low", "reach_low"] }
+  ]
+}

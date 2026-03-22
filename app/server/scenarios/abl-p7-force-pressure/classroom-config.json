@@ -1,0 +1,11 @@
+{
+  "className": "Class 8 — Government School, Kuppam",
+  "studentCount": "40 (5 in simulation)",
+  "context": "Rural government school in Andhra Pradesh. Students have had previous Agastya sessions. The regular science teacher is watching from the back of the room.",
+  "openingScene": "You walk into the classroom with a rubber sheet and a brick. The students are seated on benches. Priya is in the front row, already curious about what you're carrying. Ravi is in the second row with arms crossed. Lakshmi is in the back corner. Arjun is in the last row near the window. Meena is in the middle, notebook already open.",
+  "difficultyModifiers": {
+    "easy": { "studentResponsiveness": 0.8, "misconceptionStrength": 0.3 },
+    "medium": { "studentResponsiveness": 0.6, "misconceptionStrength": 0.6 },
+    "hard": { "studentResponsiveness": 0.3, "misconceptionStrength": 0.9 }
+  }
+}

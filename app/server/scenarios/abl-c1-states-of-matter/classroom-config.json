@@ -1,0 +1,11 @@
+{
+  "className": "Class 7 — Government School, Kuppam",
+  "studentCount": "40 (5 in simulation)",
+  "context": "Rural government school in Andhra Pradesh. Students have had previous Agastya sessions. The regular science teacher is watching from the back of the room.",
+  "openingScene": "You walk into the classroom carrying a test tube, some tissue paper, and a basin of water. The students are curious about what you're going to do. Priya is already trying to guess. Ravi notices you have very few materials and is skeptical. Lakshmi is in her usual spot near the back. Arjun is chatting with his neighbor. Meena has already written 'States of Matter' in her notebook.",
+  "difficultyModifiers": {
+    "easy": { "studentResponsiveness": 0.8, "misconceptionStrength": 0.3 },
+    "medium": { "studentResponsiveness": 0.6, "misconceptionStrength": 0.6 },
+    "hard": { "studentResponsiveness": 0.3, "misconceptionStrength": 0.9 }
+  }
+}

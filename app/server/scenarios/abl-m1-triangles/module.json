@@ -1,0 +1,123 @@
+{
+  "id": "abl-m1-triangles",
+  "name": "Triangles — Types of Triangles and Angle Sum Property",
+  "description": "Students discover that the sum of interior angles of any triangle is always 180° by cutting out triangle corners and arranging them along a straight line. They also classify triangles by sides (equilateral, isosceles, scalene) and by angles (acute, right, obtuse).",
+  "category": "Mathematics",
+  "subject": "Mathematics",
+  "handbook": "M1 — Triangles",
+  "ablCode": "ABL 1.1 & 1.2a",
+  "difficulty": "medium",
+  "estimatedMinutes": 15,
+  "version": "1.0",
+  "gradeLevel": "6-8",
+  "materials": ["Paper triangles (different types — equilateral, isosceles, scalene, acute, right, obtuse)", "Scissors", "Ruler", "Protractor", "Coloured paper sheets", "Adhesive", "White paper sheets", "Pencil/pen"],
+
+  "pointA": {
+    "assumption": "Students think different shaped triangles have different angle sums, or that bigger triangles have bigger angle sums",
+    "blindspot": "They confuse angle size with side length and don't realize the angle sum is invariant — always 180° regardless of triangle type or size"
+  },
+  "pointB": {
+    "insight": "The sum of interior angles of ANY triangle — equilateral, isosceles, scalene, acute, right, or obtuse — is always exactly 180°",
+    "evidence": "Students can cut the three corners off any triangle, arrange them adjacent to each other along a straight line, and verify they form a straight angle (180°)"
+  },
+
+  "tutorial": [
+    {
+      "title": "Learning Objective",
+      "content": "This session covers two connected activities from the Agastya M1 handbook. First (ABL 1.1): students classify triangles into six types — equilateral, isosceles, scalene (by sides) and acute, right, obtuse (by angles). Second (ABL 1.2a): students verify the angle sum property by cutting corners off a triangle and placing them on a straight line to show they sum to 180°."
+    },
+    {
+      "title": "Materials & Setup",
+      "content": "Divide the class into groups of 3-4 students. Each group needs: coloured paper sheets, white paper, scissors, ruler, protractor, adhesive, and pencil. The Ignator should have pre-made cardboard models of each triangle type (equilateral, isosceles, scalene, acute, right, obtuse) for the classification activity."
+    },
+    {
+      "title": "The Procedure — Part 1: Types of Triangles",
+      "content": "Step 1: Students make replicas of triangle models by tracing onto coloured paper, cutting out, and sticking onto white sheets. Step 2: They measure all sides (with ruler) and all angles (with protractor) of each triangle. Step 3: They fill an observation table recording measurements. Step 4: Using leading questions, they classify each triangle by sides and by angles."
+    },
+    {
+      "title": "The Procedure — Part 2: Angle Sum Property",
+      "content": "Step 1: On coloured paper, draw a triangle of any dimensions. Label vertices A, B, C. Step 2: Cut out the triangle. Step 3: Cut the three angles (corners) off the triangle. Step 4: Draw a straight line on white paper. Place the three cut angles adjacent to each other on the line, without gaps. Step 5: Observe — the three angles together form a straight line, proving their sum is 180°."
+    },
+    {
+      "title": "Common Misconceptions",
+      "content": "1. Students think larger triangles have larger angle sums. 2. Students confuse side length with angle size — thinking longer sides mean bigger angles. 3. Students may think equilateral triangles have a different angle sum than scalene triangles. 4. Students may not realize that a straight line represents exactly 180°."
+    }
+  ],
+
+  "procedure": "PART 1 — Types of Triangles (ABL 1.1): 1. Distribute cardboard triangle models (equilateral, isosceles, scalene, acute, right, obtuse) to each group. 2. Students trace the models onto coloured paper, cut them out, and paste onto white sheets with labels. 3. Students measure all sides with a ruler and all angles with a protractor. 4. Students fill an observation table with measurements. 5. Using leading questions, guide students to classify: equilateral (all sides equal, all angles 60°), isosceles (two sides equal), scalene (all sides different), acute (all angles < 90°), right (one angle = 90°), obtuse (one angle > 90°). PART 2 — Angle Sum Property (ABL 1.2a): 1. On a coloured sheet, draw any triangle. Label vertices A, B, C. 2. Cut out triangle ABC. 3. Cut the three corners (angles) off the triangle. 4. Draw a straight line on a white sheet. 5. Place the three cut angles adjacent to each other on the straight line, without gaps. 6. Observe that the three angles together perfectly form a straight line. 7. Since angles on a straight line sum to 180°, we conclude that the angle sum of any triangle is 180°. 8. Repeat with a different type of triangle to confirm the property is universal.",
+
+  "canvasSteps": [
+    {
+      "step": 1,
+      "title": "Different Triangles",
+      "description": "Six triangle types displayed — equilateral (all sides equal), isosceles (two sides equal), scalene (all sides different), acute (all angles sharp), right-angled (one 90° angle), and obtuse (one angle > 90°). Each is labelled with its type name.",
+      "svgId": "triangle-types"
+    },
+    {
+      "step": 2,
+      "title": "Measuring Angles",
+      "description": "A protractor is shown measuring each angle of a coloured triangle. The three angle values appear next to each vertex — students see that every triangle has three interior angles.",
+      "svgId": "measuring-angles"
+    },
+    {
+      "step": 3,
+      "title": "Cutting Corners",
+      "description": "Scissors cutting the three corners off a coloured paper triangle. The three cut pieces are shown separated from the triangle body, each piece containing one angle.",
+      "svgId": "cutting-corners"
+    },
+    {
+      "step": 4,
+      "title": "Arranging on a Straight Line",
+      "description": "The three corner pieces being placed adjacent to each other along a straight line drawn on white paper, without any gaps between them.",
+      "svgId": "arranging-corners"
+    },
+    {
+      "step": 5,
+      "title": "They Form 180°!",
+      "description": "The three corners perfectly form a straight angle along the line — proving that the sum of interior angles of any triangle equals 180°. A protractor overlay confirms the straight line is exactly 180°.",
+      "svgId": "straight-line-proof"
+    }
+  ],
+
+  "leadingQuestions": [
+    "Are there any triangles where all three sides are equal? What about the angles — are they also equal?",
+    "When you measure all three angles of each triangle and add them up, what do you get? Is it the same for every triangle?",
+    "After cutting and placing the three corners on the straight line, what do you observe? Is there any gap or overlap?",
+    "If I give you a triangle where two angles are 50° and 60°, can you tell me the third angle without measuring? How?"
+  ],
+
+  "keyMessages": [
+    "Triangles can be classified into six types based on sides (equilateral, isosceles, scalene) and angles (acute, right, obtuse). An equilateral triangle has all sides equal and each angle is 60°.",
+    "The sum of the three interior angles of ANY triangle is always exactly 180° — this is called the angle sum property. It holds true for equilateral, isosceles, scalene, acute, right, and obtuse triangles alike.",
+    "We can verify this by cutting the three corners off a paper triangle and placing them along a straight line — they fit perfectly because angles on a straight line add to 180°."
+  ],
+
+  "misconceptions": [
+    "Bigger or wider triangles have a larger angle sum than smaller triangles — in fact, ALL triangles have an angle sum of exactly 180° regardless of size or shape",
+    "Longer sides mean bigger angles — in reality, the relationship between sides and angles is more nuanced; in an equilateral triangle all sides and angles are equal, but in a scalene triangle the largest angle is opposite the longest side, not caused by the side length itself",
+    "The angle sum property only works for certain types of triangles like equilateral ones — it is actually universal for every triangle, which students can verify by repeating the cutting activity with different triangle types"
+  ],
+
+  "dimensions": [
+    { "id": "D1", "name": "Curiosity Sparking", "shortName": "curiosity", "weight": 0.30, "keywords": ["why", "what if", "surprise", "predict", "guess", "wonder", "what do you notice", "same or different"] },
+    { "id": "D2", "name": "Student Engagement", "shortName": "engagement", "weight": 0.25, "keywords": ["lakshmi", "arjun", "everyone", "what do you think", "come up", "your group", "show me", "try it"] },
+    { "id": "D3", "name": "Concept Clarity", "shortName": "clarity", "weight": 0.20, "keywords": ["180 degrees", "angle sum", "equilateral", "isosceles", "scalene", "acute", "right angle", "obtuse", "straight line", "interior angle"] },
+    { "id": "D4", "name": "Facilitation Quality", "shortName": "facilitation", "weight": 0.15, "keywords": ["measure", "cut", "place", "observe", "draw", "trace", "label", "now let", "next step"] },
+    { "id": "D5", "name": "Questioning & Listening", "shortName": "questioning", "weight": 0.10, "keywords": ["why do you think", "tell me more", "good question", "interesting", "can you explain", "how do you know"] }
+  ],
+
+  "importanceWeights": { "D1": 0.30, "D2": 0.25, "D3": 0.20, "D4": 0.15, "D5": 0.10 },
+
+  "skills": [
+    { "id": "S1", "name": "Spark", "description": "Creating curiosity, wonder, and mathematical questioning through hands-on discovery", "category": "engagement" },
+    { "id": "S2", "name": "Reach", "description": "Engaging every student, especially quiet and disengaged, through group work and direct invitations", "category": "inclusion" }
+  ],
+
+  "archetypes": [
+    { "id": "ignitor", "name": "The Ignitor", "description": "Spark >= 70 AND Reach >= 70", "indicators": ["spark_high", "reach_high"] },
+    { "id": "performer", "name": "The Performer", "description": "Spark >= 60, Reach < 50", "indicators": ["spark_high", "reach_low"] },
+    { "id": "caretaker", "name": "The Caretaker", "description": "Reach >= 60, Spark < 50", "indicators": ["spark_low", "reach_high"] },
+    { "id": "lecturer", "name": "The Lecturer", "description": "Both < 50, Clarity > 60", "indicators": ["spark_low", "reach_low", "clarity_high"] },
+    { "id": "learner", "name": "The Learner", "description": "Both < 40", "indicators": ["spark_low", "reach_low"] }
+  ]
+}

@@ -1,0 +1,16 @@
+[
+  {
+    "id": "test-scenario",
+    "name": "Test Scenario",
+    "description": "Automated test",
+    "dimensions": [
+      {
+        "id": "D1",
+        "name": "Quality",
+        "shortName": "quality"
+      }
+    ],
+    "createdAt": "2026-03-12T00:26:10.460Z",
+    "updatedAt": "2026-03-12T00:26:10.460Z"
+  }
+]

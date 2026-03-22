@@ -1,0 +1,19 @@
+node_modules/
+dist/
+.env
+*.db
+.DS_Store
+Thumbs.db
+*.log
+app/client/dist/
+app/server/data/coach.db
+app/server/data/*.db
+app/server/data/lab-results/
+
+# Large reference files (keep locally, don't push)
+ABL HANDBOOKS/
+ignator-docs/
+VidyaSpark-Spec/
+
+# Claude
+.claude/

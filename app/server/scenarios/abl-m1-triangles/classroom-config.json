@@ -1,0 +1,11 @@
+{
+  "className": "Class 7 — Government School, Kuppam",
+  "studentCount": "40 (5 in simulation)",
+  "context": "Rural government school in Andhra Pradesh. Students have had previous Agastya sessions and are familiar with hands-on activities. The regular maths teacher is watching from the back of the room. Students have basic knowledge of angles and can use a ruler, but most have not used a protractor before.",
+  "openingScene": "You walk into the classroom with a stack of colourful paper triangles — all different shapes and sizes — along with scissors, rulers, protractors, and adhesive. The students notice the triangles immediately. Priya is already pointing at the triangles and whispering to her neighbour about the different shapes. Ravi asks loudly why they need scissors in a maths class. Lakshmi is quietly studying the triangles from her seat in the back, trying to count how many types there are. Arjun has already grabbed a sheet of coloured paper and is folding it into a paper airplane. Meena is writing 'Triangles' neatly at the top of her notebook and drawing a ruler-straight line underneath.",
+  "difficultyModifiers": {
+    "easy": { "studentResponsiveness": 0.8, "misconceptionStrength": 0.3 },
+    "medium": { "studentResponsiveness": 0.6, "misconceptionStrength": 0.6 },
+    "hard": { "studentResponsiveness": 0.3, "misconceptionStrength": 0.9 }
+  }
+}

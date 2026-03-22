@@ -1,0 +1,117 @@
+{
+  "id": "abl-p7-force-pressure",
+  "name": "Force and Pressure — Brick on Rubber Sheet",
+  "description": "Students discover that pressure depends on both force AND area of contact by placing a brick in different orientations on a rubber sheet.",
+  "category": "Physics",
+  "subject": "Physics",
+  "handbook": "P7 — Pressure and Density",
+  "ablCode": "ABL 1.1b",
+  "difficulty": "medium",
+  "estimatedMinutes": 15,
+  "version": "1.0",
+  "gradeLevel": "6-8",
+  "materials": ["Rubber sheet", "Brick"],
+
+  "pointA": {
+    "assumption": "Students think heavier objects always create more pressure",
+    "blindspot": "They don't consider that the AREA of contact changes the pressure even when force is the same"
+  },
+  "pointB": {
+    "insight": "Pressure = Force / Area. Same force on smaller area = more pressure",
+    "evidence": "Students can predict which brick orientation creates maximum depression and explain why"
+  },
+
+  "tutorial": [
+    {
+      "title": "Learning Objective",
+      "content": "In this experiment, students will understand the concept of pressure and discover that pressure depends on both the force applied AND the area over which it is applied. The key formula is P = F/A."
+    },
+    {
+      "title": "Materials & Setup",
+      "content": "You need: 1 rubber sheet (stretched horizontally between two supports) and 1 brick. Two students hold the rubber sheet taut. The brick will be placed in three different orientations."
+    },
+    {
+      "title": "The Procedure",
+      "content": "Step 1: Place the brick flat (broad side down) on the rubber sheet. Observe the depression. Step 2: Place the same brick on its medium side. Observe. Step 3: Place the brick on its narrowest side. Observe. Step 4: Discuss why the depression changed even though the brick's weight stayed the same."
+    },
+    {
+      "title": "Key Messages",
+      "content": "1. Pressure is the ratio of force to the area of contact: P = F/A. 2. Same force on a smaller area creates MORE pressure. 3. This is why a nail point penetrates but a flat surface doesn't."
+    },
+    {
+      "title": "Common Misconceptions",
+      "content": "Students often think pressure is the same as force. They expect the depression to be identical in all three positions because the brick weighs the same. They need to discover that AREA matters."
+    }
+  ],
+
+  "procedure": "1. Take a thin rubber sheet and ask two students to stretch it horizontally and hold it. 2. Place a brick on the rubber sheet with its broad side in contact. Observe the depression. 3. Next, place the brick on its medium side. Observe the depression — it is MORE. 4. Finally, place the brick on its narrowest side. Observe — the depression is MAXIMUM. 5. Ask students: Why did the depression change when the weight is the same?",
+
+  "canvasSteps": [
+    {
+      "step": 1,
+      "title": "Setup",
+      "description": "Empty rubber sheet stretched between two supports. Brick sitting nearby.",
+      "svgId": "setup"
+    },
+    {
+      "step": 2,
+      "title": "Brick Flat (Large Area)",
+      "description": "Brick placed with broad side down. Small depression in rubber sheet.",
+      "svgId": "brick-flat"
+    },
+    {
+      "step": 3,
+      "title": "Brick on Medium Side",
+      "description": "Same brick on medium side. Noticeably MORE depression.",
+      "svgId": "brick-medium"
+    },
+    {
+      "step": 4,
+      "title": "Brick on Narrow Side",
+      "description": "Same brick on narrowest side. MAXIMUM depression.",
+      "svgId": "brick-narrow"
+    }
+  ],
+
+  "leadingQuestions": [
+    "What happens when a brick is placed on the rubber sheet?",
+    "Is the depression the same when the brick is placed in different positions?",
+    "For which position do you think the depression is maximum?",
+    "How do you explain this behavior? The weight is the same!"
+  ],
+
+  "keyMessages": [
+    "The ratio of normal force (F) acting on a surface and the area (A) of the surface on which force acts is defined as pressure: P = F/A",
+    "Pressure is the continuous normal force exerted on unit area of the surface in contact",
+    "Same force on smaller area = greater pressure"
+  ],
+
+  "misconceptions": [
+    "Pressure and force are the same thing",
+    "Heavier objects always create more pressure",
+    "The depression should be the same because the brick weight doesn't change"
+  ],
+
+  "dimensions": [
+    { "id": "D1", "name": "Curiosity Sparking", "shortName": "curiosity", "weight": 0.30, "keywords": ["why", "what if", "surprise", "predict", "guess", "wonder"] },
+    { "id": "D2", "name": "Student Engagement", "shortName": "engagement", "weight": 0.25, "keywords": ["lakshmi", "arjun", "everyone", "what do you think", "come up"] },
+    { "id": "D3", "name": "Concept Clarity", "shortName": "clarity", "weight": 0.20, "keywords": ["pressure", "force", "area", "P=F/A", "formula"] },
+    { "id": "D4", "name": "Facilitation Quality", "shortName": "facilitation", "weight": 0.15, "keywords": ["observe", "notice", "look carefully", "place", "now let"] },
+    { "id": "D5", "name": "Questioning & Listening", "shortName": "questioning", "weight": 0.10, "keywords": ["why do you think", "tell me more", "good question", "interesting"] }
+  ],
+
+  "importanceWeights": { "D1": 0.30, "D2": 0.25, "D3": 0.20, "D4": 0.15, "D5": 0.10 },
+
+  "skills": [
+    { "id": "S1", "name": "Spark", "description": "Creating curiosity, wonder, and scientific questioning", "category": "engagement" },
+    { "id": "S2", "name": "Reach", "description": "Engaging every student, especially quiet and disengaged", "category": "inclusion" }
+  ],
+
+  "archetypes": [
+    { "id": "ignitor", "name": "The Ignitor", "description": "Spark >= 70 AND Reach >= 70", "indicators": ["spark_high", "reach_high"] },
+    { "id": "performer", "name": "The Performer", "description": "Spark >= 60, Reach < 50", "indicators": ["spark_high", "reach_low"] },
+    { "id": "caretaker", "name": "The Caretaker", "description": "Reach >= 60, Spark < 50", "indicators": ["spark_low", "reach_high"] },
+    { "id": "lecturer", "name": "The Lecturer", "description": "Both < 50, Clarity > 60", "indicators": ["spark_low", "reach_low", "clarity_high"] },
+    { "id": "learner", "name": "The Learner", "description": "Both < 40", "indicators": ["spark_low", "reach_low"] }
+  ]
+}
