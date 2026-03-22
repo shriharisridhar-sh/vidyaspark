@@ -58,14 +58,29 @@ router.post('/:sessionId', optionalAuth, async (req, res) => {
     .join('\n');
 
   // ── Step 4: Build the assessment prompt ──────────────────
+  // Build module context sections
+  const formatList = (arr, getStr) => arr.map((item, i) => {
+    const text = typeof item === 'object' ? getStr(item) : String(item);
+    return (i + 1) + '. ' + text;
+  }).join('\n');
+
+  let moduleContext = '';
+  if (moduleObjectives.length > 0) {
+    moduleContext += 'KEY MESSAGES:\n' + formatList(moduleObjectives, o => o.message || o.text || JSON.stringify(o)) + '\n';
+  }
+  if (leadingQuestions.length > 0) {
+    moduleContext += '\nLEADING QUESTIONS FROM HANDBOOK:\n' + formatList(leadingQuestions, q => q.question || q.text || JSON.stringify(q)) + '\n';
+  }
+  if (misconceptions.length > 0) {
+    moduleContext += '\nCOMMON MISCONCEPTIONS:\n' + formatList(misconceptions, m => m.misconception || m.text || JSON.stringify(m)) + '\n';
+  }
+
   const systemPrompt = `You are an expert education assessment designer for Agastya International Foundation's VidyaSpark platform.
 
 Your task: Generate 10 comprehension questions and score each of 5 AI students based on how well the Ignator taught them.
 
 MODULE: ${moduleTitle}
-${moduleObjectives.length > 0 ? 'KEY MESSAGES:\n' + moduleObjectives.map((obj, i) => \`\${i + 1}. \${typeof obj === 'object' ? obj.message || obj.text || JSON.stringify(obj) : obj}\`).join('\n') : ''}
-${leadingQuestions.length > 0 ? '\nLEADING QUESTIONS FROM HANDBOOK:\n' + leadingQuestions.map((q, i) => \`\${i + 1}. \${typeof q === 'object' ? q.question || q.text || JSON.stringify(q) : q}\`).join('\n') : ''}
-${misconceptions.length > 0 ? '\nCOMMON MISCONCEPTIONS:\n' + misconceptions.map((m, i) => \`\${i + 1}. \${typeof m === 'object' ? m.misconception || m.text || JSON.stringify(m) : m}\`).join('\n') : ''}
+${moduleContext}
 
 QUESTION DISTRIBUTION (10 total):
 - 3 Recall questions (Bloom's Level 1: remember facts)
