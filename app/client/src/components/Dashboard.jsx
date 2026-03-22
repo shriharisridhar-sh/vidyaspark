@@ -140,7 +140,7 @@ export default function Dashboard() {
             <p className="text-red-400 text-sm mb-4">{error}</p>
             <button
               onClick={() => window.location.reload()}
-              className="px-5 py-2 rounded-lg text-sm font-medium bg-accent text-black hover:bg-accent/90 transition-colors"
+              className="px-5 py-2 rounded-lg text-sm font-medium bg-accent text-white hover:bg-accent/90 transition-colors"
             >
               Retry
             </button>
@@ -201,7 +201,7 @@ export default function Dashboard() {
                     className={
                       'px-4 py-2 rounded-lg text-sm font-medium transition-colors ' +
                       (activeTab === tab
-                        ? 'bg-accent text-black'
+                        ? 'bg-accent text-white'
                         : 'text-text-secondary hover:text-text-primary hover:bg-white/[0.04]')
                     }
                   >
@@ -261,7 +261,9 @@ export default function Dashboard() {
                       </div>
                       <div className="flex items-center gap-4 flex-shrink-0">
                         {session.archetype && (
-                          <span className="text-text-secondary text-xs hidden sm:block">{session.archetype}</span>
+                          <span className="text-text-secondary text-xs hidden sm:block">
+                            {typeof session.archetype === 'string' ? session.archetype : session.archetype?.name || ''}
+                          </span>
                         )}
                         {(session.score ?? session.compositeScore) != null && (
                           <span className={'text-sm font-mono font-bold ' + ((session.score ?? session.compositeScore) >= 60 ? 'text-emerald-400' : (session.score ?? session.compositeScore) >= 40 ? 'text-yellow-400' : 'text-red-400')}>
@@ -337,7 +339,7 @@ function ModuleCard({ mod, onEnter }) {
       <div className="mt-auto">
         <button
           onClick={onEnter}
-          className="w-full px-4 py-2.5 rounded-xl text-sm font-semibold bg-accent text-black hover:bg-accent/90 transition-colors group-hover:shadow-lg group-hover:shadow-accent/10"
+          className="w-full px-4 py-2.5 rounded-xl text-sm font-semibold bg-accent text-white hover:bg-accent/90 transition-colors group-hover:shadow-lg group-hover:shadow-accent/10"
         >
           Enter the Tapovan &rarr;
         </button>
