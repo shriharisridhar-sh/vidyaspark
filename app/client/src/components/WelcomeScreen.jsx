@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { API_BASE } from '../utils/api';
+import VidyaSparkLogo from './VidyaSparkLogo';
 
 const subjectColors = {
   Physics:     'bg-[#2196F3]/10 text-[#2196F3] border-[#2196F3]/20',
@@ -50,13 +51,9 @@ export default function WelcomeScreen({ onStart }) {
         {/* Logo */}
         <div
           className="anim-fade-up"
-          style={{
-            position: 'absolute', top: '2rem', left: '2.5rem', zIndex: 10,
-            fontWeight: 800, fontSize: '1.125rem', letterSpacing: '0.15em', color: '#ffffff',
-            animationDelay: '0.1s',
-          }}
+          style={{ position: 'absolute', top: '2rem', left: '2.5rem', zIndex: 10, animationDelay: '0.1s' }}
         >
-          VIDYASPARK
+          <VidyaSparkLogo size="md" light />
         </div>
 
         <div className="hero-content">

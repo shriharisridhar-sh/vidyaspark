@@ -152,8 +152,9 @@ export default function ManagerFlow() {
     setHasPaused(false);
     setEndedSessionId(null);
     setScreen('tutorial');
-    // Re-create session
+    // Re-create session (set isCreating first to prevent useEffect double-creation)
     if (moduleId && isAuthenticated) {
+      setIsCreating(true);
       createSession({
         coachType: 'ai',
         coachingCadence: 'between_rounds',
@@ -162,7 +163,12 @@ export default function ManagerFlow() {
         userName: user?.name,
         userId: user?.id,
         scenarioId: moduleId,
-      }).catch(e => console.warn('[ManagerFlow] Failed to re-create session:', e.message));
+      }).then(() => {
+        setIsCreating(false);
+      }).catch(e => {
+        console.warn('[ManagerFlow] Failed to re-create session:', e.message);
+        setIsCreating(false);
+      });
     }
   }, [resetSession, moduleId, isAuthenticated, user, createSession]);
 

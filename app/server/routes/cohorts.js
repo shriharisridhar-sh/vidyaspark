@@ -62,11 +62,15 @@ router.post('/', requireAdmin, (req, res) => {
 router.get('/', requireAdmin, (req, res) => {
   try {
     const cohorts = database.getAllCohorts();
-    const result = cohorts.map(c => ({
-      ...c,
-      modules: database.getCohortModules(c.id),
-      memberCount: database.getCohortMembers(c.id).length,
-    }));
+    const result = cohorts.map(c => {
+      const members = database.getCohortMembers(c.id);
+      return {
+        ...c,
+        modules: database.getCohortModules(c.id),
+        members,
+        memberCount: members.length,
+      };
+    });
     res.json({ cohorts: result });
   } catch (e) {
     console.error('[Cohorts] List error:', e.message);
@@ -228,7 +232,7 @@ router.post('/join', (req, res) => {
 /**
  * GET /api/cohorts/users - Get all users across all cohorts (admin only)
  */
-router.get('/users', requireAdmin, (req, res) => {
+router.get('/users', requireAdmin, async (req, res) => {
   try {
     const cohorts = database.getAllCohorts();
     const userMap = new Map();
@@ -237,19 +241,22 @@ router.get('/users', requireAdmin, (req, res) => {
       const members = database.getCohortMembers(cohort.id);
       for (const m of members) {
         if (!userMap.has(m.email)) {
+          // Get session count and last active from user's sessions
+          const sessions = database.getUserSessions(m.id);
+          const sessionCount = sessions.length;
+          const lastActive = sessions.length > 0 ? sessions[0].timestamp : m.enrolled_at;
+
           userMap.set(m.email, {
             name: m.name,
             email: m.email,
             cohorts: [cohort.name],
-            sessionCount: m.sessionCount || 0,
-            lastActive: m.lastActive || null,
+            sessionCount,
+            lastActive,
           });
         } else {
           const existing = userMap.get(m.email);
-          existing.cohorts.push(cohort.name);
-          existing.sessionCount = Math.max(existing.sessionCount, m.sessionCount || 0);
-          if (m.lastActive && (!existing.lastActive || m.lastActive > existing.lastActive)) {
-            existing.lastActive = m.lastActive;
+          if (!existing.cohorts.includes(cohort.name)) {
+            existing.cohorts.push(cohort.name);
           }
         }
       }

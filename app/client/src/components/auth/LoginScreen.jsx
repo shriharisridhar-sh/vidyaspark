@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
+import VidyaSparkLogo from '../VidyaSparkLogo';
 
 export default function LoginScreen({ cohortCode, cohortName, onSuccess }) {
   const { login, signup, joinCohort } = useAuth();
@@ -39,8 +40,8 @@ export default function LoginScreen({ cohortCode, cohortName, onSuccess }) {
         <div className="bg-white/[0.03] border border-white/[0.06] backdrop-blur-sm rounded-2xl p-8">
           {/* Header */}
           <div className="text-center mb-6">
-            <div className="text-accent text-xs font-semibold uppercase tracking-[0.2em] mb-2">
-              VidyaSpark
+            <div className="mb-3 flex justify-center">
+              <VidyaSparkLogo size="md" />
             </div>
             {cohortCode ? (
               <>

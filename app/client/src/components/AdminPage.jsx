@@ -298,6 +298,26 @@ function ModuleCard({ module }) {
 
 function CohortSection({ name, sessions, avgScore }) {
   const [open, setOpen] = useState(false);
+  const [expandedSession, setExpandedSession] = useState(null);
+  const [transcript, setTranscript] = useState(null);
+  const [loadingTranscript, setLoadingTranscript] = useState(false);
+
+  const viewTranscript = (sessionId) => {
+    if (expandedSession === sessionId) {
+      setExpandedSession(null);
+      setTranscript(null);
+      return;
+    }
+    setExpandedSession(sessionId);
+    setLoadingTranscript(true);
+    fetch(API_BASE + '/api/session/db/' + sessionId, { credentials: 'include' })
+      .then(r => r.json())
+      .then(data => {
+        setTranscript(data.transcript || []);
+        setLoadingTranscript(false);
+      })
+      .catch(() => { setTranscript([]); setLoadingTranscript(false); });
+  };
 
   return (
     <div className="mb-3">
@@ -321,27 +341,68 @@ function CohortSection({ name, sessions, avgScore }) {
             const date = s.endedAt || s.createdAt;
             const dateStr = date ? new Date(date).toLocaleDateString() : '';
             const isCoached = s.config?.coachType === 'ai';
+            const archetype = s.archetype;
+            const archetypeName = archetype
+              ? (typeof archetype === 'string' ? archetype : archetype.name || 'Unknown')
+              : null;
 
             return (
-              <div key={s.sessionId} className="flex items-center justify-between py-2 px-3 rounded-lg hover:bg-surface/30 text-xs">
-                <div className="flex items-center gap-3">
-                  <span className="text-text-primary font-medium w-32 truncate">{s.userName || 'Anonymous'}</span>
-                  <span className={"font-mono font-bold " + (score >= 60 ? 'text-green-600' : score >= 40 ? 'text-yellow-600' : 'text-red-600')}>
-                    {score}%
-                  </span>
-                  <span className={"px-1.5 py-0.5 rounded " + (isCoached ? 'bg-accent/10 text-accent' : 'bg-surface text-text-secondary')}>
-                    {isCoached ? 'Coached' : 'Solo'}
-                  </span>
-                  <span className="text-text-secondary">{dateStr}</span>
+              <div key={s.sessionId}>
+                <div className="flex items-center justify-between py-2 px-3 rounded-lg hover:bg-surface/30 text-xs">
+                  <div className="flex items-center gap-3">
+                    <span className="text-text-primary font-medium w-32 truncate">{s.userName || 'Anonymous'}</span>
+                    <span className={"font-mono font-bold " + (score >= 60 ? 'text-green-600' : score >= 40 ? 'text-yellow-600' : 'text-red-600')}>
+                      {score}%
+                    </span>
+                    <span className={"px-1.5 py-0.5 rounded " + (isCoached ? 'bg-accent/10 text-accent' : 'bg-surface text-text-secondary')}>
+                      {isCoached ? 'Coached' : 'Solo'}
+                    </span>
+                    {archetypeName && (
+                      <span className="px-1.5 py-0.5 rounded bg-orange-50 text-orange-700 dark:bg-accent/10 dark:text-accent">
+                        {archetypeName}
+                      </span>
+                    )}
+                    <span className="text-text-secondary">{dateStr}</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <button
+                      onClick={() => viewTranscript(s.sessionId)}
+                      className="text-text-secondary hover:text-accent font-medium transition-colors"
+                    >
+                      {expandedSession === s.sessionId ? 'Hide' : 'Transcript'}
+                    </button>
+                    <a
+                      href={API_BASE + '/api/report/' + s.sessionId + '/download'}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-accent hover:underline font-medium"
+                    >
+                      PDF
+                    </a>
+                  </div>
                 </div>
-                <a
-                  href={API_BASE + '/api/export/' + s.sessionId + '/pdf'}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-accent hover:underline font-medium"
-                >
-                  PDF
-                </a>
+
+                {/* Expanded transcript */}
+                {expandedSession === s.sessionId && (
+                  <div className="ml-3 mt-1 mb-2 p-3 rounded-lg bg-surface/50 border border-border/30 max-h-64 overflow-y-auto">
+                    {loadingTranscript ? (
+                      <p className="text-text-secondary text-xs">Loading transcript...</p>
+                    ) : transcript && transcript.length > 0 ? (
+                      <div className="space-y-2">
+                        {transcript.map((msg, i) => (
+                          <div key={i} className="text-xs">
+                            <span className={"font-bold " + (msg.role === 'user' || msg.role === 'ignator' ? 'text-accent' : 'text-text-secondary')}>
+                              {msg.role === 'user' || msg.role === 'ignator' ? 'Ignator' : msg.role === 'assistant' ? 'AI Student' : msg.role}:
+                            </span>{' '}
+                            <span className="text-text-primary">{msg.content}</span>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <p className="text-text-secondary text-xs">No transcript available for this session.</p>
+                    )}
+                  </div>
+                )}
               </div>
             );
           })}
@@ -371,8 +432,8 @@ function CompareSection({ sessions, loading }) {
   const metrics = [
     { label: 'Sessions', solo: solo.length, coached: coached.length, unit: '' },
     { label: 'Avg Score', solo: avg(solo, s => s.compositeScore || s.objectiveScore), coached: avg(coached, s => s.compositeScore || s.objectiveScore), unit: '%' },
-    { label: 'Avg Discovery', solo: avg(solo, s => s.discoveryScore), coached: avg(coached, s => s.discoveryScore), unit: '%' },
-    { label: 'Avg Persuasion', solo: avg(solo, s => s.persuasionScore), coached: avg(coached, s => s.persuasionScore), unit: '%' },
+    { label: 'Avg Spark', solo: avg(solo, s => s.skillScores?.spark || s.skillScores?.S1 || s.discoveryScore), coached: avg(coached, s => s.skillScores?.spark || s.skillScores?.S1 || s.discoveryScore), unit: '%' },
+    { label: 'Avg Reach', solo: avg(solo, s => s.skillScores?.reach || s.skillScores?.S2 || s.persuasionScore), coached: avg(coached, s => s.skillScores?.reach || s.skillScores?.S2 || s.persuasionScore), unit: '%' },
     { label: 'Avg Exchanges', solo: avg(solo, s => s.exchangeCount), coached: avg(coached, s => s.exchangeCount), unit: '' },
   ];
 

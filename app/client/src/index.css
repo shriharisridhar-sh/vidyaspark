@@ -143,20 +143,20 @@
 
   .hero-eyebrow {
     text-transform: uppercase;
-    font-size: 18px;
+    font-size: 20px;
     letter-spacing: 0.25em;
     color: #E65100;
     font-weight: 600;
-    margin-bottom: 28px;
+    margin-bottom: 32px;
   }
 
   .hero-title {
-    font-size: clamp(40px, 6vw, 72px);
+    font-size: clamp(48px, 7vw, 84px);
     font-weight: 800;
     letter-spacing: -0.04em;
     line-height: 0.95;
-    max-width: 800px;
-    margin-bottom: 28px;
+    max-width: 900px;
+    margin-bottom: 32px;
     color: #fafafa;
   }
 
@@ -168,9 +168,9 @@
   }
 
   .hero-sub {
-    font-size: 18px;
+    font-size: 21px;
     color: #a1a1aa;
-    max-width: 520px;
+    max-width: 560px;
     line-height: 1.7;
     font-weight: 300;
     margin-bottom: 48px;
@@ -180,12 +180,12 @@
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    padding: 16px 36px;
+    padding: 18px 40px;
     background: #E65100;
     color: #fafafa;
     border: none;
     border-radius: 14px;
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 600;
     font-family: 'Outfit', system-ui, sans-serif;
     cursor: pointer;
@@ -251,15 +251,15 @@
 
   .section-eyebrow {
     text-transform: uppercase;
-    font-size: 11px;
+    font-size: 14px;
     letter-spacing: 0.2em;
     color: #E65100;
-    font-weight: 500;
-    margin-bottom: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
   }
 
   .section-title {
-    font-size: clamp(32px, 4vw, 48px);
+    font-size: clamp(36px, 5vw, 56px);
     font-weight: 700;
     letter-spacing: -0.03em;
     margin-bottom: 64px;
@@ -335,7 +335,7 @@
 
   .module-desc {
     color: #a1a1aa;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 1.7;
     margin-bottom: 24px;
   }
@@ -343,7 +343,7 @@
   .module-meta {
     display: flex;
     gap: 16px;
-    font-size: 12px;
+    font-size: 13px;
     color: #71717a;
   }
 
@@ -414,7 +414,7 @@
   }
 
   .step-title {
-    font-size: 24px;
+    font-size: 26px;
     font-weight: 600;
     margin-bottom: 12px;
     color: #fafafa;
@@ -423,7 +423,7 @@
 
   .step-desc {
     color: #a1a1aa;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.7;
   }
 

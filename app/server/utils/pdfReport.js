@@ -41,10 +41,10 @@ const DIM_NAMES = {
   price:       'Pricing',
 };
 
-// ── Static performance grades ──
+// ── Static performance grades (legacy fallback) ──
 const PERF_GRADES = {
-  agastya: { reliability: 91, hse: 88, technical: 85, service: 79, price: 58 },
-  baker:   { reliability: 74, hse: 79, technical: 71, service: 68, price: 82 },
+  agastya:    { reliability: 91, hse: 88, technical: 85, service: 79, price: 58 },
+  competitor: { reliability: 74, hse: 79, technical: 71, service: 68, price: 82 },
 };
 
 const DIM_ORDER = ['reliability', 'hse', 'technical', 'service', 'price'];
@@ -514,7 +514,7 @@ function generateSessionPDF(sessionData, reportData, moduleId) {
       const perfCompanies = perfGrades ? Object.keys(perfGrades) : [];
       const isCompetitive = modData.isCompetitive !== undefined ? modData.isCompetitive : perfCompanies.length >= 2;
       const company1Key = perfCompanies[0] || 'agastya';
-      const company2Key = perfCompanies[1] || 'baker';
+      const company2Key = perfCompanies[1] || 'competitor';
       const company1Grades = perfGrades[company1Key] || {};
       const company2Grades = perfGrades[company2Key] || {};
       const company1Name = company1Key.charAt(0).toUpperCase() + company1Key.slice(1).replace(/([A-Z])/g, ' $1').trim();
@@ -756,7 +756,7 @@ function generateSessionPDF(sessionData, reportData, moduleId) {
         y += 16;
 
         let priceTrapText = 'In B2B energy services, pricing drives less than 10% of customer satisfaction. Reliability and HSE drive over 60%. But pricing is what customers complain about most loudly. This gap between what is salient and what is important is where careers are made or broken.';
-        priceTrapText += ' In your session, the customer led with Baker Hughes being 12% cheaper. But price was worth only ' + priceWeight + '% of their decision. Reliability alone was worth ' + relWeight + '%.';
+        priceTrapText += ' In your session, the customer led with the competitor being 12% cheaper. But price was worth only ' + priceWeight + '% of their decision. Reliability alone was worth ' + relWeight + '%.';
         if (discoveredReliability) {
           priceTrapText += ' You found your way to reliability. That is the right instinct.';
         } else {
@@ -946,7 +946,7 @@ function generateSessionPDF(sessionData, reportData, moduleId) {
         doc.text(c1Static, 55, y, { width: pageWidth, lineGap: 3 });
         y += c1H + 8;
 
-        let c1Dynamic = 'In your simulation, the customer kept raising Baker Hughes\' lower price. Price was the most salient issue. But it drove only ' + priceWeight + '% of their satisfaction.';
+        let c1Dynamic = 'In your simulation, the customer kept raising the competitor\'s lower price. Price was the most salient issue. But it drove only ' + priceWeight + '% of their satisfaction.';
         if (discoveredReliability) {
           c1Dynamic += ' You saw through the noise and probed reliability, which was worth ' + relWeight + '%. That is exactly the move this framework teaches.';
         } else {

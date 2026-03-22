@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { API_BASE } from '../utils/api';
+import VidyaSparkLogo from './VidyaSparkLogo';
 
 const SUBJECT_COLORS = {
   Physics:     { bg: 'bg-[#2196F3]/10', text: 'text-[#2196F3]', border: 'border-[#2196F3]/30', solid: '#2196F3' },
@@ -72,7 +73,7 @@ export default function Dashboard() {
       <header className="border-b border-border bg-surface/60 backdrop-blur-sm sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
           <a href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-            <span className="text-accent font-bold text-sm tracking-[0.18em] uppercase">VidyaSpark</span>
+            <VidyaSparkLogo size="sm" />
           </a>
 
           {/* User avatar + dropdown */}
@@ -237,7 +238,7 @@ export default function Dashboard() {
                 <div className="bg-surface border border-border rounded-2xl overflow-hidden">
                   {sessions.map((session, i) => (
                     <div
-                      key={session.id || session._id || i}
+                      key={session.sessionId || session.id || session._id || i}
                       className={'flex items-center justify-between px-5 py-4 ' + (i < sessions.length - 1 ? 'border-b border-border' : '')}
                     >
                       <div className="flex items-center gap-4 min-w-0">
