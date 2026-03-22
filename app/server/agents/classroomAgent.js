@@ -13,7 +13,17 @@ function buildClassroomPrompt(moduleId, currentStep, difficulty = 'medium') {
   const mod = loadModule(moduleId);
   if (!mod) return 'You are simulating a classroom of 5 students.';
 
-  const classroomConfig = mod.classroomConfig || {};
+  // Load classroom config (separate file)
+  let classroomConfig = {};
+  try {
+    const fs = require('fs');
+    const path = require('path');
+    const configPath = path.join(__dirname, '..', 'scenarios', moduleId, 'classroom-config.json');
+    if (fs.existsSync(configPath)) {
+      classroomConfig = JSON.parse(fs.readFileSync(configPath, 'utf-8'));
+    }
+  } catch (_) {}
+
   const difficultyMod = classroomConfig.difficultyModifiers?.[difficulty] || { studentResponsiveness: 0.6, misconceptionStrength: 0.6 };
 
   return `You are simulating a classroom of 5 Indian students (ages 12-14) in a government school.
@@ -53,8 +63,6 @@ ${classroomConfig.context || 'Rural government school in Andhra Pradesh.'}
 OPENING SCENE:
 ${classroomConfig.openingScene || 'The students are seated and ready.'}
 
-DIFFICULTY: ${difficulty} (Student responsiveness: ${difficultyMod.studentResponsiveness}, Misconception strength: ${difficultyMod.misconceptionStrength})
-
 THE EXPERIMENT BEING TAUGHT:
 ${mod.name}
 ${mod.description}
@@ -75,8 +83,6 @@ COMMON STUDENT MISCONCEPTIONS:
 ${(mod.misconceptions || []).map((m, i) => `${i+1}. ${m}`).join('\n')}
 
 Your students should respond naturally based on what they "see" in the experiment at the current step.
-If the Ignator does not advance through the steps, students should show signs of waiting/confusion.
-If the Ignator skips steps, students should show signs of being lost.
 
 RESPONSE FORMAT:
 Each response should show 1-3 students reacting (NOT all 5 every turn).
@@ -94,53 +100,48 @@ WHICH STUDENTS RESPOND depends on:
 - The current engagement state of each student
 - Natural classroom dynamics (Priya often responds first, Lakshmi never volunteers)
 
-ALSO INCLUDE at the very end of your response a JSON block (the frontend will parse and hide it):
-\`\`\`json
-{
-  "studentStates": {
-    "priya": { "engagement": "high", "status": "excited, pointing at canvas" },
-    "ravi": { "engagement": "high", "status": "skeptical but interested" },
-    "lakshmi": { "engagement": "low", "status": "watching quietly from back" },
-    "arjun": { "engagement": "none", "status": "doodling in notebook" },
-    "meena": { "engagement": "medium", "status": "copying notes" }
-  },
-  "canvasStep": ${currentStep},
-  "sessionPhase": "super_core"
-}
-\`\`\`
-
-Engagement levels: "high", "medium", "low", "none"
-Session phases: "super_start" (hook/intro), "super_core" (main experiment), "super_finish" (key messages/wrap-up)`;
+ALSO INCLUDE at the very end of your response a JSON block:
+{"studentStates":{"priya":{"engagement":"high","status":"excited"},"ravi":{"engagement":"high","status":"skeptical but interested"},"lakshmi":{"engagement":"low","status":"watching quietly"},"arjun":{"engagement":"none","status":"doodling"},"meena":{"engagement":"medium","status":"copying notes"}},"canvasStep":${currentStep},"sessionPhase":"super_core"}`;
 }
 
 
 /**
  * Stream a multi-student classroom response.
- * Uses the same SSE pattern as the original customerAgent.
  */
 async function stream({ history, difficulty = 'medium', moduleId, currentStep = 1, res }) {
   const systemPrompt = buildClassroomPrompt(moduleId, currentStep, difficulty);
 
+  console.log('[ClassroomAgent] Sending request to Claude API...');
+  console.log('[ClassroomAgent] Module:', moduleId, '| Step:', currentStep, '| History length:', history.length);
+
   let fullText = '';
 
-  const messageStream = await client.messages.stream({
-    model: 'claude-sonnet-4-5-20250514',
-    max_tokens: 800,
-    system: systemPrompt,
-    messages: history.map((m) => ({
-      role: m.role === 'assistant' || m.role === 'customer' || m.role === 'classroom' ? 'assistant' : 'user',
-      content: m.content,
-    })),
-  });
+  try {
+    const messageStream = await client.messages.stream({
+      model: 'claude-3-5-sonnet-20241022',
+      max_tokens: 800,
+      system: systemPrompt,
+      messages: history.map((m) => ({
+        role: m.role === 'assistant' || m.role === 'customer' || m.role === 'classroom' ? 'assistant' : 'user',
+        content: m.content,
+      })),
+    });
 
-  for await (const event of messageStream) {
-    if (event.type === 'content_block_delta' && event.delta?.type === 'text_delta') {
-      const token = event.delta.text;
-      fullText += token;
-      if (res) {
-        res.write(`data: ${JSON.stringify({ type: 'token', token })}\n\n`);
+    for await (const event of messageStream) {
+      if (event.type === 'content_block_delta' && event.delta?.type === 'text_delta') {
+        const token = event.delta.text;
+        fullText += token;
+        if (res) {
+          res.write(`data: ${JSON.stringify({ type: 'token', token })}\n\n`);
+        }
       }
     }
+
+    console.log('[ClassroomAgent] Response complete. Length:', fullText.length);
+  } catch (err) {
+    console.error('[ClassroomAgent] API ERROR:', err.message);
+    console.error('[ClassroomAgent] Full error:', JSON.stringify(err, null, 2));
+    throw err;
   }
 
   return fullText;

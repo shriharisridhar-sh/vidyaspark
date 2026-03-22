@@ -184,7 +184,10 @@ router.post('/message', async (req, res) => {
 
   } catch (err) {
     console.error('[POST /api/negotiation/message] Error:', err.message);
-    res.write('data: ' + JSON.stringify({ type: 'error', message: 'An error occurred.' }) + '\n\n');
+    console.error('[POST /api/negotiation/message] Stack:', err.stack);
+    // Send error as a visible student response so user sees something
+    res.write('data: ' + JSON.stringify({ type: 'token', token: '[System]: The classroom encountered an issue. Error: ' + err.message + '. Please try again.' }) + '\n\n');
+    res.write('data: ' + JSON.stringify({ type: 'done', exchangeCount: 0 }) + '\n\n');
   } finally {
     res.end();
   }
