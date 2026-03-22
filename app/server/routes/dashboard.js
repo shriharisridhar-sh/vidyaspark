@@ -129,4 +129,36 @@ router.get('/sessions', requireAuth, async (req, res) => {
   }
 });
 
+/**
+ * DELETE /api/dashboard/sessions/cleanup - Delete all 0-score sessions for the current user
+ * This runs inside the live server process so it actually affects the in-memory DB
+ */
+router.delete('/sessions/cleanup', requireAuth, async (req, res) => {
+  try {
+    const userId = req.user.id;
+    const d = await database.getDb();
+
+    // Count before
+    const before = d.exec('SELECT COUNT(*) FROM sessions WHERE user_id = ?', [userId]);
+    const countBefore = before.length ? before[0].values[0][0] : 0;
+
+    // Delete sessions with 0 or null composite_score
+    d.run('DELETE FROM sessions WHERE user_id = ? AND (composite_score IS NULL OR composite_score = 0)', [userId]);
+    database.saveToDisk();
+
+    // Count after
+    const after = d.exec('SELECT COUNT(*) FROM sessions WHERE user_id = ?', [userId]);
+    const countAfter = after.length ? after[0].values[0][0] : 0;
+
+    res.json({
+      message: 'Cleanup complete',
+      deleted: countBefore - countAfter,
+      remaining: countAfter,
+    });
+  } catch (e) {
+    console.error('[Dashboard] cleanup error:', e.message);
+    res.status(500).json({ error: 'Cleanup failed: ' + e.message });
+  }
+});
+
 module.exports = router;
