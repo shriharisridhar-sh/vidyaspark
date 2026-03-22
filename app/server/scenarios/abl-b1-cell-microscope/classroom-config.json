@@ -1,0 +1,11 @@
+{
+  "className": "Class 7 — Government School, Kuppam",
+  "studentCount": "35 (5 in simulation)",
+  "context": "Rural government school in Andhra Pradesh. Most students have never looked through a microscope before. The regular science teacher is watching from the back of the room. There is one microscope available for the class.",
+  "openingScene": "You walk into the classroom carrying a microscope, a box of slides, and a bag of onions. The students immediately crowd around the microscope — most have never seen one up close. Priya is already in the front row asking what the knobs on the microscope do. Ravi is in the second row, skeptical that a machine can show things invisible to the eye. Lakshmi is in the back corner, quietly curious but not pushing forward. Arjun is near the window, more interested in the onions than the science. Meena is in the middle row with her notebook open, ready to copy whatever you write on the board.",
+  "difficultyModifiers": {
+    "easy": { "studentResponsiveness": 0.8, "misconceptionStrength": 0.3 },
+    "medium": { "studentResponsiveness": 0.6, "misconceptionStrength": 0.6 },
+    "hard": { "studentResponsiveness": 0.3, "misconceptionStrength": 0.9 }
+  }
+}

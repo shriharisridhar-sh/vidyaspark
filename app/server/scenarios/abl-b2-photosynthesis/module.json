@@ -1,0 +1,120 @@
+{
+  "id": "abl-b2-photosynthesis",
+  "name": "Photosynthesis — Testing Leaves for Starch",
+  "description": "Students discover that green leaves contain starch by performing the iodine test on food items and then on de-chlorophylled leaves, establishing that photosynthesis produces glucose which is stored as starch in leaves — the kitchens of plants.",
+  "category": "Biology",
+  "subject": "Biology",
+  "handbook": "B2 — Photosynthesis",
+  "ablCode": "ABL 1",
+  "difficulty": "medium",
+  "estimatedMinutes": 15,
+  "version": "1.0",
+  "gradeLevel": "7-9",
+  "materials": ["Potato piece", "Fruit (apple/banana)", "Wheat flour", "Rice flour", "Bread", "Iodine solution", "Dropper", "Petri dishes", "Methanol", "Glass beakers (500ml and 50ml)", "Spirit lamp", "Tripod stand", "Wire gauze", "Forceps", "Green leaves", "Filter paper", "Microscope", "Hydrilla leaves", "Slides and cover slips"],
+
+  "pointA": {
+    "assumption": "Students think food simply comes from farms or shops — they do not connect the food they eat to the biological process of photosynthesis happening inside green leaves",
+    "blindspot": "They don't realize that the starch in their everyday food (rice, bread, potato) was originally produced as glucose by photosynthesis in green leaves and then stored as starch"
+  },
+  "pointB": {
+    "insight": "Green leaves produce glucose through photosynthesis using sunlight, carbon dioxide, and water. This glucose is stored as starch. The iodine test proves starch is present in both food items and green leaves, connecting everyday food to the process of photosynthesis.",
+    "evidence": "Students can explain why iodine turns blue-black on food items and on de-chlorophylled leaves, and can identify chloroplasts in the mesophyll tissue as the site of photosynthesis"
+  },
+
+  "tutorial": [
+    {
+      "title": "Learning Objective",
+      "content": "In this module, students trace the origin of the food they eat back to photosynthesis in green leaves. Through three linked activities — testing food for starch with iodine, testing de-chlorophylled leaves for starch, and observing leaf cells under a microscope — students build the complete picture: plants produce glucose via photosynthesis, store it as starch, and this starch is what we consume as food energy."
+    },
+    {
+      "title": "Materials & Setup",
+      "content": "Activity 1.1: Prepare food samples (potato, fruit, bread, wheat flour, rice flour) in Petri dishes for each group, with droppers and iodine solution in a common area. Activity 1.2: Set up a heating apparatus with a tripod stand, wire gauze, spirit lamp, glass beakers, methanol, and forceps. Collect fresh green leaves. Activity 1.3: Set up a microscope with Hydrilla leaves, slides, and cover slips. Print the internal leaf structure chart."
+    },
+    {
+      "title": "The Procedure",
+      "content": "Step 1: Ask students what they ate for their last meal and list the items on the board. Discuss where each food comes from — most trace back to plants. Step 2: Distribute food samples to groups. Students crush the sample and add iodine — it turns blue-black, confirming starch is present. Step 3: Boil green leaves in water, then soak in methanol to remove chlorophyll. Apply iodine to the pale leaves — blue-black colour confirms starch in leaves too. Step 4: Prepare a Hydrilla leaf slide and have students observe under the microscope. They identify mesophyll cells and chloroplasts — the sites where photosynthesis occurs. Step 5: Conclude: plants are the kitchens that produce glucose via photosynthesis, store it as starch, and that starch is what we eat."
+    },
+    {
+      "title": "Key Messages",
+      "content": "1. We get most of our food energy from plants, and that food contains starch. 2. Green leaves also contain starch — confirming they are the sites of photosynthesis, the process that produces glucose which is stored as starch. 3. Photosynthesis occurs in chloroplasts within the mesophyll tissue of leaves, using sunlight, carbon dioxide, and water. 4. Green leaves are the kitchens of plants."
+    },
+    {
+      "title": "Common Misconceptions",
+      "content": "Students often think plants get food from the soil rather than making it themselves through photosynthesis. Some believe only certain 'food plants' contain starch and are surprised to find it in all green leaves. Others confuse respiration with photosynthesis, thinking plants only breathe in carbon dioxide. Some students think chlorophyll itself is the food, rather than the pigment that captures light energy for the process."
+    }
+  ],
+
+  "procedure": "1. Ask 15-20 learners what they had for their last meal. Write their answers on the board. 2. For each food item, ask: what is the main raw material? Where does it come from — plants or animals? Guide them to see that most food traces back to plants. 3. Explain that plants store energy as starch. Introduce the iodine test: iodine turns blue-black in the presence of starch. 4. Divide the class into groups. Give each group a different food sample (potato, fruit, bread, flour) in a Petri dish. Have them crush the sample and add 1-2 drops of iodine. All samples turn blue-black — starch is present. 5. Now ask: if our food comes from plants and contains starch, do the green leaves of plants also contain starch? 6. Set up the heating apparatus. Boil fresh green leaves in water for 5-10 minutes to soften them. Transfer the boiled leaves to methanol in a water bath to extract the chlorophyll (the methanol turns green). 7. Remove the pale leaves, dry on filter paper, and have students apply iodine. Blue-black patches appear — starch is present in leaves! 8. Explain: plants produce glucose through photosynthesis (sunlight + CO2 + water → glucose + oxygen) and store it as starch. 9. Set up the microscope with a Hydrilla leaf slide. Have each student observe and draw the internal structure. Display the leaf structure chart. 10. Guide students to identify mesophyll cells and chloroplasts — the specific sites where photosynthesis takes place. Conclude: green leaves are the kitchens of plants.",
+
+  "canvasSteps": [
+    {
+      "step": 1,
+      "title": "Food Comes from Plants",
+      "description": "A table showing common food items (rice, bread, potato, fruit) with arrows tracing each back to the plant it comes from. A blackboard in the background lists student meal items in one column and their plant sources in another.",
+      "svgId": "food-from-plants"
+    },
+    {
+      "step": 2,
+      "title": "Iodine Test on Food",
+      "description": "Petri dishes containing crushed food samples (potato, apple, bread, wheat flour). A dropper adds brown iodine solution to each sample. The food samples turn blue-black, confirming the presence of starch.",
+      "svgId": "iodine-test-food"
+    },
+    {
+      "step": 3,
+      "title": "Starch Test on Leaves",
+      "description": "A heating setup with a spirit lamp, tripod, and beakers. Green leaves are boiled in water, then placed in methanol which turns green as chlorophyll is extracted. The pale leaves are placed on filter paper and iodine is applied — blue-black patches appear, proving leaves contain starch.",
+      "svgId": "starch-test-leaves"
+    },
+    {
+      "step": 4,
+      "title": "Inside the Leaf — Chloroplasts",
+      "description": "A microscope view of a Hydrilla leaf showing the internal structure: upper and lower epidermis, mesophyll cells packed with small green chloroplasts. A label points to the chloroplasts as the site of photosynthesis. A summary equation appears: Sunlight + CO2 + H2O → Glucose + O2.",
+      "svgId": "leaf-chloroplasts"
+    }
+  ],
+
+  "leadingQuestions": [
+    "What did you eat for breakfast or lunch today? Can you trace each food item back to where it originally comes from?",
+    "What happened when we added iodine to the food samples? What does the blue-black colour tell us?",
+    "If our food comes from plants and contains starch, do you think green leaves also contain starch? How can we test this?",
+    "Why did we have to remove the chlorophyll before testing the leaf with iodine?",
+    "Where exactly inside the leaf does photosynthesis happen? What structures did you see under the microscope?"
+  ],
+
+  "keyMessages": [
+    "We get most of our food energy from plants — the starch in rice, bread, potato, and other foods all originates from plants",
+    "Green leaves contain starch, confirming they are the sites where photosynthesis produces glucose, which is then stored as starch",
+    "Photosynthesis takes place in chloroplasts within the mesophyll tissue of leaves, using sunlight, carbon dioxide, and water to produce glucose and oxygen",
+    "Green leaves are the kitchens of plants — they manufacture the food that sustains both the plant and, ultimately, us"
+  ],
+
+  "misconceptions": [
+    "Plants get their food from the soil through their roots, rather than manufacturing it in their leaves through photosynthesis",
+    "Only fruits and vegetables contain starch — students are surprised to find starch in green leaves",
+    "Chlorophyll is the food that plants make, rather than the pigment that captures light energy for photosynthesis",
+    "Plants only take in carbon dioxide and do not respire — confusing photosynthesis with the absence of respiration"
+  ],
+
+  "dimensions": [
+    { "id": "D1", "name": "Curiosity Sparking", "shortName": "curiosity", "weight": 0.30, "keywords": ["why", "what if", "surprise", "predict", "guess", "wonder", "prove", "how", "trace", "discover"] },
+    { "id": "D2", "name": "Student Engagement", "shortName": "engagement", "weight": 0.25, "keywords": ["lakshmi", "arjun", "everyone", "what do you think", "come up", "your group", "draw what you see", "observe", "each group"] },
+    { "id": "D3", "name": "Concept Clarity", "shortName": "clarity", "weight": 0.20, "keywords": ["photosynthesis", "starch", "glucose", "chlorophyll", "chloroplast", "mesophyll", "iodine", "blue-black", "sunlight", "carbon dioxide", "oxygen"] },
+    { "id": "D4", "name": "Facilitation Quality", "shortName": "facilitation", "weight": 0.15, "keywords": ["observe", "notice", "look carefully", "compare", "draw", "test", "crush the sample", "add iodine", "see for yourself", "look under the microscope"] },
+    { "id": "D5", "name": "Questioning & Listening", "shortName": "questioning", "weight": 0.10, "keywords": ["why do you think", "tell me more", "good question", "interesting", "what else", "who can explain", "what does this tell us"] }
+  ],
+
+  "importanceWeights": { "D1": 0.30, "D2": 0.25, "D3": 0.20, "D4": 0.15, "D5": 0.10 },
+
+  "skills": [
+    { "id": "S1", "name": "Spark", "description": "Creating curiosity, wonder, and scientific questioning", "category": "engagement" },
+    { "id": "S2", "name": "Reach", "description": "Engaging every student, especially quiet and disengaged", "category": "inclusion" }
+  ],
+
+  "archetypes": [
+    { "id": "ignitor", "name": "The Ignitor", "description": "Spark >= 70 AND Reach >= 70", "indicators": ["spark_high", "reach_high"] },
+    { "id": "performer", "name": "The Performer", "description": "Spark >= 60, Reach < 50", "indicators": ["spark_high", "reach_low"] },
+    { "id": "caretaker", "name": "The Caretaker", "description": "Reach >= 60, Spark < 50", "indicators": ["spark_low", "reach_high"] },
+    { "id": "lecturer", "name": "The Lecturer", "description": "Both < 50, Clarity > 60", "indicators": ["spark_low", "reach_low", "clarity_high"] },
+    { "id": "learner", "name": "The Learner", "description": "Both < 40", "indicators": ["spark_low", "reach_low"] }
+  ]
+}

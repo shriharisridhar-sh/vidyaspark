@@ -1,0 +1,121 @@
+{
+  "id": "abl-b1-cell-microscope",
+  "name": "Cell and Microscope — Onion Peel Under the Lens",
+  "description": "Students discover that all living things are made of tiny building blocks called cells by preparing onion peel and cheek cell slides, examining them under a microscope, and comparing what they see with the naked eye versus magnified views.",
+  "category": "Biology",
+  "subject": "Biology",
+  "handbook": "B1 — Cell and Microscope",
+  "ablCode": "ABL 1.2",
+  "difficulty": "medium",
+  "estimatedMinutes": 15,
+  "version": "1.0",
+  "gradeLevel": "6-8",
+  "materials": ["Microscope", "Empty slides", "Onion with outer shell", "Magnifying lens", "Ice cream sticks", "Forceps", "Dropper", "Bowl with water", "Methylene blue stain", "Tissue paper", "Observation sheet"],
+
+  "pointA": {
+    "assumption": "Students think living things are continuous solid material, like plastic or metal",
+    "blindspot": "They don't realize that all living matter is composed of microscopic repeating units called cells that are invisible to the naked eye"
+  },
+  "pointB": {
+    "insight": "All living organisms are made of cells — tiny compartments that are the fundamental building blocks of life, visible only through a microscope",
+    "evidence": "Students can describe the repeating brick-like structures they observed in onion peel and round structures in cheek cells, and explain why a microscope was needed to see them"
+  },
+
+  "tutorial": [
+    {
+      "title": "Learning Objective",
+      "content": "In this experiment, students will discover that all living things are made of tiny building blocks called cells. They will prepare slides of onion peel and cheek cells, observe them under a microscope, and understand why microscopes are essential tools for studying life."
+    },
+    {
+      "title": "Materials & Setup",
+      "content": "You need: 1 microscope, empty slides, onions, magnifying lenses, ice cream sticks, forceps, dropper, bowls with water, methylene blue stain, tissue paper, and observation sheets. Divide students into 4 groups. Each group prepares three slides: onion peel, cheek cells (buccal cavity scraping stained with methylene blue), and tissue paper."
+    },
+    {
+      "title": "The Procedure",
+      "content": "Step 1: Remind students that buildings are made of bricks, sweaters of thread — big things are made of smaller blocks. Step 2: Groups prepare onion peel slides (peel placed in water on slide) and cheek cell slides (gentle inner cheek scrape with methylene blue stain). Step 3: Groups first examine slides with naked eye and magnifying glass, drawing observations. Step 4: Groups rotate to the microscope to view all slides. Step 5: Compare drawings across all three viewing methods and discuss the repeating structures they see."
+    },
+    {
+      "title": "Key Messages",
+      "content": "1. Cells are the building blocks of all living matter. 2. Cells are so tiny we need microscopes to see them. 3. Robert Hooke first saw cells in 1665 when he looked at cork under a microscope — he named them 'cells' because they looked like small rooms. 4. Whether plants, animals, or organisms in pond water, scientists ALWAYS find cells."
+    },
+    {
+      "title": "Common Misconceptions",
+      "content": "Students often think living things are made of continuous material rather than discrete units. They may not understand why a microscope is needed if a magnifying glass already makes things bigger. They may confuse cells with atoms or think only some living things have cells. They need to discover that ALL living matter is made of cells."
+    }
+  ],
+
+  "procedure": "1. Begin by asking students what buildings, sweaters, and books are made of — establish that big things are made of smaller building blocks. 2. Show a human body chart or plant chart and ask what living things are made of at the smallest level. 3. Divide students into 4 groups and distribute materials. 4. Each group prepares an onion peel slide (peel onion skin with forceps, place in water on slide) and a cheek cell slide (scrape inner cheek with ice cream stick, place on slide with water and methylene blue). 5. Groups first examine with naked eye and magnifying glass, drawing what they see on observation sheets. 6. One group at a time views slides under the microscope while others continue drawing. 7. After all groups have viewed, compare observations: naked eye shows nothing special, magnifying glass shows some structure, microscope reveals repeating brick-like units (onion) and round objects with dots (cheek cells). 8. Explain that these repeating structures are called cells — the building blocks of all life. 9. Tell the story of Robert Hooke discovering cells in 1665.",
+
+  "canvasSteps": [
+    {
+      "step": 1,
+      "title": "Setup — Building Blocks Analogy",
+      "description": "Table with microscope, slides, onion, magnifying glass, and other materials. A chart showing bricks making a building, threads making cloth, and a question mark for living things.",
+      "svgId": "setup"
+    },
+    {
+      "step": 2,
+      "title": "Slide Preparation",
+      "description": "Students peeling onion skin with forceps and placing it on a slide with water. Another student gently scraping inner cheek with ice cream stick and adding methylene blue stain to the slide.",
+      "svgId": "slide-prep"
+    },
+    {
+      "step": 3,
+      "title": "Three Levels of Observation",
+      "description": "Split view showing the same onion peel specimen as seen with: naked eye (plain translucent film), magnifying glass (faint texture visible), and microscope (clear brick-like cells with dark nuclei).",
+      "svgId": "three-views"
+    },
+    {
+      "step": 4,
+      "title": "Cells Revealed",
+      "description": "Microscope view of onion cells (rectangular brick-like pattern with nuclei) alongside cheek cells (round cells with central dark nucleus). Label pointing out cell wall, nucleus, and cytoplasm.",
+      "svgId": "cells-revealed"
+    }
+  ],
+
+  "leadingQuestions": [
+    "What are buildings made of? What are sweaters made of? What are the building blocks of living things?",
+    "What happens when you look at the onion peel through the magnifying glass compared to the naked eye?",
+    "What do you see when you look through the microscope? Do you notice any repeating patterns?",
+    "Why do you think we could not see these structures without a microscope?",
+    "Do you think your skin, your hair, and a leaf are also made of cells? Why?"
+  ],
+
+  "keyMessages": [
+    "Cells are the building blocks of all living matter — just as bricks build a building, cells build every living organism",
+    "Cells are so tiny that we need special instruments such as microscopes to see them",
+    "Robert Hooke first observed cells in cork in 1665 and named them 'cells' because they resembled small rooms",
+    "Whether plants, animals, or pond organisms, ALL living things are made of cells"
+  ],
+
+  "misconceptions": [
+    "Living things are made of continuous solid material like plastic or wood",
+    "A magnifying glass is powerful enough to see cells clearly",
+    "Only some living things are made of cells",
+    "Cells are the same as atoms or molecules",
+    "Cells were always known to exist even before microscopes were invented"
+  ],
+
+  "dimensions": [
+    { "id": "D1", "name": "Curiosity Sparking", "shortName": "curiosity", "weight": 0.30, "keywords": ["why", "what if", "surprise", "predict", "guess", "wonder", "discover", "imagine"] },
+    { "id": "D2", "name": "Student Engagement", "shortName": "engagement", "weight": 0.25, "keywords": ["lakshmi", "arjun", "everyone", "what do you think", "come up", "your turn", "look through"] },
+    { "id": "D3", "name": "Concept Clarity", "shortName": "clarity", "weight": 0.20, "keywords": ["cell", "building block", "microscope", "nucleus", "Robert Hooke", "magnify", "onion peel", "cheek cell"] },
+    { "id": "D4", "name": "Facilitation Quality", "shortName": "facilitation", "weight": 0.15, "keywords": ["observe", "notice", "look carefully", "draw", "compare", "prepare the slide", "peel", "scrape"] },
+    { "id": "D5", "name": "Questioning & Listening", "shortName": "questioning", "weight": 0.10, "keywords": ["why do you think", "tell me more", "good question", "interesting", "what did you see"] }
+  ],
+
+  "importanceWeights": { "D1": 0.30, "D2": 0.25, "D3": 0.20, "D4": 0.15, "D5": 0.10 },
+
+  "skills": [
+    { "id": "S1", "name": "Spark", "description": "Creating curiosity, wonder, and scientific questioning", "category": "engagement" },
+    { "id": "S2", "name": "Reach", "description": "Engaging every student, especially quiet and disengaged", "category": "inclusion" }
+  ],
+
+  "archetypes": [
+    { "id": "ignitor", "name": "The Ignitor", "description": "Spark >= 70 AND Reach >= 70", "indicators": ["spark_high", "reach_high"] },
+    { "id": "performer", "name": "The Performer", "description": "Spark >= 60, Reach < 50", "indicators": ["spark_high", "reach_low"] },
+    { "id": "caretaker", "name": "The Caretaker", "description": "Reach >= 60, Spark < 50", "indicators": ["spark_low", "reach_high"] },
+    { "id": "lecturer", "name": "The Lecturer", "description": "Both < 50, Clarity > 60", "indicators": ["spark_low", "reach_low", "clarity_high"] },
+    { "id": "learner", "name": "The Learner", "description": "Both < 40", "indicators": ["spark_low", "reach_low"] }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "className": "Class 8 — Government School, Kuppam",
+  "studentCount": "35 (5 in simulation)",
+  "context": "Rural government school in Andhra Pradesh. Students have had previous Agastya sessions and completed the B1 module on cells and microscopes. The regular science teacher is watching from the back of the room.",
+  "openingScene": "You walk into the classroom carrying a bag of food samples, bottles of iodine and methanol, a spirit lamp, and a bunch of fresh green leaves. A microscope is already set up on the front desk. The students are curious about the variety of items. Priya is trying to peek into the bag. Ravi notices the iodine bottle and asks if it's medicine. Lakshmi is quietly looking at the green leaves. Arjun jokes that you've brought breakfast. Meena has already written 'Photosynthesis' in her notebook from seeing the chapter title on the board.",
+  "difficultyModifiers": {
+    "easy": { "studentResponsiveness": 0.8, "misconceptionStrength": 0.3 },
+    "medium": { "studentResponsiveness": 0.6, "misconceptionStrength": 0.6 },
+    "hard": { "studentResponsiveness": 0.3, "misconceptionStrength": 0.9 }
+  }
+}
