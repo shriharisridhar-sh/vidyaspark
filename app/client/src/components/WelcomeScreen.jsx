@@ -126,7 +126,7 @@ export default function WelcomeScreen({ onStart }) {
         <div className="section-inner">
           <div className="section-eyebrow">ABL Modules</div>
           <h2 className="section-title">
-            Modules across Physics, Chemistry &amp; Mathematics
+            Modules across Physics, Chemistry, Mathematics &amp; Biology
           </h2>
           <p style={{ textAlign: 'center', color: '#71717a', fontSize: '1rem', marginBottom: '2rem' }}>
             Each module is built from Agastya's official ABL handbooks
@@ -134,7 +134,7 @@ export default function WelcomeScreen({ onStart }) {
 
           {/* Subject pills */}
           <div style={{ display: 'flex', justifyContent: 'center', gap: '0.75rem', marginBottom: '2.5rem', flexWrap: 'wrap' }}>
-            {['Physics', 'Chemistry', 'Mathematics'].map(subj => {
+            {['Physics', 'Chemistry', 'Mathematics', 'Biology'].map(subj => {
               const count = modules.filter(m => m.subject === subj).length;
               return (
                 <span
