@@ -219,15 +219,11 @@ export default function WelcomeScreen({ onStart }) {
 
 
 /* ═══════════════════════════════════════════════════════════════
-   InteractiveHowItWorks — 3-tab panel with radio-button sub-steps
+   InteractiveHowItWorks — 3 tabs, one graphic each, only real features
    ═══════════════════════════════════════════════════════════════ */
 
 function InteractiveHowItWorks() {
-  const [activePhase, setActivePhase] = useState(0); // 0=Learn, 1=Practice, 2=Ignite
-  const [activeStep, setActiveStep] = useState(0);   // 0,1,2 within each phase
-
-  // Reset step when phase changes
-  useEffect(() => { setActiveStep(0); }, [activePhase]);
+  const [activePhase, setActivePhase] = useState(0);
 
   const phases = [
     { label: 'Learn', icon: '📖', color: '#2196F3' },
@@ -267,384 +263,201 @@ function InteractiveHowItWorks() {
         border: '1px solid rgba(255,255,255,0.06)',
         borderRadius: '1.5rem',
         padding: '2.5rem',
-        minHeight: 420,
-        position: 'relative',
-        overflow: 'hidden',
+        minHeight: 380,
       }}>
-        {activePhase === 0 && <LearnPanel step={activeStep} setStep={setActiveStep} />}
-        {activePhase === 1 && <PracticePanel step={activeStep} setStep={setActiveStep} />}
-        {activePhase === 2 && <IgnitePanel step={activeStep} setStep={setActiveStep} />}
+        {activePhase === 0 && <LearnPanel />}
+        {activePhase === 1 && <PracticePanel />}
+        {activePhase === 2 && <IgnitePanel />}
       </div>
     </div>
   );
 }
 
 
-/* ─── Radio step selector ─── */
-function StepSelector({ steps, active, onSelect, color }) {
+/* ─── LEARN: 5-step tutorial walkthrough ─── */
+function LearnPanel() {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '2rem' }}>
-      {steps.map((label, i) => (
-        <button
-          key={i}
-          onClick={() => onSelect(i)}
-          style={{
-            display: 'flex', alignItems: 'center', gap: '0.75rem',
-            padding: '0.75rem 1.25rem',
-            borderRadius: '0.75rem',
-            border: active === i ? `1.5px solid ${color}40` : '1.5px solid transparent',
-            background: active === i ? color + '10' : 'transparent',
-            cursor: 'pointer',
-            transition: 'all 0.25s ease',
-            textAlign: 'left',
-          }}
-        >
-          <div style={{
-            width: 20, height: 20, borderRadius: '50%',
-            border: `2px solid ${active === i ? color : '#52525b'}`,
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            flexShrink: 0,
-            transition: 'all 0.25s ease',
-          }}>
-            {active === i && (
-              <div style={{ width: 10, height: 10, borderRadius: '50%', background: color }} />
-            )}
-          </div>
-          <span style={{
-            fontSize: '0.95rem',
-            fontWeight: active === i ? 600 : 400,
-            color: active === i ? '#fafafa' : '#a1a1aa',
-            transition: 'all 0.25s ease',
-          }}>
-            {label}
-          </span>
-        </button>
-      ))}
-    </div>
-  );
-}
-
-
-/* ─── LEARN Panel ─── */
-function LearnPanel({ step, setStep }) {
-  const steps = ['Read the ABL handbook', 'Watch the experiment steps', 'Understand the 5 students'];
-  return (
-    <div style={{ display: 'grid', gridTemplateColumns: '280px 1fr', gap: '2rem', alignItems: 'start' }}>
+    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2.5rem', alignItems: 'center' }}>
       <div>
-        <h3 style={{ fontSize: '1.3rem', fontWeight: 700, color: '#fafafa', marginBottom: '0.5rem' }}>Learn the Module</h3>
-        <p style={{ fontSize: '0.9rem', color: '#71717a', marginBottom: '1.5rem' }}>Before teaching, understand what you'll teach</p>
-        <StepSelector steps={steps} active={step} onSelect={setStep} color="#2196F3" />
+        <h3 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#fafafa', marginBottom: '0.75rem' }}>
+          Walk through the ABL tutorial
+        </h3>
+        <p style={{ fontSize: '1rem', color: '#a1a1aa', lineHeight: 1.7, marginBottom: '1.5rem' }}>
+          Before you teach, you'll step through a 5-part tutorial built from Agastya's actual ABL handbooks. It covers:
+        </p>
+        <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+          {[
+            { icon: '🎯', text: 'Learning objective for the experiment' },
+            { icon: '🧪', text: 'Materials needed (brick, rubber sheet, etc.)' },
+            { icon: '📋', text: 'Step-by-step procedure' },
+            { icon: '💡', text: 'Key messages students should learn' },
+            { icon: '⚠️', text: 'Common misconceptions to watch for' },
+          ].map((item, i) => (
+            <li key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '0.95rem', color: '#d4d4d8' }}>
+              <span style={{ fontSize: '1.1rem' }}>{item.icon}</span> {item.text}
+            </li>
+          ))}
+        </ul>
       </div>
-      <div style={{ position: 'relative', minHeight: 320 }}>
-        {step === 0 && <LearnHandbook />}
-        {step === 1 && <LearnSteps />}
-        {step === 2 && <LearnStudents />}
-      </div>
+      <svg viewBox="0 0 400 280" style={{ width: '100%' }}>
+        {/* Tutorial card mockup */}
+        <rect x="20" y="10" width="360" height="260" rx="16" fill="#141419" stroke="rgba(255,255,255,0.06)" strokeWidth="1" />
+        {/* Header */}
+        <text x="40" y="45" fill="#2196F3" fontSize="10" fontWeight="700" letterSpacing="0.08em">P7.1 · PHYSICS</text>
+        <text x="40" y="68" fill="#fafafa" fontSize="15" fontWeight="700">Force & Pressure</text>
+        {/* Step progress dots */}
+        {[0, 1, 2, 3, 4].map(i => (
+          <circle key={i} cx={40 + i * 24} cy="90" r={i === 2 ? 6 : 4} fill={i <= 2 ? '#2196F3' : 'rgba(255,255,255,0.1)'} />
+        ))}
+        <text x="170" y="94" fill="#71717a" fontSize="9">Step 3 of 5</text>
+        {/* Content card */}
+        <rect x="35" y="110" width="330" height="140" rx="10" fill="rgba(33,150,243,0.06)" stroke="rgba(33,150,243,0.15)" strokeWidth="1" />
+        <text x="55" y="138" fill="#2196F3" fontSize="11" fontWeight="700">📋 Procedure</text>
+        {['1. Place brick flat on rubber sheet', '2. Observe the depression', '3. Turn brick on its side (medium face)', '4. Turn brick on its end (smallest face)', '5. Compare all three depressions'].map((line, i) => (
+          <text key={i} x="55" y={160 + i * 17} fill="#a1a1aa" fontSize="10">{line}</text>
+        ))}
+      </svg>
     </div>
   );
 }
 
-function LearnHandbook() {
-  return (
-    <svg viewBox="0 0 480 300" style={{ width: '100%', maxHeight: 320 }}>
-      {/* Handbook */}
-      <rect x="40" y="20" width="400" height="260" rx="12" fill="#1a1a2e" stroke="#2196F3" strokeWidth="1.5" opacity="0.8" />
-      <rect x="240" y="20" width="2" height="260" fill="#2196F3" opacity="0.3" />
-      {/* Left page - title */}
-      <text x="140" y="60" fill="#fafafa" fontSize="16" fontWeight="700" textAnchor="middle">ABL Handbook</text>
-      <text x="140" y="82" fill="#2196F3" fontSize="11" textAnchor="middle">Activity-Based Learning</text>
-      {/* Left page - content lines */}
-      {[100, 118, 136, 154, 172, 190].map((y, i) => (
-        <rect key={i} x="70" y={y} width={140 - i * 10} height="6" rx="3" fill="rgba(255,255,255,0.08)" />
-      ))}
-      {/* Right page - key concepts */}
-      <text x="360" y="60" fill="#fafafa" fontSize="14" fontWeight="600" textAnchor="middle">Key Concepts</text>
-      {['Force = Push or Pull', 'Pressure = F / A', 'Area affects pressure'].map((text, i) => (
-        <g key={i}>
-          <rect x="270" y={82 + i * 42} width="180" height="32" rx="8" fill="#2196F3" opacity="0.1" />
-          <circle cx="286" cy={98 + i * 42} r="4" fill="#2196F3" />
-          <text x="298" y={102 + i * 42} fill="#a1a1aa" fontSize="11">{text}</text>
-        </g>
-      ))}
-      {/* Materials list */}
-      <text x="360" y="220" fill="#71717a" fontSize="10" textAnchor="middle">Materials: Brick, rubber sheet, supports</text>
-    </svg>
-  );
-}
 
-function LearnSteps() {
+/* ─── PRACTICE: Tapovan session with canvas + AI students ─── */
+function PracticePanel() {
   return (
-    <svg viewBox="0 0 480 300" style={{ width: '100%', maxHeight: 320 }}>
-      {/* Canvas mockup */}
-      <rect x="20" y="10" width="440" height="240" rx="12" fill="#0f0f1a" stroke="rgba(255,255,255,0.08)" strokeWidth="1" />
-      {/* Supports */}
-      <rect x="100" y="100" width="20" height="120" rx="4" fill="#8B6914" />
-      <rect x="360" y="100" width="20" height="120" rx="4" fill="#8B6914" />
-      {/* Rubber sheet */}
-      <path d="M110 150 Q240 200 370 150" stroke="#E65100" strokeWidth="3" fill="none" />
-      {/* Brick */}
-      <rect x="200" y="130" width="80" height="40" rx="4" fill="#C62828" opacity="0.8" />
-      <text x="240" y="155" fill="white" fontSize="10" textAnchor="middle" fontWeight="600">BRICK</text>
-      {/* Step dots */}
-      <g transform="translate(160, 270)">
+    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2.5rem', alignItems: 'center' }}>
+      <div>
+        <h3 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#fafafa', marginBottom: '0.75rem' }}>
+          Teach in the Tapovan
+        </h3>
+        <p style={{ fontSize: '1rem', color: '#a1a1aa', lineHeight: 1.7, marginBottom: '1.5rem' }}>
+          The Tapovan is your virtual classroom. An interactive experiment canvas fills the left side.
+          On the right, 5 AI students with distinct personalities listen and respond:
+        </p>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+          {[
+            { name: 'Priya', trait: 'Curious — asks genuine "why" questions', color: '#4FC3F7' },
+            { name: 'Ravi', trait: 'Skeptic — demands proof', color: '#FF7043' },
+            { name: 'Lakshmi', trait: 'Shy — knows answers, won\'t speak unless called', color: '#CE93D8' },
+            { name: 'Arjun', trait: 'Disengaged — bored, needs to be won back', color: '#78909C' },
+            { name: 'Meena', trait: 'Rote learner — repeats without understanding', color: '#FFD54F' },
+          ].map((s, i) => (
+            <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+              <span style={{ width: 8, height: 8, borderRadius: '50%', background: s.color, flexShrink: 0 }} />
+              <span style={{ fontSize: '0.9rem' }}>
+                <span style={{ color: s.color, fontWeight: 600 }}>{s.name}</span>
+                <span style={{ color: '#71717a' }}> — {s.trait}</span>
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+      <svg viewBox="0 0 400 280" style={{ width: '100%' }}>
+        {/* Tapovan frame */}
+        <rect x="5" y="5" width="390" height="270" rx="12" fill="#0a0a0a" stroke="rgba(255,255,255,0.08)" strokeWidth="1" />
+        {/* Header */}
+        <rect x="5" y="5" width="390" height="30" rx="12" fill="#141419" />
+        <rect x="5" y="22" width="390" height="13" fill="#141419" />
+        <text x="18" y="25" fill="#E65100" fontSize="8" fontWeight="700">P7.1</text>
+        <text x="48" y="25" fill="#fafafa" fontSize="9" fontWeight="600">Force & Pressure</text>
+        <text x="340" y="25" fill="#71717a" fontSize="8" fontFamily="monospace">05:32</text>
+        {/* Canvas left side */}
+        <rect x="10" y="40" width="245" height="230" rx="6" fill="#0f0f18" />
+        <rect x="70" y="90" width="12" height="80" rx="3" fill="#8B6914" />
+        <rect x="195" y="90" width="12" height="80" rx="3" fill="#8B6914" />
+        <path d="M78 130 Q140 160 199 130" stroke="#E65100" strokeWidth="2" fill="none" />
+        <rect x="110" y="110" width="50" height="25" rx="3" fill="#C62828" opacity="0.7" />
+        {/* Step dots */}
         {[0, 1, 2, 3].map(i => (
+          <circle key={i} cx={110 + i * 18} cy="240" r={i === 1 ? 4 : 2.5} fill={i === 1 ? '#E65100' : 'rgba(255,255,255,0.1)'} />
+        ))}
+        {/* Divider */}
+        <line x1="260" y1="40" x2="260" y2="270" stroke="rgba(255,255,255,0.06)" />
+        {/* Chat panel */}
+        <rect x="268" y="46" width="118" height="60" rx="6" fill="rgba(255,255,255,0.02)" />
+        <text x="276" y="60" fill="#71717a" fontSize="6" fontWeight="600" letterSpacing="0.08em">STUDENTS</text>
+        {[
+          { n: 'Priya', c: '#4FC3F7', d: '#22c55e' },
+          { n: 'Ravi', c: '#FF7043', d: '#22c55e' },
+          { n: 'Lakshmi', c: '#CE93D8', d: '#ef4444' },
+          { n: 'Arjun', c: '#78909C', d: '#ef4444' },
+          { n: 'Meena', c: '#FFD54F', d: '#eab308' },
+        ].map((s, i) => (
           <g key={i}>
-            <circle cx={i * 48} cy="0" r={i === 1 ? 8 : 5} fill={i === 1 ? '#E65100' : 'rgba(255,255,255,0.15)'} />
-            {i === 1 && <text x={i * 48} y="20" fill="#E65100" fontSize="9" textAnchor="middle">Step 2</text>}
+            <circle cx="278" cy={72 + i * 9} r="2" fill={s.d} />
+            <text x="284" y={75 + i * 9} fill={s.c} fontSize="7" fontWeight="600">{s.n}</text>
           </g>
         ))}
-      </g>
-      {/* Label */}
-      <text x="240" y="295" fill="#71717a" fontSize="11" textAnchor="middle">Interactive canvas advances with your teaching</text>
-    </svg>
-  );
-}
-
-function LearnStudents() {
-  const students = [
-    { name: 'Priya', trait: 'Curious', color: '#4FC3F7', emoji: '🙋‍♀️' },
-    { name: 'Ravi', trait: 'Skeptic', color: '#FF7043', emoji: '🤨' },
-    { name: 'Lakshmi', trait: 'Shy', color: '#CE93D8', emoji: '😶' },
-    { name: 'Arjun', trait: 'Disengaged', color: '#78909C', emoji: '😴' },
-    { name: 'Meena', trait: 'Rote Learner', color: '#FFD54F', emoji: '📝' },
-  ];
-  return (
-    <svg viewBox="0 0 480 300" style={{ width: '100%', maxHeight: 320 }}>
-      {students.map((s, i) => {
-        const x = 48 + i * 88;
-        return (
-          <g key={i}>
-            <rect x={x} y="30" width="76" height="230" rx="12" fill="rgba(255,255,255,0.03)" stroke={s.color + '40'} strokeWidth="1" />
-            <text x={x + 38} y="70" fontSize="28" textAnchor="middle">{s.emoji}</text>
-            <text x={x + 38} y="100" fill={s.color} fontSize="13" fontWeight="700" textAnchor="middle">{s.name}</text>
-            <text x={x + 38} y="118" fill="#71717a" fontSize="10" textAnchor="middle">{s.trait}</text>
-            {/* Personality bar */}
-            <rect x={x + 12} y="135" width="52" height="4" rx="2" fill="rgba(255,255,255,0.06)" />
-            <rect x={x + 12} y="135" width={52 * [0.9, 0.7, 0.3, 0.2, 0.6][i]} height="4" rx="2" fill={s.color} opacity="0.6" />
-            {/* Description lines */}
-            {[155, 170, 185].map((y, li) => (
-              <rect key={li} x={x + 10} y={y} width={56 - li * 5} height="4" rx="2" fill="rgba(255,255,255,0.05)" />
-            ))}
-          </g>
-        );
-      })}
-      <text x="240" y="290" fill="#71717a" fontSize="11" textAnchor="middle">5 AI students with unique personalities</text>
-    </svg>
-  );
-}
-
-
-/* ─── PRACTICE Panel ─── */
-function PracticePanel({ step, setStep }) {
-  const steps = ['Teach on the interactive canvas', 'AI students respond naturally', 'Track real-time engagement'];
-  return (
-    <div style={{ display: 'grid', gridTemplateColumns: '280px 1fr', gap: '2rem', alignItems: 'start' }}>
-      <div>
-        <h3 style={{ fontSize: '1.3rem', fontWeight: 700, color: '#fafafa', marginBottom: '0.5rem' }}>Practice Teaching</h3>
-        <p style={{ fontSize: '0.9rem', color: '#71717a', marginBottom: '1.5rem' }}>Enter the Tapovan with 5 AI students</p>
-        <StepSelector steps={steps} active={step} onSelect={setStep} color="#E65100" />
-      </div>
-      <div style={{ position: 'relative', minHeight: 320 }}>
-        {step === 0 && <PracticeCanvas />}
-        {step === 1 && <PracticeChat />}
-        {step === 2 && <PracticeEngagement />}
-      </div>
+        {/* Chat bubbles */}
+        <rect x="268" y="115" width="110" height="20" rx="6" fill="rgba(230,81,0,0.1)" />
+        <text x="274" y="129" fill="#E65100" fontSize="6.5">[You] What happens when I...</text>
+        <rect x="268" y="140" width="118" height="20" rx="6" fill="rgba(255,255,255,0.03)" />
+        <text x="274" y="154" fill="#4FC3F7" fontSize="6.5">[Priya] The sheet will bend!</text>
+        <rect x="268" y="165" width="118" height="20" rx="6" fill="rgba(255,255,255,0.03)" />
+        <text x="274" y="179" fill="#FF7043" fontSize="6.5">[Ravi] But how much depends...</text>
+        {/* Input */}
+        <rect x="268" y="248" width="118" height="18" rx="6" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.06)" strokeWidth="0.5" />
+        <text x="276" y="260" fill="#52525b" fontSize="6">What would you say?</text>
+      </svg>
     </div>
   );
 }
 
-function PracticeCanvas() {
-  return (
-    <svg viewBox="0 0 480 300" style={{ width: '100%', maxHeight: 320 }}>
-      {/* Split screen frame */}
-      <rect x="10" y="10" width="460" height="280" rx="12" fill="#0a0a0a" stroke="rgba(255,255,255,0.08)" strokeWidth="1" />
-      {/* Divider at 65% */}
-      <line x1="310" y1="10" x2="310" y2="290" stroke="rgba(255,255,255,0.08)" />
-      {/* Left - Canvas area (highlighted) */}
-      <rect x="15" y="15" width="290" height="270" rx="8" fill="rgba(230,81,0,0.05)" stroke="#E65100" strokeWidth="1.5" strokeDasharray="4 4" />
-      <text x="160" y="45" fill="#E65100" fontSize="11" fontWeight="700" textAnchor="middle">EXPERIMENT CANVAS</text>
-      {/* Mini experiment */}
-      <rect x="60" y="100" width="12" height="80" rx="3" fill="#8B6914" />
-      <rect x="228" y="100" width="12" height="80" rx="3" fill="#8B6914" />
-      <path d="M68 140 Q150 175 232 140" stroke="#E65100" strokeWidth="2.5" fill="none" />
-      <rect x="120" y="115" width="60" height="30" rx="4" fill="#C62828" opacity="0.7" />
-      {/* Right - Chat panel */}
-      <rect x="315" y="30" width="150" height="16" rx="4" fill="rgba(255,255,255,0.04)" />
-      <rect x="315" y="52" width="150" height="16" rx="4" fill="rgba(255,255,255,0.04)" />
-      {[80, 110, 140, 170].map((y, i) => (
-        <g key={i}>
-          <rect x={i % 2 === 0 ? 315 : 355} y={y} width={i % 2 === 0 ? 120 : 110} height="22" rx="6" fill={i % 2 === 0 ? 'rgba(230,81,0,0.1)' : 'rgba(255,255,255,0.03)'} />
-        </g>
-      ))}
-      {/* Label */}
-      <text x="240" y="295" fill="#71717a" fontSize="10" textAnchor="middle">65% canvas (left) + 35% classroom panel (right)</text>
-    </svg>
-  );
-}
 
-function PracticeChat() {
-  const messages = [
-    { speaker: 'You', text: 'What do you think will happen if I place this brick on the rubber sheet?', color: '#E65100', align: 'right' },
-    { speaker: 'Priya', text: 'Ooh! I think the sheet will bend down because the brick is heavy!', color: '#4FC3F7', align: 'left' },
-    { speaker: 'Ravi', text: 'But HOW MUCH it bends depends on the area, right? Prove it.', color: '#FF7043', align: 'left' },
-    { speaker: 'Arjun', text: '...can I go to lunch?', color: '#78909C', align: 'left' },
-  ];
+/* ─── IGNITE: End session → assessment → report ─── */
+function IgnitePanel() {
   return (
-    <svg viewBox="0 0 480 300" style={{ width: '100%', maxHeight: 320 }}>
-      <rect x="20" y="10" width="440" height="280" rx="12" fill="#121218" stroke="rgba(255,255,255,0.06)" strokeWidth="1" />
-      {messages.map((msg, i) => {
-        const y = 35 + i * 65;
-        const isUser = msg.align === 'right';
-        return (
-          <g key={i}>
-            <rect
-              x={isUser ? 180 : 40} y={y}
-              width={isUser ? 270 : 300} height="50"
-              rx="12" fill={isUser ? 'rgba(230,81,0,0.1)' : 'rgba(255,255,255,0.03)'}
-              stroke={msg.color + '30'} strokeWidth="1"
-            />
-            <text x={isUser ? 195 : 55} y={y + 18} fill={msg.color} fontSize="10" fontWeight="700">[{msg.speaker}]</text>
-            <text x={isUser ? 195 : 55} y={y + 36} fill="#a1a1aa" fontSize="10.5">
-              {msg.text.length > 50 ? msg.text.substring(0, 50) + '...' : msg.text}
-            </text>
-          </g>
-        );
-      })}
-      <text x="240" y="290" fill="#71717a" fontSize="10" textAnchor="middle">Students respond based on their unique personalities</text>
-    </svg>
-  );
-}
-
-function PracticeEngagement() {
-  const students = [
-    { name: 'Priya', engagement: 0.9, dot: '#22c55e', status: 'Actively asking questions' },
-    { name: 'Ravi', engagement: 0.7, dot: '#22c55e', status: 'Demanding proof' },
-    { name: 'Lakshmi', engagement: 0.2, dot: '#ef4444', status: 'Silent — not called on' },
-    { name: 'Arjun', engagement: 0.15, dot: '#ef4444', status: 'Drawing on desk' },
-    { name: 'Meena', engagement: 0.5, dot: '#eab308', status: 'Memorizing your words' },
-  ];
-  return (
-    <svg viewBox="0 0 480 300" style={{ width: '100%', maxHeight: 320 }}>
-      <rect x="20" y="10" width="440" height="280" rx="12" fill="#121218" stroke="rgba(255,255,255,0.06)" strokeWidth="1" />
-      <text x="240" y="42" fill="#fafafa" fontSize="13" fontWeight="700" textAnchor="middle">Student Engagement</text>
-      {students.map((s, i) => {
-        const y = 60 + i * 46;
-        return (
-          <g key={i}>
-            <circle cx="50" cy={y + 12} r="5" fill={s.dot} />
-            <text x="68" y={y + 16} fill="#fafafa" fontSize="12" fontWeight="600">{s.name}</text>
-            {/* Bar */}
-            <rect x="145" y={y + 6} width="200" height="12" rx="6" fill="rgba(255,255,255,0.06)" />
-            <rect x="145" y={y + 6} width={200 * s.engagement} height="12" rx="6" fill={s.dot} opacity="0.6" />
-            <text x="355" y={y + 16} fill="#71717a" fontSize="10">{s.status}</text>
-          </g>
-        );
-      })}
-      <text x="240" y="290" fill="#71717a" fontSize="10" textAnchor="middle">Real-time engagement tracking for every student</text>
-    </svg>
-  );
-}
-
-
-/* ─── IGNITE Panel ─── */
-function IgnitePanel({ step, setStep }) {
-  const steps = ['Students take a 10-question test', 'See your VidyaSpark score', 'Get coaching to improve'];
-  return (
-    <div style={{ display: 'grid', gridTemplateColumns: '280px 1fr', gap: '2rem', alignItems: 'start' }}>
+    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2.5rem', alignItems: 'center' }}>
       <div>
-        <h3 style={{ fontSize: '1.3rem', fontWeight: 700, color: '#fafafa', marginBottom: '0.5rem' }}>Get Your Score</h3>
-        <p style={{ fontSize: '0.9rem', color: '#71717a', marginBottom: '1.5rem' }}>See the impact of your teaching</p>
-        <StepSelector steps={steps} active={step} onSelect={setStep} color="#059669" />
+        <h3 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#fafafa', marginBottom: '0.75rem' }}>
+          See how your students did
+        </h3>
+        <p style={{ fontSize: '1rem', color: '#a1a1aa', lineHeight: 1.7, marginBottom: '1.5rem' }}>
+          When you end the session, AI generates a 10-question comprehension test based on
+          what you taught. Each student's score reflects how well YOUR teaching reached them:
+        </p>
+        <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+          {[
+            { icon: '📝', text: '10 questions across recall, understanding & application' },
+            { icon: '📊', text: 'Per-student scores tied to engagement' },
+            { icon: '✅', text: 'Concepts you taught well, with evidence' },
+            { icon: '🔧', text: 'Concepts to improve, with specific suggestions' },
+            { icon: '🔄', text: 'Practice again — unlimited, 24/7' },
+          ].map((item, i) => (
+            <li key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '0.95rem', color: '#d4d4d8' }}>
+              <span style={{ fontSize: '1.1rem' }}>{item.icon}</span> {item.text}
+            </li>
+          ))}
+        </ul>
       </div>
-      <div style={{ position: 'relative', minHeight: 320 }}>
-        {step === 0 && <IgniteTest />}
-        {step === 1 && <IgniteScore />}
-        {step === 2 && <IgniteCoaching />}
-      </div>
-    </div>
-  );
-}
-
-function IgniteTest() {
-  const types = [
-    { label: 'Recall', count: 3, color: '#60a5fa' },
-    { label: 'Understanding', count: 3, color: '#a78bfa' },
-    { label: 'Application', count: 2, color: '#fbbf24' },
-    { label: 'Analysis', count: 2, color: '#f87171' },
-  ];
-  return (
-    <svg viewBox="0 0 480 300" style={{ width: '100%', maxHeight: 320 }}>
-      <text x="240" y="30" fill="#fafafa" fontSize="14" fontWeight="700" textAnchor="middle">10-Question Comprehension Test</text>
-      <text x="240" y="48" fill="#71717a" fontSize="10" textAnchor="middle">Across Bloom's Taxonomy levels</text>
-      {/* Question type cards */}
-      {types.map((t, i) => {
-        const x = 40 + i * 110;
-        return (
+      <svg viewBox="0 0 400 280" style={{ width: '100%' }}>
+        {/* Report card */}
+        <rect x="20" y="10" width="360" height="260" rx="16" fill="#141419" stroke="rgba(5,150,105,0.15)" strokeWidth="1" />
+        {/* Score */}
+        <text x="200" y="50" fill="#059669" fontSize="10" fontWeight="700" textAnchor="middle" letterSpacing="0.1em">SESSION REPORT</text>
+        <text x="200" y="100" fill="#059669" fontSize="48" fontWeight="800" textAnchor="middle">72</text>
+        <text x="200" y="120" fill="#71717a" fontSize="10" textAnchor="middle">Class Average: 7.2 / 10</text>
+        {/* Student scores */}
+        {[
+          { n: 'Priya', s: '9/10', c: '#4FC3F7' },
+          { n: 'Ravi', s: '8/10', c: '#FF7043' },
+          { n: 'Lakshmi', s: '4/10', c: '#CE93D8' },
+          { n: 'Arjun', s: '6/10', c: '#78909C' },
+          { n: 'Meena', s: '9/10', c: '#FFD54F' },
+        ].map((s, i) => (
           <g key={i}>
-            <rect x={x} y="65" width="100" height="100" rx="10" fill={t.color + '10'} stroke={t.color + '40'} strokeWidth="1" />
-            <text x={x + 50} y="100" fill={t.color} fontSize="28" fontWeight="800" textAnchor="middle">{t.count}</text>
-            <text x={x + 50} y="120" fill={t.color} fontSize="10" fontWeight="600" textAnchor="middle">{t.label}</text>
-            <text x={x + 50} y="140" fill="#71717a" fontSize="9" textAnchor="middle">questions</text>
+            <rect x={38 + i * 68} y="140" width="58" height="40" rx="8" fill="rgba(255,255,255,0.03)" />
+            <text x={67 + i * 68} y="158" fill={s.c} fontSize="9" fontWeight="700" textAnchor="middle">{s.n}</text>
+            <text x={67 + i * 68} y="173" fill="#a1a1aa" fontSize="10" textAnchor="middle">{s.s}</text>
           </g>
-        );
-      })}
-      {/* Student scoring preview */}
-      <text x="240" y="195" fill="#fafafa" fontSize="12" fontWeight="600" textAnchor="middle">Each student scores based on YOUR teaching</text>
-      {['Priya 8/10', 'Ravi 7/10', 'Lakshmi 0/10', 'Arjun 3/10', 'Meena 5/10'].map((s, i) => (
-        <g key={i}>
-          <rect x={40 + i * 88} y="210" width="78" height="28" rx="8" fill="rgba(255,255,255,0.04)" />
-          <text x={79 + i * 88} y="228" fill="#a1a1aa" fontSize="10" textAnchor="middle">{s}</text>
-        </g>
-      ))}
-      <text x="240" y="270" fill="#ef4444" fontSize="10" textAnchor="middle">Lakshmi scored 0 — she was never called on!</text>
-      <text x="240" y="290" fill="#71717a" fontSize="10" textAnchor="middle">Scores reflect actual engagement, not random chance</text>
-    </svg>
-  );
-}
-
-function IgniteScore() {
-  return (
-    <svg viewBox="0 0 480 300" style={{ width: '100%', maxHeight: 320 }}>
-      <rect x="100" y="20" width="280" height="180" rx="16" fill="rgba(230,81,0,0.05)" stroke="rgba(230,81,0,0.2)" strokeWidth="1.5" />
-      <text x="240" y="55" fill="#E65100" fontSize="11" fontWeight="700" textAnchor="middle" letterSpacing="0.1em">YOUR VIDYASPARK SCORE</text>
-      <text x="240" y="120" fill="#E65100" fontSize="64" fontWeight="800" textAnchor="middle">56</text>
-      <text x="240" y="145" fill="#a1a1aa" fontSize="13" textAnchor="middle">out of 100</text>
-      {/* Formula */}
-      <text x="240" y="180" fill="#71717a" fontSize="10" textAnchor="middle">70% student achievement (46%) + 30% confidence (80%)</text>
-      {/* Breakdown */}
-      <rect x="60" y="220" width="170" height="50" rx="10" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)" strokeWidth="1" />
-      <text x="145" y="240" fill="#71717a" fontSize="9" textAnchor="middle">STUDENT ACHIEVEMENT</text>
-      <text x="145" y="260" fill="#fafafa" fontSize="16" fontWeight="700" textAnchor="middle">23/50 = 46%</text>
-      <rect x="250" y="220" width="170" height="50" rx="10" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)" strokeWidth="1" />
-      <text x="335" y="240" fill="#71717a" fontSize="9" textAnchor="middle">YOUR CONFIDENCE</text>
-      <text x="335" y="260" fill="#fafafa" fontSize="16" fontWeight="700" textAnchor="middle">4/5 = 80%</text>
-      <text x="240" y="295" fill="#71717a" fontSize="10" textAnchor="middle">Weighted composite of your students' results and your self-assessment</text>
-    </svg>
-  );
-}
-
-function IgniteCoaching() {
-  return (
-    <svg viewBox="0 0 480 300" style={{ width: '100%', maxHeight: 320 }}>
-      <text x="240" y="28" fill="#fafafa" fontSize="14" fontWeight="700" textAnchor="middle">Personalized Coaching</text>
-      {/* Coaching pair 1 */}
-      <rect x="30" y="45" width="420" height="70" rx="10" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)" strokeWidth="1" />
-      <text x="50" y="68" fill="#ef4444" fontSize="10" fontWeight="700">Instead of:</text>
-      <text x="120" y="68" fill="#a1a1aa" fontSize="10.5">Only calling on Priya (who always volunteers)</text>
-      <text x="50" y="95" fill="#22c55e" fontSize="10" fontWeight="700">Try this:</text>
-      <text x="105" y="95" fill="#fafafa" fontSize="10.5" fontWeight="500">Directly invite Lakshmi: "Lakshmi, what do you notice?"</text>
-      {/* Coaching pair 2 */}
-      <rect x="30" y="125" width="420" height="70" rx="10" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)" strokeWidth="1" />
-      <text x="50" y="148" fill="#ef4444" fontSize="10" fontWeight="700">Instead of:</text>
-      <text x="120" y="148" fill="#a1a1aa" fontSize="10.5">Ignoring Arjun's disengagement</text>
-      <text x="50" y="175" fill="#22c55e" fontSize="10" fontWeight="700">Try this:</text>
-      <text x="105" y="175" fill="#fafafa" fontSize="10.5" fontWeight="500">Give him a hands-on role: "Arjun, hold the rubber sheet"</text>
-      {/* Going forward */}
-      <rect x="30" y="210" width="420" height="60" rx="10" fill="rgba(5,150,105,0.06)" stroke="rgba(5,150,105,0.2)" strokeWidth="1" />
-      <text x="240" y="232" fill="#059669" fontSize="11" fontWeight="700" textAnchor="middle">Going Forward</text>
-      <text x="240" y="252" fill="#a1a1aa" fontSize="10.5" textAnchor="middle">Ask more, tell less. Create moments of wonder where students discover answers themselves.</text>
-      <text x="240" y="290" fill="#71717a" fontSize="10" textAnchor="middle">Then practice again — unlimited times, 24/7, from anywhere</text>
-    </svg>
+        ))}
+        {/* Coaching hint */}
+        <rect x="35" y="195" width="330" height="55" rx="10" fill="rgba(5,150,105,0.06)" stroke="rgba(5,150,105,0.15)" strokeWidth="1" />
+        <text x="50" y="215" fill="#059669" fontSize="9" fontWeight="700">Coaching Insight:</text>
+        <text x="50" y="232" fill="#a1a1aa" fontSize="9">Lakshmi scored low — she was never called on directly.</text>
+        <text x="50" y="244" fill="#d4d4d8" fontSize="9">Try: "Lakshmi, what do you think happened to the paper?"</text>
+      </svg>
+    </div>
   );
 }
 
