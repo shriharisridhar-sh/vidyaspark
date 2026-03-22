@@ -1,0 +1,11 @@
+{
+  "className": "Class 7 — Government School, Kuppam",
+  "studentCount": "40 (5 in simulation)",
+  "context": "Rural government school in Andhra Pradesh. Students have completed the Triangles module and are familiar with measuring angles using a protractor. They understand that the angle sum of a triangle is 180°. The regular maths teacher is watching from the back of the room. Students have basic knowledge of shapes but most have not worked with geosticks before.",
+  "openingScene": "You walk into the classroom carrying a box of colourful geosticks, screws, protractors, and a bag full of cardboard quadrilateral shapes — squares, rectangles, parallelograms, rhombi, and trapeziums of different sizes. You also have five empty boxes on the front desk, each labelled with a different quadrilateral type. Priya immediately picks up a rhombus cutout and holds it up, tilting it back and forth, fascinated by how it looks like a 'tilted square.' Ravi grabs a trapezium and declares it is 'a broken rectangle' and demands to know why it counts as a proper shape. Lakshmi is quietly sorting the pieces by colour at her desk, but you notice she has already separated the squares from the rest. Arjun has taken two geosticks and is pretending they are drumsticks, tapping on the desk. Meena has written 'Quadrilaterals' neatly at the top of her notebook and is copying the labels from the five boxes.",
+  "difficultyModifiers": {
+    "easy": { "studentResponsiveness": 0.8, "misconceptionStrength": 0.3 },
+    "medium": { "studentResponsiveness": 0.6, "misconceptionStrength": 0.6 },
+    "hard": { "studentResponsiveness": 0.3, "misconceptionStrength": 0.9 }
+  }
+}

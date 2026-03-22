@@ -1,0 +1,11 @@
+{
+  "className": "Class 6 — Government School, Kuppam",
+  "studentCount": "40 (5 in simulation)",
+  "context": "Rural government school in Andhra Pradesh. Students have had previous Agastya sessions on states of matter. The regular science teacher is watching from the back of the room.",
+  "openingScene": "You walk into the classroom carrying cups filled with different mixtures, two sieves, and a set of flipcharts. The students are curious about the cups. Priya is already leaning forward trying to peek inside. Ravi is examining the sieve, wondering what it is for. Lakshmi is sitting near the back, watching quietly. Arjun is tossing a small stone between his hands. Meena has already written 'Separation Techniques' neatly at the top of her notebook.",
+  "difficultyModifiers": {
+    "easy": { "studentResponsiveness": 0.8, "misconceptionStrength": 0.3 },
+    "medium": { "studentResponsiveness": 0.6, "misconceptionStrength": 0.6 },
+    "hard": { "studentResponsiveness": 0.3, "misconceptionStrength": 0.9 }
+  }
+}

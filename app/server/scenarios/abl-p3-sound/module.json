@@ -1,0 +1,118 @@
+{
+  "id": "abl-p3-sound",
+  "name": "What is Sound — Vibrating Ruler & Voice Box",
+  "description": "Students discover that sound is produced by vibrating bodies through three hands-on activities: a vibrating ruler on a table, feeling the voice box while speaking, and releasing air from a balloon.",
+  "category": "Physics",
+  "subject": "Physics",
+  "handbook": "P3 — Sound",
+  "ablCode": "ABL 1.2",
+  "difficulty": "medium",
+  "estimatedMinutes": 15,
+  "version": "1.0",
+  "gradeLevel": "8-9",
+  "materials": ["Plastic ruler/scale", "Table", "Balloon"],
+
+  "pointA": {
+    "assumption": "Students think sound just exists in the environment and don't connect it to physical vibrations",
+    "blindspot": "They don't realize that EVERY sound they hear is caused by something vibrating — no vibration means no sound"
+  },
+  "pointB": {
+    "insight": "Sound is a form of energy produced by vibrating bodies. The vibration transfers energy to surrounding air molecules, which carry it to our ears.",
+    "evidence": "Students can identify the vibrating part in any sound source and explain that sound stops when vibration stops"
+  },
+
+  "tutorial": [
+    {
+      "title": "Learning Objective",
+      "content": "In this experiment, students will discover that sound is produced by vibrating bodies. They will observe vibrations in a ruler, feel vibrations in their own voice box, and hear sound from a vibrating balloon — building the core understanding that vibration is the common cause of all sound."
+    },
+    {
+      "title": "Materials & Setup",
+      "content": "You need: 1 plastic ruler (common school scale), 1 table, and 1 inflated balloon. The ruler demonstration is done at the front table. Students work in pairs for the voice box activity. The balloon demonstration is done by the Ignator."
+    },
+    {
+      "title": "The Procedure",
+      "content": "Step 1: Hold the ruler on a table with part of it extending over the edge. Flick the free end and ask students to observe the movement and listen. Step 2: Have students place 4 fingers on their own throat and speak — then go silent. Feel the difference. Step 3: Inflate a balloon, pinch the neck, then slowly release air while stretching the opening to produce sounds. Step 4: Ask students what is COMMON between all three activities."
+    },
+    {
+      "title": "Key Messages",
+      "content": "1. Sound is a form of energy. 2. Sound is produced by vibrating bodies — the ruler vibrates, vocal cords vibrate, the balloon membrane vibrates. 3. The vibrating object transfers energy to surrounding air molecules, and those vibrations reach our ears as sound."
+    },
+    {
+      "title": "Common Misconceptions",
+      "content": "Students often think sound simply 'comes out' of objects without any physical mechanism. They may not realize their own voice is produced by vibrating vocal cords. They may think vibrations and sound are unrelated phenomena. Some believe all vibrations produce audible sound."
+    }
+  ],
+
+  "procedure": "1. Hold a plastic ruler firmly on the edge of a table so that part of it extends beyond the edge. Flick the free end and ask students to watch the ruler move to and fro (vibrate) and listen to the sound it makes. 2. Divide students into pairs. Ask each student to place 4 fingers gently across the front of their throat and speak — they will feel vibrations. Then ask them to stop speaking and notice the vibrations stop. Repeat on their partner's throat. 3. Inflate a balloon fully and pinch the neck shut. Slowly release air while twisting and stretching the mouth of the balloon to produce different sounds. 4. Ask: What was COMMON in all three activities? Guide students to realize that in every case, something was vibrating, and that vibration produced the sound.",
+
+  "canvasSteps": [
+    {
+      "step": 1,
+      "title": "Setup",
+      "description": "A table with a plastic ruler placed on it, an uninflated balloon nearby. Students seated and ready.",
+      "svgId": "setup"
+    },
+    {
+      "step": 2,
+      "title": "Vibrating Ruler",
+      "description": "Ruler clamped to the table edge with the free end extending out. The free end is flicked — it vibrates rapidly to and fro, producing a buzzing sound.",
+      "svgId": "ruler-vibrating"
+    },
+    {
+      "step": 3,
+      "title": "Feeling the Voice Box",
+      "description": "Students in pairs, each placing fingers on their own throat. When speaking, they feel vibrations. When silent, the vibrations stop.",
+      "svgId": "voice-box"
+    },
+    {
+      "step": 4,
+      "title": "Balloon Sound",
+      "description": "Ignator holds an inflated balloon and releases air through a stretched opening. The balloon membrane vibrates, producing a squealing sound.",
+      "svgId": "balloon-sound"
+    }
+  ],
+
+  "leadingQuestions": [
+    "What do you observe when I flick the ruler? What do you hear?",
+    "What did you feel on your throat when you were speaking? What happened when you stopped?",
+    "What is COMMON between the ruler, your voice box, and the balloon?",
+    "Can you think of other objects around you that vibrate to produce sound?"
+  ],
+
+  "keyMessages": [
+    "Sound is a form of energy produced by vibrating bodies",
+    "When an object vibrates, it transfers energy to the surrounding air molecules, and those vibrations travel to our ears as sound",
+    "Vibrations cause all sounds — but not all vibrations produce sounds we can hear"
+  ],
+
+  "misconceptions": [
+    "Sound just exists or comes out of objects without any physical cause",
+    "Vibrations and sound are two separate, unrelated things",
+    "The voice comes from the mouth or lungs, not from vibrating vocal cords",
+    "All vibrations must produce audible sound"
+  ],
+
+  "dimensions": [
+    { "id": "D1", "name": "Curiosity Sparking", "shortName": "curiosity", "weight": 0.30, "keywords": ["why", "what if", "surprise", "predict", "guess", "wonder", "what do you notice"] },
+    { "id": "D2", "name": "Student Engagement", "shortName": "engagement", "weight": 0.25, "keywords": ["lakshmi", "arjun", "everyone", "what do you think", "try it yourself", "feel your throat"] },
+    { "id": "D3", "name": "Concept Clarity", "shortName": "clarity", "weight": 0.20, "keywords": ["vibration", "sound", "energy", "vocal cords", "to and fro", "vibrating bodies"] },
+    { "id": "D4", "name": "Facilitation Quality", "shortName": "facilitation", "weight": 0.15, "keywords": ["observe", "notice", "look carefully", "listen", "feel", "place your fingers", "now watch"] },
+    { "id": "D5", "name": "Questioning & Listening", "shortName": "questioning", "weight": 0.10, "keywords": ["why do you think", "tell me more", "good question", "interesting", "what is common"] }
+  ],
+
+  "importanceWeights": { "D1": 0.30, "D2": 0.25, "D3": 0.20, "D4": 0.15, "D5": 0.10 },
+
+  "skills": [
+    { "id": "S1", "name": "Spark", "description": "Creating curiosity, wonder, and scientific questioning", "category": "engagement" },
+    { "id": "S2", "name": "Reach", "description": "Engaging every student, especially quiet and disengaged", "category": "inclusion" }
+  ],
+
+  "archetypes": [
+    { "id": "ignitor", "name": "The Ignitor", "description": "Spark >= 70 AND Reach >= 70", "indicators": ["spark_high", "reach_high"] },
+    { "id": "performer", "name": "The Performer", "description": "Spark >= 60, Reach < 50", "indicators": ["spark_high", "reach_low"] },
+    { "id": "caretaker", "name": "The Caretaker", "description": "Reach >= 60, Spark < 50", "indicators": ["spark_low", "reach_high"] },
+    { "id": "lecturer", "name": "The Lecturer", "description": "Both < 50, Clarity > 60", "indicators": ["spark_low", "reach_low", "clarity_high"] },
+    { "id": "learner", "name": "The Learner", "description": "Both < 40", "indicators": ["spark_low", "reach_low"] }
+  ]
+}

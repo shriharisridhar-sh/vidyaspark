@@ -1,0 +1,118 @@
+{
+  "id": "abl-m1-quadrilaterals",
+  "name": "Quadrilaterals — Types and Angle Sum Property",
+  "description": "Students discover that the sum of interior angles of any quadrilateral is always 360° by constructing quadrilaterals with geosticks and measuring angles with protractors. They also classify quadrilaterals into five types (trapezium, parallelogram, rhombus, rectangle, square) and explore the relationships between them.",
+  "category": "Mathematics",
+  "subject": "Mathematics",
+  "handbook": "M1 — Quadrilaterals",
+  "ablCode": "ABL 2.1 & 2.2a",
+  "difficulty": "medium",
+  "estimatedMinutes": 15,
+  "version": "1.0",
+  "gradeLevel": "6-8",
+  "materials": ["Cardboard or wooden quadrilateral models (square, rectangle, parallelogram, rhombus, trapezium)", "Geosticks (wooden or cardboard strips)", "Screws to hold strips together", "Four 180-degree protractors", "One 360-degree protractor", "Ruler", "Thread", "White paper sheets", "Pencil/pen", "Five boxes labelled with quadrilateral types"],
+
+  "pointA": {
+    "assumption": "Students think all four-sided shapes are either squares or rectangles, and do not realize there is a hierarchy of quadrilateral types or that all quadrilaterals share a common angle sum",
+    "blindspot": "They cannot distinguish between parallelogram, rhombus, and trapezium, and assume different-shaped quadrilaterals have different angle sums"
+  },
+  "pointB": {
+    "insight": "The sum of interior angles of ANY quadrilateral — trapezium, parallelogram, rhombus, rectangle, or square — is always exactly 360°, and these types form a hierarchy where squares are special rectangles, rectangles are special parallelograms, etc.",
+    "evidence": "Students can construct different quadrilaterals with geosticks, measure all four angles with protractors, and verify the sum is always 360° regardless of shape"
+  },
+
+  "tutorial": [
+    {
+      "title": "Learning Objective",
+      "content": "This session covers two connected activities from the Agastya M1 handbook. First (ABL 2.1): students classify quadrilaterals into five types — trapezium, parallelogram, rhombus, rectangle, and square — by examining their properties (parallel sides, equal sides, right angles). Second (ABL 2.2a): students verify the angle sum property by constructing quadrilaterals with geosticks, measuring all four interior angles, and confirming they always sum to 360°."
+    },
+    {
+      "title": "Materials & Setup",
+      "content": "Divide the class into groups of 3-4 students. Each group needs: a set of cardboard/wooden quadrilateral models, geosticks with screws, four 180-degree protractors, a ruler, thread, and white paper. The Ignator should have five labelled boxes (trapezium, parallelogram, rhombus, rectangle, square) for the sorting activity, and pre-made models of each quadrilateral type."
+    },
+    {
+      "title": "The Procedure — Part 1: Types of Quadrilaterals",
+      "content": "Step 1: Distribute 7-10 random quadrilateral pieces per group along with a blank sheet. Ask groups to name the pieces and write common attributes (e.g. 'each has 4 sides') and differences in their own words. Step 2: Each group presents their observations; other groups ask questions. Step 3: Draw a classification table on the board showing trapezium (one pair of parallel sides), parallelogram (both pairs parallel), rhombus (all sides equal), rectangle (all angles 90°), square (all sides equal and all angles 90°). Step 4: Distribute a different set of pieces — groups must classify each using the table. Step 5: Groups present their classifications with reasons."
+    },
+    {
+      "title": "The Procedure — Part 2: Angle Sum Property",
+      "content": "Step 1: Each group fixes 4 geosticks with screws to form a quadrilateral of any shape. Step 2: Using protractors, students measure all 4 interior angles and record them in a table. Step 3: Students add the four angles and record the sum. Step 4: Repeat with 2-3 different quadrilateral shapes (e.g. a parallelogram, then a trapezium, then an irregular quadrilateral). Step 5: Students observe that the sum is always 360° regardless of the quadrilateral type."
+    },
+    {
+      "title": "Common Misconceptions",
+      "content": "1. Students think only squares and rectangles are quadrilaterals. 2. Students confuse rhombus with square — not realizing a rhombus need not have 90° angles. 3. Students do not see the hierarchy — that a square is also a rectangle, a rhombus, and a parallelogram. 4. Students think irregular or 'wonky' quadrilaterals have a different angle sum than regular ones."
+    }
+  ],
+
+  "procedure": "PART 1 — Types of Quadrilaterals (ABL 2.1): 1. Distribute 7-10 quadrilateral models per group with blank paper. 2. Groups write common attributes and differences in their own words. 3. Each group presents; other groups ask questions. 4. Draw classification table on board: trapezium (one pair of parallel sides), parallelogram (both pairs of opposite sides parallel), rhombus (all sides equal, diagonals bisect at 90°), rectangle (all angles 90°, also a parallelogram), square (all sides equal and all angles 90°). 5. Distribute new set of pieces; groups classify using the table and present reasoning. PART 2 — Angle Sum Property (ABL 2.2a): 1. Each group constructs a quadrilateral by fixing 4 geosticks with screws. 2. Measure all 4 interior angles with protractors. 3. Record angles in a table and compute the sum. 4. Repeat with 2-3 different quadrilateral shapes. 5. Observe that the sum of interior angles is always 360°. 6. Discuss: why is it 360°? (A quadrilateral can be divided into two triangles, each with 180°, so 2 x 180° = 360°.)",
+
+  "canvasSteps": [
+    {
+      "step": 1,
+      "title": "Five Types of Quadrilaterals",
+      "description": "Five quadrilateral types displayed — trapezium (one pair of parallel sides), parallelogram (both pairs parallel), rhombus (all sides equal, tilted), rectangle (all right angles), and square (all sides equal, all right angles). Each is labelled with its type name and key property.",
+      "svgId": "quadrilateral-types"
+    },
+    {
+      "step": 2,
+      "title": "Building with Geosticks",
+      "description": "Hands assembling four geosticks with screws to form a quadrilateral shape. A protractor is attached at each vertex, ready to measure the interior angles. The geosticks can be adjusted to form different quadrilateral shapes.",
+      "svgId": "building-quadrilateral"
+    },
+    {
+      "step": 3,
+      "title": "Measuring All Four Angles",
+      "description": "Protractors placed at each of the four vertices of a geostick quadrilateral, showing the measured angle values. The four angle measurements are displayed prominently next to each vertex.",
+      "svgId": "measuring-four-angles"
+    },
+    {
+      "step": 4,
+      "title": "They Sum to 360°!",
+      "description": "The four measured angles shown being added together, equalling exactly 360°. A second quadrilateral of a completely different shape is shown alongside with its own four angles also summing to 360° — proving the property holds for ALL quadrilaterals. A diagonal line divides one quadrilateral into two triangles, showing why: 180° + 180° = 360°.",
+      "svgId": "angle-sum-360"
+    }
+  ],
+
+  "leadingQuestions": [
+    "What makes a shape a quadrilateral? Can you think of quadrilaterals you see in everyday life — in the classroom, at home?",
+    "A square has all sides equal. A rhombus also has all sides equal. So what is the difference between a square and a rhombus?",
+    "When you add up all four interior angles of your geostick quadrilateral, what do you get? Is it the same for every quadrilateral your group made?",
+    "If I tell you three angles of a quadrilateral are 90°, 80°, and 110°, can you find the fourth angle without measuring? How?"
+  ],
+
+  "keyMessages": [
+    "Quadrilaterals can be classified into five types based on their properties: trapezium (one pair of parallel sides), parallelogram (both pairs of opposite sides parallel), rhombus (all sides equal), rectangle (all angles 90°), and square (all sides equal and all angles 90°). These types form a hierarchy — every square is a rectangle, every rectangle is a parallelogram.",
+    "The sum of the four interior angles of ANY quadrilateral is always exactly 360° — this is the angle sum property of quadrilaterals. It holds for regular and irregular quadrilaterals alike.",
+    "We can understand why by drawing a diagonal — it splits the quadrilateral into two triangles, and since each triangle has an angle sum of 180°, the quadrilateral has 180° + 180° = 360°."
+  ],
+
+  "misconceptions": [
+    "Only squares and rectangles are quadrilaterals — in fact, any closed four-sided polygon is a quadrilateral, including trapeziums, parallelograms, rhombi, and irregular shapes",
+    "A rhombus is the same as a square — a rhombus has all sides equal but its angles need not be 90°; a square is a special rhombus where all angles are also 90°",
+    "The angle sum property only works for regular shapes like squares and rectangles — it is actually universal for every quadrilateral, which students can verify by constructing irregular quadrilaterals with geosticks and measuring all four angles",
+    "Different-sized or different-shaped quadrilaterals have different angle sums — the sum is always 360° regardless of size, shape, or type"
+  ],
+
+  "dimensions": [
+    { "id": "D1", "name": "Curiosity Sparking", "shortName": "curiosity", "weight": 0.30, "keywords": ["why", "what if", "surprise", "predict", "guess", "wonder", "what do you notice", "same or different", "real life", "around you"] },
+    { "id": "D2", "name": "Student Engagement", "shortName": "engagement", "weight": 0.25, "keywords": ["lakshmi", "arjun", "everyone", "what do you think", "come up", "your group", "show me", "try it", "present", "discuss"] },
+    { "id": "D3", "name": "Concept Clarity", "shortName": "clarity", "weight": 0.20, "keywords": ["360 degrees", "angle sum", "trapezium", "parallelogram", "rhombus", "rectangle", "square", "parallel", "interior angle", "diagonal", "two triangles"] },
+    { "id": "D4", "name": "Facilitation Quality", "shortName": "facilitation", "weight": 0.15, "keywords": ["measure", "construct", "fix", "observe", "record", "label", "now let", "next step", "geostick", "protractor", "classify"] },
+    { "id": "D5", "name": "Questioning & Listening", "shortName": "questioning", "weight": 0.10, "keywords": ["why do you think", "tell me more", "good question", "interesting", "can you explain", "how do you know", "justify"] }
+  ],
+
+  "importanceWeights": { "D1": 0.30, "D2": 0.25, "D3": 0.20, "D4": 0.15, "D5": 0.10 },
+
+  "skills": [
+    { "id": "S1", "name": "Spark", "description": "Creating curiosity, wonder, and mathematical questioning through hands-on discovery with geosticks and classification challenges", "category": "engagement" },
+    { "id": "S2", "name": "Reach", "description": "Engaging every student, especially quiet and disengaged, through group construction, classification races, and direct invitations to present", "category": "inclusion" }
+  ],
+
+  "archetypes": [
+    { "id": "ignitor", "name": "The Ignitor", "description": "Spark >= 70 AND Reach >= 70", "indicators": ["spark_high", "reach_high"] },
+    { "id": "performer", "name": "The Performer", "description": "Spark >= 60, Reach < 50", "indicators": ["spark_high", "reach_low"] },
+    { "id": "caretaker", "name": "The Caretaker", "description": "Reach >= 60, Spark < 50", "indicators": ["spark_low", "reach_high"] },
+    { "id": "lecturer", "name": "The Lecturer", "description": "Both < 50, Clarity > 60", "indicators": ["spark_low", "reach_low", "clarity_high"] },
+    { "id": "learner", "name": "The Learner", "description": "Both < 40", "indicators": ["spark_low", "reach_low"] }
+  ]
+}

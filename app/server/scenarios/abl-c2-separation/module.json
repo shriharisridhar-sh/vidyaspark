@@ -1,0 +1,121 @@
+{
+  "id": "abl-c2-separation",
+  "name": "Separation Techniques — Separating Mixtures of Solids",
+  "description": "Students discover how to separate mixtures containing solids using handpicking and sieving, and learn why separation is necessary — to obtain useful substances, remove impurities, or sort by size.",
+  "category": "Chemistry",
+  "subject": "Chemistry",
+  "handbook": "C2 — Separation Techniques",
+  "ablCode": "ABL 1.1",
+  "difficulty": "medium",
+  "estimatedMinutes": 20,
+  "version": "1.0",
+  "gradeLevel": "6-8",
+  "materials": ["Rice (1/2 cup)", "Stones (1/2 cup)", "Sand (1/2 cup)", "Sugar (1/2 cup)", "Black Urad dal (1/2 cup)", "Toor dal (1/2 cup)", "Sieve (2)", "Cups for pre-mixed mixtures"],
+
+  "pointA": {
+    "assumption": "Students think all mixtures can be separated the same way — just pick things apart by hand",
+    "blindspot": "They don't realize that the choice of separation method depends on properties like size, shape, colour, and weight of the substances in the mixture"
+  },
+  "pointB": {
+    "insight": "Different mixtures require different separation techniques. Handpicking works when substances differ in size or appearance, but sieving is needed when particles are too small to pick by hand.",
+    "evidence": "Students can explain why sand and sugar cannot be separated by hand but can be separated using a sieve, and can identify which method suits which mixture"
+  },
+
+  "tutorial": [
+    {
+      "title": "Learning Objective",
+      "content": "In this experiment, students will learn how to separate mixtures containing solids using handpicking and sieving. They will discover that the method of separation depends on the physical properties of the substances — size, shape, colour, and appearance. Groups that receive sand and sugar will struggle to separate by hand, motivating the introduction of the sieve."
+    },
+    {
+      "title": "Materials & Setup",
+      "content": "Prepare three mixtures in advance: (1) Toor dal mixed with black urad dal, (2) Rice mixed with small stones, (3) Sand mixed with sugar. Store each in a separate cup. You also need 2 sieves. Divide the class into 6 groups before the session begins. Do NOT let students taste or eat any materials."
+    },
+    {
+      "title": "The Procedure",
+      "content": "Step 1: Give groups 1-2 the dal mixture, groups 3-4 the rice-stones mixture, and groups 5-6 the sand-sugar mixture. Ask all groups to separate their mixtures. Give 5 minutes. Step 2: Groups 1-4 will succeed using handpicking. Groups 5-6 will fail — sand and sugar look similar and are too small. Step 3: Pass the sand-sugar mixture to other groups to try. Step 4: Ask if any tool could help. Introduce the sieve. Step 5: Groups 5-6 use the sieve — fine sand passes through, sugar stays behind. Step 6: Show flipcharts of threshing and winnowing as large-scale mechanical separation methods."
+    },
+    {
+      "title": "Key Messages",
+      "content": "1. Handpicking separates mixtures when substances differ in size, colour, or appearance — e.g., stones from rice, urad dal from toor dal. 2. Sieving separates substances based on size differences — fine particles pass through while larger ones remain. 3. Mechanical methods like threshing and winnowing are used for large-scale separation based on weight differences. 4. The right separation method depends on the properties of the substances in the mixture."
+    },
+    {
+      "title": "Common Misconceptions",
+      "content": "Students often think all mixtures can be separated by hand if you try hard enough. Some believe sieving works because of weight rather than particle size. Others may confuse the terms 'substance' and 'mixture' or think separation creates new substances rather than recovering the original ones."
+    }
+  ],
+
+  "procedure": "1. Divide the class into 6 groups. Prepare three mixtures in advance: toor dal + urad dal, rice + stones, sand + sugar. 2. Distribute: Groups 1-2 get the dal mixture, Groups 3-4 get the rice-stones mixture, Groups 5-6 get the sand-sugar mixture. 3. Ask all groups to separate the substances in their mixture. Give them 5 minutes. 4. Groups 1-4 will separate their mixtures easily by handpicking — the substances differ in colour, size, or shape. 5. Groups 5-6 will struggle — sand and sugar particles are too small and similar to pick apart. 6. Pass the sand-sugar mixture to other groups. Ask: Can you separate this? Can all mixtures be separated by hand? 7. Ask: Is there a tool that could help? Introduce the sieve. 8. Groups 5-6 use the sieve. The fine sand passes through the mesh while the larger sugar crystals remain inside. 9. Discuss: Handpicking works when substances differ in size or appearance. Sieving works when particle sizes are very different. 10. Show flipcharts of threshing (beating dried paddy stalks to separate grain) and winnowing (dropping grain from a height so wind carries away lighter husks). 11. Conclude: Different mixtures require different separation techniques depending on the physical properties of the substances.",
+
+  "canvasSteps": [
+    {
+      "step": 1,
+      "title": "Setup — Three Mixtures",
+      "description": "A table with three cups containing pre-mixed mixtures: toor dal + urad dal, rice + stones, and sand + sugar. Six groups of students are seated around the table. Two sieves are set aside.",
+      "svgId": "setup"
+    },
+    {
+      "step": 2,
+      "title": "Handpicking Succeeds",
+      "description": "Groups 1-4 successfully separate their mixtures by hand. Toor dal and urad dal are sorted into two piles based on colour. Stones are picked out of rice based on shape and appearance. Groups 5-6 look frustrated — sand and sugar look too similar.",
+      "svgId": "handpicking"
+    },
+    {
+      "step": 3,
+      "title": "Sieving Saves the Day",
+      "description": "A student pours the sand-sugar mixture into the sieve. Fine sand particles fall through the mesh into a container below, while the larger sugar crystals remain trapped on top of the sieve.",
+      "svgId": "sieving"
+    },
+    {
+      "step": 4,
+      "title": "Threshing and Winnowing",
+      "description": "A flipchart shows farmers threshing paddy — beating stalks against the ground to separate grains. Another image shows winnowing — a farmer dropping grain from a height as wind blows away the lighter husks while heavier grains fall straight down.",
+      "svgId": "threshing-winnowing"
+    }
+  ],
+
+  "leadingQuestions": [
+    "What do you understand by the word 'mixture'? Can you give an example from your kitchen?",
+    "How did you separate the substances in your mixture? What property helped you tell them apart?",
+    "Why could you not separate the sand and sugar by hand? What is different about this mixture?",
+    "How does the sieve work — what property of the substances allows the sieve to separate them?",
+    "Can you think of where you have seen a sieve being used at home or in your village?",
+    "In winnowing, why do the husks fly away while the grains fall down? What property is different?"
+  ],
+
+  "keyMessages": [
+    "Handpicking separates mixtures when substances differ visibly in size, shape, colour, or appearance — suitable for small quantities",
+    "Sieving separates substances based on differences in particle size — fine particles pass through the mesh while larger ones are retained",
+    "Mechanical methods like threshing (beating to separate grain from stalks) and winnowing (using wind to separate light husks from heavy grain) work on large-scale mixtures",
+    "The choice of separation technique depends on the physical properties of the substances in the mixture"
+  ],
+
+  "misconceptions": [
+    "All mixtures can be separated by handpicking if you are patient enough",
+    "Sieving works because of the weight of the particles, not their size",
+    "Separation changes the substances or creates new ones, rather than recovering the original components",
+    "Mixtures and substances are the same thing"
+  ],
+
+  "dimensions": [
+    { "id": "D1", "name": "Curiosity Sparking", "shortName": "curiosity", "weight": 0.30, "keywords": ["why", "what if", "surprise", "predict", "guess", "wonder", "prove", "how", "try", "challenge"] },
+    { "id": "D2", "name": "Student Engagement", "shortName": "engagement", "weight": 0.25, "keywords": ["lakshmi", "arjun", "everyone", "what do you think", "your group", "come up", "show us", "pass it around", "try it"] },
+    { "id": "D3", "name": "Concept Clarity", "shortName": "clarity", "weight": 0.20, "keywords": ["mixture", "substance", "handpicking", "sieving", "threshing", "winnowing", "separation", "property", "size", "appearance"] },
+    { "id": "D4", "name": "Facilitation Quality", "shortName": "facilitation", "weight": 0.15, "keywords": ["observe", "notice", "look carefully", "feel the difference", "compare", "see for yourself", "now watch", "try this"] },
+    { "id": "D5", "name": "Questioning & Listening", "shortName": "questioning", "weight": 0.10, "keywords": ["why do you think", "tell me more", "good question", "interesting", "what else", "who can explain", "does anyone disagree"] }
+  ],
+
+  "importanceWeights": { "D1": 0.30, "D2": 0.25, "D3": 0.20, "D4": 0.15, "D5": 0.10 },
+
+  "skills": [
+    { "id": "S1", "name": "Spark", "description": "Creating curiosity, wonder, and scientific questioning", "category": "engagement" },
+    { "id": "S2", "name": "Reach", "description": "Engaging every student, especially quiet and disengaged", "category": "inclusion" }
+  ],
+
+  "archetypes": [
+    { "id": "ignitor", "name": "The Ignitor", "description": "Spark >= 70 AND Reach >= 70", "indicators": ["spark_high", "reach_high"] },
+    { "id": "performer", "name": "The Performer", "description": "Spark >= 60, Reach < 50", "indicators": ["spark_high", "reach_low"] },
+    { "id": "caretaker", "name": "The Caretaker", "description": "Reach >= 60, Spark < 50", "indicators": ["spark_low", "reach_high"] },
+    { "id": "lecturer", "name": "The Lecturer", "description": "Both < 50, Clarity > 60", "indicators": ["spark_low", "reach_low", "clarity_high"] },
+    { "id": "learner", "name": "The Learner", "description": "Both < 40", "indicators": ["spark_low", "reach_low"] }
+  ]
+}
