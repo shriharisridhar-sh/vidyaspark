@@ -255,26 +255,26 @@ export default function TapovanSession({
   return (
     <div className="h-screen flex flex-col bg-bg overflow-hidden">
       {/* Header Bar */}
-      <div className="flex items-center justify-between px-6 py-3 bg-surface border-b border-border flex-shrink-0">
+      <div className="flex items-center justify-between px-6 py-3.5 bg-surface border-b border-border flex-shrink-0">
         <div className="flex items-center gap-4">
-          <span className="text-xs font-mono text-accent uppercase tracking-wider">
+          <span className="text-sm font-mono text-accent uppercase tracking-wider font-semibold">
             {module?.ablCode}
           </span>
-          <span className="text-sm font-medium text-text-primary">
+          <span className="text-base font-semibold text-text-primary">
             {module?.name}
           </span>
         </div>
         <div className="flex items-center gap-6">
-          <span className="text-sm text-text-secondary">
+          <span className="text-base text-text-secondary">
             Step {currentStep}/{totalSteps}
           </span>
-          <span className="text-sm font-mono text-text-primary bg-surface-light px-3 py-1 rounded-lg">
+          <span className="text-base font-mono text-text-primary bg-surface-light px-4 py-1.5 rounded-lg">
             {formatTime(timer)}
           </span>
           <AmbientAudio volume={0.12} playing={true} lowVolume={true} />
           <button
             onClick={handleEndSession}
-            className="text-xs px-3 py-1.5 rounded-lg bg-danger/10 text-danger hover:bg-danger/20 transition-colors"
+            className="text-sm px-4 py-2 rounded-lg bg-danger/10 text-danger hover:bg-danger/20 transition-colors font-medium"
           >
             End Session
           </button>
@@ -319,7 +319,7 @@ export default function TapovanSession({
               </div>
 
               {/* Step title */}
-              <p className="text-xs text-text-muted">
+              <p className="text-sm text-text-muted">
                 {currentStepData?.title}
               </p>
 
@@ -328,14 +328,14 @@ export default function TapovanSession({
                 <button
                   onClick={() => handleStepChange(currentStep - 1)}
                   disabled={currentStep <= 1}
-                  className="px-3 py-1.5 text-xs rounded-lg bg-surface-light border border-border text-text-secondary hover:text-text-primary disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+                  className="px-4 py-2 text-sm rounded-lg bg-surface-light border border-border text-text-secondary hover:text-text-primary disabled:opacity-30 disabled:cursor-not-allowed transition-all"
                 >
                   ← Prev
                 </button>
                 <button
                   onClick={() => handleStepChange(currentStep + 1)}
                   disabled={currentStep >= totalSteps}
-                  className="px-4 py-1.5 text-xs rounded-lg bg-accent/10 border border-accent/30 text-accent hover:bg-accent/20 disabled:opacity-30 disabled:cursor-not-allowed transition-all font-medium"
+                  className="px-5 py-2 text-sm rounded-lg bg-accent/10 border border-accent/30 text-accent hover:bg-accent/20 disabled:opacity-30 disabled:cursor-not-allowed transition-all font-medium"
                 >
                   Next Step →
                 </button>
@@ -362,20 +362,20 @@ export default function TapovanSession({
                 className={`fade-in ${msg.type === 'user' ? 'ml-8' : msg.type === 'system' ? 'mx-4' : 'mr-4'}`}
               >
                 {msg.type === 'system' ? (
-                  <div className="text-xs text-text-muted italic bg-white/[0.02] rounded-lg px-3 py-2 border border-white/[0.04]">
+                  <div className="text-sm text-text-muted italic bg-white/[0.02] rounded-lg px-4 py-3 border border-white/[0.04]">
                     {msg.text}
                   </div>
                 ) : msg.type === 'user' ? (
-                  <div className="bg-accent/10 border border-accent/20 rounded-xl rounded-br-sm px-4 py-2.5">
-                    <p className="text-xs font-medium text-accent mb-0.5">[You]</p>
-                    <p className="text-sm text-text-primary leading-relaxed">{msg.text}</p>
+                  <div className="bg-accent/10 border border-accent/20 rounded-xl rounded-br-sm px-5 py-3">
+                    <p className="text-sm font-semibold text-accent mb-1">[You]</p>
+                    <p className="text-base text-text-primary leading-relaxed">{msg.text}</p>
                   </div>
                 ) : (
-                  <div className="bg-white/[0.03] border border-white/[0.06] rounded-xl rounded-bl-sm px-4 py-2.5">
-                    <p className={`text-xs font-medium mb-0.5 ${getSpeakerColor(msg.speaker)}`}>
+                  <div className="bg-white/[0.03] border border-white/[0.06] rounded-xl rounded-bl-sm px-5 py-3">
+                    <p className={`text-sm font-semibold mb-1 ${getSpeakerColor(msg.speaker)}`}>
                       [{msg.speaker}]
                     </p>
-                    <p className="text-sm text-text-secondary leading-relaxed">{msg.text}</p>
+                    <p className="text-base text-text-secondary leading-relaxed">{msg.text}</p>
                   </div>
                 )}
               </div>
@@ -387,7 +387,7 @@ export default function TapovanSession({
                   <span className="w-1.5 h-1.5 bg-text-muted rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
                   <span className="w-1.5 h-1.5 bg-text-muted rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
                 </div>
-                <span className="text-xs">Students are responding...</span>
+                <span className="text-sm">Students are responding...</span>
               </div>
             )}
             <div ref={chatEndRef} />
@@ -402,7 +402,7 @@ export default function TapovanSession({
                 onKeyDown={handleKeyDown}
                 placeholder="What would you say to the class?"
                 rows={2}
-                className="flex-1 bg-bg border border-border rounded-xl px-4 py-3 text-sm text-text-primary placeholder-text-muted resize-none focus:outline-none focus:border-accent/40 transition-colors"
+                className="flex-1 bg-bg border border-border rounded-xl px-4 py-3 text-base text-text-primary placeholder-text-muted resize-none focus:outline-none focus:border-accent/40 transition-colors"
               />
               <div className="flex flex-col gap-1">
                 <button

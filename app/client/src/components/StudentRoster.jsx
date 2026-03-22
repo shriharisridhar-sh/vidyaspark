@@ -1,5 +1,5 @@
 /**
- * StudentRoster — Compact 5-student status panel for the Tapovan.
+ * StudentRoster — 5-student status panel for the Tapovan.
  * Shows engagement dots and one-line status for each AI student.
  */
 
@@ -20,8 +20,8 @@ const ENGAGEMENT_DOTS = {
 
 export default function StudentRoster({ studentStates = {}, speakingStudent = null }) {
   return (
-    <div className="flex flex-col gap-1.5 p-3 bg-surface rounded-xl border border-border">
-      <p className="text-[10px] uppercase tracking-wider text-text-muted font-medium mb-0.5">Students</p>
+    <div className="flex flex-col gap-2 p-4 bg-surface rounded-xl border border-border">
+      <p className="text-xs uppercase tracking-wider text-text-muted font-semibold mb-1">Students</p>
       {STUDENTS.map(student => {
         const state = studentStates[student.id] || { engagement: 'medium', status: 'waiting' };
         const dot = ENGAGEMENT_DOTS[state.engagement] || ENGAGEMENT_DOTS.medium;
@@ -30,15 +30,15 @@ export default function StudentRoster({ studentStates = {}, speakingStudent = nu
         return (
           <div
             key={student.id}
-            className={`flex items-center gap-2 px-2.5 py-1.5 rounded-lg transition-all duration-300 ${
+            className={`flex items-center gap-3 px-3 py-2 rounded-lg transition-all duration-300 ${
               isSpeaking ? 'bg-white/[0.06] ring-1 ring-white/10' : 'bg-transparent'
             }`}
           >
-            <div className={`w-2 h-2 rounded-full ${dot.color} flex-shrink-0 ${isSpeaking ? 'animate-pulse' : ''}`} />
-            <span className={`text-xs font-medium ${student.colorClass} flex-shrink-0 w-14`}>
+            <div className={`w-2.5 h-2.5 rounded-full ${dot.color} flex-shrink-0 ${isSpeaking ? 'animate-pulse' : ''}`} />
+            <span className={`text-sm font-semibold ${student.colorClass} flex-shrink-0 w-16`}>
               {student.name}
             </span>
-            <span className="text-[11px] text-text-muted truncate">
+            <span className="text-sm text-text-muted truncate">
               {state.status || student.trait}
             </span>
           </div>
