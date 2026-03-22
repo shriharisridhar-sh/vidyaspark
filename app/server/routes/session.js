@@ -4,7 +4,7 @@ const { Router } = require('express');
 const sessionStore = require('../session/SessionStore');
 const sessionArchive = require('../session/SessionArchive');
 const database = require('../db/database');
-const { optionalAuth } = require('../middleware/auth');
+const { optionalAuth, requireAdmin } = require('../middleware/auth');
 
 const router = Router();
 
@@ -185,7 +185,7 @@ router.get('/db/stats', async (req, res) => {
   } catch (e) { res.status(500).json({ error: e.message }); }
 });
 
-router.get('/db/all', async (req, res) => {
+router.get('/db/all', requireAdmin, async (req, res) => {
   try {
     const { coachType, difficulty, userName } = req.query;
     const sessions = await database.getAllSessions({ coachType, difficulty, userName });
