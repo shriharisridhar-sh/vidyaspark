@@ -124,7 +124,7 @@ async function stream({ history, difficulty = 'medium', moduleId, currentStep = 
   let fullText = '';
 
   const messageStream = await client.messages.stream({
-    model: 'claude-sonnet-4-5-20241022',
+    model: 'claude-sonnet-4-5-20250514',
     max_tokens: 800,
     system: systemPrompt,
     messages: history.map((m) => ({
