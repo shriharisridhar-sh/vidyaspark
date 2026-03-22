@@ -27,28 +27,35 @@ export default function Dashboard() {
 
   useEffect(() => {
     async function fetchData() {
-      try {
-        const [statsRes, modulesRes, sessionsRes] = await Promise.all([
-          fetch(API_BASE + '/api/dashboard/user-stats', { credentials: 'include' }),
-          fetch(API_BASE + '/api/modules/available', { credentials: 'include' }),
-          fetch(API_BASE + '/api/dashboard/sessions', { credentials: 'include' }).catch(() => null),
-        ]);
+      // Fetch all three independently — don't let one failure block the others
+      const [statsResult, modulesResult, sessionsResult] = await Promise.allSettled([
+        fetch(API_BASE + '/api/dashboard/user-stats', { credentials: 'include' }).then(r => r.ok ? r.json() : null),
+        fetch(API_BASE + '/api/modules/available', { credentials: 'include' }).then(r => r.ok ? r.json() : null),
+        fetch(API_BASE + '/api/dashboard/sessions', { credentials: 'include' }).then(r => r.ok ? r.json() : null),
+      ]);
 
-        if (!statsRes.ok) throw new Error('Failed to load user stats');
-        if (!modulesRes.ok) throw new Error('Failed to load modules');
-
-        const statsData = await statsRes.json();
-        const modulesData = await modulesRes.json();
-        const sessionsData = sessionsRes && sessionsRes.ok ? await sessionsRes.json() : [];
-
-        setUserStats(statsData);
-        setModules(Array.isArray(modulesData) ? modulesData : modulesData.modules || []);
-        setSessions(Array.isArray(sessionsData) ? sessionsData.slice(0, 5) : []);
-      } catch (err) {
-        setError(err.message);
-      } finally {
-        setLoading(false);
+      // Stats
+      if (statsResult.status === 'fulfilled' && statsResult.value) {
+        setUserStats(statsResult.value);
+      } else {
+        setUserStats({ totalSessions: 0, modulesPracticed: 0, avgSpark: 0, avgReach: 0 });
       }
+
+      // Modules — this is the critical one
+      if (modulesResult.status === 'fulfilled' && modulesResult.value) {
+        const data = modulesResult.value;
+        setModules(Array.isArray(data) ? data : data.modules || []);
+      } else {
+        setError('Failed to load modules');
+      }
+
+      // Sessions
+      if (sessionsResult.status === 'fulfilled' && sessionsResult.value) {
+        const data = sessionsResult.value;
+        setSessions(Array.isArray(data) ? data.slice(0, 5) : []);
+      }
+
+      setLoading(false);
     }
     fetchData();
   }, []);
