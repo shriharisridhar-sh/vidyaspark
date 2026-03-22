@@ -204,7 +204,21 @@ Generate 10 comprehension questions (3 recall, 3 understanding, 2 application, 2
       ? Math.round(0.70 * studentAchievement + 0.30 * confidence)
       : null;
 
-    // ── Step 7: Return full assessment ────────────────────
+    // ── Step 7: Save score to database ────────────────────
+    const scoreToSave = compositeScore !== null ? compositeScore : Math.round(studentAchievement);
+    if (db && scoreToSave > 0) {
+      try {
+        const d = await db.getDb();
+        d.run('UPDATE sessions SET composite_score = ?, objective_score = ? WHERE id = ?',
+          [scoreToSave, Math.round(studentAchievement), sessionId]);
+        db.saveToDisk();
+        console.log('[Assessment] Saved score', scoreToSave, 'for session', sessionId);
+      } catch (dbErr) {
+        console.error('[Assessment] Failed to save score to DB:', dbErr.message);
+      }
+    }
+
+    // ── Step 8: Return full assessment ────────────────────
     return res.json({
       questions: assessment.questions,
       studentResults: assessment.studentResults,
