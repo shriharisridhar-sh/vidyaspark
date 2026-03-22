@@ -85,9 +85,14 @@ router.get('/', (req, res) => {
   }
 });
 
-// Get single module
+// Get single module (check scenario registry first, then moduleStore)
 router.get('/:id', (req, res) => {
   try {
+    // First try the scenario registry (ABL modules)
+    const scenarioMod = loadModule(req.params.id);
+    if (scenarioMod) return res.json(scenarioMod);
+
+    // Fall back to moduleStore (user-created modules)
     const module = moduleStore.getById(req.params.id);
     if (!module) return res.status(404).json({ error: 'Module not found' });
     res.json({ module });
