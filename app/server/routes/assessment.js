@@ -115,47 +115,11 @@ ALSO GENERATE:
 - "goingForward": Array of 3 specific tips for the next session
 - "sessionSummary": 2-3 sentence overall assessment of the teaching quality
 
-RESPONSE FORMAT — Valid JSON only, no other text:
-{
-  "questions": [
-    { "id": 1, "question": "...", "type": "recall", "correctAnswer": "..." },
-    { "id": 2, "question": "...", "type": "recall", "correctAnswer": "..." },
-    { "id": 3, "question": "...", "type": "recall", "correctAnswer": "..." },
-    { "id": 4, "question": "...", "type": "understanding", "correctAnswer": "..." },
-    { "id": 5, "question": "...", "type": "understanding", "correctAnswer": "..." },
-    { "id": 6, "question": "...", "type": "understanding", "correctAnswer": "..." },
-    { "id": 7, "question": "...", "type": "application", "correctAnswer": "..." },
-    { "id": 8, "question": "...", "type": "application", "correctAnswer": "..." },
-    { "id": 9, "question": "...", "type": "analysis", "correctAnswer": "..." },
-    { "id": 10, "question": "...", "type": "analysis", "correctAnswer": "..." }
-  ],
-  "studentResults": {
-    "priya": {
-      "score": <0-10>,
-      "answers": [
-        { "questionId": 1, "correct": true/false, "answer": "brief student answer" },
-        ...all 10
-      ],
-      "note": "Why Priya scored this way, tied to specific transcript moments"
-    },
-    "ravi": { "score": <0-10>, "answers": [...], "note": "..." },
-    "lakshmi": { "score": <0-10>, "answers": [...], "note": "..." },
-    "arjun": { "score": <0-10>, "answers": [...], "note": "..." },
-    "meena": { "score": <0-10>, "answers": [...], "note": "..." }
-  },
-  "conceptsTaughtWell": [
-    { "concept": "...", "evidence": "What the Ignator did that worked" }
-  ],
-  "conceptsToImprove": [
-    { "concept": "...", "insteadOf": "What the Ignator did or didn't do", "tryThis": "Specific better approach" }
-  ],
-  "goingForward": [
-    "Tip 1...",
-    "Tip 2...",
-    "Tip 3..."
-  ],
-  "sessionSummary": "2-3 sentence assessment..."
-}`;
+RESPONSE FORMAT — You MUST respond with valid JSON only, no markdown, no comments. Use this exact structure:
+
+{"questions":[{"id":1,"question":"What are the three states of matter?","type":"recall","correctAnswer":"Solid, liquid, and gas"},{"id":2,"question":"...","type":"recall","correctAnswer":"..."}],"studentResults":{"priya":{"score":8,"answers":[{"questionId":1,"correct":true,"answer":"Solid, liquid, and gas!"},{"questionId":2,"correct":true,"answer":"..."}],"note":"Priya scored well because the Ignator..."},"ravi":{"score":6,"answers":[{"questionId":1,"correct":true,"answer":"..."}],"note":"..."},"lakshmi":{"score":0,"answers":[{"questionId":1,"correct":false,"answer":"..."}],"note":"Lakshmi was never called on..."},"arjun":{"score":3,"answers":[{"questionId":1,"correct":false,"answer":"..."}],"note":"..."},"meena":{"score":5,"answers":[{"questionId":1,"correct":true,"answer":"..."}],"note":"..."}},"conceptsTaughtWell":[{"concept":"Air occupies space","evidence":"Ignator clearly demonstrated with test tube"}],"conceptsToImprove":[{"concept":"Inclusive teaching","insteadOf":"Only calling on Priya","tryThis":"Call on Lakshmi by name"}],"goingForward":["Tip 1","Tip 2","Tip 3"],"sessionSummary":"The Ignator showed clear knowledge but..."}
+
+IMPORTANT: Include ALL 10 questions in the questions array. Include ALL 10 answers for EACH student in their answers array. Return ONLY the JSON object, nothing else.`;
 
   const userMessage = `Here is the full teaching session transcript. Analyze how the Ignator taught and generate the 10-question assessment.
 
@@ -168,7 +132,7 @@ Generate 10 comprehension questions (3 recall, 3 understanding, 2 application, 2
     // ── Step 5: Call Claude API ───────────────────────────────
     const response = await client.messages.create({
       model: 'claude-3-haiku-20240307',
-      max_tokens: 8192,
+      max_tokens: 4096,
       system: systemPrompt,
       messages: [{ role: 'user', content: userMessage }],
     });
