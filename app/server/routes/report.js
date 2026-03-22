@@ -154,4 +154,58 @@ router.post('/:sessionId/annotations', async (req, res) => {
   }
 });
 
+/**
+ * GET /api/report/:sessionId/download — Download PDF report
+ *
+ * Generates a PDF version of the teaching performance report.
+ * Falls back to a JSON download if pdfReport utility is not available.
+ */
+router.get('/:sessionId/download', async (req, res) => {
+  const { sessionId } = req.params;
+
+  try {
+    const session = sessionStore.getSession(sessionId);
+    if (!session) {
+      return res.status(404).json({ error: 'Session not found' });
+    }
+
+    const report = session.report;
+    if (!report) {
+      return res.status(400).json({ error: 'No report available for this session. Generate a report first.' });
+    }
+
+    // Try to use pdfReport utility if available
+    let pdfReport;
+    try {
+      pdfReport = require('../utils/pdfReport');
+    } catch (_) {
+      // pdfReport not available — fall back to JSON download
+    }
+
+    if (pdfReport && typeof pdfReport.generatePDF === 'function') {
+      const pdfBuffer = await pdfReport.generatePDF({
+        sessionId,
+        report,
+        config: session.config,
+        scenarioId: session.scenarioId,
+      });
+      res.setHeader('Content-Type', 'application/pdf');
+      res.setHeader('Content-Disposition', `attachment; filename="VidyaSpark-Report-${sessionId.slice(0, 8)}.pdf"`);
+      return res.send(pdfBuffer);
+    }
+
+    // Fallback: return report as JSON download
+    res.setHeader('Content-Type', 'application/json');
+    res.setHeader('Content-Disposition', `attachment; filename="VidyaSpark-Report-${sessionId.slice(0, 8)}.json"`);
+    return res.json({
+      sessionId,
+      generatedAt: new Date().toISOString(),
+      ...report,
+    });
+  } catch (err) {
+    console.error('[GET /api/report/:sessionId/download] Error:', err.message);
+    return res.status(500).json({ error: 'Failed to generate PDF', details: err.message });
+  }
+});
+
 module.exports = router;

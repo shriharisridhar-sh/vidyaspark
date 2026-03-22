@@ -36,6 +36,9 @@ export default function ManagerFlow() {
   const [assessmentData, setAssessmentData] = useState(null);
   const [sessionTimer, setSessionTimer] = useState(0);
   const [hasPaused, setHasPaused] = useState(false);
+  // Capture sessionId at end-of-session so downstream screens (assessment, loading, report)
+  // still have it even if context sessionId gets cleared during resetSession.
+  const [endedSessionId, setEndedSessionId] = useState(null);
 
   // Load module data when moduleId is set
   useEffect(() => {
@@ -84,6 +87,7 @@ export default function ManagerFlow() {
     setAssessmentData(null);
     setSessionTimer(0);
     setHasPaused(false);
+    setEndedSessionId(null);
     navigate('/dashboard');
   }, [resetSession, navigate]);
 
@@ -114,7 +118,9 @@ export default function ManagerFlow() {
 
   // Session end → assessment
   const handleSessionEnd = useCallback(async () => {
+    // Capture sessionId before endSession changes state
     if (sessionId) {
+      setEndedSessionId(sessionId);
       try {
         await endSession();
       } catch (e) {
@@ -144,6 +150,7 @@ export default function ManagerFlow() {
     setAssessmentData(null);
     setSessionTimer(0);
     setHasPaused(false);
+    setEndedSessionId(null);
     setScreen('tutorial');
     // Re-create session
     if (moduleId && isAuthenticated) {
@@ -205,7 +212,7 @@ export default function ManagerFlow() {
 
       {screen === 'assessment' && (
         <PostSessionAssessment
-          sessionId={sessionId}
+          sessionId={endedSessionId || sessionId}
           module={moduleData}
           onComplete={handleAssessmentComplete}
         />
@@ -213,6 +220,7 @@ export default function ManagerFlow() {
 
       {screen === 'loading' && (
         <LoadingScreen
+          sessionId={endedSessionId || sessionId}
           onReportReady={handleReportReady}
           moduleId={moduleId}
         />
@@ -220,6 +228,7 @@ export default function ManagerFlow() {
 
       {screen === 'report' && (
         <ReportScreen
+          sessionId={endedSessionId || sessionId}
           reportData={reportData}
           assessmentData={assessmentData}
           moduleId={moduleId}

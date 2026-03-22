@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useSession } from '../contexts/SessionContext';
 import { API_BASE } from '../utils/api';
 
 const STUDENT_NAMES = {
@@ -29,8 +28,7 @@ const ARCHETYPES = {
  * Page 2: Your Students (per-student results)
  * Page 3: Your Growth Path (coaching tips)
  */
-export default function ReportScreen({ reportData, assessmentData, moduleId, onPracticeAgain, onExit }) {
-  const { sessionId } = useSession();
+export default function ReportScreen({ sessionId, reportData, assessmentData, moduleId, onPracticeAgain, onExit }) {
   const [page, setPage] = useState(1);
   const [downloading, setDownloading] = useState(false);
 

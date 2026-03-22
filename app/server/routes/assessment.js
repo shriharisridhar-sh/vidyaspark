@@ -19,7 +19,7 @@ const { Router } = require('express');
 const Anthropic = require('@anthropic-ai/sdk');
 const sessionStore = require('../session/SessionStore');
 const { loadModule } = require('../modules/ModuleRegistry');
-const { requireAuth } = require('../middleware/auth');
+const { optionalAuth } = require('../middleware/auth');
 
 const client = new Anthropic();
 const router = Router();
@@ -30,7 +30,7 @@ const router = Router();
  * Returns comprehension questions and per-student results that reflect
  * how well the Ignator taught and engaged each student archetype.
  */
-router.post('/:sessionId', requireAuth, async (req, res) => {
+router.post('/:sessionId', optionalAuth, async (req, res) => {
   const { sessionId } = req.params;
 
   // ── Step 1: Get session ──────────────────────────────────
@@ -44,7 +44,7 @@ router.post('/:sessionId', requireAuth, async (req, res) => {
   }
 
   // ── Step 2: Get module config ────────────────────────────
-  const moduleId = session.scenarioId || 'P7.1';
+  const moduleId = session.scenarioId || 'abl-p7-force-pressure';
   const mod = loadModule(moduleId);
   const moduleTitle = (mod && mod.title) || moduleId;
   const moduleObjectives = (mod && mod.objectives) || [];
