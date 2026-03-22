@@ -150,12 +150,14 @@ Generate 10 comprehension questions (3 recall, 3 understanding, 2 application, 2
 
   try {
     // ── Step 5: Call Claude API ───────────────────────────────
+    console.log('[Assessment] Calling Claude API for session', sessionId, 'transcript length:', transcriptText.length);
     const response = await client.messages.create({
-      model: 'claude-3-haiku-20240307',
-      max_tokens: 4096,
+      model: 'claude-sonnet-4-5-20250514',
+      max_tokens: 8192,
       system: systemPrompt,
       messages: [{ role: 'user', content: userMessage }],
     });
+    console.log('[Assessment] Claude response received, stop_reason:', response.stop_reason);
 
     const textBlock = response.content.find(block => block.type === 'text');
     if (!textBlock) {
@@ -236,6 +238,7 @@ Generate 10 comprehension questions (3 recall, 3 understanding, 2 application, 2
 
   } catch (err) {
     console.error('[POST /api/assessment/:sessionId] Error:', err.message);
+    console.error('[Assessment] Full error:', err.status || '', err.error?.message || err.message);
     return res.status(500).json({ error: 'Assessment generation failed: ' + err.message });
   }
 });
