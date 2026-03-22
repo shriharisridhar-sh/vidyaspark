@@ -3,16 +3,14 @@
 /**
  * ASSESSMENT ROUTE — Post-Session Student Comprehension Assessment
  *
- * After a teaching session ends, this route generates comprehension questions
- * based on the module content and evaluates how each of the 5 AI students
+ * After a teaching session ends, this route generates 10 comprehension questions
+ * across Bloom's taxonomy levels and evaluates how each of the 5 AI students
  * would answer based on their engagement during the session.
  *
- * The 5 AI Students:
- *   - Priya (13, Curious): Asks "why" questions, engaged learner
- *   - Ravi (14, Skeptic): Demands proof, challenges claims
- *   - Lakshmi (12, Shy): Knows answers but won't speak unless invited
- *   - Arjun (14, Disengaged): Bored, jokes, can be won back
- *   - Meena (13, Rote Learner): Repeats without understanding
+ * Score formula:
+ *   studentAchievement = (totalCorrect / 50) × 100
+ *   confidence = selfRating × 20
+ *   compositeScore = 0.70 × studentAchievement + 0.30 × confidence
  */
 
 const { Router } = require('express');
@@ -26,12 +24,10 @@ const router = Router();
 
 /**
  * POST /api/assessment/:sessionId — Generate post-session student assessment
- *
- * Returns comprehension questions and per-student results that reflect
- * how well the Ignator taught and engaged each student archetype.
  */
 router.post('/:sessionId', optionalAuth, async (req, res) => {
   const { sessionId } = req.params;
+  const { selfRating } = req.body; // 1-5 confidence scale
 
   // ── Step 1: Get session ──────────────────────────────────
   const session = sessionStore.getSession(sessionId);
@@ -46,10 +42,13 @@ router.post('/:sessionId', optionalAuth, async (req, res) => {
   // ── Step 2: Get module config ────────────────────────────
   const moduleId = session.scenarioId || 'abl-p7-force-pressure';
   const mod = loadModule(moduleId);
-  const moduleTitle = (mod && mod.title) || moduleId;
-  const moduleObjectives = (mod && mod.objectives) || [];
+  const moduleTitle = (mod && mod.title) || (mod && mod.name) || moduleId;
+  const moduleObjectives = (mod && mod.objectives) || (mod && mod.keyMessages) || [];
+  const leadingQuestions = (mod && mod.leadingQuestions) || [];
+  const keyMessages = (mod && mod.keyMessages) || [];
+  const misconceptions = (mod && mod.misconceptions) || [];
 
-  // ── Step 3: Format transcript for the prompt ─────────────
+  // ── Step 3: Format transcript ─────────────────────────
   const transcriptText = session.transcript
     .filter(entry => entry.role === 'manager' || entry.role === 'classroom' || entry.role === 'customer')
     .map(entry => {
@@ -61,85 +60,111 @@ router.post('/:sessionId', optionalAuth, async (req, res) => {
   // ── Step 4: Build the assessment prompt ──────────────────
   const systemPrompt = `You are an expert education assessment designer for Agastya International Foundation's VidyaSpark platform.
 
-Your task is to evaluate how well an Ignator (science educator) taught an Activity-Based Learning (ABL) module by:
-1. Generating 4 comprehension questions at increasing Bloom's taxonomy levels
-2. Determining how each of 5 AI students would answer based on their personality and engagement during the session
+Your task: Generate 10 comprehension questions and score each of 5 AI students based on how well the Ignator taught them.
 
-Module: ${moduleTitle}
-${moduleObjectives.length > 0 ? 'Learning Objectives:\n' + moduleObjectives.map((obj, i) => `${i + 1}. ${obj}`).join('\n') : ''}
+MODULE: ${moduleTitle}
+${moduleObjectives.length > 0 ? 'KEY MESSAGES:\n' + moduleObjectives.map((obj, i) => \`\${i + 1}. \${typeof obj === 'object' ? obj.message || obj.text || JSON.stringify(obj) : obj}\`).join('\n') : ''}
+${leadingQuestions.length > 0 ? '\nLEADING QUESTIONS FROM HANDBOOK:\n' + leadingQuestions.map((q, i) => \`\${i + 1}. \${typeof q === 'object' ? q.question || q.text || JSON.stringify(q) : q}\`).join('\n') : ''}
+${misconceptions.length > 0 ? '\nCOMMON MISCONCEPTIONS:\n' + misconceptions.map((m, i) => \`\${i + 1}. \${typeof m === 'object' ? m.misconception || m.text || JSON.stringify(m) : m}\`).join('\n') : ''}
 
-THE 5 AI STUDENTS:
+QUESTION DISTRIBUTION (10 total):
+- 3 Recall questions (Bloom's Level 1: remember facts)
+- 3 Understanding questions (Bloom's Level 2: explain concepts)
+- 2 Application questions (Bloom's Level 3: use in new context)
+- 2 Analysis questions (Bloom's Level 4: break down, evaluate)
 
-1. **Priya** (13, Curious): Genuinely curious, asks "why" questions. If the Ignator explained concepts well and encouraged questions, Priya will score high. She benefits from clear explanations and interactive teaching.
+THE 5 AI STUDENTS AND SCORING RULES:
 
-2. **Ravi** (14, Skeptic): Demands proof and challenges claims. If the Ignator provided evidence, demonstrated experiments clearly, and addressed skepticism, Ravi will score high. He struggles when teaching is assertion-based without proof.
+1. **Priya** (13, Curious): Genuinely curious, asks "why" questions. Benefits from clear explanations and interactive teaching. Scores high if Ignator explained concepts well and encouraged questions.
 
-3. **Lakshmi** (12, Shy): Knows answers internally but won't speak unless directly invited or called upon. If the Ignator never addressed quiet students or created inclusive moments, Lakshmi's score should be 0 (she won't volunteer answers). If called upon gently, she performs well.
+2. **Ravi** (14, Skeptic): Demands proof and challenges claims. Scores high if Ignator provided evidence, demonstrated experiments clearly, addressed skepticism. Struggles with assertion-based teaching.
 
-4. **Arjun** (14, Disengaged): Bored, makes jokes, needs to be re-engaged with interesting hooks. If the Ignator never tried to re-engage distracted students or make the content exciting, Arjun scores poorly (0-1). If re-engaged successfully, he can score well.
+3. **Lakshmi** (12, Shy): Knows answers internally but won't speak unless directly called upon by name. If the Ignator NEVER addressed her by name or created inclusive moments, Lakshmi's score MUST be 0. If called upon gently, she performs well.
 
-5. **Meena** (13, Rote Learner): Memorizes without understanding. She can answer recall questions but fails application/analysis unless the Ignator specifically challenged rote learning and pushed for deeper understanding.
+4. **Arjun** (14, Disengaged): Bored, makes jokes. Needs re-engagement with interesting hooks or hands-on roles. If Ignator never tried to re-engage him, score 0-2. If given a task or hooked with something interesting, can score 6-8.
 
-SCORING RULES:
-- Each student answers all 4 questions. Score = number of correct answers (0-4).
-- Student answers MUST reflect their engagement level during the session.
-- If the Ignator did not engage a student type, that student should score poorly.
-- Meena always gets recall questions right (she memorizes) but fails higher-order questions unless pushed.
-- Lakshmi scores 0 across the board if never called on or invited to participate.
-- Arjun scores 0-1 if never re-engaged; he only answers if something caught his attention.
+5. **Meena** (13, Rote Learner): Memorizes without understanding. ALWAYS gets recall questions right (she memorizes everything). But FAILS application and analysis questions UNLESS the Ignator specifically challenged rote learning and pushed for deeper understanding.
 
-RESPONSE FORMAT — You MUST respond with valid JSON only, no other text:
+CRITICAL SCORING RULES:
+- Each student answers all 10 questions. Score = number correct (0-10).
+- Scores MUST reflect actual engagement patterns from the transcript.
+- If Ignator did NOT engage a student type, that student scores poorly.
+- Meena ALWAYS gets at least 2-3 recall questions right (she memorizes).
+- Lakshmi scores 0 if never called on by name.
+- Be honest and differentiating — NOT all students should score similarly.
+- For each student, provide a specific "note" explaining their score tied to transcript evidence.
+
+ALSO GENERATE:
+- "conceptsTaughtWell": Array of 2-4 concepts the Ignator clearly explained (with evidence from transcript)
+- "conceptsToImprove": Array of 2-4 concepts that were unclear or missed, with specific "insteadOf" / "tryThis" coaching pairs
+- "goingForward": Array of 3 specific tips for the next session
+- "sessionSummary": 2-3 sentence overall assessment of the teaching quality
+
+RESPONSE FORMAT — Valid JSON only, no other text:
 {
   "questions": [
     { "id": 1, "question": "...", "type": "recall", "correctAnswer": "..." },
-    { "id": 2, "question": "...", "type": "understanding", "correctAnswer": "..." },
-    { "id": 3, "question": "...", "type": "application", "correctAnswer": "..." },
-    { "id": 4, "question": "...", "type": "analysis", "correctAnswer": "..." }
+    { "id": 2, "question": "...", "type": "recall", "correctAnswer": "..." },
+    { "id": 3, "question": "...", "type": "recall", "correctAnswer": "..." },
+    { "id": 4, "question": "...", "type": "understanding", "correctAnswer": "..." },
+    { "id": 5, "question": "...", "type": "understanding", "correctAnswer": "..." },
+    { "id": 6, "question": "...", "type": "understanding", "correctAnswer": "..." },
+    { "id": 7, "question": "...", "type": "application", "correctAnswer": "..." },
+    { "id": 8, "question": "...", "type": "application", "correctAnswer": "..." },
+    { "id": 9, "question": "...", "type": "analysis", "correctAnswer": "..." },
+    { "id": 10, "question": "...", "type": "analysis", "correctAnswer": "..." }
   ],
   "studentResults": {
     "priya": {
-      "score": <0-4>,
+      "score": <0-10>,
       "answers": [
-        { "questionId": 1, "answer": "...", "correct": true/false },
-        { "questionId": 2, "answer": "...", "correct": true/false },
-        { "questionId": 3, "answer": "...", "correct": true/false },
-        { "questionId": 4, "answer": "...", "correct": true/false }
+        { "questionId": 1, "correct": true/false, "answer": "brief student answer" },
+        ...all 10
       ],
-      "note": "<brief note on why this student performed this way based on the session>"
+      "note": "Why Priya scored this way, tied to specific transcript moments"
     },
-    "ravi": { "score": <0-4>, "answers": [...], "note": "..." },
-    "lakshmi": { "score": <0-4>, "answers": [...], "note": "..." },
-    "arjun": { "score": <0-4>, "answers": [...], "note": "..." },
-    "meena": { "score": <0-4>, "answers": [...], "note": "..." }
-  }
+    "ravi": { "score": <0-10>, "answers": [...], "note": "..." },
+    "lakshmi": { "score": <0-10>, "answers": [...], "note": "..." },
+    "arjun": { "score": <0-10>, "answers": [...], "note": "..." },
+    "meena": { "score": <0-10>, "answers": [...], "note": "..." }
+  },
+  "conceptsTaughtWell": [
+    { "concept": "...", "evidence": "What the Ignator did that worked" }
+  ],
+  "conceptsToImprove": [
+    { "concept": "...", "insteadOf": "What the Ignator did or didn't do", "tryThis": "Specific better approach" }
+  ],
+  "goingForward": [
+    "Tip 1...",
+    "Tip 2...",
+    "Tip 3..."
+  ],
+  "sessionSummary": "2-3 sentence assessment..."
 }`;
 
-  const userMessage = `Here is the full teaching session transcript. Analyze how the Ignator taught and generate the assessment.
+  const userMessage = `Here is the full teaching session transcript. Analyze how the Ignator taught and generate the 10-question assessment.
 
 SESSION TRANSCRIPT:
 ${transcriptText}
 
-Generate 4 comprehension questions (recall, understanding, application, analysis) based on the content taught, then determine how each of the 5 AI students would answer based on their personality and how well the Ignator engaged them during this session. Respond with JSON only.`;
+Generate 10 comprehension questions (3 recall, 3 understanding, 2 application, 2 analysis) based on the content taught, then determine how each of the 5 AI students would answer based on their personality and how well the Ignator engaged them during this session. Also provide concept analysis and coaching recommendations. Respond with JSON only.`;
 
   try {
     // ── Step 5: Call Claude API ───────────────────────────────
     const response = await client.messages.create({
       model: 'claude-3-haiku-20240307',
-      max_tokens: 4096,
+      max_tokens: 8192,
       system: systemPrompt,
       messages: [{ role: 'user', content: userMessage }],
     });
 
-    // Extract text content from the response
     const textBlock = response.content.find(block => block.type === 'text');
     if (!textBlock) {
       return res.status(500).json({ error: 'No text response from assessment model' });
     }
 
-    // Parse the JSON response
     let assessment;
     try {
-      // Strip markdown code fences if present
       let jsonText = textBlock.text.trim();
       if (jsonText.startsWith('```')) {
         jsonText = jsonText.replace(/^```(?:json)?\s*/, '').replace(/\s*```$/, '');
@@ -151,27 +176,44 @@ Generate 4 comprehension questions (recall, understanding, application, analysis
       return res.status(500).json({ error: 'Failed to parse assessment response' });
     }
 
-    // ── Step 6: Compute class average ────────────────────────
+    // ── Step 6: Compute scores ────────────────────────
     const students = ['priya', 'ravi', 'lakshmi', 'arjun', 'meena'];
-    let totalScore = 0;
+    const totalQuestions = assessment.questions?.length || 10;
+    let totalCorrect = 0;
     let studentCount = 0;
 
     students.forEach(name => {
       if (assessment.studentResults && assessment.studentResults[name]) {
-        totalScore += assessment.studentResults[name].score || 0;
+        totalCorrect += assessment.studentResults[name].score || 0;
         studentCount++;
       }
     });
 
+    const maxPossible = studentCount * totalQuestions; // 5 students × 10 questions = 50
+    const studentAchievement = maxPossible > 0 ? (totalCorrect / maxPossible) * 100 : 0;
     const classAverage = studentCount > 0
-      ? Math.round((totalScore / studentCount) * 10) / 10
+      ? Math.round((totalCorrect / studentCount) * 10) / 10
       : 0;
 
-    // ── Step 7: Return assessment results ────────────────────
+    // Composite score (selfRating applied client-side if not provided here)
+    const confidence = selfRating ? selfRating * 20 : null;
+    const compositeScore = confidence !== null
+      ? Math.round(0.70 * studentAchievement + 0.30 * confidence)
+      : null;
+
+    // ── Step 7: Return full assessment ────────────────────
     return res.json({
       questions: assessment.questions,
       studentResults: assessment.studentResults,
+      conceptsTaughtWell: assessment.conceptsTaughtWell || [],
+      conceptsToImprove: assessment.conceptsToImprove || [],
+      goingForward: assessment.goingForward || [],
+      sessionSummary: assessment.sessionSummary || '',
       classAverage,
+      totalCorrect,
+      maxPossible,
+      studentAchievement: Math.round(studentAchievement * 10) / 10,
+      compositeScore,
     });
 
   } catch (err) {

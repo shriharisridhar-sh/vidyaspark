@@ -38,7 +38,7 @@ export default function Dashboard() {
       if (statsResult.status === 'fulfilled' && statsResult.value) {
         setUserStats(statsResult.value);
       } else {
-        setUserStats({ totalSessions: 0, modulesPracticed: 0, avgSpark: 0, avgReach: 0 });
+        setUserStats({ totalSessions: 0, modulesPracticed: 0, avgScore: 0, bestScore: 0 });
       }
 
       // Modules — this is the critical one
@@ -164,7 +164,7 @@ export default function Dashboard() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                 <StatCard
                   label="Tapovan Sessions"
                   value={userStats?.totalSessions ?? 0}
@@ -174,14 +174,9 @@ export default function Dashboard() {
                   value={userStats?.modulesPracticed ?? userStats?.completedModules ?? userStats?.modulesCompleted ?? 0}
                 />
                 <StatCard
-                  label="Avg Spark Score"
-                  value={(userStats?.avgSpark ?? userStats?.avgSparkScore) != null ? (userStats.avgSpark ?? userStats.avgSparkScore) + '%' : '--'}
+                  label="Avg Score"
+                  value={(userStats?.avgScore ?? userStats?.avgSpark) != null ? Math.round(userStats.avgScore ?? userStats.avgSpark) : '--'}
                   color="text-accent"
-                />
-                <StatCard
-                  label="Avg Reach Score"
-                  value={(userStats?.avgReach ?? userStats?.avgReachScore) != null ? (userStats.avgReach ?? userStats.avgReachScore) + '%' : '--'}
-                  color="text-emerald-400"
                 />
               </div>
             </section>

@@ -432,8 +432,6 @@ function CompareSection({ sessions, loading }) {
   const metrics = [
     { label: 'Sessions', solo: solo.length, coached: coached.length, unit: '' },
     { label: 'Avg Score', solo: avg(solo, s => s.compositeScore || s.objectiveScore), coached: avg(coached, s => s.compositeScore || s.objectiveScore), unit: '%' },
-    { label: 'Avg Spark', solo: avg(solo, s => s.skillScores?.spark || s.skillScores?.S1 || s.discoveryScore), coached: avg(coached, s => s.skillScores?.spark || s.skillScores?.S1 || s.discoveryScore), unit: '%' },
-    { label: 'Avg Reach', solo: avg(solo, s => s.skillScores?.reach || s.skillScores?.S2 || s.persuasionScore), coached: avg(coached, s => s.skillScores?.reach || s.skillScores?.S2 || s.persuasionScore), unit: '%' },
     { label: 'Avg Exchanges', solo: avg(solo, s => s.exchangeCount), coached: avg(coached, s => s.exchangeCount), unit: '' },
   ];
 

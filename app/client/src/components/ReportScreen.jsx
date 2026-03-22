@@ -6,47 +6,57 @@ const STUDENT_NAMES = {
 };
 
 const STUDENT_COLORS = {
-  priya: 'border-student-curious bg-student-curious/10',
-  ravi: 'border-student-skeptic bg-student-skeptic/10',
-  lakshmi: 'border-student-shy bg-student-shy/10',
-  arjun: 'border-student-disengaged bg-student-disengaged/10',
-  meena: 'border-student-rote bg-student-rote/10',
+  priya: { text: 'text-student-curious', bg: 'bg-student-curious/10', border: 'border-student-curious/30' },
+  ravi: { text: 'text-student-skeptic', bg: 'bg-student-skeptic/10', border: 'border-student-skeptic/30' },
+  lakshmi: { text: 'text-student-shy', bg: 'bg-student-shy/10', border: 'border-student-shy/30' },
+  arjun: { text: 'text-student-disengaged', bg: 'bg-student-disengaged/10', border: 'border-student-disengaged/30' },
+  meena: { text: 'text-student-rote', bg: 'bg-student-rote/10', border: 'border-student-rote/30' },
 };
 
-const ARCHETYPES = {
-  ignitor:   { name: 'The Ignitor', desc: 'Masterful balance of curiosity and inclusion. You spark wonder AND reach every student.', color: 'text-accent' },
-  performer: { name: 'The Performer', desc: 'Exciting teaching but talks AT students, not WITH them. Great spark, but some students are left behind.', color: 'text-student-curious' },
-  caretaker: { name: 'The Caretaker', desc: 'Warm and inclusive but lacks "Aha!" moments. Every student feels seen, but the curiosity fire needs more fuel.', color: 'text-secondary' },
-  lecturer:  { name: 'The Lecturer', desc: 'Clear explanations but limited engagement. The science is right, but the classroom needs more energy.', color: 'text-student-skeptic' },
-  learner:   { name: 'The Learner', desc: 'Still developing your Ignator skills. Keep practicing — every session makes you stronger.', color: 'text-text-muted' },
+const STUDENT_TRAITS = {
+  priya: 'Curious', ravi: 'Skeptic', lakshmi: 'Shy', arjun: 'Disengaged', meena: 'Rote Learner',
 };
+
+const QUESTION_TYPE_LABELS = {
+  recall: { label: 'Recall', color: 'text-blue-400' },
+  understanding: { label: 'Understanding', color: 'text-purple-400' },
+  application: { label: 'Application', color: 'text-amber-400' },
+  analysis: { label: 'Analysis', color: 'text-red-400' },
+};
+
+const STUDENT_ORDER = ['priya', 'ravi', 'lakshmi', 'arjun', 'meena'];
 
 /**
- * ReportScreen — VidyaSpark 3-page teaching performance report.
+ * ReportScreen — Single scrolling VidyaSpark teaching performance report.
  *
- * Page 1: Your Tapovan Session (scores + archetype)
- * Page 2: Your Students (per-student results)
- * Page 3: Your Growth Path (coaching tips)
+ * Section A: Your Score (composite + formula breakdown)
+ * Section B: How Your Students Did (per-student cards with scores and notes)
+ * Section C: The 10 Questions & Answers (question × student matrix)
+ * Section D: What You Taught Well (from Claude analysis)
+ * Section E: What To Improve (coaching pairs)
+ * Section F: Going Forward (tips + Super Class framework)
  */
 export default function ReportScreen({ sessionId, reportData, assessmentData, moduleId, onPracticeAgain, onExit }) {
-  const [page, setPage] = useState(1);
   const [downloading, setDownloading] = useState(false);
 
-  const report = reportData || {};
   const assessment = assessmentData || {};
+  const questions = assessment.questions || [];
+  const studentResults = assessment.studentResults || {};
+  const totalQs = questions.length || 10;
 
-  const overallScore = report.compositeScore || report.overallScore || 0;
-  const sparkScore = report.skillScores?.spark || report.skillScores?.S1 || 0;
-  const reachScore = report.skillScores?.reach || report.skillScores?.S2 || 0;
+  // Score data from assessment
+  const compositeScore = assessment.compositeScore || 0;
+  const studentAchievement = assessment.studentAchievement || 0;
+  const confidence = assessment.confidence || (assessment.selfRating ? assessment.selfRating * 20 : 0);
+  const classAverage = assessment.classAverage || 0;
+  const totalCorrect = assessment.totalCorrect || 0;
+  const maxPossible = assessment.maxPossible || 50;
 
-  // Determine archetype
-  const archetypeId = report.archetype?.id || report.archetype ||
-    (sparkScore >= 70 && reachScore >= 70 ? 'ignitor'
-    : sparkScore >= 60 && reachScore < 50 ? 'performer'
-    : reachScore >= 60 && sparkScore < 50 ? 'caretaker'
-    : sparkScore < 40 && reachScore < 40 ? 'learner'
-    : 'lecturer');
-  const archetype = ARCHETYPES[archetypeId] || ARCHETYPES.learner;
+  // Coaching data from assessment
+  const conceptsTaughtWell = assessment.conceptsTaughtWell || [];
+  const conceptsToImprove = assessment.conceptsToImprove || [];
+  const goingForward = assessment.goingForward || [];
+  const sessionSummary = assessment.sessionSummary || '';
 
   const handleDownloadPDF = async () => {
     if (!sessionId) return;
@@ -67,194 +77,291 @@ export default function ReportScreen({ sessionId, reportData, assessmentData, mo
     }
   };
 
-  const ScoreBar = ({ label, score, color = 'bg-accent' }) => (
-    <div className="mb-3">
-      <div className="flex justify-between text-xs mb-1">
-        <span className="text-text-secondary">{label}</span>
-        <span className="text-text-primary font-medium">{Math.round(score)}</span>
-      </div>
-      <div className="h-2 bg-white/[0.06] rounded-full overflow-hidden">
-        <div
-          className={`h-full ${color} rounded-full transition-all duration-1000`}
-          style={{ width: `${Math.min(100, score)}%` }}
-        />
-      </div>
-    </div>
-  );
+  // Get score color
+  const getScoreColor = (score, max) => {
+    const pct = (score / max) * 100;
+    if (pct >= 70) return 'text-green-400';
+    if (pct >= 50) return 'text-amber-400';
+    return 'text-red-400';
+  };
 
   return (
-    <div className="min-h-screen bg-bg px-6 py-12">
-      <div className="max-w-3xl mx-auto">
-        {/* Page tabs */}
-        <div className="flex items-center justify-center gap-2 mb-8">
-          {[1, 2, 3].map(p => (
-            <button
-              key={p}
-              onClick={() => setPage(p)}
-              className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                page === p
-                  ? 'bg-accent text-white'
-                  : 'bg-surface text-text-secondary hover:text-text-primary'
-              }`}
-            >
-              {p === 1 ? 'Your Session' : p === 2 ? 'Your Students' : 'Growth Path'}
-            </button>
-          ))}
-        </div>
+    <div className="min-h-screen bg-bg px-6 py-12 overflow-y-auto">
+      <div className="max-w-4xl mx-auto">
 
-        {/* PAGE 1: Your Tapovan Session */}
-        {page === 1 && (
-          <div className="fade-in space-y-6">
-            <div className="text-center mb-8">
-              <p className="text-xs uppercase tracking-[0.2em] text-accent font-medium mb-2">Tapovan Report</p>
-              <h2 className="text-3xl font-bold text-text-primary mb-1">{archetype.name}</h2>
-              <p className={`text-sm ${archetype.color}`}>{archetype.desc}</p>
-            </div>
-
-            {/* Overall Score */}
-            <div className="card text-center">
-              <p className="text-xs text-text-muted uppercase tracking-wider mb-2">Overall Score</p>
-              <p className="text-6xl font-bold text-accent mb-2">{Math.round(overallScore)}</p>
-              <p className="text-sm text-text-secondary">out of 100</p>
-            </div>
-
-            {/* Spark & Reach */}
-            <div className="grid grid-cols-2 gap-4">
-              <div className="card">
-                <p className="text-xs text-text-muted uppercase tracking-wider mb-3">Spark Score</p>
-                <p className="text-3xl font-bold text-accent-warm mb-1">{Math.round(sparkScore)}</p>
-                <p className="text-xs text-text-secondary">Curiosity & wonder</p>
-              </div>
-              <div className="card">
-                <p className="text-xs text-text-muted uppercase tracking-wider mb-3">Reach Score</p>
-                <p className="text-3xl font-bold text-secondary mb-1">{Math.round(reachScore)}</p>
-                <p className="text-xs text-text-secondary">Inclusion & engagement</p>
-              </div>
-            </div>
-
-            {/* Dimension breakdown */}
-            <div className="card">
-              <p className="text-xs text-text-muted uppercase tracking-wider mb-4">Dimension Scores</p>
-              <ScoreBar label="Curiosity Sparking" score={report.dimensionScores?.D1 || sparkScore * 0.9} color="bg-accent" />
-              <ScoreBar label="Student Engagement" score={report.dimensionScores?.D2 || reachScore * 0.9} color="bg-secondary" />
-              <ScoreBar label="Concept Clarity" score={report.dimensionScores?.D3 || overallScore * 0.8} color="bg-student-skeptic" />
-              <ScoreBar label="Facilitation Quality" score={report.dimensionScores?.D4 || overallScore * 0.75} color="bg-student-shy" />
-              <ScoreBar label="Questioning & Listening" score={report.dimensionScores?.D5 || overallScore * 0.7} color="bg-student-curious" />
-            </div>
-
-            {report.sessionSummary && (
-              <div className="card">
-                <p className="text-sm text-text-secondary italic">{report.sessionSummary}</p>
-              </div>
+        {/* ═══════════════════════════════════════════════════════════════
+            SECTION A: YOUR SCORE
+            ═══════════════════════════════════════════════════════════════ */}
+        <section className="mb-16">
+          <div className="text-center mb-8">
+            <p className="text-sm uppercase tracking-[0.2em] text-accent font-semibold mb-3">VidyaSpark Report</p>
+            <h1 className="text-4xl font-bold text-text-primary mb-4">Your Teaching Score</h1>
+            {sessionSummary && (
+              <p className="text-lg text-text-secondary max-w-2xl mx-auto leading-relaxed">{sessionSummary}</p>
             )}
           </div>
-        )}
 
-        {/* PAGE 2: Your Students */}
-        {page === 2 && (
-          <div className="fade-in space-y-4">
-            <div className="text-center mb-6">
-              <h2 className="text-2xl font-bold text-text-primary">Your Students</h2>
-              <p className="text-sm text-text-secondary">How each student experienced your teaching</p>
+          {/* Big score */}
+          <div className="card text-center py-10 mb-6">
+            <p className="text-8xl font-bold text-accent mb-3">{compositeScore}</p>
+            <p className="text-lg text-text-secondary">out of 100</p>
+            <div className="mt-6 flex items-center justify-center gap-8 text-base">
+              <div>
+                <span className="text-text-muted">Student Achievement (70%): </span>
+                <span className="text-text-primary font-semibold">{Math.round(studentAchievement)}%</span>
+              </div>
+              <div className="text-text-muted">•</div>
+              <div>
+                <span className="text-text-muted">Your Confidence (30%): </span>
+                <span className="text-text-primary font-semibold">{Math.round(confidence)}%</span>
+              </div>
             </div>
+            <p className="text-sm text-text-muted mt-3">
+              {totalCorrect} correct answers out of {maxPossible} total ({STUDENT_ORDER.length} students × {totalQs} questions)
+            </p>
+          </div>
+        </section>
 
-            {Object.entries(assessment.studentResults || {}).map(([id, result]) => (
-              <div key={id} className={`card border-l-4 ${STUDENT_COLORS[id] || ''}`}>
-                <div className="flex items-center justify-between mb-2">
-                  <div>
-                    <span className="font-semibold text-text-primary">{STUDENT_NAMES[id]}</span>
-                    <span className="text-xs text-text-muted ml-2">
-                      {id === 'priya' ? 'The Curious One' : id === 'ravi' ? 'The Skeptic' : id === 'lakshmi' ? 'The Shy One' : id === 'arjun' ? 'The Disengaged' : 'The Rote Learner'}
-                    </span>
+        {/* ═══════════════════════════════════════════════════════════════
+            SECTION B: HOW YOUR STUDENTS DID
+            ═══════════════════════════════════════════════════════════════ */}
+        <section className="mb-16">
+          <h2 className="text-2xl font-bold text-text-primary mb-2">How Your Students Did</h2>
+          <p className="text-base text-text-secondary mb-6">Each student's score reflects how well they were engaged during your session</p>
+
+          <div className="space-y-4">
+            {STUDENT_ORDER.map(id => {
+              const result = studentResults[id];
+              if (!result) return null;
+              const colors = STUDENT_COLORS[id] || {};
+              const pct = Math.round((result.score / totalQs) * 100);
+
+              return (
+                <div key={id} className={`card border-l-4 ${colors.border} ${colors.bg}`}>
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center gap-3">
+                      <span className={`text-lg font-bold ${colors.text}`}>{STUDENT_NAMES[id]}</span>
+                      <span className="text-sm text-text-muted">— {STUDENT_TRAITS[id]}</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <span className={`text-2xl font-bold ${getScoreColor(result.score, totalQs)}`}>
+                        {result.score}/{totalQs}
+                      </span>
+                      <span className={`text-sm font-medium px-2.5 py-1 rounded-full ${
+                        pct >= 70 ? 'bg-green-500/20 text-green-400'
+                        : pct >= 50 ? 'bg-amber-500/20 text-amber-400'
+                        : 'bg-red-500/20 text-red-400'
+                      }`}>
+                        {pct}%
+                      </span>
+                    </div>
                   </div>
-                  <span className="text-lg font-bold text-text-primary">
-                    {result.score}/{assessment.questions?.length || 4}
-                  </span>
-                </div>
-                <p className="text-sm text-text-secondary">{result.note}</p>
-              </div>
-            ))}
 
-            {assessment.classAverage !== undefined && (
-              <div className="card bg-surface-light text-center">
-                <p className="text-xs text-text-muted uppercase tracking-wider mb-1">Class Average</p>
-                <p className="text-2xl font-bold text-accent">
-                  {assessment.classAverage?.toFixed(1)}/{assessment.questions?.length || 4}
-                </p>
-              </div>
-            )}
+                  {/* Answer dots */}
+                  <div className="flex gap-1.5 mb-3">
+                    {(result.answers || []).map((a, qi) => (
+                      <div
+                        key={qi}
+                        className={`w-7 h-7 rounded flex items-center justify-center text-xs font-bold ${
+                          a.correct
+                            ? 'bg-green-500/20 text-green-400'
+                            : 'bg-red-500/20 text-red-400'
+                        }`}
+                        title={`Q${a.questionId || qi + 1}: ${a.correct ? 'Correct' : 'Wrong'}`}
+                      >
+                        {a.correct ? '✓' : '✗'}
+                      </div>
+                    ))}
+                  </div>
+
+                  <p className="text-base text-text-secondary leading-relaxed">{result.note}</p>
+                </div>
+              );
+            })}
           </div>
+        </section>
+
+        {/* ═══════════════════════════════════════════════════════════════
+            SECTION C: THE 10 QUESTIONS & ANSWERS
+            ═══════════════════════════════════════════════════════════════ */}
+        <section className="mb-16">
+          <h2 className="text-2xl font-bold text-text-primary mb-2">The {totalQs} Questions</h2>
+          <p className="text-base text-text-secondary mb-6">Each question with correct answer and how each student performed</p>
+
+          <div className="space-y-4">
+            {questions.map((q, qi) => {
+              const typeInfo = QUESTION_TYPE_LABELS[q.type] || { label: q.type, color: 'text-text-muted' };
+
+              return (
+                <div key={q.id || qi} className="card">
+                  <div className="flex items-start gap-4 mb-4">
+                    <span className="text-sm font-mono text-text-muted bg-surface-light px-3 py-1.5 rounded flex-shrink-0">
+                      Q{qi + 1}
+                    </span>
+                    <div className="flex-1">
+                      <p className="text-base text-text-primary leading-relaxed mb-2">{q.question}</p>
+                      <div className="flex items-center gap-3">
+                        <span className={`text-xs font-medium capitalize ${typeInfo.color}`}>{typeInfo.label}</span>
+                        <span className="text-xs text-text-muted">•</span>
+                        <span className="text-sm text-green-400/80">
+                          <strong>Answer:</strong> {q.correctAnswer}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Student answer row */}
+                  <div className="flex gap-2 flex-wrap">
+                    {STUDENT_ORDER.map(id => {
+                      const result = studentResults[id];
+                      if (!result) return null;
+                      const answer = (result.answers || []).find(a => (a.questionId || 0) === (q.id || qi + 1))
+                        || (result.answers || [])[qi];
+                      if (!answer) return null;
+                      const colors = STUDENT_COLORS[id] || {};
+
+                      return (
+                        <div
+                          key={id}
+                          className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm ${
+                            answer.correct
+                              ? 'bg-green-500/10 text-green-400'
+                              : 'bg-red-500/10 text-red-400'
+                          }`}
+                        >
+                          <span className={`font-semibold ${colors.text}`}>{STUDENT_NAMES[id]}</span>
+                          <span className="font-bold">{answer.correct ? '✓' : '✗'}</span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+
+        {/* ═══════════════════════════════════════════════════════════════
+            SECTION D: WHAT YOU TAUGHT WELL
+            ═══════════════════════════════════════════════════════════════ */}
+        {conceptsTaughtWell.length > 0 && (
+          <section className="mb-16">
+            <h2 className="text-2xl font-bold text-text-primary mb-2">What You Taught Well</h2>
+            <p className="text-base text-text-secondary mb-6">Concepts your students clearly understood</p>
+
+            <div className="space-y-3">
+              {conceptsTaughtWell.map((item, i) => (
+                <div key={i} className="card border-l-4 border-green-500/40 bg-green-500/5">
+                  <div className="flex items-start gap-3">
+                    <span className="text-green-400 text-xl flex-shrink-0 mt-0.5">✓</span>
+                    <div>
+                      <p className="text-base text-text-primary font-semibold">{typeof item === 'string' ? item : item.concept}</p>
+                      {item.evidence && (
+                        <p className="text-sm text-text-secondary mt-1">{item.evidence}</p>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
         )}
 
-        {/* PAGE 3: Growth Path */}
-        {page === 3 && (
-          <div className="fade-in space-y-4">
-            <div className="text-center mb-6">
-              <h2 className="text-2xl font-bold text-text-primary">Your Growth Path</h2>
-              <p className="text-sm text-text-secondary">Specific coaching for your next session</p>
-            </div>
+        {/* ═══════════════════════════════════════════════════════════════
+            SECTION E: WHAT TO IMPROVE
+            ═══════════════════════════════════════════════════════════════ */}
+        {conceptsToImprove.length > 0 && (
+          <section className="mb-16">
+            <h2 className="text-2xl font-bold text-text-primary mb-2">What To Improve</h2>
+            <p className="text-base text-text-secondary mb-6">Specific coaching to strengthen your teaching</p>
 
-            {/* Coaching pairs */}
-            {(report.coachingPairs || [
-              { instead: 'Giving the answer directly', tryThis: 'Ask "What do you think will happen?" before revealing the result' },
-              { instead: 'Only calling on Priya (who always volunteers)', tryThis: 'Directly invite Lakshmi by name: "Lakshmi, what do you notice?"' },
-              { instead: 'Ignoring Arjun\'s disengagement', tryThis: 'Give Arjun a hands-on role: "Arjun, can you hold the rubber sheet?"' },
-              { instead: 'Accepting Meena\'s rote answer', tryThis: 'Challenge with: "Can you explain that in your own words?"' },
-              { instead: 'Rushing through experiment steps', tryThis: 'Pause after each step and ask: "What surprised you?"' },
-            ]).map((pair, i) => (
-              <div key={i} className="card">
-                <div className="flex items-start gap-3 mb-2">
-                  <span className="text-danger text-sm flex-shrink-0">Instead of:</span>
-                  <span className="text-sm text-text-secondary">{pair.instead}</span>
+            <div className="space-y-4">
+              {conceptsToImprove.map((item, i) => (
+                <div key={i} className="card">
+                  {item.concept && (
+                    <p className="text-base text-text-primary font-semibold mb-3">{item.concept}</p>
+                  )}
+                  <div className="space-y-3">
+                    <div className="flex items-start gap-3">
+                      <span className="text-red-400 text-sm font-semibold flex-shrink-0 mt-0.5 w-20">Instead of:</span>
+                      <span className="text-base text-text-secondary">{item.insteadOf || item.instead || (typeof item === 'string' ? item : '')}</span>
+                    </div>
+                    {(item.tryThis || item.try_this) && (
+                      <div className="flex items-start gap-3">
+                        <span className="text-green-400 text-sm font-semibold flex-shrink-0 mt-0.5 w-20">Try this:</span>
+                        <span className="text-base text-text-primary font-medium">{item.tryThis || item.try_this}</span>
+                      </div>
+                    )}
+                  </div>
                 </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-success text-sm flex-shrink-0">Try this:</span>
-                  <span className="text-sm text-text-primary font-medium">{pair.tryThis}</span>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* ═══════════════════════════════════════════════════════════════
+            SECTION F: GOING FORWARD
+            ═══════════════════════════════════════════════════════════════ */}
+        <section className="mb-16">
+          <h2 className="text-2xl font-bold text-text-primary mb-2">Going Forward</h2>
+          <p className="text-base text-text-secondary mb-6">Your roadmap for the next session</p>
+
+          {goingForward.length > 0 && (
+            <div className="space-y-3 mb-8">
+              {goingForward.map((tip, i) => (
+                <div key={i} className="card border-l-4 border-accent/40">
+                  <div className="flex items-start gap-4">
+                    <span className="text-accent font-bold text-lg flex-shrink-0">{i + 1}</span>
+                    <p className="text-base text-text-primary leading-relaxed">{typeof tip === 'string' ? tip : tip.tip || tip.text || JSON.stringify(tip)}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* Super Class Framework */}
+          <div className="card">
+            <p className="text-sm text-text-muted uppercase tracking-wider mb-4 font-semibold">Agastya Super Class Framework</p>
+            <div className="space-y-4">
+              <div className="flex items-start gap-4">
+                <span className="w-3 h-3 rounded-full bg-accent mt-1.5 flex-shrink-0" />
+                <div>
+                  <span className="text-base text-text-primary font-semibold">Super Start</span>
+                  <p className="text-sm text-text-secondary mt-0.5">Create curiosity and hook attention with a surprising question or demonstration</p>
                 </div>
               </div>
-            ))}
-
-            {/* Key insight */}
-            <div className="card bg-accent/5 border-accent/20">
-              <p className="text-xs text-accent uppercase tracking-wider mb-2">Key Growth Insight</p>
-              <p className="text-sm text-text-primary leading-relaxed">
-                {report.keyInsight || 'Great Ignators don\'t just explain science — they create moments of wonder where students discover the answer themselves. Your next challenge: ask more, tell less.'}
-              </p>
-            </div>
-
-            {/* Super Class connection */}
-            <div className="card">
-              <p className="text-xs text-text-muted uppercase tracking-wider mb-2">Agastya Super Class Framework</p>
-              <div className="space-y-2 text-sm">
-                <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-accent" />
-                  <span className="text-text-primary"><strong>Super Start:</strong> Create curiosity and hook attention</span>
+              <div className="flex items-start gap-4">
+                <span className="w-3 h-3 rounded-full bg-secondary mt-1.5 flex-shrink-0" />
+                <div>
+                  <span className="text-base text-text-primary font-semibold">Super Core</span>
+                  <p className="text-sm text-text-secondary mt-0.5">Facilitate the experiment with active student participation — ask, don't tell</p>
                 </div>
-                <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-secondary" />
-                  <span className="text-text-primary"><strong>Super Core:</strong> Facilitate the experiment with student participation</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-student-skeptic" />
-                  <span className="text-text-primary"><strong>Super Finish:</strong> Deliver key messages and check understanding</span>
+              </div>
+              <div className="flex items-start gap-4">
+                <span className="w-3 h-3 rounded-full bg-student-skeptic mt-1.5 flex-shrink-0" />
+                <div>
+                  <span className="text-base text-text-primary font-semibold">Super Finish</span>
+                  <p className="text-sm text-text-secondary mt-0.5">Deliver key messages and check understanding with every student</p>
                 </div>
               </div>
             </div>
           </div>
-        )}
+        </section>
 
-        {/* Action buttons */}
-        <div className="flex items-center justify-center gap-4 mt-8">
-          <button onClick={onPracticeAgain} className="btn-primary">
+        {/* ═══════════════════════════════════════════════════════════════
+            ACTION BUTTONS
+            ═══════════════════════════════════════════════════════════════ */}
+        <div className="flex items-center justify-center gap-4 py-8 border-t border-border">
+          <button onClick={onPracticeAgain} className="btn-primary text-base px-8 py-3">
             Practice Again
           </button>
-          <button onClick={onExit} className="px-6 py-3 rounded-xl text-sm text-text-secondary hover:text-text-primary border border-border hover:border-white/20 transition-all">
+          <button onClick={onExit} className="px-8 py-3 rounded-xl text-base text-text-secondary hover:text-text-primary border border-border hover:border-white/20 transition-all">
             Back to Dashboard
           </button>
           <button
             onClick={handleDownloadPDF}
             disabled={downloading}
-            className="px-6 py-3 rounded-xl text-sm text-text-secondary hover:text-text-primary border border-border hover:border-white/20 transition-all"
+            className="px-8 py-3 rounded-xl text-base text-text-secondary hover:text-text-primary border border-border hover:border-white/20 transition-all"
           >
             {downloading ? 'Generating...' : 'Download PDF'}
           </button>
