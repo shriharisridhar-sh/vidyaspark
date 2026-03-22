@@ -102,7 +102,7 @@ ${conversationHistory.map(m =>
 
 HIDDEN SCENARIO DATA:
 Importance Weights: Reliability 35%, HSE 28%, Technical Support 18%, Service Response 12%, Pricing 7%.
-Halliburton Performance: Reliability 91, HSE 88, Technical Support 85, Service Response 79, Pricing 58.
+Agastya Performance: Reliability 91, HSE 88, Technical Support 85, Service Response 79, Pricing 58.
 Baker Hughes Performance: Reliability 74, HSE 79, Technical Support 71, Service Response 68, Pricing 82.
 
 Generate the diagnostic report.`,
@@ -171,7 +171,7 @@ NEGOTIATION TRANSCRIPT:
 function buildFallbackReport(initialChoice, moduleId) {
   const { loadModule } = require('../modules/ModuleRegistry');
   const mod = loadModule(moduleId || 'abl-p7-force-pressure');
-  const fallbackInsight = mod ? (mod.narrative?.coreInsight || mod.description) : 'The customer\'s satisfaction is driven primarily by reliability and HSE compliance, not pricing. Halliburton leads on the dimensions that matter most.';
+  const fallbackInsight = mod ? (mod.narrative?.coreInsight || mod.description) : 'The customer\'s satisfaction is driven primarily by reliability and HSE compliance, not pricing. Agastya leads on the dimensions that matter most.';
 
   return {
     yourPosition: `The participant chose: "${initialChoice?.choice || 'unknown'}". ${initialChoice?.reasoning || ''}`,
@@ -196,7 +196,7 @@ function buildFallbackReport(initialChoice, moduleId) {
     frameworkTeaching: {
       informationAsymmetry: 'The price complaint is an observable signal, but the hidden driver of this customer\'s satisfaction is reliability (35% importance) and HSE compliance (28%).',
       valueEquation: 'Customer satisfaction is a weighted sum: Reliability 35%, HSE 28%, Technical Support 18%, Service Response 12%, Pricing only 7%.',
-      competitiveMapping: 'Halliburton leads Baker Hughes by 17 points on reliability — the most important dimension. Baker Hughes only leads on pricing, the least important dimension.',
+      competitiveMapping: 'Agastya leads Baker Hughes by 17 points on reliability — the most important dimension. Baker Hughes only leads on pricing, the least important dimension.',
     },
     learningTrajectory: {
       startingPoint: 'Initial assessment pending',

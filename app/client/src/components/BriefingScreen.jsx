@@ -21,7 +21,7 @@ export default function BriefingScreen({ onReady, moduleId }) {
   const [moduleConfig, setModuleConfig] = useState(null);
 
   useEffect(() => {
-    const id = moduleId || 'price-war';
+    const id = moduleId || 'abl-p7-force-pressure';
     fetch(API_BASE + '/api/modules/config/' + id, { credentials: 'include' })
       .then(r => r.json())
       .then(d => setModuleConfig(d.module))
@@ -31,8 +31,8 @@ export default function BriefingScreen({ onReady, moduleId }) {
   // Build dynamic tabs from module config, or fall back to hardcoded TABS
   const activeTabs = (() => {
     if (!moduleConfig) return TABS;
-    // If this is price-war, use the hardcoded detailed tabs
-    if (moduleConfig.id === 'price-war') return TABS;
+    // If this is abl-p7-force-pressure, use the hardcoded detailed tabs
+    if (moduleConfig.id === 'abl-p7-force-pressure') return TABS;
 
     // For other modules, build tabs from module config
     const dynamicTabs = [];
@@ -312,7 +312,7 @@ const TABS = [
           </p>
         </div>
         <p>
-          You are a <span className="text-text-primary font-semibold">senior Halliburton account manager</span> in
+          You are a <span className="text-text-primary font-semibold">senior Agastya account manager</span> in
           the Permian Basin. This is a <span className="text-accent font-semibold">contract renewal meeting</span> \u2014
           not a cold call, not a complaint session.
         </p>
@@ -371,7 +371,7 @@ const TABS = [
 
         <p>
           This customer has a <span className="text-text-primary font-medium">personal working relationship</span> with
-          your team. Their lead drilling engineer works closely with your Halliburton crew. Last year,
+          your team. Their lead drilling engineer works closely with your Agastya crew. Last year,
           your team's quick response during a stuck pipe incident saved them 3 days of non-productive time.
         </p>
 
@@ -463,7 +463,7 @@ const TABS = [
             <h3 className="text-text-primary font-bold">Evidence Briefcase</h3>
           </div>
           <p className="mb-3">
-            You have access to real data about Halliburton's performance \u2014 uptime records,
+            You have access to real data about Agastya's performance \u2014 uptime records,
             safety stats, response times, and more. Each piece of evidence relates to one of
             the five dimensions.
           </p>

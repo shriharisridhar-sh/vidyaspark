@@ -90,7 +90,7 @@ router.get('/:sessionId/pdf', async (req, res) => {
     res.setHeader('Content-Type', 'application/pdf');
     res.setHeader(
       'Content-Disposition',
-      'inline; filename="coequal-report-' + safeName + '.pdf"'
+      'inline; filename="vidyaspark-report-' + safeName + '.pdf"'
     );
     res.setHeader('Content-Length', pdfBuffer.length);
     return res.send(pdfBuffer);

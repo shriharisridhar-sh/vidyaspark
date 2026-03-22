@@ -51,7 +51,7 @@ export default function AdminPage() {
     name: mod.name,
     description: mod.description || '',
     sessions: sessions.filter(s => {
-      const sid = s.config?.scenarioId || s.scenarioId || 'price-war';
+      const sid = s.config?.scenarioId || s.scenarioId || 'abl-p7-force-pressure';
       return sid === mod.id;
     }),
   }));
@@ -59,7 +59,7 @@ export default function AdminPage() {
   // Any sessions without a matching module go under "The Price Trap" (legacy)
   const assignedSessionIds = new Set(moduleGroups.flatMap(g => g.sessions.map(s => s.sessionId)));
   const unassigned = sessions.filter(s => !assignedSessionIds.has(s.sessionId));
-  const priceWarGroup = moduleGroups.find(g => g.id === 'price-war');
+  const priceWarGroup = moduleGroups.find(g => g.id === 'abl-p7-force-pressure');
   if (priceWarGroup && unassigned.length > 0) {
     priceWarGroup.sessions = [...priceWarGroup.sessions, ...unassigned];
   }
@@ -73,7 +73,7 @@ export default function AdminPage() {
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
             </svg>
-            CoEqual
+            VidyaSpark
           </a>
           <div className="flex items-center gap-3">
             {health ? (

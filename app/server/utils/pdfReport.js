@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * pdfReport.js — 5-page individualized coaching PDF for each CoEqual AI session.
+ * pdfReport.js — 5-page individualized coaching PDF for each VidyaSpark session.
  *
  * Page 1: YOUR PERFORMANCE (Mirror)
  * Page 2: YOUR COACHING DEBRIEF (Diagnose)
@@ -23,10 +23,10 @@ const { loadModule } = require('../modules/ModuleRegistry');
 const COLORS = {
   primary:     '#0a0a0a',
   secondary:   '#71717a',
-  accent:      '#10b981',
-  accentLight: '#d1fae5',
+  accent:      '#E65100',
+  accentLight: '#FFF3E0',
   warmGray:    '#f4f4f5',
-  green:       '#10b981',
+  green:       '#059669',
   amber:       '#f59e0b',
   red:         '#ef4444',
   white:       '#ffffff',
@@ -43,8 +43,8 @@ const DIM_NAMES = {
 
 // ── Static performance grades ──
 const PERF_GRADES = {
-  halliburton: { reliability: 91, hse: 88, technical: 85, service: 79, price: 58 },
-  baker:       { reliability: 74, hse: 79, technical: 71, service: 68, price: 82 },
+  agastya: { reliability: 91, hse: 88, technical: 85, service: 79, price: 58 },
+  baker:   { reliability: 74, hse: 79, technical: 71, service: 68, price: 82 },
 };
 
 const DIM_ORDER = ['reliability', 'hse', 'technical', 'service', 'price'];
@@ -52,7 +52,7 @@ const DIM_ORDER = ['reliability', 'hse', 'technical', 'service', 'price'];
 // ── Module-aware report data loader ──
 
 function getReportData(moduleId) {
-  const mod = loadModule(moduleId || 'price-war');
+  const mod = loadModule(moduleId || 'abl-p7-force-pressure');
   if (!mod) return { dimNames: DIM_NAMES, perfGrades: PERF_GRADES, dimOrder: DIM_ORDER };
 
   const dimNames = {};
@@ -171,7 +171,7 @@ function drawSkillBar(doc, x, y, width, label, score, weight, color) {
 
 function drawPageHeader(doc, pageWidth, rightLabel) {
   doc.font('Helvetica-Bold').fontSize(20).fillColor(COLORS.accent);
-  doc.text('CoEqual AI', 55, 45);
+  doc.text('VidyaSpark', 55, 45);
   doc.font('Helvetica').fontSize(9).fillColor(COLORS.secondary);
   doc.text(rightLabel, 55, 50, { width: pageWidth, align: 'right' });
   doc.moveTo(55, 72).lineTo(55 + pageWidth, 72).strokeColor(COLORS.accent).lineWidth(1.5).stroke();
@@ -179,7 +179,7 @@ function drawPageHeader(doc, pageWidth, rightLabel) {
 
 function drawPageFooter(doc, pageWidth, sessionId) {
   doc.font('Helvetica').fontSize(7).fillColor(COLORS.secondary);
-  doc.text('CoEqual AI. Train With the Machine.', 55, 730, { width: pageWidth, align: 'center' });
+  doc.text('VidyaSpark. Practice the Classroom Before the Classroom.', 55, 730, { width: pageWidth, align: 'center' });
   if (sessionId) {
     doc.fontSize(6);
     doc.text('Session: ' + String(sessionId).substring(0, 12), 55, 742, { width: pageWidth, align: 'center' });
@@ -499,7 +499,7 @@ function drawBeforeAfter(doc, x, y, width, before, after) {
 function generateSessionPDF(sessionData, reportData, moduleId) {
   return new Promise((resolve, reject) => {
     try {
-      const modData = getReportData(moduleId || sessionData?.coachModelMetrics?.scenarioId || 'price-war');
+      const modData = getReportData(moduleId || sessionData?.coachModelMetrics?.scenarioId || 'abl-p7-force-pressure');
       const dimNames = modData.dimNames;
       const perfGrades = modData.perfGrades;
       const dimOrder = modData.dimOrder;
@@ -513,7 +513,7 @@ function generateSessionPDF(sessionData, reportData, moduleId) {
       // Determine if this is a competitive module (explicit flag or fallback to 2+ companies in perfGrades)
       const perfCompanies = perfGrades ? Object.keys(perfGrades) : [];
       const isCompetitive = modData.isCompetitive !== undefined ? modData.isCompetitive : perfCompanies.length >= 2;
-      const company1Key = perfCompanies[0] || 'halliburton';
+      const company1Key = perfCompanies[0] || 'agastya';
       const company2Key = perfCompanies[1] || 'baker';
       const company1Grades = perfGrades[company1Key] || {};
       const company2Grades = perfGrades[company2Key] || {};
@@ -524,8 +524,8 @@ function generateSessionPDF(sessionData, reportData, moduleId) {
         size: 'letter',
         margins: { top: 50, bottom: 50, left: 55, right: 55 },
         info: {
-          Title: 'CoEqual AI Performance Report',
-          Author: 'CoEqual AI',
+          Title: 'VidyaSpark Performance Report',
+          Author: 'VidyaSpark',
           Subject: 'Individualized Coaching Report',
         },
       });
@@ -586,7 +586,7 @@ function generateSessionPDF(sessionData, reportData, moduleId) {
       // ═══════════════════════════════════════════════
 
       doc.font('Helvetica-Bold').fontSize(20).fillColor(COLORS.accent);
-      doc.text('CoEqual AI', 55, 45);
+      doc.text('VidyaSpark', 55, 45);
       doc.font('Helvetica').fontSize(9).fillColor(COLORS.secondary);
       doc.text(userName, 55, 45, { width: pageWidth, align: 'right' });
       doc.text(sessionDate, 55, 57, { width: pageWidth, align: 'right' });
@@ -928,7 +928,7 @@ function generateSessionPDF(sessionData, reportData, moduleId) {
           if (y > 640) break;
         }
       } else {
-        // Default price-war framework concepts
+        // Default legacy framework concepts
         doc.font('Helvetica-Oblique').fontSize(10).fillColor(COLORS.secondary);
         const openingText = 'This simulation is built on research from the Customer Value Framework. The patterns you experienced are not unique to this scenario. They appear in every B2B relationship. Here are three concepts that will change how you negotiate.';
         const openH = doc.heightOfString(openingText, { width: pageWidth, lineGap: 3 });
@@ -987,7 +987,7 @@ function generateSessionPDF(sessionData, reportData, moduleId) {
 
         const cmScore = conceptScores.length > 2 ? conceptScores[2].score : 0;
         const combinedTopWeight = relWeight + hseWeight;
-        let c3Dynamic = 'Halliburton sits in the "Maintain Strength" quadrant on Reliability and HSE, the two dimensions worth ' + combinedTopWeight + '% combined. Baker Hughes only leads on Pricing, worth ' + priceWeight + '%.';
+        let c3Dynamic = 'The learner sits in the "Maintain Strength" quadrant on Reliability and HSE, the two dimensions worth ' + combinedTopWeight + '% combined. The competitor only leads on Pricing, worth ' + priceWeight + '%.';
         if (cmScore >= 7) {
           c3Dynamic += ' Your Competitive Mapping score of ' + Math.round(cmScore) + '/10 suggests you grasped this instinctively.';
         } else if (cmScore > 0 && cmScore < 4) {
@@ -1047,7 +1047,7 @@ function generateSessionPDF(sessionData, reportData, moduleId) {
           y += 6;
         }
       } else {
-        // Default price-war before/after pairs
+        // Default legacy before/after pairs
         y += drawBeforeAfter(doc, 55, y, pageWidth,
           '"We can match their price."',
           '"Before we talk numbers, help me understand what is driving this decision. What would make you confident in switching?"'

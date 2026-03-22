@@ -33,7 +33,7 @@ export default function StrategyCheckScreen({ onStart, moduleId }) {
   const [skills, setSkills] = useState([]);
 
   useEffect(() => {
-    const id = moduleId || 'price-war';
+    const id = moduleId || 'abl-p7-force-pressure';
     fetch(API_BASE + '/api/modules/config/' + id, { credentials: 'include' })
       .then(r => r.json())
       .then(d => {

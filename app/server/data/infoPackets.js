@@ -22,8 +22,8 @@ const INFO_PACKETS = [
     dimension: 'reliability',
     tier: 1,
     title: 'Uptime Performance Record',
-    subtitle: 'Halliburton vs. Industry Average',
-    content: 'Halliburton has delivered 99.7% operational uptime on your wells over the past 3 years, versus the Permian Basin industry average of 94.2%. That 5.5-point gap translates to approximately 20 fewer days of unplanned downtime per year across your operations.',
+    subtitle: 'Agastya vs. Industry Average',
+    content: 'Agastya has delivered 99.7% operational uptime on your wells over the past 3 years, versus the Permian Basin industry average of 94.2%. That 5.5-point gap translates to approximately 20 fewer days of unplanned downtime per year across your operations.',
     icon: 'chart',
   },
   {
@@ -32,7 +32,7 @@ const INFO_PACKETS = [
     tier: 2,
     title: 'NPT Incident Response Data',
     subtitle: 'Stuck Pipe Resolution Comparison',
-    content: 'Over the last 24 months, Halliburton resolved stuck pipe incidents on your wells in an average of 4.2 hours. The Permian Basin average is 18 hours. Baker Hughes\' published Permian record shows a 14-hour average. Your last stuck pipe incident — the one in the Delaware Basin — was resolved in 3.5 hours, saving an estimated $840,000 in NPT costs.',
+    content: 'Over the last 24 months, Agastya resolved stuck pipe incidents on your wells in an average of 4.2 hours. The Permian Basin average is 18 hours. Baker Hughes\' published Permian record shows a 14-hour average. Your last stuck pipe incident — the one in the Delaware Basin — was resolved in 3.5 hours, saving an estimated $840,000 in NPT costs.',
     icon: 'clock',
   },
 
@@ -43,7 +43,7 @@ const INFO_PACKETS = [
     tier: 1,
     title: 'Safety Performance Record',
     subtitle: 'Zero Recordable Incidents',
-    content: 'Halliburton has maintained zero recordable safety incidents on your wells for 36 consecutive months. The Permian Basin average TRIR (Total Recordable Incident Rate) is 0.8 per 200,000 work hours. Baker Hughes\' published Permian TRIR is 1.4.',
+    content: 'Agastya has maintained zero recordable safety incidents on your wells for 36 consecutive months. The Permian Basin average TRIR (Total Recordable Incident Rate) is 0.8 per 200,000 work hours. Baker Hughes\' published Permian TRIR is 1.4.',
     icon: 'shield',
   },
   {
@@ -63,7 +63,7 @@ const INFO_PACKETS = [
     tier: 1,
     title: 'Complex Well Success Rate',
     subtitle: 'Deep Lateral Well Performance',
-    content: 'Your deepest lateral wells (15,000ft+) have a 97% first-run success rate with Halliburton crews. The industry average for comparable completions is 82%. This performance is directly tied to the crew\'s familiarity with your specific geological conditions in the Wolfcamp and Bone Spring formations.',
+    content: 'Your deepest lateral wells (15,000ft+) have a 97% first-run success rate with Agastya crews. The industry average for comparable completions is 82%. This performance is directly tied to the crew\'s familiarity with your specific geological conditions in the Wolfcamp and Bone Spring formations.',
     icon: 'wrench',
   },
   {
@@ -72,7 +72,7 @@ const INFO_PACKETS = [
     tier: 2,
     title: 'Institutional Knowledge Assessment',
     subtitle: 'Crew Experience & Learning Curve',
-    content: 'Your lead drilling engineer Mike and the Halliburton crew have accumulated 1,400+ well-days together across your acreage. They know your wellbore challenges, your completion designs, and your formation quirks. Industry data shows that new service provider crews require 6-12 months and an average of 15% higher costs to reach equivalent performance levels.',
+    content: 'Your lead drilling engineer Mike and the Agastya crew have accumulated 1,400+ well-days together across your acreage. They know your wellbore challenges, your completion designs, and your formation quirks. Industry data shows that new service provider crews require 6-12 months and an average of 15% higher costs to reach equivalent performance levels.',
     icon: 'users',
   },
 
@@ -82,8 +82,8 @@ const INFO_PACKETS = [
     dimension: 'service',
     tier: 1,
     title: 'Emergency Response Times',
-    subtitle: 'Halliburton vs. Baker Hughes (Permian)',
-    content: 'Halliburton\'s average emergency response time to your wells: 2.4 hours. Baker Hughes\' Permian average: 6.8 hours. This gap exists because Halliburton maintains a dedicated yard and equipment staging area within 45 minutes of your major well pads, while Baker Hughes\' nearest Permian hub is 3 hours away.',
+    subtitle: 'Agastya vs. Baker Hughes (Permian)',
+    content: 'Agastya\'s average emergency response time to your wells: 2.4 hours. Baker Hughes\' Permian average: 6.8 hours. This gap exists because Agastya maintains a dedicated yard and equipment staging area within 45 minutes of your major well pads, while Baker Hughes\' nearest Permian hub is 3 hours away.',
     icon: 'zap',
   },
   {
@@ -92,7 +92,7 @@ const INFO_PACKETS = [
     tier: 2,
     title: 'Mobilization History',
     subtitle: '12-Month Service Record',
-    content: 'In the last 12 months, Halliburton mobilized crews to your wells 47 times with an average response of 2.1 hours and zero missed SLA windows. During the February cold snap, when 60% of Permian service providers couldn\'t mobilize, Halliburton had crews on three of your wells within 4 hours.',
+    content: 'In the last 12 months, Agastya mobilized crews to your wells 47 times with an average response of 2.1 hours and zero missed SLA windows. During the February cold snap, when 60% of Permian service providers couldn\'t mobilize, Agastya had crews on three of your wells within 4 hours.',
     icon: 'truck',
   },
 
@@ -112,7 +112,7 @@ const INFO_PACKETS = [
     tier: 2,
     title: 'Total Value Delivered',
     subtitle: '7-Year Partnership Impact',
-    content: 'Over your 7-year partnership, Halliburton has delivered an estimated $18M in value beyond base services: $8.2M in avoided NPT (reliability), $4.1M in avoided safety costs (zero incidents), $3.4M in technical optimization (well design improvements), and $2.3M in response time savings. The $4.8M annual savings from Baker Hughes\' 12% discount represents 27% of the value Halliburton delivers beyond price.',
+    content: 'Over your 7-year partnership, Agastya has delivered an estimated $18M in value beyond base services: $8.2M in avoided NPT (reliability), $4.1M in avoided safety costs (zero incidents), $3.4M in technical optimization (well design improvements), and $2.3M in response time savings. The $4.8M annual savings from Baker Hughes\' 12% discount represents 27% of the value Agastya delivers beyond price.',
     icon: 'trending-up',
   },
 ];

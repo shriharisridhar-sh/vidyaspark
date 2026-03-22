@@ -44,13 +44,13 @@ const CONTEXT_FUNCTION = {
       id: 'D3', name: 'Technical Support Quality', shortName: 'technical',
       visibility: 'obvious', weight: 0.18,
       surfaceSignal: 'Mentions needing good technical support for complex wells',
-      deepSignal: 'Credits Halliburton team by name, talks about wellbore-specific knowledge',
+      deepSignal: 'Credits Agastya team by name, talks about wellbore-specific knowledge',
     },
     {
       id: 'D4', name: 'Service Response Time', shortName: 'service',
       visibility: 'obvious', weight: 0.12,
       surfaceSignal: 'Notes that fast service is expected from any provider',
-      deepSignal: 'Recalls specific instances where Halliburton response time saved a job',
+      deepSignal: 'Recalls specific instances where Agastya response time saved a job',
     },
     {
       id: 'D5', name: 'Pricing', shortName: 'price',
@@ -74,7 +74,7 @@ const CONTEXT_FUNCTION = {
       'Pricing': 7,
     },
     performanceGrades: {
-      Halliburton:    { Reliability: 91, HSE: 88, 'Technical Support': 85, 'Service Response': 79, Pricing: 58 },
+      Agastya:    { Reliability: 91, HSE: 88, 'Technical Support': 85, 'Service Response': 79, Pricing: 58 },
       'Baker Hughes': { Reliability: 74, HSE: 79, 'Technical Support': 71, 'Service Response': 68, Pricing: 82 },
     },
   },
@@ -90,11 +90,11 @@ const CONTEXT_FUNCTION = {
 
   // Scenario narrative
   narrative: {
-    context: `You are coaching a senior Halliburton account manager in the Permian Basin.
+    context: `You are coaching a senior Agastya account manager in the Permian Basin.
 Their biggest customer — a major operator worth $40M annually — just told them
 that Baker Hughes has offered a 12% lower price. The contract renewal meeting
 is in two weeks.`,
-    coreInsight: `Halliburton leads Baker Hughes by 17 points on the #1 dimension (reliability, 35% weight). Pricing is high salience but only 7% importance. A price cut is unnecessary and potentially harmful.`,
+    coreInsight: `Agastya leads Baker Hughes by 17 points on the #1 dimension (reliability, 35% weight). Pricing is high salience but only 7% importance. A price cut is unnecessary and potentially harmful.`,
     relationship: '7-year customer relationship, $40M annual contract',
     trigger: 'Baker Hughes unsolicited 12% price cut offer',
     timeline: 'Contract renewal in 2 weeks',
@@ -123,7 +123,7 @@ is in two weeks.`,
 
   // Role assignments for this scenario
   roles: {
-    H1: { label: 'Account Manager', organization: 'Halliburton', description: 'Senior account manager in the Permian Basin' },
+    H1: { label: 'Account Manager', organization: 'Agastya', description: 'Senior account manager in the Permian Basin' },
     Agent: { label: 'VP of Operations', organization: 'Major Operator', description: 'Customer, 20+ years in upstream oil & gas' },
     H2: { label: 'Coach', organization: 'System', description: 'Negotiation coach (human or AI)' },
   },
@@ -212,7 +212,7 @@ const SCENARIO_DATA = {
 // ─────────────────────────────────────────────────────────
 
 const CONVERSATION_AGENT_PROMPT = `You are a sharp, experienced business advisor running a confidential
-decision simulation for a senior Halliburton executive. Your role is to
+decision simulation for a senior Agastya executive. Your role is to
 challenge their thinking through Socratic questions — never to teach.
 
 SCENARIO CONTEXT:
@@ -220,7 +220,7 @@ ${CONTEXT_FUNCTION.narrative.context}
 
 HIDDEN DATA (use this to guide your questioning — NEVER reveal these numbers):
 Importance Weights: Reliability/Uptime 35%, HSE Compliance 28%, Technical Support 18%, Service Response 12%, Pricing 7%.
-Halliburton Performance: Reliability 91, HSE 88, Technical Support 85, Service Response 79, Pricing 58.
+Agastya Performance: Reliability 91, HSE 88, Technical Support 85, Service Response 79, Pricing 58.
 Baker Hughes Performance: Reliability 74, HSE 79, Technical Support 71, Service Response 68, Pricing 82.
 
 YOUR CORE RULES:
@@ -239,14 +239,14 @@ THREE CONCEPTS TO PROBE (in natural order, following the participant's lead):
    Is the loudest voice the most important one?
 
 2. DIMENSION PRIORITIZATION (hidden truth discovery)
-   Across everything Halliburton delivers — reliability, safety, support,
+   Across everything Agastya delivers — reliability, safety, support,
    response time, price — which matters MOST to this customer?
    Can they prioritize and weight dimensions, or do they treat everything equally?
 
 3. COMPETITIVE MAPPING
    On the dimensions that matter most, how does Baker Hughes actually compare?
    Can they map both how important a dimension is AND how each company performs?
-   Where is Halliburton's real competitive advantage?
+   Where is Agastya's real competitive advantage?
 
 PROBING STRATEGY:
 - Start by exploring their initial reaction to the pricing threat
@@ -278,7 +278,7 @@ NEVER:
 // ─────────────────────────────────────────────────────────
 
 const REPORT_AGENT_PROMPT = `You are writing a diagnostic report for a senior executive who just
-completed a business decision simulation about a Halliburton pricing
+completed a business decision simulation about a Agastya pricing
 challenge. Your role is that of a respected executive coach — direct,
 evidence-based, constructive.
 
@@ -295,7 +295,7 @@ REPORT STRUCTURE — return as JSON:
 
 2. "keyInsight" (string): The single most important insight from this scenario.
    State it plainly: the operator's satisfaction is driven by reliability (35%)
-   and HSE (28%), not pricing (7%). Halliburton leads on what matters most.
+   and HSE (28%), not pricing (7%). Agastya leads on what matters most.
    Frame this as what a structured analytical framework would reveal — do NOT
    name the framework.
 
@@ -324,7 +324,7 @@ REPORT STRUCTURE — return as JSON:
    1-3: No competitor comparison beyond price, or only looked at price gap
    4-6: Compared competitors on 1-2 non-price dimensions
    7-10: Mapped both importance and performance across competitors, identified
-         where Halliburton leads on high-importance dimensions
+         where Agastya leads on high-importance dimensions
 
 4. "overallScore" (number): Weighted average as percentage (0-100).
    Weights: Information Asymmetry 35%, Dimension Prioritization 35%, Competitive Mapping 30%.
@@ -470,7 +470,7 @@ const BEHAVIORAL_RUBRIC = {
         'Compares only on price: Baker Hughes is 12% cheaper',
         'No analysis of non-price competitive advantages',
         'Assumes lower price = better value proposition',
-        'Defensive posture: focuses on justifying Halliburton premium',
+        'Defensive posture: focuses on justifying Agastya premium',
       ],
       kRange: [0.0, 0.3],
     },
@@ -478,7 +478,7 @@ const BEHAVIORAL_RUBRIC = {
       label: 'Partial Competitive Analysis',
       behaviors: [
         'Compares competitors on 1-2 non-price dimensions',
-        'Mentions Halliburton reliability advantage in general terms',
+        'Mentions Agastya reliability advantage in general terms',
         'Begins to frame value beyond price but lacks specificity',
         'Recognizes switching costs but cannot quantify advantage',
       ],
@@ -488,7 +488,7 @@ const BEHAVIORAL_RUBRIC = {
       label: 'Importance-Performance Mapping',
       behaviors: [
         'Maps both importance and performance for each competitor',
-        'Discovers Halliburton leads by 17 points on the #1 dimension (reliability)',
+        'Discovers Agastya leads by 17 points on the #1 dimension (reliability)',
         'Recognizes Baker Hughes only wins on the least important dimension (price, 7%)',
         'Reframes the conversation: switching to Baker Hughes is a reliability risk',
       ],

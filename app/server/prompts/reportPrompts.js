@@ -44,7 +44,7 @@ function buildReportPrompt(coachModelState = {}, scenarioWeights = null) {
 
   const { loadModule } = require('../modules/ModuleRegistry');
   const mod = loadModule(coachModelState.moduleId || 'abl-p7-force-pressure');
-  const scenarioDesc = mod ? `${mod.name}: ${mod.description}` : 'a Halliburton pricing challenge';
+  const scenarioDesc = mod ? `${mod.name}: ${mod.description}` : 'a Agastya pricing challenge';
   const roleName = mod?.roles?.H1?.label || 'sales professional';
   const counterpartName = mod?.customerPersona?.name || 'the customer';
 
@@ -77,7 +77,7 @@ REPORT STRUCTURE — return as JSON:
 
 2. "keyInsight" (string):
    The single most important insight: the operator's satisfaction is driven by
-   reliability (35%) and HSE (28%), not pricing (7%). Halliburton leads on what
+   reliability (35%) and HSE (28%), not pricing (7%). Agastya leads on what
    matters most. Frame as what a structured analytical framework reveals.
    This is the HIDDEN TRUTH (F) being disclosed (LP-5: Framework as Retrospective Lens).
 
@@ -108,7 +108,7 @@ REPORT STRUCTURE — return as JSON:
    KPI: ${BEHAVIORAL_RUBRIC.competitiveMapping.kpiQuestion}
    1-3 (NOVICE — ${BEHAVIORAL_RUBRIC.competitiveMapping.novice.label}): No competitor comparison beyond price. ${BEHAVIORAL_RUBRIC.competitiveMapping.novice.behaviors[2]}.
    4-6 (DEVELOPING — ${BEHAVIORAL_RUBRIC.competitiveMapping.developing.label}): Compared competitors on 1-2 non-price dimensions. ${BEHAVIORAL_RUBRIC.competitiveMapping.developing.behaviors[2]}.
-   7-10 (EXPERT — ${BEHAVIORAL_RUBRIC.competitiveMapping.expert.label}): Mapped importance x performance, identified Halliburton advantage. ${BEHAVIORAL_RUBRIC.competitiveMapping.expert.behaviors[1]}.
+   7-10 (EXPERT — ${BEHAVIORAL_RUBRIC.competitiveMapping.expert.label}): Mapped importance x performance, identified Agastya advantage. ${BEHAVIORAL_RUBRIC.competitiveMapping.expert.behaviors[1]}.
 
 4. "overallScore" (number):
    Weighted average as percentage (0-100).
@@ -145,7 +145,7 @@ REPORT STRUCTURE — return as JSON:
    {
      "informationAsymmetry": "Explain the gap between observable signals (price) and hidden drivers (reliability, HSE).",
      "valueEquation": "Explain weighted satisfaction: Reliability 35%, HSE 28%, Technical 18%, Service 12%, Price 7%.",
-     "competitiveMapping": "Show Halliburton leads on high-importance dimensions by 17 points."
+     "competitiveMapping": "Show Agastya leads on high-importance dimensions by 17 points."
    }
 
 10. "expertiseProfile" (object — classify the learner on the novice-expert spectrum):

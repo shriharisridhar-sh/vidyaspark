@@ -90,7 +90,7 @@ function buildCoachPrompt(coachState = {}, moduleId = null) {
   }
 
   return `You are an expert negotiation coach and strategic advisor silently
-observing a live B2B negotiation between a Halliburton account manager (H1)
+observing a live B2B negotiation between a Agastya account manager (H1)
 and their biggest customer (Agent).
 
 YOUR ROLE IN THE COACH MODEL:
@@ -107,12 +107,12 @@ The customer's satisfaction is driven by these hidden importance weights (F):
 - Service Response Time: ${SCENARIO_DATA.importanceWeights['Service Response Time']}%
 - Pricing: ${SCENARIO_DATA.importanceWeights['Pricing']}% (LOWEST — almost irrelevant)
 
-Performance grades (Halliburton vs Baker Hughes):
-- Reliability: ${SCENARIO_DATA.performanceGrades.Halliburton.Reliability} vs ${SCENARIO_DATA.performanceGrades['Baker Hughes'].Reliability} (Halliburton leads by ${SCENARIO_DATA.performanceGrades.Halliburton.Reliability - SCENARIO_DATA.performanceGrades['Baker Hughes'].Reliability} points!)
-- HSE: ${SCENARIO_DATA.performanceGrades.Halliburton.HSE} vs ${SCENARIO_DATA.performanceGrades['Baker Hughes'].HSE}
-- Technical Support: ${SCENARIO_DATA.performanceGrades.Halliburton['Technical Support']} vs ${SCENARIO_DATA.performanceGrades['Baker Hughes']['Technical Support']}
-- Service Response: ${SCENARIO_DATA.performanceGrades.Halliburton['Service Response']} vs ${SCENARIO_DATA.performanceGrades['Baker Hughes']['Service Response']}
-- Pricing: ${SCENARIO_DATA.performanceGrades.Halliburton.Pricing} vs ${SCENARIO_DATA.performanceGrades['Baker Hughes'].Pricing}
+Performance grades (Agastya vs Baker Hughes):
+- Reliability: ${SCENARIO_DATA.performanceGrades.Agastya.Reliability} vs ${SCENARIO_DATA.performanceGrades['Baker Hughes'].Reliability} (Agastya leads by ${SCENARIO_DATA.performanceGrades.Agastya.Reliability - SCENARIO_DATA.performanceGrades['Baker Hughes'].Reliability} points!)
+- HSE: ${SCENARIO_DATA.performanceGrades.Agastya.HSE} vs ${SCENARIO_DATA.performanceGrades['Baker Hughes'].HSE}
+- Technical Support: ${SCENARIO_DATA.performanceGrades.Agastya['Technical Support']} vs ${SCENARIO_DATA.performanceGrades['Baker Hughes']['Technical Support']}
+- Service Response: ${SCENARIO_DATA.performanceGrades.Agastya['Service Response']} vs ${SCENARIO_DATA.performanceGrades['Baker Hughes']['Service Response']}
+- Pricing: ${SCENARIO_DATA.performanceGrades.Agastya.Pricing} vs ${SCENARIO_DATA.performanceGrades['Baker Hughes'].Pricing}
 
 Core insight: ${SCENARIO_DATA.coreInsight}
 
@@ -156,13 +156,13 @@ THREE CONCEPTS TO GUIDE H1 TOWARD (progressive disclosure):
    Help them see the gap between the loudest signal and the deepest concern.
 
 2. DIMENSION PRIORITIZATION (discovering the hidden truth F)
-   Across everything Halliburton delivers — reliability, safety, support, response, price —
+   Across everything Agastya delivers — reliability, safety, support, response, price —
    which matters MOST to this customer? Can the manager rank or weight these dimensions?
    Help them move from "everything matters" to "some things matter far more."
 
 3. COMPETITIVE MAPPING (mapping importance x performance)
    On the dimensions that matter most, how does Baker Hughes actually compare?
-   Guide the manager to see that Halliburton leads massively on high-importance dimensions
+   Guide the manager to see that Agastya leads massively on high-importance dimensions
    while Baker Hughes only wins on the least important one (price).
 
 PROGRESSIVE FRAMEWORK INTRODUCTION (CP-1 — calibrated to exchange + K(t)):

@@ -79,7 +79,7 @@ export default function JoinCohortPage() {
           {/* Header */}
           <div className="text-center mb-6">
             <div className="text-accent text-xs font-semibold uppercase tracking-[0.2em] mb-2">
-              CoEqual AI
+              VidyaSpark
             </div>
             <h2 className="text-text-primary text-xl font-bold">{cohort?.name || 'Join Cohort'}</h2>
             {cohort?.description && (

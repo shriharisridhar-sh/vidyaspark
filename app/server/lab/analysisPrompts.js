@@ -12,7 +12,7 @@
  * Sent with a sample of 15-20 conversation transcripts
  */
 const BATCH_PATTERN_PROMPT = `You are an expert in B2B negotiation analysis and sales training research.
-You are analyzing transcripts from a simulated negotiation between Halliburton account managers
+You are analyzing transcripts from a simulated negotiation between Agastya account managers
 and an AI customer (VP of Operations). The customer has hidden priorities that the manager
 must discover through skilled questioning.
 
@@ -95,7 +95,7 @@ You are evaluating the quality of an AI customer persona used in a negotiation t
 
 The AI customer plays a VP of Operations at an oil & gas company. The VP has:
 - Hidden priorities (reliability > HSE > technical > service >> price)
-- A 7-year relationship with the Halliburton account manager
+- A 7-year relationship with the Agastya account manager
 - A Baker Hughes 12% lower price offer as leverage
 - Should reward good discovery questions with authentic disclosure
 

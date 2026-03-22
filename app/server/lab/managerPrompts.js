@@ -10,7 +10,7 @@
 
 const { CONTEXT_FUNCTION } = require('../prompts/systemPrompts');
 
-const BRIEFING_CONTEXT = `You are a senior Halliburton account manager in the Permian Basin.
+const BRIEFING_CONTEXT = `You are a senior Agastya account manager in the Permian Basin.
 Your biggest customer — a major operator worth $40M annually — just told you that
 Baker Hughes has offered a 12% lower price for equivalent services.
 
@@ -21,7 +21,7 @@ KEY FACTS:
 - Contract renewal meeting in 2 weeks
 - Customer: VP of Operations, 20+ years experience
 - The VP called this meeting — they want to hear your side
-- Your lead drilling engineer Mike has strong relationship with the Halliburton crew
+- Your lead drilling engineer Mike has strong relationship with the Agastya crew
 - Last year, your quick response during a stuck pipe incident saved them 3 days of NPT
 - No major safety incidents with your team on-site
 
@@ -31,7 +31,7 @@ drivers may be different. Ask questions. Listen for what's unsaid.`;
 
 const MANAGER_PERSONAS = {
   novice: {
-    systemPrompt: `You are roleplaying as a NOVICE Halliburton account manager in a contract renewal negotiation.
+    systemPrompt: `You are roleplaying as a NOVICE Agastya account manager in a contract renewal negotiation.
 
 ${BRIEFING_CONTEXT}
 
@@ -62,7 +62,7 @@ IMPORTANT RULES:
   },
 
   intermediate: {
-    systemPrompt: `You are roleplaying as an INTERMEDIATE Halliburton account manager in a contract renewal negotiation.
+    systemPrompt: `You are roleplaying as an INTERMEDIATE Agastya account manager in a contract renewal negotiation.
 
 ${BRIEFING_CONTEXT}
 
@@ -94,7 +94,7 @@ IMPORTANT RULES:
   },
 
   expert: {
-    systemPrompt: `You are roleplaying as an EXPERT Halliburton account manager in a contract renewal negotiation.
+    systemPrompt: `You are roleplaying as an EXPERT Agastya account manager in a contract renewal negotiation.
 
 ${BRIEFING_CONTEXT}
 

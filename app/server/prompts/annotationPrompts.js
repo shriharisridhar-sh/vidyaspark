@@ -49,10 +49,10 @@ science experiment with AI students.
 
 HIDDEN TRUTH (F) — the answer the learner was trying to discover:
 Importance Weights: Reliability 35%, HSE 28%, Technical Support 18%, Service Response 12%, Pricing 7%
-Halliburton Performance: Reliability 91, HSE 88, Technical 85, Service 79, Pricing 58
+Agastya Performance: Reliability 91, HSE 88, Technical 85, Service 79, Pricing 58
 Baker Hughes Performance: Reliability 74, HSE 79, Technical 71, Service 68, Pricing 82
 
-KEY INSIGHT: Halliburton leads by 17 points on the #1 dimension (reliability).
+KEY INSIGHT: Agastya leads by 17 points on the #1 dimension (reliability).
 Price is the loudest complaint but only 7% of actual decision weight.
 
 COACHING TYPE: ${config.coachType || 'none'}

@@ -12,7 +12,7 @@ const path = require('path');
  *   Delta (Difficulty Modifiers): easy/medium/hard behavioral calibration
  *   Omega (Assessment Weights): per-dimension scoring weights
  *
- * The default Halliburton scenario is always available.
+ * The default scenario is always available.
  * Custom scenarios created via God Mode are stored here.
  */
 class ScenarioStore {
@@ -76,7 +76,7 @@ class ScenarioStore {
   }
 
   /**
-   * Get all scenarios (custom only — default Halliburton is always implicit).
+   * Get all scenarios (custom only — default scenario is always implicit).
    */
   getAll() {
     return [...this.scenarios];

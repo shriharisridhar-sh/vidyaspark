@@ -15,7 +15,7 @@ export default function DebriefScreen({ reportData, onComplete, moduleId }) {
   const [moduleConfig, setModuleConfig] = useState(null);
 
   useEffect(() => {
-    const id = moduleId || 'price-war';
+    const id = moduleId || 'abl-p7-force-pressure';
     fetch(API_BASE + '/api/modules/config/' + id, { credentials: 'include' })
       .then(r => r.json())
       .then(d => setModuleConfig(d.module))
