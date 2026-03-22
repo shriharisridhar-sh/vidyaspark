@@ -5,13 +5,23 @@ import AmbientAudio from './AmbientAudio';
 
 // Dynamic canvas imports
 import P7ForcePressureCanvas from './canvas/P7ForcePressureCanvas';
+import P3SoundCanvas from './canvas/P3SoundCanvas';
 import C1StatesOfMatterCanvas from './canvas/C1StatesOfMatterCanvas';
+import C2SeparationCanvas from './canvas/C2SeparationCanvas';
 import M1TrianglesCanvas from './canvas/M1TrianglesCanvas';
+import M1QuadrilateralsCanvas from './canvas/M1QuadrilateralsCanvas';
+import B1CellMicroscopeCanvas from './canvas/B1CellMicroscopeCanvas';
+import B2PhotosynthesisCanvas from './canvas/B2PhotosynthesisCanvas';
 
 const CANVAS_MAP = {
   'abl-p7-force-pressure': P7ForcePressureCanvas,
+  'abl-p3-sound': P3SoundCanvas,
   'abl-c1-states-of-matter': C1StatesOfMatterCanvas,
+  'abl-c2-separation': C2SeparationCanvas,
   'abl-m1-triangles': M1TrianglesCanvas,
+  'abl-m1-quadrilaterals': M1QuadrilateralsCanvas,
+  'abl-b1-cell-microscope': B1CellMicroscopeCanvas,
+  'abl-b2-photosynthesis': B2PhotosynthesisCanvas,
 };
 
 /**
