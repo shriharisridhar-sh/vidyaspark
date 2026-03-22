@@ -117,7 +117,6 @@ router.get('/sessions', requireAuth, async (req, res) => {
         moduleName: mod ? mod.name : s.scenarioId,
         timestamp: s.timestamp,
         compositeScore: s.compositeScore || s.objectiveScore || 0,
-        archetype: s.archetype,
         exchangeCount: s.exchangeCount,
       };
     });

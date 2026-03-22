@@ -255,16 +255,16 @@ export default function Dashboard() {
                         </div>
                       </div>
                       <div className="flex items-center gap-4 flex-shrink-0">
-                        {session.archetype && (
-                          <span className="text-text-secondary text-xs hidden sm:block">
-                            {typeof session.archetype === 'string' ? session.archetype : session.archetype?.name || ''}
-                          </span>
-                        )}
-                        {(session.score ?? session.compositeScore) != null && (
-                          <span className={'text-sm font-mono font-bold ' + ((session.score ?? session.compositeScore) >= 60 ? 'text-emerald-400' : (session.score ?? session.compositeScore) >= 40 ? 'text-yellow-400' : 'text-red-400')}>
-                            {session.score ?? session.compositeScore}%
-                          </span>
-                        )}
+                        {(() => {
+                          const score = session.score ?? session.compositeScore ?? 0;
+                          return score > 0 ? (
+                            <span className={'text-sm font-mono font-bold ' + (score >= 60 ? 'text-emerald-400' : score >= 40 ? 'text-yellow-400' : 'text-red-400')}>
+                              {score}%
+                            </span>
+                          ) : (
+                            <span className="text-text-muted text-xs italic">No score</span>
+                          );
+                        })()}
                       </div>
                     </div>
                   ))}
