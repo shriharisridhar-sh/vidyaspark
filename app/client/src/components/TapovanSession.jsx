@@ -271,7 +271,7 @@ export default function TapovanSession({
           <span className="text-base font-mono text-text-primary bg-surface-light px-4 py-1.5 rounded-lg">
             {formatTime(timer)}
           </span>
-          <AmbientAudio volume={0.12} playing={true} lowVolume={true} />
+          <AmbientAudio volume={0.5} playing={true} lowVolume={false} />
           <button
             onClick={handleEndSession}
             className="text-sm px-4 py-2 rounded-lg bg-danger/10 text-danger hover:bg-danger/20 transition-colors font-medium"

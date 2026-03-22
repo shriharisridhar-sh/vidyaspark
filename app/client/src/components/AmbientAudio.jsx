@@ -5,14 +5,14 @@ import { useEffect, useRef, useState } from 'react';
  * Auto-starts on first user interaction (click/keypress anywhere on the page).
  * Uses Web Audio API to generate gentle nature-inspired ambient sound.
  */
-export default function AmbientAudio({ volume = 0.15, playing = true, lowVolume = false }) {
+export default function AmbientAudio({ volume = 0.6, playing = true, lowVolume = false }) {
   const audioCtxRef = useRef(null);
   const masterGainRef = useRef(null);
   const nodesRef = useRef([]);
   const [muted, setMuted] = useState(false);
   const [initialized, setInitialized] = useState(false);
 
-  const effectiveVolume = muted ? 0 : lowVolume ? volume * 0.3 : volume;
+  const effectiveVolume = muted ? 0 : lowVolume ? volume * 0.5 : volume;
 
   const initAudio = () => {
     if (audioCtxRef.current) return;
@@ -39,7 +39,7 @@ export default function AmbientAudio({ volume = 0.15, playing = true, lowVolume 
       windFilter.frequency.value = 400;
       windFilter.Q.value = 0.5;
       const windGain = ctx.createGain();
-      windGain.gain.value = 0.08;
+      windGain.gain.value = 0.25;
       windSource.connect(windFilter);
       windFilter.connect(windGain);
       windGain.connect(masterGain);
@@ -52,7 +52,7 @@ export default function AmbientAudio({ volume = 0.15, playing = true, lowVolume 
         osc.type = 'sine';
         osc.frequency.value = freq;
         const g = ctx.createGain();
-        g.gain.value = freq === 136.1 ? 0.04 : 0.02;
+        g.gain.value = freq === 136.1 ? 0.15 : 0.08;
         osc.connect(g);
         g.connect(masterGain);
         osc.start();
@@ -64,14 +64,15 @@ export default function AmbientAudio({ volume = 0.15, playing = true, lowVolume 
       shimmer.type = 'triangle';
       shimmer.frequency.value = 204.15;
       const sg = ctx.createGain();
-      sg.gain.value = 0.015;
+      sg.gain.value = 0.06;
       shimmer.connect(sg);
       sg.connect(masterGain);
       shimmer.start();
       nodesRef.current.push(shimmer);
 
-      // Fade in gently over 2 seconds
-      masterGain.gain.linearRampToValueAtTime(effectiveVolume, ctx.currentTime + 2);
+      // Fade in gently over 2 seconds — use actual volume, not stale closure
+      const vol = muted ? 0 : lowVolume ? volume * 0.5 : volume;
+      masterGain.gain.linearRampToValueAtTime(vol, ctx.currentTime + 2);
 
       setInitialized(true);
     } catch (_) {}
