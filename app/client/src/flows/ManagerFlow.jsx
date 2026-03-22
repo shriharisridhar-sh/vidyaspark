@@ -118,16 +118,21 @@ export default function ManagerFlow() {
 
   // Session end → assessment
   const handleSessionEnd = useCallback(async () => {
-    // Capture sessionId before endSession changes state
+    // Capture sessionId BEFORE ending — assessment needs it
     if (sessionId) {
       setEndedSessionId(sessionId);
+    }
+    // Show assessment FIRST (while session is still in memory)
+    setScreen('assessment');
+    // End session AFTER assessment screen is mounted and can fetch
+    // Small delay to let the assessment API call go out first
+    setTimeout(async () => {
       try {
         await endSession();
       } catch (e) {
         console.warn('[ManagerFlow] Failed to end session:', e.message);
       }
-    }
-    setScreen('assessment');
+    }, 3000);
   }, [sessionId, endSession]);
 
   // Assessment complete → loading → report

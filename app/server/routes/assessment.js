@@ -19,6 +19,9 @@ const sessionStore = require('../session/SessionStore');
 const { loadModule } = require('../modules/ModuleRegistry');
 const { optionalAuth } = require('../middleware/auth');
 
+let db;
+try { db = require('../db/database'); } catch (_) {}
+
 const client = new Anthropic();
 const router = Router();
 
@@ -29,10 +32,27 @@ router.post('/:sessionId', optionalAuth, async (req, res) => {
   const { sessionId } = req.params;
   const { selfRating } = req.body; // 1-5 confidence scale
 
-  // ── Step 1: Get session ──────────────────────────────────
-  const session = sessionStore.getSession(sessionId);
+  // ── Step 1: Get session (try in-memory first, then database) ──
+  let session = sessionStore.getSession(sessionId);
+
+  if (!session && db) {
+    try {
+      const d = await db.getDb();
+      const rows = d.exec('SELECT transcript, scenario_id FROM sessions WHERE id = ?', [sessionId]);
+      if (rows.length > 0 && rows[0].values.length > 0) {
+        const [transcript, scenarioId] = rows[0].values[0];
+        session = {
+          transcript: transcript ? JSON.parse(transcript) : [],
+          scenarioId: scenarioId || 'abl-p7-force-pressure',
+        };
+      }
+    } catch (dbErr) {
+      console.error('[Assessment] DB fallback error:', dbErr.message);
+    }
+  }
+
   if (!session) {
-    return res.status(404).json({ error: 'Session not found' });
+    return res.status(404).json({ error: 'Session not found in memory or database' });
   }
 
   if (!session.transcript || session.transcript.length === 0) {
