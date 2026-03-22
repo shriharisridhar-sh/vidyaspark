@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="14" fill="#0a0a0a"/>
+  <!-- Center petal -->
+  <path d="M32 10C32 10 24 20 24 30c0 6 3.5 10 8 10s8-4 8-10c0-10-8-20-8-20z" fill="#E65100"/>
+  <path d="M32 14C32 14 27 22 27 29c0 4 2.2 7 5 7s5-3 5-7c0-7-5-15-5-15z" fill="#F57C00" opacity="0.5"/>
+  <!-- Left petal -->
+  <path d="M20 18C20 18 10 24 10 32c0 5 3 7 6 6s6-5 7-10c1-5-3-10-3-10z" fill="#E65100" opacity="0.85"/>
+  <!-- Right petal -->
+  <path d="M44 18C44 18 54 24 54 32c0 5-3 7-6 6s-6-5-7-10c-1-5 3-10 3-10z" fill="#E65100" opacity="0.85"/>
+  <!-- Far left -->
+  <path d="M14 26C14 26 6 30 6 35c0 3 2 5 4 4.5s4.5-3.5 5-7.5-1-6-1-6z" fill="#E65100" opacity="0.6"/>
+  <!-- Far right -->
+  <path d="M50 26C50 26 58 30 58 35c0 3-2 5-4 4.5s-4.5-3.5-5-7.5 1-6 1-6z" fill="#E65100" opacity="0.6"/>
+  <!-- Pistil -->
+  <circle cx="32" cy="27" r="2.5" fill="#FFF3E0"/>
+  <!-- Calyx -->
+  <path d="M22 40 Q27 44 32 42 Q37 44 42 40 Q37 46 32 46 Q27 46 22 40z" fill="#BF360C" opacity="0.5"/>
+  <!-- VS text -->
+  <text x="32" y="58" text-anchor="middle" font-family="Arial,sans-serif" font-weight="800" font-size="9" fill="#E65100" letter-spacing="1">VS</text>
+</svg>
