@@ -152,7 +152,7 @@ Generate 10 comprehension questions (3 recall, 3 understanding, 2 application, 2
     // ── Step 5: Call Claude API ───────────────────────────────
     console.log('[Assessment] Calling Claude API for session', sessionId, 'transcript length:', transcriptText.length);
     const response = await client.messages.create({
-      model: 'claude-sonnet-4-5-20250514',
+      model: 'claude-sonnet-4-20250514',
       max_tokens: 8192,
       system: systemPrompt,
       messages: [{ role: 'user', content: userMessage }],
