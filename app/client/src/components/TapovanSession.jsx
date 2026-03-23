@@ -63,13 +63,8 @@ export default function TapovanSession({
     return () => clearInterval(timerRef.current);
   }, []);
 
-  // Mentor pause at 5 minutes (300s) — only if not already paused
-  useEffect(() => {
-    if (timer >= 300 && !hasPaused && onMentorPause) {
-      clearInterval(timerRef.current);
-      onMentorPause(timer);
-    }
-  }, [timer, hasPaused, onMentorPause]);
+  // Mentor pause is now manual only — Ignator decides when to pause or end
+  // No automatic interruption at 5 minutes
 
   // Auto-scroll chat
   useEffect(() => {
