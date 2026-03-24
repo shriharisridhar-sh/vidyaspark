@@ -1,0 +1,118 @@
+{
+  "id": "abl-p4-light",
+  "name": "Light Travels in a Straight Line — Three Cardboard Experiment",
+  "description": "Students discover that light travels in a straight line by aligning holes in three cardboard sheets and observing that a candle flame is only visible when all three holes are perfectly aligned.",
+  "category": "Physics",
+  "subject": "Physics",
+  "handbook": "P4 — Light",
+  "ablCode": "ABL 1.3",
+  "difficulty": "medium",
+  "estimatedMinutes": 15,
+  "version": "1.0",
+  "gradeLevel": "5-7",
+  "materials": ["Candle", "Thread", "3 A4-size cardboard sheets", "Matchbox", "3 stands to hold cardboard sheets"],
+
+  "pointA": {
+    "assumption": "Students think light can bend around obstacles or scatter in all directions from a source",
+    "blindspot": "They don't realize that light always travels in a straight line (rectilinear propagation) and cannot curve around objects"
+  },
+  "pointB": {
+    "insight": "Light travels in a straight line. When the holes in the cardboards are aligned in a straight line, the flame is visible; when any cardboard is displaced, the flame disappears.",
+    "evidence": "Students can predict that moving any one cardboard out of alignment will block the candle flame and explain why using the principle of rectilinear propagation"
+  },
+
+  "tutorial": [
+    {
+      "title": "Learning Objective",
+      "content": "In this experiment, students will discover that light travels in a straight line (rectilinear propagation). By aligning holes in three cardboard sheets and observing a candle flame, they will see that light can only pass through when all holes are in a straight line."
+    },
+    {
+      "title": "Materials & Setup",
+      "content": "You need: 3 cardboard sheets of equal size, 3 stands to hold them upright, 1 candle, 1 matchbox, and a thread. Place the three cardboard sheets together, make a hole at the centre of each, fix them in stands on a table, and use the thread through all three holes to ensure they are perfectly aligned."
+    },
+    {
+      "title": "The Procedure",
+      "content": "Step 1: Align the three cardboard sheets using the thread so all holes are in a straight line. Remove the thread. Step 2: Light the candle and place it on one side. Look through the hole from the opposite side — you can see the flame. Step 3: Move one cardboard slightly to the left. Try to see the flame — it disappears. Step 4: Bring it back to position — the flame is visible again. Repeat by displacing the other cardboards one at a time."
+    },
+    {
+      "title": "Key Messages",
+      "content": "1. Light travels in a straight line — this is called rectilinear propagation. 2. When the three holes are aligned, the straight path of light passes through all of them. 3. Displacing any one cardboard breaks the straight-line path and the flame cannot be seen. 4. Real-life examples: headlight beams at night, sunbeams through a dusty window."
+    },
+    {
+      "title": "Common Misconceptions",
+      "content": "Students often think light can bend around objects or spread out to fill any space. They may expect to still see the flame even when a cardboard is moved. They need to discover that light only travels in straight lines and cannot curve around obstacles."
+    }
+  ],
+
+  "procedure": "1. Take three A4-size cardboard sheets of equal size. Place them together and make a hole at the centre of each. 2. Fix the cardboard sheets in stands and place them on a table in a line. 3. Pass a thread through all three holes to verify they are aligned in a straight line. Remove the thread. 4. Light the candle and place it on one side of the cardboard sheets. 5. Look through the hole from the opposite side — you can see the candle flame through all three holes. 6. Move the first cardboard slightly to the left. Try to see the flame from the third cardboard — it disappears. 7. Bring the first cardboard back to its original position — the flame is visible again. 8. Repeat by moving the middle and last cardboards one by one. Each time, the flame disappears when a cardboard is displaced. 9. Ask students: Why can we only see the flame when all three holes are perfectly aligned?",
+
+  "canvasSteps": [
+    {
+      "step": 1,
+      "title": "Setup",
+      "description": "Three cardboard sheets with holes fixed in stands on a table. A thread passes through all three holes showing they are aligned. Candle and matchbox sit nearby.",
+      "svgId": "setup"
+    },
+    {
+      "step": 2,
+      "title": "Holes Aligned — Flame Visible",
+      "description": "Candle is lit on one side. Looking through the hole from the opposite side, the flame is clearly visible through all three aligned holes. A dotted line shows the straight light path.",
+      "svgId": "aligned-visible"
+    },
+    {
+      "step": 3,
+      "title": "One Cardboard Displaced — Flame Hidden",
+      "description": "The first cardboard is shifted to the left. The flame can no longer be seen. The straight-line path from the candle is blocked by the displaced cardboard.",
+      "svgId": "displaced-hidden"
+    },
+    {
+      "step": 4,
+      "title": "Restored Alignment — Flame Visible Again",
+      "description": "All three cardboards are back in alignment. The flame is visible again, confirming that light travels only in a straight line.",
+      "svgId": "restored-visible"
+    }
+  ],
+
+  "leadingQuestions": [
+    "Can you see the flame of the candle when all three holes are aligned?",
+    "What happens when the first cardboard is moved to the side?",
+    "Can you see the flame when any one of the cardboards is displaced?",
+    "Why does the flame become visible again when the cardboard is brought back?",
+    "What does this tell us about how light travels?"
+  ],
+
+  "keyMessages": [
+    "Light travels in a straight line — this property is called rectilinear propagation of light",
+    "The candle flame is only visible when all three holes are in a straight line because light cannot bend or curve around obstacles",
+    "Displacing any cardboard breaks the straight-line path and blocks the light from reaching your eye"
+  ],
+
+  "misconceptions": [
+    "Light can bend around obstacles to reach your eyes",
+    "Light spreads out in all directions and can fill any space regardless of obstacles",
+    "The flame should still be visible even when a cardboard is moved because light is everywhere"
+  ],
+
+  "dimensions": [
+    { "id": "D1", "name": "Curiosity Sparking", "shortName": "curiosity", "weight": 0.30, "keywords": ["why", "what if", "surprise", "predict", "guess", "wonder", "what happens"] },
+    { "id": "D2", "name": "Student Engagement", "shortName": "engagement", "weight": 0.25, "keywords": ["lakshmi", "arjun", "everyone", "what do you think", "come up", "try it", "your turn"] },
+    { "id": "D3", "name": "Concept Clarity", "shortName": "clarity", "weight": 0.20, "keywords": ["straight line", "rectilinear", "aligned", "displaced", "propagation", "path of light"] },
+    { "id": "D4", "name": "Facilitation Quality", "shortName": "facilitation", "weight": 0.15, "keywords": ["observe", "notice", "look carefully", "now move", "watch", "let us see"] },
+    { "id": "D5", "name": "Questioning & Listening", "shortName": "questioning", "weight": 0.10, "keywords": ["why do you think", "tell me more", "good question", "interesting", "can you explain"] }
+  ],
+
+  "importanceWeights": { "D1": 0.30, "D2": 0.25, "D3": 0.20, "D4": 0.15, "D5": 0.10 },
+
+  "skills": [
+    { "id": "S1", "name": "Spark", "description": "Creating curiosity, wonder, and scientific questioning", "category": "engagement" },
+    { "id": "S2", "name": "Reach", "description": "Engaging every student, especially quiet and disengaged", "category": "inclusion" }
+  ],
+
+  "archetypes": [
+    { "id": "ignitor", "name": "The Ignitor", "description": "Spark >= 70 AND Reach >= 70", "indicators": ["spark_high", "reach_high"] },
+    { "id": "performer", "name": "The Performer", "description": "Spark >= 60, Reach < 50", "indicators": ["spark_high", "reach_low"] },
+    { "id": "caretaker", "name": "The Caretaker", "description": "Reach >= 60, Spark < 50", "indicators": ["spark_low", "reach_high"] },
+    { "id": "lecturer", "name": "The Lecturer", "description": "Both < 50, Clarity > 60", "indicators": ["spark_low", "reach_low", "clarity_high"] },
+    { "id": "learner", "name": "The Learner", "description": "Both < 40", "indicators": ["spark_low", "reach_low"] }
+  ]
+}

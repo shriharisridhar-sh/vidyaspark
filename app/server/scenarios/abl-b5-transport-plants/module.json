@@ -1,0 +1,121 @@
+{
+  "id": "abl-b5-transport-plants",
+  "name": "Transport in Plants — Diffusion, Osmosis & Root Absorption",
+  "description": "Students discover how plants transport water and nutrients by exploring three key processes: diffusion (using potassium permanganate and incense sticks), osmosis (using a potato osmometer and raisins), and root absorption (watching a live plant draw water from a test tube). They build from the analogy of bees spreading in a box to understand concentration gradients.",
+  "category": "Biology",
+  "subject": "Biology",
+  "handbook": "B5 — Transport in Plants",
+  "ablCode": "ABL 1",
+  "difficulty": "medium",
+  "estimatedMinutes": 15,
+  "version": "1.0",
+  "gradeLevel": "9-10",
+  "materials": ["Beans (Rajma) — soaked and unsoaked", "Potassium permanganate crystals", "Beakers (250 ml)", "Water", "Spray bottle", "Food colouring / dye", "Agarbatti / incense sticks", "Small herbaceous plant with roots (Coriander/Mint)", "Test tubes (boiling)", "Vegetable oil", "Marker pen", "Potato", "Knife", "Sugar", "Raisins", "Shallow dishes", "Ball pins", "Toy cars", "Sloping cardboard pieces", "Flip charts (Bees in a Box, Concentration Gradient)", "Observation sheets"],
+
+  "pointA": {
+    "assumption": "Students think water and nutrients simply soak into plants like a sponge absorbs water, with no specific mechanism or direction",
+    "blindspot": "They don't realise that plants rely on distinct physical processes — diffusion, osmosis, and active transport — each governed by concentration gradients, and that these processes work together to move water from soil through roots into the rest of the plant"
+  },
+  "pointB": {
+    "insight": "Water and nutrients move through plants via diffusion (molecules moving from high to low concentration), osmosis (water crossing a semi-permeable membrane), and active transport (energy-driven movement against the gradient) — and roots use these processes to absorb water from the soil",
+    "evidence": "Students can explain diffusion using the potassium permanganate experiment, demonstrate osmosis with the potato osmometer and raisins, describe how roots absorb water using the test-tube plant experiment, and distinguish all three transport processes"
+  },
+
+  "tutorial": [
+    {
+      "title": "Learning Objective",
+      "content": "In this experiment, students will discover the three key processes that plants use to transport water and nutrients: diffusion, osmosis, and active transport. Through hands-on activities — watching potassium permanganate spread in water, observing raisins swell, building a potato osmometer, and tracking water uptake by a live plant — they will understand concentration gradients and how roots absorb water from the soil."
+    },
+    {
+      "title": "Materials & Setup",
+      "content": "You need: soaked and unsoaked beans, potassium permanganate crystals, beakers, water, spray bottle, food colouring, incense sticks, a small plant with roots (coriander or mint), test tubes, vegetable oil, a potato (cut into cups), sugar solution, raisins (some pre-soaked), shallow dishes, ball pins, toy cars, and sloping cardboard. Set up the plant-in-test-tube experiment before class begins (plant in water with oil layer, mark water level). Soak beans and raisins 30 minutes to 8 hours in advance."
+    },
+    {
+      "title": "The Procedure",
+      "content": "Step 1: Start with imbibition — pass soaked and unsoaked beans, ask students what happened. Step 2: Use the 'bees in a box' flip chart to introduce diffusion — bees spread when the screen is removed. Step 3: Groups do four diffusion experiments: potassium permanganate in water, food colouring in water, spray bottle mist, and lit incense stick. Step 4: Return to the plant test-tube setup — observe water level drop, discuss root absorption via diffusion. Step 5: Demonstrate osmosis with the potato osmometer (sugar solution rises) and raisins (swollen vs dry). Step 6: Use toy cars on slopes to explain active transport — pushing the car uphill needs energy, just like moving molecules against a concentration gradient."
+    },
+    {
+      "title": "Key Messages",
+      "content": "1. Diffusion is the movement of molecules from higher concentration to lower concentration — it occurs across different media (solid in liquid, gas in gas, etc.). 2. Osmosis is the diffusion of water molecules across a semi-permeable membrane — the potato skin and raisin skin act as natural membranes. 3. Active transport moves substances from lower to higher concentration using energy from ATP — the opposite direction of diffusion. 4. Plants use all three processes: roots absorb water by osmosis, nutrients enter by diffusion and active transport."
+    },
+    {
+      "title": "Common Misconceptions",
+      "content": "Students often think water just soaks into plants passively like a sponge, with no mechanism. They confuse diffusion with osmosis, not realising osmosis specifically involves water crossing a semi-permeable membrane. They may think active transport is the same as diffusion but faster. They may not understand that energy (ATP) is required only for active transport. They may believe molecules stop moving once evenly distributed."
+    }
+  ],
+
+  "procedure": "1. Begin with imbibition: pass around soaked and unsoaked beans — ask why they look different, introduce the idea that plants absorb water. 2. Show the 'bees in a box' flip chart: bees crowded on one side with a screen; ask what happens when the screen is removed — they spread out. This is diffusion. 3. Divide students into groups for four diffusion experiments: drop potassium permanganate crystal in water (solid diffusing in liquid), add food colouring to water (liquid in liquid), squirt spray bottle (liquid in gas), light incense stick (gas in gas). Each group records observations. 4. Return to the plant test-tube experiment set up before class: the water level has dropped in the tubes with plants — roots absorbed water by diffusion through root hairs. Compare the tube in sunlight vs shade. 5. Demonstrate osmosis: cut potato into cups, fill one with sugar solution and one with water, place both in dishes of water, mark levels with pins. After 20 minutes the sugar solution level rises — water crossed the potato membrane. Show soaked vs dry raisins — water entered through the raisin skin (endosmosis). 6. Active transport: give groups toy cars and cardboard slopes — releasing downhill is easy (diffusion), pushing uphill requires energy (active transport). Show concentration gradient chart. Explain ATP provides energy. 7. Summarise with the comparison chart: diffusion vs osmosis vs active transport. Conduct team quiz with question cards.",
+
+  "canvasSteps": [
+    {
+      "step": 1,
+      "title": "Setup — Bees in a Box & Diffusion Demo",
+      "description": "A table with beakers, potassium permanganate crystals, spray bottle, incense sticks, and food colouring. Beside it, a flip chart showing bees crowded on one side of a box with a screen in the middle. A second image shows the screen removed and bees spread evenly throughout the box.",
+      "svgId": "setup-diffusion"
+    },
+    {
+      "step": 2,
+      "title": "Four Diffusion Experiments",
+      "description": "Split view showing four simultaneous experiments: (1) purple potassium permanganate crystal dissolving and spreading in a beaker of clear water, (2) drops of food colouring dispersing in water, (3) a spray bottle releasing a mist cloud into the air, (4) smoke rising from a lit incense stick and spreading across the room. Labels indicate the diffusing substance and medium for each.",
+      "svgId": "diffusion-experiments"
+    },
+    {
+      "step": 3,
+      "title": "Osmosis — Potato Osmometer & Raisins",
+      "description": "Left side shows two potato cups in dishes of water: one filled with sugar solution (water level risen, marked with pins showing before and after) and one control with plain water (level unchanged). Right side shows a comparison of plump soaked raisins next to shrivelled dry raisins. Arrows show water molecule movement across the semi-permeable potato membrane from high water concentration to low.",
+      "svgId": "osmosis-demo"
+    },
+    {
+      "step": 4,
+      "title": "Root Absorption & Active Transport",
+      "description": "Left side shows three test tubes: two with small plants (roots submerged, oil layer on top) and one control without a plant. Water level marks show the plant tubes have lower water levels, especially the one kept in sunlight. Right side shows a toy car on a cardboard slope — rolling down easily (labelled 'Diffusion: high to low') versus being pushed uphill with effort (labelled 'Active Transport: low to high, needs ATP energy'). A summary chart compares diffusion, osmosis, and active transport.",
+      "svgId": "roots-active-transport"
+    }
+  ],
+
+  "leadingQuestions": [
+    "Why do the soaked beans look and feel so different from the unsoaked beans? How did water get inside them?",
+    "If we remove the screen from the box, where will all the bees go? Why don't they stay on one side?",
+    "What happened when you dropped potassium permanganate into the water? Did you have to stir it? Why does it spread on its own?",
+    "Look at the potato osmometer — why did the sugar solution level rise but the water-only level stayed the same?",
+    "Why is it easy to let the toy car roll downhill but hard to push it uphill? How does this relate to how molecules move inside a plant?"
+  ],
+
+  "keyMessages": [
+    "Diffusion is the movement of molecules from a region of higher concentration to lower concentration — it happens across different media without requiring energy",
+    "Osmosis is the diffusion of water molecules specifically across a semi-permeable membrane, from dilute to concentrated solution",
+    "Active transport moves substances from lower to higher concentration, requiring energy from ATP — the opposite direction of diffusion",
+    "Plant roots absorb water from the soil using osmosis through root hairs, and transport mineral ions using active transport"
+  ],
+
+  "misconceptions": [
+    "Water soaks into plants passively like a sponge — there is no specific mechanism",
+    "Diffusion and osmosis are the same process",
+    "Molecules stop moving once they are evenly distributed",
+    "Active transport is just faster diffusion in the same direction",
+    "Plants do not need energy to absorb nutrients from the soil"
+  ],
+
+  "dimensions": [
+    { "id": "D1", "name": "Curiosity Sparking", "shortName": "curiosity", "weight": 0.30, "keywords": ["why", "what if", "predict", "guess", "wonder", "what do you think will happen", "surprise", "imagine", "observe"] },
+    { "id": "D2", "name": "Student Engagement", "shortName": "engagement", "weight": 0.25, "keywords": ["lakshmi", "arjun", "everyone", "your turn", "come up", "touch", "feel", "try", "each group"] },
+    { "id": "D3", "name": "Concept Clarity", "shortName": "clarity", "weight": 0.20, "keywords": ["diffusion", "osmosis", "active transport", "concentration", "semi-permeable", "root hair", "ATP", "gradient", "membrane"] },
+    { "id": "D4", "name": "Facilitation Quality", "shortName": "facilitation", "weight": 0.15, "keywords": ["observe", "record", "compare", "drop the crystal", "mark the level", "set up", "pour", "light the incense", "feel the raisins"] },
+    { "id": "D5", "name": "Questioning & Listening", "shortName": "questioning", "weight": 0.10, "keywords": ["why do you think", "tell me more", "good question", "interesting", "what did you notice", "can you explain"] }
+  ],
+
+  "importanceWeights": { "D1": 0.30, "D2": 0.25, "D3": 0.20, "D4": 0.15, "D5": 0.10 },
+
+  "skills": [
+    { "id": "S1", "name": "Spark", "description": "Creating curiosity, wonder, and scientific questioning", "category": "engagement" },
+    { "id": "S2", "name": "Reach", "description": "Engaging every student, especially quiet and disengaged", "category": "inclusion" }
+  ],
+
+  "archetypes": [
+    { "id": "ignitor", "name": "The Ignitor", "description": "Spark >= 70 AND Reach >= 70", "indicators": ["spark_high", "reach_high"] },
+    { "id": "performer", "name": "The Performer", "description": "Spark >= 60, Reach < 50", "indicators": ["spark_high", "reach_low"] },
+    { "id": "caretaker", "name": "The Caretaker", "description": "Reach >= 60, Spark < 50", "indicators": ["spark_low", "reach_high"] },
+    { "id": "lecturer", "name": "The Lecturer", "description": "Both < 50, Clarity > 60", "indicators": ["spark_low", "reach_low", "clarity_high"] },
+    { "id": "learner", "name": "The Learner", "description": "Both < 40", "indicators": ["spark_low", "reach_low"] }
+  ]
+}

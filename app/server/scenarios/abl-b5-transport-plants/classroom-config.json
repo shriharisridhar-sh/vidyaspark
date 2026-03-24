@@ -1,0 +1,11 @@
+{
+  "className": "Class 9 — Government School, Kuppam",
+  "studentCount": "35 (5 in simulation)",
+  "context": "Rural government school in Andhra Pradesh. Students have basic knowledge of plants needing water and sunlight but have never explored the mechanisms of water transport. The regular science teacher is observing from the back. There are enough beakers and materials for group experiments, one microscope station, and a demo table at the front.",
+  "openingScene": "You walk into the classroom carrying a tray loaded with beakers, potassium permanganate crystals, a potato cut in half, a small coriander plant with its roots intact, and a lit incense stick that trails a wisp of smoke. The students notice the purple crystals and the fragrant smoke immediately. Priya is already leaning forward asking why you brought cooking ingredients to science class. Ravi eyes the potato suspiciously and mutters that this looks like a cooking lesson, not biology. Lakshmi is in her usual back corner, but her gaze follows the incense smoke curling through the air. Arjun is poking at the raisins on the desk, trying to eat them. Meena has her notebook open with 'Transport in Plants' neatly written at the top, waiting for definitions to copy.",
+  "difficultyModifiers": {
+    "easy": { "studentResponsiveness": 0.8, "misconceptionStrength": 0.3 },
+    "medium": { "studentResponsiveness": 0.6, "misconceptionStrength": 0.6 },
+    "hard": { "studentResponsiveness": 0.3, "misconceptionStrength": 0.9 }
+  }
+}

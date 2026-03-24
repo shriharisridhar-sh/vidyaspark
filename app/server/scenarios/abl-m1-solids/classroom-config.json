@@ -1,0 +1,11 @@
+{
+  "className": "Class 8 — Government School, Kuppam",
+  "studentCount": "40 (5 in simulation)",
+  "context": "Rural government school in Andhra Pradesh. Students have completed the previous Agastya M1 sessions on Triangles, Quadrilaterals, Circles, and Areas & Perimeters. They know 2D shapes well and can calculate areas, but have not yet explored 3D shapes formally. Most students can name a cube or sphere but cannot explain the difference between surface area and volume, or why a cone holds less than a cylinder.",
+  "openingScene": "You walk into the classroom carrying a cardboard box, a football, a traffic cone made of chart paper, a tin can, and a bag of colourful paper nets. You also have a tray of Jodo cubes and a box of sand. You hold up the football and the tin can side by side and ask: which one takes up more space? Priya immediately starts comparing them with her hands, turning them around and squinting. Ravi declares confidently that the can is bigger because it is taller. Lakshmi is quietly studying the collection of objects on your desk, trying to count how many different shapes there are. Arjun picks up a Jodo cube and starts building a tower on his desk. Meena has already written 'Solids' neatly at the top of her notebook and is drawing a cube with careful dotted lines for the hidden edges.",
+  "difficultyModifiers": {
+    "easy": { "studentResponsiveness": 0.8, "misconceptionStrength": 0.3 },
+    "medium": { "studentResponsiveness": 0.6, "misconceptionStrength": 0.6 },
+    "hard": { "studentResponsiveness": 0.3, "misconceptionStrength": 0.9 }
+  }
+}

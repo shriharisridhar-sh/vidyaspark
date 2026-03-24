@@ -1,0 +1,118 @@
+{
+  "id": "abl-m1-solids",
+  "name": "Solids — 3D Shapes, Nets, Surface Areas and Volumes",
+  "description": "Students explore the world of 3D shapes by classifying solids into polyhedrons and non-polyhedrons, constructing them from nets, verifying Euler's formula (F + V = E + 2), and then deriving surface area and volume formulas through hands-on experiments — deconstructing cubes and cuboids into rectangles, wrapping spheres in cylinders, and pouring sand from cones into cylinders to discover the 1/3 relationship.",
+  "category": "Mathematics",
+  "subject": "Mathematics",
+  "handbook": "M1 — Solids",
+  "ablCode": "ABL 5.1, 5.2, 5.3 & 5.4",
+  "difficulty": "medium",
+  "estimatedMinutes": 15,
+  "version": "1.0",
+  "gradeLevel": "6-8",
+  "materials": ["Models of solid shapes (cube, cuboid, cylinder, cone, sphere, prisms, pyramids)", "Nets of 3D figures (printed or hand-drawn)", "Jodo cubes (unit cubes)", "Hollow models of cone, cylinder and sphere", "Sand or rice grains", "Coloured paper sheets", "Chart paper", "Scissors", "Ruler", "Pencil/pen", "Adhesive/glue", "Protractor/compass", "Graph paper"],
+
+  "pointA": {
+    "assumption": "Students think 3D shapes are just 'thick' versions of 2D shapes, memorize surface area and volume formulas as arbitrary rules, and believe each shape has an unrelated formula",
+    "blindspot": "They don't realize that every surface area formula comes from unfolding a solid into flat faces, and every volume formula connects back to counting unit cubes — a cone is exactly 1/3 of its matching cylinder, and a sphere fills exactly 2/3 of two cylinders"
+  },
+  "pointB": {
+    "insight": "All surface area formulas come from deconstructing solids into flat 2D shapes (rectangles and circles), and all volume formulas connect through the idea of base area times height — with cones being exactly 1/3 of a cylinder and spheres being 4/3 pi r cubed, provable by pouring sand",
+    "evidence": "Students can unfold nets to count faces and derive surface area, build cubes from unit cubes to discover volume = length x breadth x height, and pour sand from a cone into a cylinder exactly 3 times to prove the 1/3 relationship"
+  },
+
+  "tutorial": [
+    {
+      "title": "Learning Objective",
+      "content": "This session covers ABL 5.1 through 5.4 from the Agastya M1 handbook. Students progress from recognizing and classifying 3D solids (polyhedrons vs non-polyhedrons, prisms vs pyramids) to constructing them from nets, verifying Euler's formula (F + V = E + 2), then deriving surface area formulas by deconstructing solids into flat faces, and finally discovering volume formulas using unit cubes and sand-pouring experiments."
+    },
+    {
+      "title": "Materials & Setup",
+      "content": "Divide the class into groups of 3-4 students. Each group needs: solid shape models (or cardboard versions), printed nets of cube/cuboid/prism/pyramid/cylinder/cone, Jodo cubes (unit cubes), coloured paper, scissors, ruler, compass, adhesive, and pencil. For the volume experiments, each group needs hollow models of a cone and cylinder (same radius and height), a hollow sphere, and a box of sand or rice grains."
+    },
+    {
+      "title": "The Procedure — Part 1: Classifying Solids & Nets (ABL 5.1 & 5.2)",
+      "content": "Step 1: Show 2D and 3D models side by side — ask students to describe the difference in their own words. Introduce the idea that 3D shapes have length, breadth AND height. Step 2: Classify solids into polyhedrons (flat faces — cubes, prisms, pyramids) and non-polyhedrons (curved surfaces — cylinders, cones, spheres). Step 3: Students construct 3D figures from nets by folding and gluing. Step 4: Count faces, vertices, and edges of each figure. Verify Euler's formula: F + V = E + 2 for every polyhedron."
+    },
+    {
+      "title": "The Procedure — Part 2: Surface Areas & Volumes (ABL 5.3 & 5.4)",
+      "content": "Surface Areas: Deconstruct each solid into flat faces. Cube = 6 squares = 6a squared. Cuboid = 6 rectangles = 2(lh + bh + lb). Cylinder = rectangle + 2 circles = 2 pi r(r + h). Cone: fold curved surface into parallelogram to get pi rl. Sphere: wrap in cylinder to show surface area = curved surface area of cylinder = 4 pi r squared. Volumes: Build cube from Jodo cubes to find a cubed. Cuboid = lbh. Cylinder = pi r squared h (stack of circles). Cone: pour sand into cylinder 3 times to prove volume = 1/3 pi r squared h. Sphere: fill sphere with sand and empty into 2 cylinders, 3 times, to derive 4/3 pi r cubed."
+    },
+    {
+      "title": "Common Misconceptions",
+      "content": "1. Students confuse surface area with volume — thinking the outside covering IS the space inside. 2. Students think bigger-looking shapes always have larger volume. 3. Students believe a cone has half the volume of a cylinder (not 1/3). 4. Students use slant height instead of perpendicular height in volume formulas. 5. Students think Euler's formula works for non-polyhedrons like spheres and cylinders (it only applies to polyhedrons)."
+    }
+  ],
+
+  "procedure": "PART 1 — Classifying Solids (ABL 5.1): 1. Show models of 2D and 3D shapes. Ask students to describe differences using their own words. 2. Introduce 3D = length + breadth + height. 3. Classify into polyhedrons (flat faces: cubes, prisms, pyramids) and non-polyhedrons (curved: cylinders, cones, spheres). 4. Teach terminology: faces, edges, vertices. 5. Play 'Guess the Solid' game — one student holds a secret solid, others ask yes/no questions to identify it. PART 2 — Nets & Euler's Formula (ABL 5.2): 1. Demonstrate constructing a cube from its net. 2. Students construct various solids from nets (cube, cuboid, triangular prism, pentagonal prism, triangular pyramid, square pyramid, cylinder, cone). 3. Students count faces, edges, vertices for each polyhedron. 4. Fill observation table and discover F + V = E + 2 (Euler's formula). PART 3 — Surface Areas (ABL 5.3): 1. Deconstruct cube net — 6 identical squares — surface area = 6a squared. 2. Deconstruct cuboid — 6 rectangles — surface area = 2(lh + bh + lb). 3. Cylinder: unroll to get rectangle (length = circumference) + 2 circles. CSA = 2 pi rh, TSA = 2 pi r(r+h). 4. Cone: cut curved surface, fold into parallelogram — CSA = pi rl, TSA = pi r(l+r). 5. Sphere: wrap in cylinder of same radius and height = diameter — surface area = 4 pi r squared. PART 4 — Volumes (ABL 5.4): 1. Build cube from 27 Jodo cubes. Count = a cubed. 2. Build cuboid from Jodo cubes. Volume = lbh = base area x height. 3. Cylinder: stack of circles, volume = pi r squared h. 4. Cone: fill with sand, pour into cylinder — takes exactly 3 cone-fulls. Volume = 1/3 pi r squared h. 5. Sphere: fill with sand, pour into 2 cylinders — takes exactly 3 sphere-fulls to fill both. Volume = 4/3 pi r cubed.",
+
+  "canvasSteps": [
+    {
+      "step": 1,
+      "title": "2D vs 3D — Classifying Solids",
+      "description": "A flat triangle and a flat square on the left labelled '2D'. On the right, a cube, cylinder, cone, sphere, and triangular prism labelled '3D'. Below them, two groups: polyhedrons (cube, prism, pyramid — flat faces) and non-polyhedrons (cylinder, cone, sphere — curved surfaces). Faces, edges, and vertices are highlighted on a cube.",
+      "svgId": "classifying-solids"
+    },
+    {
+      "step": 2,
+      "title": "Nets Fold into Solids — Euler's Formula",
+      "description": "A flat net of a cube (six connected squares) shown with dotted fold lines, with an arrow showing it folding up into a 3D cube. Below, an observation table showing F + V = E + 2 verified for cube (6+8=12+2), cuboid, triangular prism, and square pyramid. The formula F + V = E + 2 is displayed prominently.",
+      "svgId": "nets-euler-formula"
+    },
+    {
+      "step": 3,
+      "title": "Unfolding Solids — Surface Area",
+      "description": "Four deconstructed solids shown side by side: a cube unfolded into 6 squares (SA = 6a squared), a cylinder unrolled into a rectangle plus 2 circles (CSA = 2 pi rh), a cone flattened into a sector plus a circle (CSA = pi rl), and a sphere wrapped by a cylinder to show SA = 4 pi r squared. Each shows the formula derivation.",
+      "svgId": "surface-area-derivation"
+    },
+    {
+      "step": 4,
+      "title": "Sand Pouring — Discovering Volume",
+      "description": "On the left, a cube built from 27 small unit cubes (3x3x3) with the formula V = a cubed. In the centre, a cone pouring sand into a cylinder — shown being done 3 times — with the equation 3 x cone = 1 cylinder, so V = 1/3 pi r squared h. On the right, a sphere pouring sand into 2 cylinders — done 3 times — deriving V = 4/3 pi r cubed.",
+      "svgId": "volume-discovery"
+    }
+  ],
+
+  "leadingQuestions": [
+    "What is the difference between a flat shape like a triangle and a solid shape like a pyramid? How many measurements do you need for each?",
+    "When you fold up the net of a cube, how many faces, edges, and vertices does it have? Does the formula F + V = E + 2 work for every polyhedron you built?",
+    "If you unfold a cylinder into flat pieces, what shapes do you get? Can you figure out the surface area from those flat pieces?",
+    "How many times did you have to fill the cone with sand and pour it into the cylinder to fill it completely? What does that tell you about the relationship between their volumes?"
+  ],
+
+  "keyMessages": [
+    "Solids are 3D shapes measured by length, breadth, and height. They are classified into polyhedrons (flat faces — prisms, pyramids) and non-polyhedrons (curved surfaces — cylinders, cones, spheres). For every polyhedron, Euler's formula holds: Faces + Vertices = Edges + 2.",
+    "Surface area formulas come from deconstructing solids into flat 2D faces. A cube unfolds into 6 squares (6a squared), a cylinder unrolls into a rectangle and 2 circles (2 pi r(r+h)), and a sphere's surface area equals the curved surface area of a wrapping cylinder (4 pi r squared).",
+    "Volume measures the space a solid occupies, in cubic units. All volume formulas connect through base area times height. A cone is exactly 1/3 of its matching cylinder (1/3 pi r squared h). A sphere's volume is 4/3 pi r cubed — proven by pouring sand from sphere into cylinders."
+  ],
+
+  "misconceptions": [
+    "Surface area and volume are the same thing — in fact, surface area measures the total area of a solid's outer faces (in square units) while volume measures the space inside the solid (in cubic units). A hollow box has surface area but the volume is the space inside it",
+    "A cone has half the volume of a cylinder with the same base and height — students are surprised to discover it takes exactly 3 cone-fulls of sand to fill the cylinder, proving the cone is 1/3 (not 1/2) of the cylinder's volume",
+    "Euler's formula F + V = E + 2 works for all solids — it only applies to polyhedrons (flat-faced solids). It does not apply to non-polyhedrons like cylinders, cones, and spheres which have curved surfaces",
+    "Bigger-looking shapes always have larger volume — a tall thin cylinder can look bigger than a short wide one but have less volume. You must calculate using the formula, not judge by appearance"
+  ],
+
+  "dimensions": [
+    { "id": "D1", "name": "Curiosity Sparking", "shortName": "curiosity", "weight": 0.30, "keywords": ["why", "what if", "predict", "guess", "surprise", "what do you notice", "how many times", "what shape do you get", "can you figure out"] },
+    { "id": "D2", "name": "Student Engagement", "shortName": "engagement", "weight": 0.25, "keywords": ["lakshmi", "arjun", "everyone", "your group", "show me", "try it", "come up", "take turns", "pour", "build", "fold"] },
+    { "id": "D3", "name": "Concept Clarity", "shortName": "clarity", "weight": 0.20, "keywords": ["polyhedron", "faces", "edges", "vertices", "euler", "surface area", "volume", "cubic", "pi", "radius", "height", "net", "prism", "pyramid", "cylinder", "cone", "sphere"] },
+    { "id": "D4", "name": "Facilitation Quality", "shortName": "facilitation", "weight": 0.15, "keywords": ["fold", "cut", "pour", "fill", "count", "measure", "construct", "deconstruct", "unfold", "label", "observe", "now let", "next step", "sand"] },
+    { "id": "D5", "name": "Questioning & Listening", "shortName": "questioning", "weight": 0.10, "keywords": ["why do you think", "tell me more", "good question", "interesting", "can you explain", "how do you know", "what did you observe"] }
+  ],
+
+  "importanceWeights": { "D1": 0.30, "D2": 0.25, "D3": 0.20, "D4": 0.15, "D5": 0.10 },
+
+  "skills": [
+    { "id": "S1", "name": "Spark", "description": "Creating curiosity, wonder, and mathematical questioning through hands-on construction of solids and sand-pouring volume experiments", "category": "engagement" },
+    { "id": "S2", "name": "Reach", "description": "Engaging every student, especially quiet and disengaged, through group construction from nets, the Guess the Solid game, and collaborative sand-pouring experiments", "category": "inclusion" }
+  ],
+
+  "archetypes": [
+    { "id": "ignitor", "name": "The Ignitor", "description": "Spark >= 70 AND Reach >= 70", "indicators": ["spark_high", "reach_high"] },
+    { "id": "performer", "name": "The Performer", "description": "Spark >= 60, Reach < 50", "indicators": ["spark_high", "reach_low"] },
+    { "id": "caretaker", "name": "The Caretaker", "description": "Reach >= 60, Spark < 50", "indicators": ["spark_low", "reach_high"] },
+    { "id": "lecturer", "name": "The Lecturer", "description": "Both < 50, Clarity > 60", "indicators": ["spark_low", "reach_low", "clarity_high"] },
+    { "id": "learner", "name": "The Learner", "description": "Both < 40", "indicators": ["spark_low", "reach_low"] }
+  ]
+}

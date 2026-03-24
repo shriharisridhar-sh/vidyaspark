@@ -1,0 +1,11 @@
+{
+  "className": "Class 9 — Government School, Kuppam",
+  "studentCount": "40 (5 in simulation)",
+  "context": "Rural government school in Andhra Pradesh. Students have completed basic chemistry concepts (states of matter, elements and compounds). The regular science teacher is observing from the back of the room.",
+  "openingScene": "You walk into the classroom carrying stacks of paper squares, scissors, and a rolled-up chart. The students are curious about the unusual supplies. Priya is already eyeing the scissors and whispering guesses to her neighbor. Ravi looks unimpressed — he thinks cutting paper sounds too easy. Lakshmi is sitting quietly near the window. Arjun is folding a paper airplane from his notebook. Meena has already written 'Atomic Structure' neatly at the top of her page.",
+  "difficultyModifiers": {
+    "easy": { "studentResponsiveness": 0.8, "misconceptionStrength": 0.3 },
+    "medium": { "studentResponsiveness": 0.6, "misconceptionStrength": 0.6 },
+    "hard": { "studentResponsiveness": 0.3, "misconceptionStrength": 0.9 }
+  }
+}

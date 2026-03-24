@@ -1,0 +1,117 @@
+{
+  "id": "abl-c5-atomic-structure",
+  "name": "Atomic Structure — How Small Is an Atom?",
+  "description": "Students discover the incredibly tiny scale of atoms by repeatedly cutting paper in half. Through this hands-on activity, they realize that atoms are far smaller than anything visible to the naked eye, and learn that atomic size is measured in nanometres.",
+  "category": "Chemistry",
+  "subject": "Chemistry",
+  "handbook": "C5 — Atomic Structure",
+  "ablCode": "ABL 1.1",
+  "difficulty": "medium",
+  "estimatedMinutes": 15,
+  "version": "1.0",
+  "gradeLevel": "9-10",
+  "materials": ["Paper squares (28cm x 28cm)", "Scissors", "Meter rule", "Size comparison chart - Table 1", "Size comparison chart - Table 2"],
+
+  "pointA": {
+    "assumption": "Students think atoms are just 'very small' but have no real sense of how unimaginably tiny they are compared to everyday objects",
+    "blindspot": "They cannot connect abstract measurements like nanometres to anything in their daily experience, so 'small' has no concrete meaning"
+  },
+  "pointB": {
+    "insight": "An atom is approximately 0.1 nanometres — equivalent to cutting a 28cm paper in half 31 times. Even after 10 cuts (the limit of what scissors can manage), you are still millions of times larger than an atom.",
+    "evidence": "Students can describe the size progression from hand-sized paper down through hair, bacteria, light waves, and finally to the atomic scale, and explain why atoms cannot be seen even with ordinary microscopes"
+  },
+
+  "tutorial": [
+    {
+      "title": "Learning Objective",
+      "content": "In this experiment, students will grasp the incredibly small scale of atoms through a paper-cutting activity. Starting with a 28cm square of paper, they cut it in half repeatedly. Each cut halves the size, and a comparison chart maps each cut to a real-world object. By cut 31 they would reach 0.1 nanometres — the size of an atom. This builds intuition for why atoms are invisible and why we need special units (nanometres) to measure them."
+    },
+    {
+      "title": "Materials & Setup",
+      "content": "You need: 14 paper squares cut to 28cm x 28cm (one per group of 3 students), 14 scissors, 1 meter rule, and printed copies of Size Comparison Chart Table 1 (metric prefixes) and Table 2 (cut number to object size mapping). Cut the paper squares before class and have the charts ready to display."
+    },
+    {
+      "title": "The Procedure",
+      "content": "Step 1: Discuss what matter is made of — guide students to the word 'atom'. Ask if they have ever seen one. Step 2: Show the meter rule and explain metric prefixes (deca, centi, milli, micro, nano) using Chart 1. Step 3: Divide into groups of 3, give each group a paper square and scissors. Step 4: Students fold and cut the paper in half, calling out the cut number each time. After each cut, they check Chart 2 to see what real-world object matches that size. Step 5: Students continue cutting until physically impossible (usually around cut 10, which is 0.25mm — the size of fine pencil lead). Step 6: Walk through Chart 2 beyond their last cut: cut 12 is hair thickness, cut 18 is bacteria, cut 24 is electron microscope range, and cut 31 reaches 0.1 nanometres — the size of an atom."
+    },
+    {
+      "title": "Key Messages",
+      "content": "1. Atoms are smaller than anything we can imagine — you would need to cut a 28cm paper in half 31 times to reach atomic scale. 2. The size of an atom (atomic radius) is measured in nanometres. One nanometre is 10^-9 metres. 3. Even powerful optical microscopes cannot see atoms because atoms are smaller than the wavelength of visible light."
+    },
+    {
+      "title": "Common Misconceptions",
+      "content": "Students often think atoms are small but still visible under a regular microscope. Some believe atoms are the same size as cells or bacteria. Others may think that because they stopped cutting at cut 10, that is the smallest possible size — they need to understand the progression continues mathematically far beyond what scissors can achieve."
+    }
+  ],
+
+  "procedure": "1. Begin with a two-minute discussion: What is all matter made up of? Point to objects in the classroom (books, pencils, desks) and ask what the smallest unit could be. Guide them to the answer 'atom'. Ask if anyone has ever seen an atom. 2. Show the meter rule. Explain that 1 metre can be divided into smaller and smaller units. Use Chart 1 to introduce metric prefixes: centimetre (10^-2), millimetre (10^-3), micrometre (10^-6), nanometre (10^-9). Give everyday examples for each. 3. Put up Size Comparison Chart Table 2. Divide the class into groups of 3. Give each group a 28cm x 28cm paper square and scissors. 4. Tell them: if you can cut this paper in half 31 times, you will reach the size of an atom. Let us see how far we can get! 5. Students fold and cut, calling out the cut number. After each cut they check Chart 2: Cut 1 = 14cm (child's hand), Cut 2 = 7cm (fingers), Cut 3 = 3.5cm (watch), Cut 4 = 1.75cm (keyboard key), Cut 6 = 0.44cm (mustard seed), Cut 8 = 1mm (thread), Cut 10 = 0.25mm (fine pencil lead). 6. Most groups will stop around cut 10. Now walk them through what comes next on the chart: Cut 12 = 0.06mm (hair), Cut 14 = 0.015mm (width of paper), Cut 18 = 1 micron (bacteria), Cut 19 = 500nm (visible light), Cut 24 = 15nm (electron microscope range), Cut 31 = 0.1nm — the size of an ATOM. 7. Emphasize: we stopped at cut 10 and that was already incredibly tiny. An atom is 21 more halvings beyond that — unimaginably small. 8. Conclude: Atoms are smaller than anything we can imagine. Atomic radius is measured in nanometres. One nanometre is 10^-9 metres.",
+
+  "canvasSteps": [
+    {
+      "step": 1,
+      "title": "Setup",
+      "description": "A classroom table with a 28cm paper square, scissors, a meter rule, and the Size Comparison Chart displayed on the wall. Students sit in groups of three.",
+      "svgId": "setup"
+    },
+    {
+      "step": 2,
+      "title": "Cutting Begins",
+      "description": "Students fold and cut the paper in half. The first cut produces a 14cm piece (size of a child's hand). A visual scale bar shows the size comparison. The cut number counter shows '1'.",
+      "svgId": "cutting-begins"
+    },
+    {
+      "step": 3,
+      "title": "Reaching the Limit",
+      "description": "After 10 cuts, the paper is 0.25mm — the size of fine pencil lead. Students hold up their tiny scraps. The scissors can no longer cut further. The comparison chart highlights where they stopped.",
+      "svgId": "reaching-limit"
+    },
+    {
+      "step": 4,
+      "title": "The Journey to the Atom",
+      "description": "A zoom-in animation continues the journey beyond cut 10: hair (cut 12), bacteria (cut 18), visible light wavelength (cut 19), electron microscope range (cut 24), and finally at cut 31 — 0.1 nanometres — the size of an atom! A scale bar dramatically shows how far beyond human vision atoms lie.",
+      "svgId": "journey-to-atom"
+    }
+  ],
+
+  "leadingQuestions": [
+    "What do you think all matter is made up of? What is the smallest particle you can think of?",
+    "Have you ever seen an atom? Why do you think we cannot see atoms?",
+    "How many times do you think you can cut the paper before it becomes too small to cut?",
+    "Can we understand the size of an atom by comparing it to objects we see every day?"
+  ],
+
+  "keyMessages": [
+    "Atoms are smaller than anything we can imagine — cutting a 28cm paper in half 31 times reaches atomic scale at 0.1 nanometres",
+    "The size of an atom (atomic radius) is measured in nanometres, where one nanometre is 10^-9 metres",
+    "Even after 10 cuts we reach pencil-lead thickness — an atom requires 21 more halvings beyond that, showing just how incredibly tiny atoms are"
+  ],
+
+  "misconceptions": [
+    "Atoms are small but can be seen under a regular school microscope",
+    "Atoms are about the same size as cells or bacteria",
+    "Because we stopped cutting at cut 10, that must be close to the smallest possible size of matter"
+  ],
+
+  "dimensions": [
+    { "id": "D1", "name": "Curiosity Sparking", "shortName": "curiosity", "weight": 0.30, "keywords": ["why", "what if", "surprise", "predict", "guess", "wonder", "how small", "imagine", "how many cuts"] },
+    { "id": "D2", "name": "Student Engagement", "shortName": "engagement", "weight": 0.25, "keywords": ["lakshmi", "arjun", "everyone", "your group", "try it", "show me", "cut together", "hold it up", "compare"] },
+    { "id": "D3", "name": "Concept Clarity", "shortName": "clarity", "weight": 0.20, "keywords": ["atom", "nanometre", "atomic radius", "matter", "particles", "size", "scale", "10^-9", "invisible"] },
+    { "id": "D4", "name": "Facilitation Quality", "shortName": "facilitation", "weight": 0.15, "keywords": ["observe", "look at the chart", "check your size", "notice", "compare with", "count your cuts", "refer to table"] },
+    { "id": "D5", "name": "Questioning & Listening", "shortName": "questioning", "weight": 0.10, "keywords": ["why do you think", "tell me more", "good question", "interesting", "what else", "who can explain", "how did you figure that out"] }
+  ],
+
+  "importanceWeights": { "D1": 0.30, "D2": 0.25, "D3": 0.20, "D4": 0.15, "D5": 0.10 },
+
+  "skills": [
+    { "id": "S1", "name": "Spark", "description": "Creating curiosity, wonder, and scientific questioning", "category": "engagement" },
+    { "id": "S2", "name": "Reach", "description": "Engaging every student, especially quiet and disengaged", "category": "inclusion" }
+  ],
+
+  "archetypes": [
+    { "id": "ignitor", "name": "The Ignitor", "description": "Spark >= 70 AND Reach >= 70", "indicators": ["spark_high", "reach_high"] },
+    { "id": "performer", "name": "The Performer", "description": "Spark >= 60, Reach < 50", "indicators": ["spark_high", "reach_low"] },
+    { "id": "caretaker", "name": "The Caretaker", "description": "Reach >= 60, Spark < 50", "indicators": ["spark_low", "reach_high"] },
+    { "id": "lecturer", "name": "The Lecturer", "description": "Both < 50, Clarity > 60", "indicators": ["spark_low", "reach_low", "clarity_high"] },
+    { "id": "learner", "name": "The Learner", "description": "Both < 40", "indicators": ["spark_low", "reach_low"] }
+  ]
+}
