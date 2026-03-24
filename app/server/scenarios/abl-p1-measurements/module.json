@@ -1,0 +1,118 @@
+{
+  "id": "abl-p1-measurements",
+  "name": "Learning to Measure — Physical Quantities",
+  "description": "Students discover that measurement requires both a number and a unit by comparing objects using non-standard measures (hand spans, beauty) versus standard measures (scales, measuring glasses), and learn to distinguish physical quantities from non-physical qualities.",
+  "category": "Physics",
+  "subject": "Physics",
+  "handbook": "P1 — Measurements",
+  "ablCode": "ABL 1",
+  "difficulty": "easy",
+  "estimatedMinutes": 15,
+  "version": "1.0",
+  "gradeLevel": "4-6",
+  "materials": ["Various kinds of flowers", "Collection of pens and pencils", "Flip chart with lines and shapes (Chart 1)", "Bangles of different sizes", "Two glasses of same height but different diameter", "Water with food colouring", "Scale", "Volume measuring glass"],
+
+  "pointA": {
+    "assumption": "Students think they can judge the size of objects just by looking at them, and confuse subjective qualities like beauty with measurable quantities",
+    "blindspot": "They don't realize that visual comparison can be misleading, and that true measurement requires a standard unit and a numerical value"
+  },
+  "pointB": {
+    "insight": "Measurement = Number + Unit. Only physical quantities (length, volume, mass) can be measured; subjective qualities (beauty, ease of writing) cannot. Standard units are needed because non-standard measures give different results for different people.",
+    "evidence": "Students can distinguish physical quantities from non-physical qualities, explain why two students measuring the same table with hand spans get different answers, and state that every measurement has a number and a unit"
+  },
+
+  "tutorial": [
+    {
+      "title": "Learning Objective",
+      "content": "In this experiment, students will understand what physical quantities are, learn that measurement is the determination of quantity using a standard, and discover that every measurement has two components: a number and a unit. They will also learn why non-standard units (like hand spans) are unreliable."
+    },
+    {
+      "title": "Materials & Setup",
+      "content": "You need: a bunch of mixed flowers of different sizes, 20 pens and pencils collected from students, a flip chart showing lines and 2D/3D shapes of different sizes (Chart 1), bangles of different sizes, two glasses of the same height but different diameters, water with food colouring, a scale, and a volume measuring glass."
+    },
+    {
+      "title": "The Procedure",
+      "content": "Activity 1: Show flowers and ask students to sort by colour (easy), then by beauty (impossible to agree). Show pens/pencils and ask to sort by type (easy), then by ease of writing (subjective). Show Chart 1 with lines and shapes and ask which is bigger. Activity 2: Show two line segments and ask which is bigger by sight, then verify with a scale. Pour equal water into two glasses of different diameters and ask which has more, then measure with a measuring glass. Activity 3: Have two students measure a table using hand spans and compare — they get different numbers. Then measure with a standard scale."
+    },
+    {
+      "title": "Key Messages",
+      "content": "1. Anything that can be measured and expressed as a number is a physical quantity (length, mass, volume, time). Qualities like beauty or comfort cannot be measured. 2. Measurement always has two components: a number and a unit (e.g., 10 cm, 50 ml). 3. Standard units are necessary because non-standard measures (hand spans, cubits) vary from person to person."
+    },
+    {
+      "title": "Common Misconceptions",
+      "content": "Students often think visual comparison is sufficient and don't see the need for instruments. They confuse subjective qualities (beauty, comfort) with measurable physical quantities. They assume all measurement methods give the same result, not realizing that non-standard units lead to inconsistency."
+    }
+  ],
+
+  "procedure": "1. Show a bunch of mixed flowers. Ask students to sort by colour (they agree). Then ask them to sort by beauty (they disagree). Discuss why. 2. Show pens and pencils. Ask students to sort pens from pencils (easy). Then ask which is easiest to write with (they disagree). 3. Show Chart 1 with lines and shapes. Ask which line is longer, which rectangle is bigger, which box is smaller. Then measure with a scale to verify. 4. Show two line segments of similar length. Ask which is longer — students guess. Measure to find the truth. 5. Pour equal amounts of coloured water into two glasses of different diameters. Ask which has more. Measure with a measuring glass to show they are equal. 6. Ask two students to measure a table with their hand spans — they get different numbers. Measure with a standard scale. Ask: Why did the hand-span measurements differ?",
+
+  "canvasSteps": [
+    {
+      "step": 1,
+      "title": "Setup",
+      "description": "A table with mixed flowers, pens, pencils, Chart 1 on a stand, two glasses, bangles, and a scale laid out. Students seated in a semicircle.",
+      "svgId": "setup"
+    },
+    {
+      "step": 2,
+      "title": "Sorting by Measurable vs Subjective",
+      "description": "Flowers split into two groups by size (clear agreement). Then a question mark over 'Which is most beautiful?' showing student disagreement. Pens and pencils sorted into two piles.",
+      "svgId": "sorting-activity"
+    },
+    {
+      "step": 3,
+      "title": "Measuring with Standard Tools",
+      "description": "Two line segments side by side with a scale underneath showing their true lengths. Two glasses of different diameters with equal coloured water, and a measuring glass showing both are 100 ml.",
+      "svgId": "standard-measurement"
+    },
+    {
+      "step": 4,
+      "title": "Hand Span vs Standard Scale",
+      "description": "Two students measuring the same table with hand spans, getting different numbers (6 vs 7). Then the same table measured with a scale showing one consistent answer. Caption: Measurement = Number + Unit.",
+      "svgId": "handspan-vs-scale"
+    }
+  ],
+
+  "leadingQuestions": [
+    "Can you sort these flowers by their beauty? Does everyone agree?",
+    "Which of these two lines is longer? Are you sure, or should we measure?",
+    "Which glass has more water — the tall narrow one or the short wide one?",
+    "Two students measured the same table with hand spans and got different numbers. Why?",
+    "What two things does every measurement need?"
+  ],
+
+  "keyMessages": [
+    "Anything that can be measured and expressed in terms of a number is a physical quantity — mass, length, time are fundamental physical quantities",
+    "Measurement is the determination of quantity of an item or a physical quantity, and always has two components: a number and a unit",
+    "Standard units are necessary because non-standard measures like hand spans vary from person to person and give inconsistent results"
+  ],
+
+  "misconceptions": [
+    "You can always tell which object is bigger or longer just by looking at it",
+    "Beauty, comfort, and ease of writing are measurable quantities like length and mass",
+    "Any method of measurement gives the same result, so hand spans are just as good as a scale"
+  ],
+
+  "dimensions": [
+    { "id": "D1", "name": "Curiosity Sparking", "shortName": "curiosity", "weight": 0.30, "keywords": ["why", "what if", "surprise", "predict", "guess", "wonder", "which is bigger", "are you sure"] },
+    { "id": "D2", "name": "Student Engagement", "shortName": "engagement", "weight": 0.25, "keywords": ["lakshmi", "arjun", "everyone", "what do you think", "come up", "try it", "your turn"] },
+    { "id": "D3", "name": "Concept Clarity", "shortName": "clarity", "weight": 0.20, "keywords": ["physical quantity", "measurement", "number", "unit", "standard", "hand span", "scale", "centimeter", "milliliter"] },
+    { "id": "D4", "name": "Facilitation Quality", "shortName": "facilitation", "weight": 0.15, "keywords": ["observe", "notice", "look carefully", "sort", "measure", "compare", "now let", "show"] },
+    { "id": "D5", "name": "Questioning & Listening", "shortName": "questioning", "weight": 0.10, "keywords": ["why do you think", "tell me more", "good question", "interesting", "do you agree"] }
+  ],
+
+  "importanceWeights": { "D1": 0.30, "D2": 0.25, "D3": 0.20, "D4": 0.15, "D5": 0.10 },
+
+  "skills": [
+    { "id": "S1", "name": "Spark", "description": "Creating curiosity, wonder, and scientific questioning", "category": "engagement" },
+    { "id": "S2", "name": "Reach", "description": "Engaging every student, especially quiet and disengaged", "category": "inclusion" }
+  ],
+
+  "archetypes": [
+    { "id": "ignitor", "name": "The Ignitor", "description": "Spark >= 70 AND Reach >= 70", "indicators": ["spark_high", "reach_high"] },
+    { "id": "performer", "name": "The Performer", "description": "Spark >= 60, Reach < 50", "indicators": ["spark_high", "reach_low"] },
+    { "id": "caretaker", "name": "The Caretaker", "description": "Reach >= 60, Spark < 50", "indicators": ["spark_low", "reach_high"] },
+    { "id": "lecturer", "name": "The Lecturer", "description": "Both < 50, Clarity > 60", "indicators": ["spark_low", "reach_low", "clarity_high"] },
+    { "id": "learner", "name": "The Learner", "description": "Both < 40", "indicators": ["spark_low", "reach_low"] }
+  ]
+}

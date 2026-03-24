@@ -1,0 +1,121 @@
+{
+  "id": "abl-b3-digestion",
+  "name": "Food and Digestion — Learning About the Food We Eat",
+  "description": "Students discover that the food they eat contains different nutrients — proteins, carbohydrates, fats, vitamins, and minerals — by sorting food cards, playing a nutrient-matching game, and comparing nutrient percentages across common food items, leading to an understanding of why a balanced diet matters.",
+  "category": "Biology",
+  "subject": "Biology",
+  "handbook": "B3 — The Amazing World of Food and Digestion",
+  "ablCode": "ABL 1.1",
+  "difficulty": "medium",
+  "estimatedMinutes": 15,
+  "version": "1.0",
+  "gradeLevel": "6-8",
+  "materials": ["Chart paper or flipchart", "Nutrition charts (set of 2)", "Food cards (two sets of 50 cards with pictures of food items)", "Cardboard or plastic boxes (5 per session)", "Nutrient percentage cards", "Colour pencils", "Marker pens"],
+
+  "pointA": {
+    "assumption": "Students think food is just something that fills your stomach and stops hunger — rice, dal, roti are all the same",
+    "blindspot": "They don't realize that different foods contain different nutrients (proteins, carbohydrates, fats, vitamins, minerals), each serving a specific function in the body, and that eating a variety is essential for health"
+  },
+  "pointB": {
+    "insight": "Food contains five main nutrient groups — macronutrients (proteins, carbohydrates, fats) and micronutrients (vitamins, minerals) — and a balanced diet ensures the body gets all nutrients in the right quantities",
+    "evidence": "Students can classify common food items into nutrient groups, explain why different nutrients are needed, and identify what might be missing from an unbalanced meal"
+  },
+
+  "tutorial": [
+    {
+      "title": "Learning Objective",
+      "content": "In this experiment, students will discover that the food they eat contains different types of nutrients — proteins, carbohydrates, fats, vitamins, and minerals. Through sorting games and group activities, they will learn that different foods are rich in different nutrients and understand why eating a balanced diet is essential for the body to grow and function properly."
+    },
+    {
+      "title": "Materials & Setup",
+      "content": "You need: chart paper or flipchart, two nutrition charts (one listing foods rich in each nutrient, the other listing functions and deficiency diseases), two sets of 50 food cards (playing-card size with pictures of common foods like dal, rice, groundnuts, carrots, milk), 5 cardboard boxes, and nutrient percentage cards. Divide students into 5 groups named after nutrients: Protein, Carbohydrate, Fat, Vitamin, Mineral."
+    },
+    {
+      "title": "The Procedure",
+      "content": "Step 1: Ask students what foods they ate in the past week and list them on a chart with 5 unlabelled columns grouped by nutrient type — see if students can guess why items are grouped together. Step 2: Play 'Find the Nutrients' — distribute boxes of mixed food cards to each group; groups sort cards by nutrient type using codes on the back, then trade cards so each nutrient group collects all its cards. Step 3: Play the percentage game — 10 students each hold a nutrient percentage card and must stand in ascending order of protein percentage, showing that the same nutrient appears in different amounts across foods. Step 4: Discuss macronutrients vs micronutrients and why balanced meals matter. Step 5: Reflection — each student identifies a nutrient they may have missed in their last meal."
+    },
+    {
+      "title": "Key Messages",
+      "content": "1. The main nutrients in food are macronutrients (proteins, carbohydrates, fats) and micronutrients (vitamins, minerals). 2. Different foods are rich in different nutrients — no single food provides everything. 3. It is important to have a balanced diet so the body gets all required nutrients in the right quantities. 4. For good digestion, we also need water and dietary fiber (roughage). 5. Nutrient deficiencies lead to specific diseases — protein deficiency causes stunted growth, vitamin C deficiency causes scurvy, iron deficiency causes anemia."
+    },
+    {
+      "title": "Common Misconceptions",
+      "content": "Students often think all food is the same as long as it fills your stomach. They may believe that eating more of one food type (like rice) is sufficient for good health. They may not understand why variety in diet matters or confuse being full with being well-nourished. Some think vitamins and minerals are only found in medicines or supplements, not in everyday food."
+    }
+  ],
+
+  "procedure": "1. Begin by asking students what foods they have eaten over the past week — list responses on a chart paper with five columns, grouping foods by their dominant nutrient without revealing the column headers. 2. Ask students why you grouped certain foods together — guide them toward discovering that foods can be classified by nutrients: proteins, carbohydrates, fats, vitamins, and minerals. 3. Divide students into 5 groups, naming each group after a nutrient (students call out 'protein', 'carbohydrate', 'fat', 'mineral', 'vitamin' instead of numbers). 4. Play 'Find the Nutrients' — distribute boxes of mixed food cards; each group sorts cards by the nutrient code on the back, then groups trade cards so each nutrient-named group collects all matching cards. 5. Tally sorted cards against the Nutrition Chart 1 displayed on the wall. 6. Play the percentage game — give 10 students nutrient percentage cards and ask them to stand in ascending order of protein content, showing that different foods have different amounts of the same nutrient. 7. Introduce the terms macronutrients (needed in large quantities: proteins, carbs, fats) and micronutrients (needed in small amounts: vitamins, minerals). 8. Discuss what happens when nutrients are deficient — protein deficiency leads to kwashiorkor, vitamin D deficiency leads to rickets, iron deficiency leads to anemia. 9. Each student reflects on what nutrient they may have missed in their last meal.",
+
+  "canvasSteps": [
+    {
+      "step": 1,
+      "title": "Setup — What Did You Eat This Week?",
+      "description": "A classroom chart with five unlabelled columns. Common Indian food items (dal, rice, groundnuts, carrots, milk, eggs, spinach) are being placed into columns. Students are gathered around suggesting foods they ate.",
+      "svgId": "food-chart-setup"
+    },
+    {
+      "step": 2,
+      "title": "Find the Nutrients Game",
+      "description": "Five groups of students with cardboard boxes of food cards. Each card shows a food picture (banana, fish, potato, etc.) with a nutrient code on the back. Groups are sorting and trading cards. Arrows show protein cards flowing to the Protein group, fat cards to the Fat group, etc.",
+      "svgId": "nutrient-sorting-game"
+    },
+    {
+      "step": 3,
+      "title": "The Five Nutrient Groups Revealed",
+      "description": "A colorful nutrition chart showing five groups: Proteins (dal, beans, eggs, milk), Carbohydrates (rice, wheat, potato, sugarcane), Fats (groundnuts, coconut, ghee, sesame), Vitamins (carrots, lemons, spinach, amla), Minerals (milk, bananas, iodized salt, leafy greens). Each group is color-coded with icons showing body functions: growth, energy, protection.",
+      "svgId": "five-nutrient-groups"
+    },
+    {
+      "step": 4,
+      "title": "Balanced Diet — Putting It All Together",
+      "description": "A balanced plate (thali) diagram showing proportions of each nutrient group. Beside it, two comparison figures: a healthy child eating a balanced diet vs. illustrations of deficiency conditions (weak bones from calcium deficiency, goiter from iodine deficiency). A banner reads: Different foods, different nutrients — eat variety for health.",
+      "svgId": "balanced-diet-thali"
+    }
+  ],
+
+  "leadingQuestions": [
+    "What different foods did you eat this past week? Can you think of why we eat different types of food in each meal?",
+    "Look at the five columns — can you guess why I grouped these foods together? What do the foods in each column have in common?",
+    "Which nutrient groups do we need in larger quantities? Which ones do we need in smaller amounts but are still essential?",
+    "What would happen if you only ate rice and nothing else for many weeks? Would you stay healthy?",
+    "Can you think of a nutrient that might be missing from your last meal? What could you eat next to make up for it?"
+  ],
+
+  "keyMessages": [
+    "The main nutrients in our food are macronutrients (proteins, carbohydrates, fats) and micronutrients (vitamins, minerals) — each has a specific role in the body",
+    "Different foods are rich in different nutrients — no single food gives you everything your body needs",
+    "A balanced diet means eating the right quantities of all nutrient groups so the body can grow, repair, and function properly",
+    "Nutrient deficiencies lead to specific health problems — protein deficiency causes stunted growth, vitamin C deficiency causes scurvy, iron deficiency causes anemia"
+  ],
+
+  "misconceptions": [
+    "All food is the same as long as it fills your stomach and stops hunger",
+    "Eating large amounts of rice or roti alone is sufficient for good health",
+    "Vitamins and minerals only come from medicine bottles or supplements, not from everyday food",
+    "Being full after a meal means you have gotten all the nutrients your body needs",
+    "Children only need to worry about nutrition when they are sick"
+  ],
+
+  "dimensions": [
+    { "id": "D1", "name": "Curiosity Sparking", "shortName": "curiosity", "weight": 0.30, "keywords": ["why", "what if", "surprise", "predict", "guess", "wonder", "discover", "imagine", "what happens"] },
+    { "id": "D2", "name": "Student Engagement", "shortName": "engagement", "weight": 0.25, "keywords": ["lakshmi", "arjun", "everyone", "what do you think", "your turn", "come up", "your group", "sort the cards", "stand in order"] },
+    { "id": "D3", "name": "Concept Clarity", "shortName": "clarity", "weight": 0.20, "keywords": ["protein", "carbohydrate", "fat", "vitamin", "mineral", "macronutrient", "micronutrient", "balanced diet", "nutrient", "deficiency", "roughage"] },
+    { "id": "D4", "name": "Facilitation Quality", "shortName": "facilitation", "weight": 0.15, "keywords": ["sort", "trade", "match", "compare", "look at the chart", "check the card", "find", "group the foods", "read out"] },
+    { "id": "D5", "name": "Questioning & Listening", "shortName": "questioning", "weight": 0.10, "keywords": ["why do you think", "tell me more", "good question", "interesting", "what did you notice", "can you explain"] }
+  ],
+
+  "importanceWeights": { "D1": 0.30, "D2": 0.25, "D3": 0.20, "D4": 0.15, "D5": 0.10 },
+
+  "skills": [
+    { "id": "S1", "name": "Spark", "description": "Creating curiosity, wonder, and scientific questioning", "category": "engagement" },
+    { "id": "S2", "name": "Reach", "description": "Engaging every student, especially quiet and disengaged", "category": "inclusion" }
+  ],
+
+  "archetypes": [
+    { "id": "ignitor", "name": "The Ignitor", "description": "Spark >= 70 AND Reach >= 70", "indicators": ["spark_high", "reach_high"] },
+    { "id": "performer", "name": "The Performer", "description": "Spark >= 60, Reach < 50", "indicators": ["spark_high", "reach_low"] },
+    { "id": "caretaker", "name": "The Caretaker", "description": "Reach >= 60, Spark < 50", "indicators": ["spark_low", "reach_high"] },
+    { "id": "lecturer", "name": "The Lecturer", "description": "Both < 50, Clarity > 60", "indicators": ["spark_low", "reach_low", "clarity_high"] },
+    { "id": "learner", "name": "The Learner", "description": "Both < 40", "indicators": ["spark_low", "reach_low"] }
+  ]
+}

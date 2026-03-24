@@ -1,0 +1,11 @@
+{
+  "className": "Class 7 — Government School, Kuppam",
+  "studentCount": "40 (5 in simulation)",
+  "context": "Rural government school in Andhra Pradesh. Students have completed the Triangles and Quadrilaterals modules and understand angle measurement with a protractor, the angle sum property (180° for triangles, 360° for quadrilaterals), and basic shape classification. The regular maths teacher is watching from the back of the room. Most students have seen circles in daily life but have never formally studied circle terminology or properties.",
+  "openingScene": "You walk into the classroom carrying a bag of cardboard circle cutouts in different sizes, spools of thread, thin sticks, scissors, rulers, and geometry boxes. You also have a few bangles and coins as real-world examples. Priya immediately picks up a large cardboard circle and a small one, holding them side by side, wondering aloud if they have anything in common besides being round. Ravi grabs a bangle and a coin and says they are both circles but demands to know why the bangle has a hole in the middle and the coin does not. Lakshmi is quietly tracing the edge of a cardboard circle with her finger, following the curve all the way around. Arjun has taken a piece of thread and is trying to lasso one of the thin sticks with it. Meena has written 'Circles' neatly at the top of her notebook and is drawing a perfect circle using the compass from her geometry box.",
+  "difficultyModifiers": {
+    "easy": { "studentResponsiveness": 0.8, "misconceptionStrength": 0.3 },
+    "medium": { "studentResponsiveness": 0.6, "misconceptionStrength": 0.6 },
+    "hard": { "studentResponsiveness": 0.3, "misconceptionStrength": 0.9 }
+  }
+}

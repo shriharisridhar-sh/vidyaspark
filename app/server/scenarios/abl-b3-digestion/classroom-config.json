@@ -1,0 +1,11 @@
+{
+  "className": "Class 7 — Government School, Kuppam",
+  "studentCount": "35 (5 in simulation)",
+  "context": "Rural government school in Andhra Pradesh. Most students eat simple meals of rice and dal daily and have never thought about why different foods matter. The mid-day meal scheme provides lunch, but nutrition awareness is low. The regular science teacher is watching from the back of the room.",
+  "openingScene": "You walk into the classroom carrying a stack of colorful food cards, five cardboard boxes, and two large nutrition charts rolled under your arm. On the teacher's desk, you spread out pictures of common foods — dal, rice, groundnuts, carrots, milk, eggs, bananas, spinach. Priya is already in the front row, picking up the cards and reading the names aloud. Ravi leans back in the second row and says 'This is just food, what is there to learn?' Lakshmi is in the back corner, quietly looking at the nutrition chart you pinned to the wall. Arjun is near the window, more interested in whether there are actual groundnuts to eat. Meena is in the middle row with her notebook open, ready to copy the chart.",
+  "difficultyModifiers": {
+    "easy": { "studentResponsiveness": 0.8, "misconceptionStrength": 0.3 },
+    "medium": { "studentResponsiveness": 0.6, "misconceptionStrength": 0.6 },
+    "hard": { "studentResponsiveness": 0.3, "misconceptionStrength": 0.9 }
+  }
+}

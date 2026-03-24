@@ -1,0 +1,121 @@
+{
+  "id": "abl-c3-acids-bases",
+  "name": "Acids and Bases — Testing with Litmus Paper",
+  "description": "Students discover that substances can be classified as acids, bases, or neutral by testing household substances (lemon juice, vinegar, baking soda solution, sugar, salt) with red and blue litmus paper and observing the colour changes.",
+  "category": "Chemistry",
+  "subject": "Chemistry",
+  "handbook": "C3 — Acids, Bases and Salts",
+  "ablCode": "ABL 1.2",
+  "difficulty": "medium",
+  "estimatedMinutes": 15,
+  "version": "1.0",
+  "gradeLevel": "8-9",
+  "materials": ["Red litmus paper strips", "Blue litmus paper strips", "Lemon juice", "Vinegar", "Baking soda solution", "Sugar solution", "Common salt solution", "Plastic cups", "Droppers", "Water", "Stirrer", "Observation sheet"],
+
+  "pointA": {
+    "assumption": "Students think the only way to identify a substance is by tasting or touching it, and they have no concept of acids and bases as chemical categories",
+    "blindspot": "They don't realize that a simple indicator like litmus paper can reveal the hidden chemical nature of everyday substances without tasting them"
+  },
+  "pointB": {
+    "insight": "Substances that taste sour turn blue litmus paper red and are called acids. Substances that taste bitter turn red litmus paper blue and are called bases. Substances that do not change either litmus paper are neutral.",
+    "evidence": "Students can predict whether a substance is an acid, base, or neutral by using litmus paper and can explain the colour change pattern"
+  },
+
+  "tutorial": [
+    {
+      "title": "Learning Objective",
+      "content": "In this experiment, students will learn how litmus paper reacts with different substances to classify them as acids, bases, or neutral. Building on ABL 1.1 where students tasted substances (sour, bitter, salty, sweet), this activity introduces a scientific tool — litmus paper — that can identify acids and bases without tasting, which is important because many substances are unsafe to taste."
+    },
+    {
+      "title": "Materials & Setup",
+      "content": "You need: cups of lemon juice, vinegar, sugar solution, common salt solution, and baking soda solution (one set per group), red and blue litmus paper strips, plastic cups, droppers, and water. Label all substances and place them at group stations. Distribute observation sheets to each learner. Remind students they must NOT taste any substances in this activity."
+    },
+    {
+      "title": "The Procedure",
+      "content": "Step 1: Recap that in ABL 1.1 we identified substances by taste — but tasting is not always safe. Introduce litmus paper as a dye extracted from lichens, coated on paper. Step 2: Each group mixes their assigned substance with water in a plastic cup. Step 3: Using a dropper, place a drop of each solution on both red and blue litmus paper. Step 4: Observe and record colour changes on the observation sheet. Step 5: Each group reports their findings — display all litmus strips to the class."
+    },
+    {
+      "title": "Key Messages",
+      "content": "1. Sour substances turn blue litmus paper red — these are called acids (lemon juice, vinegar). 2. Bitter substances turn red litmus paper blue — these are called bases (baking soda solution). 3. Substances that do not change the colour of either litmus paper are called neutral (sugar, common salt). 4. Litmus is called an indicator because it indicates whether a substance is acidic or basic."
+    },
+    {
+      "title": "Common Misconceptions",
+      "content": "Students often confuse which litmus paper changes with which type of substance — remember: Blue litmus turns Red with Acids (BRA), Red litmus turns Blue with Bases (RBB). Some students think all bases are dangerous, but many are common household items like baking soda and soap. Others may believe that neutral means the substance is 'nothing' rather than understanding it is simply neither acidic nor basic."
+    }
+  ],
+
+  "procedure": "1. Recap ABL 1.1: We identified substances by tasting — sour, bitter, sweet, salty. But is it always safe to taste substances? (No!) We need a safer method. 2. Introduce litmus paper: Litmus is a dye extracted from tiny plants called lichens. It is coated onto paper. We have two types — red litmus paper and blue litmus paper. 3. Divide the class into 5 groups. Each group has one substance: lemon juice, vinegar, sugar solution, salt solution, or baking soda solution. 4. Each group mixes a small amount of their substance with water in a plastic cup using a stirrer. 5. Using a dropper, place a drop of the solution on a strip of red litmus paper AND a strip of blue litmus paper. 6. Observe carefully: Does the red litmus paper change colour? Does the blue litmus paper change colour? Record observations on the sheet. 7. One learner from each group reports to the class: what their substance did to each litmus paper. Display the litmus strips for all to see. 8. Record all results on the large observation sheet on the board. 9. Guide discussion: Lemon juice and vinegar turned blue litmus red — these sour substances are called ACIDS. Baking soda turned red litmus blue — this bitter substance is called a BASE. Sugar and salt changed neither — these are NEUTRAL. 10. Conclude: Litmus paper is an indicator — it indicates whether a substance is an acid or a base, without needing to taste it.",
+
+  "canvasSteps": [
+    {
+      "step": 1,
+      "title": "Setup — Substances and Litmus Paper",
+      "description": "A table with five labelled cups (lemon juice, vinegar, sugar solution, salt solution, baking soda solution), strips of red and blue litmus paper, droppers, and an observation sheet.",
+      "svgId": "setup"
+    },
+    {
+      "step": 2,
+      "title": "Testing with Litmus Paper",
+      "description": "A dropper places a drop of lemon juice onto blue litmus paper. The blue litmus paper turns red! The red litmus paper stays the same. Students observe the colour change closely.",
+      "svgId": "testing-litmus"
+    },
+    {
+      "step": 3,
+      "title": "Comparing All Results",
+      "description": "The observation sheet shows results for all five substances. Lemon juice and vinegar turned blue litmus red (acids). Baking soda turned red litmus blue (base). Sugar and salt changed neither (neutral). Litmus strips are displayed side by side.",
+      "svgId": "comparing-results"
+    },
+    {
+      "step": 4,
+      "title": "Classification — Acids, Bases, and Neutral",
+      "description": "A summary chart shows three categories: ACIDS (sour, turn blue litmus red) with lemon juice and vinegar; BASES (bitter, turn red litmus blue) with baking soda; NEUTRAL (no change to either litmus) with sugar and salt. Litmus is an indicator!",
+      "svgId": "classification-chart"
+    }
+  ],
+
+  "leadingQuestions": [
+    "Is it safe to taste every substance to find out what it is? What if a substance is poisonous?",
+    "What do you think will happen when we put a drop of lemon juice on the blue litmus paper?",
+    "Lemon juice turned the blue litmus paper red! Why do you think that happened?",
+    "Baking soda turned the red litmus paper blue, but sugar did not change either paper — what does that tell us about these substances?",
+    "Can you think of other substances at home that might be acids or bases? How would you test them?",
+    "Why do we call litmus paper an indicator?"
+  ],
+
+  "keyMessages": [
+    "Sour substances that turn blue litmus paper red are called acids — examples include lemon juice and vinegar",
+    "Bitter substances that turn red litmus paper blue are called bases — baking soda solution is an example",
+    "Substances that do not change the colour of either red or blue litmus paper are called neutral — sugar and salt are examples",
+    "Litmus paper is an indicator because it indicates whether a substance is an acid or a base without needing to taste it"
+  ],
+
+  "misconceptions": [
+    "Confusing which litmus paper changes with which substance type — acids turn BLUE litmus red, bases turn RED litmus blue",
+    "Thinking that all acids and bases are dangerous chemicals, when many are common household substances like lemon juice and baking soda",
+    "Believing that neutral means the substance has no properties, rather than understanding it is simply neither acidic nor basic",
+    "Assuming tasting is the only reliable way to identify substances, not realizing that chemical indicators are safer and more scientific"
+  ],
+
+  "dimensions": [
+    { "id": "D1", "name": "Curiosity Sparking", "shortName": "curiosity", "weight": 0.25, "keywords": ["why", "what if", "predict", "guess", "surprise", "wonder", "what do you think will happen", "how"] },
+    { "id": "D2", "name": "Student Engagement", "shortName": "engagement", "weight": 0.25, "keywords": ["lakshmi", "arjun", "everyone", "each group", "come and see", "show the class", "your turn", "report"] },
+    { "id": "D3", "name": "Concept Clarity", "shortName": "clarity", "weight": 0.25, "keywords": ["acid", "base", "neutral", "litmus", "indicator", "sour", "bitter", "colour change", "red", "blue"] },
+    { "id": "D4", "name": "Facilitation Quality", "shortName": "facilitation", "weight": 0.15, "keywords": ["observe", "look carefully", "notice the colour", "compare", "record", "write down", "display", "show"] },
+    { "id": "D5", "name": "Questioning & Listening", "shortName": "questioning", "weight": 0.10, "keywords": ["why do you think", "tell me more", "good observation", "interesting", "who can explain", "what else"] }
+  ],
+
+  "importanceWeights": { "D1": 0.25, "D2": 0.25, "D3": 0.25, "D4": 0.15, "D5": 0.10 },
+
+  "skills": [
+    { "id": "S1", "name": "Spark", "description": "Creating curiosity, wonder, and scientific questioning", "category": "engagement" },
+    { "id": "S2", "name": "Reach", "description": "Engaging every student, especially quiet and disengaged", "category": "inclusion" }
+  ],
+
+  "archetypes": [
+    { "id": "ignitor", "name": "The Ignitor", "description": "Spark >= 70 AND Reach >= 70", "indicators": ["spark_high", "reach_high"] },
+    { "id": "performer", "name": "The Performer", "description": "Spark >= 60, Reach < 50", "indicators": ["spark_high", "reach_low"] },
+    { "id": "caretaker", "name": "The Caretaker", "description": "Reach >= 60, Spark < 50", "indicators": ["spark_low", "reach_high"] },
+    { "id": "lecturer", "name": "The Lecturer", "description": "Both < 50, Clarity > 60", "indicators": ["spark_low", "reach_low", "clarity_high"] },
+    { "id": "learner", "name": "The Learner", "description": "Both < 40", "indicators": ["spark_low", "reach_low"] }
+  ]
+}

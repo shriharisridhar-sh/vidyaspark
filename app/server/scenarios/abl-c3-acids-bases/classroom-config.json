@@ -1,0 +1,11 @@
+{
+  "className": "Class 8 — Government School, Kuppam",
+  "studentCount": "40 (5 in simulation)",
+  "context": "Rural government school in Andhra Pradesh. Students completed ABL 1.1 in the previous session where they tasted substances (lemon juice, vinegar, sugar, salt, baking soda) and classified them as sour, bitter, sweet, salty, or tasteless. The regular science teacher is watching from the back of the room.",
+  "openingScene": "You walk into the classroom carrying strips of red and blue litmus paper, droppers, plastic cups, and the same five substances from the last session. The students recognize the lemon juice and vinegar from ABL 1.1. Priya is already wondering what the coloured paper strips are for. Ravi is skeptical — he says he can just taste things to know what they are. Lakshmi quietly remembers that baking soda tasted bitter last time. Arjun is flicking a litmus strip like a bookmark. Meena has already written 'Acids and Bases' as the heading in her notebook.",
+  "difficultyModifiers": {
+    "easy": { "studentResponsiveness": 0.8, "misconceptionStrength": 0.3 },
+    "medium": { "studentResponsiveness": 0.6, "misconceptionStrength": 0.6 },
+    "hard": { "studentResponsiveness": 0.3, "misconceptionStrength": 0.9 }
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "id": "abl-m1-circles",
+  "name": "Circles — Terminology and Properties of Circles",
+  "description": "Students learn circle terminology (radius, diameter, chord, arc, circumference, tangent, secant) through paper folding and thread activities, then verify key properties: the diameter is the longest chord, the ratio of circumference to diameter is constant (pi), and the angle subtended by an arc at the centre is twice the angle at the circumference.",
+  "category": "Mathematics",
+  "subject": "Mathematics",
+  "handbook": "M1 — Circles",
+  "ablCode": "ABL 3.1 & 3.2",
+  "difficulty": "medium",
+  "estimatedMinutes": 15,
+  "version": "1.0",
+  "gradeLevel": "6-8",
+  "materials": ["Cardboard or wooden circle models (different sizes)", "Coloured paper sheets", "Tracing paper", "Thread/string", "Scissors", "Ruler", "Geometry box (compass, protractor)", "Adhesive", "White paper sheets", "Pencil/pen/sketch pens", "Thin sticks (for tangent/secant demonstration)"],
+
+  "pointA": {
+    "assumption": "Students think a circle is just a round shape and do not distinguish between radius, diameter, chord, arc, tangent, and secant — they also assume the ratio of circumference to diameter varies with the size of the circle",
+    "blindspot": "They do not realize that all these terms describe precise geometric relationships, that the diameter is always the longest chord, and that circumference divided by diameter is a universal constant (pi) regardless of circle size"
+  },
+  "pointB": {
+    "insight": "A circle is the collection of all points equidistant from a centre; its parts (radius, diameter, chord, arc, tangent, secant) have precise definitions. The ratio of circumference to diameter is always the same constant (approximately 3.14, called pi), the diameter is always the longest chord, and the angle at the centre is twice the angle at the circumference for the same arc.",
+    "evidence": "Students can fold paper circles to find the centre and diameter, use thread to measure circumference and diameter of different-sized circles and compute the constant ratio, and use tracing-paper angle replicas to verify that the central angle is twice the inscribed angle"
+  },
+
+  "tutorial": [
+    {
+      "title": "Learning Objective",
+      "content": "This session covers two connected activities from the Agastya M1 handbook. First (ABL 3.1): students learn circle terminology — radius, diameter, circumference, chord, arc, major/minor segment, tangent, and secant — through hands-on paper folding and thread activities. Second (ABL 3.2): students verify key circle properties — the diameter is the longest chord, the ratio of circumference to diameter is constant (pi), and the angle subtended by an arc at the centre is twice the angle at the circumference."
+    },
+    {
+      "title": "Materials & Setup",
+      "content": "Divide the class into groups of 3-4 students. Each group needs: cardboard circle models of different sizes, coloured paper, tracing paper, thread, scissors, ruler, geometry box (compass, protractor), adhesive, and white paper. The Ignator should have pre-cut paper circles and thin sticks for demonstrating tangent and secant."
+    },
+    {
+      "title": "The Procedure — Part 1: Circle Terminology",
+      "content": "Step 1: Students make replicas of circle models using tracing/coloured paper. Step 2: Fold the replica exactly in half — the crease is a diameter. Fold again at a different position — the two creases meet at the centre. Step 3: Cut a piece of thread equal to the radius (centre to edge); move it around the edge to see all points are equidistant from the centre. Step 4: Wrap thread around the circle edge and measure — this is the circumference. Step 5: Fold at a position away from the centre to create a chord; use thread along the edge between chord endpoints to show arcs. Step 6: Place sticks to demonstrate tangent (touches at one point) and secant (intersects at two points)."
+    },
+    {
+      "title": "The Procedure — Part 2: Properties of Circles",
+      "content": "Step 1: Fold the circle at different positions to create several chords; measure each chord length. The fold through the centre (diameter) is always the longest. Step 2: For different-sized cardboard circles, roll each along a line to measure circumference, then fold to find diameter. Record circumference/diameter ratios — all are approximately 3.14 (pi). Step 3: Mark an arc AB on a circle; fold to get lines OA and OB (central angle). Mark point C on the circumference; fold to get CA and CB (inscribed angle). Trace angle ACB twice and place both replicas over angle AOB — they fit exactly, proving the central angle is twice the inscribed angle."
+    },
+    {
+      "title": "Common Misconceptions",
+      "content": "1. Students think larger circles have a larger circumference-to-diameter ratio — the ratio is always pi regardless of size. 2. Students confuse chord and diameter — not realizing the diameter is simply the longest possible chord (passing through the centre). 3. Students think tangent and secant are the same — a tangent touches at exactly one point while a secant crosses at two. 4. Students assume the angle at the circumference is the same as the angle at the centre for the same arc."
+    }
+  ],
+
+  "procedure": "PART 1 — Circle Terminology (ABL 3.1): 1. Ask students about circles in daily life (wheels, bangles, coins). What makes a circle different from triangles and quadrilaterals? 2. Students make replicas of circle models on coloured paper. 3. Fold the replica exactly in half — the crease is a diameter. Fold again at a different position — the two creases intersect at the centre. 4. Cut thread equal to the radius; move it around the edge to verify all points are equidistant from the centre. This is the definition of a circle. 5. Wrap thread around the circle edge; measure it — this is the circumference. 6. Fold at a position away from the centre — the crease is a chord. Use thread along the edge between chord endpoints to show major and minor arcs. 7. Place a stick touching the edge at one point — tangent. Place a stick crossing the circle at two points — secant. PART 2 — Properties of Circles (ABL 3.2): 1. Fold a circle at multiple positions to create several chords. Measure each. The fold through the centre (diameter) is always longest. 2. For 3-4 different-sized circles, measure circumference (by rolling along a line) and diameter (by folding). Compute circumference/diameter — always approximately 3.14 (pi). 3. On a circle, mark arc AB. Draw OA and OB to form central angle AOB. Mark point C on the circumference; draw CA and CB to form inscribed angle ACB. Trace angle ACB on tracing paper, make 2 replicas, and place both over angle AOB — they fit exactly, proving the central angle is twice the inscribed angle. 4. Mark points P and Q in the same segment; verify angles APB and AQB are equal using tracing paper replicas.",
+
+  "canvasSteps": [
+    {
+      "step": 1,
+      "title": "Parts of a Circle",
+      "description": "A coloured circle with all key parts labelled — centre, radius, diameter, chord, arc (major and minor), major segment, minor segment. A tangent line touches the circle at one point, and a secant line crosses through at two points. Each term is clearly labelled with its name.",
+      "svgId": "circle-terminology"
+    },
+    {
+      "step": 2,
+      "title": "Folding to Find Centre and Diameter",
+      "description": "A paper circle being folded in half — the crease forms a diameter. A second fold at a different angle creates another crease. The two creases intersect at the centre point. A piece of thread stretches from the centre to the edge, showing the radius is the same in every direction.",
+      "svgId": "folding-circle"
+    },
+    {
+      "step": 3,
+      "title": "Measuring Circumference and Diameter",
+      "description": "Three circles of different sizes are shown. Each circle is rolled along a straight line to measure its circumference, and folded in half to measure its diameter. A table shows: Circle 1 (C=15.7, D=5, ratio=3.14), Circle 2 (C=22.0, D=7, ratio=3.14), Circle 3 (C=31.4, D=10, ratio=3.14). The constant ratio pi is highlighted.",
+      "svgId": "circumference-diameter-ratio"
+    },
+    {
+      "step": 4,
+      "title": "The Diameter is the Longest Chord",
+      "description": "A circle with several chords drawn at different positions. Each chord is labelled with its measured length. The diameter — the chord passing through the centre — is visually the longest, with its length highlighted and compared to the others.",
+      "svgId": "longest-chord"
+    },
+    {
+      "step": 5,
+      "title": "Central Angle is Twice the Inscribed Angle",
+      "description": "A circle with arc AB marked. Lines OA and OB form the central angle at the centre. Lines CA and CB form the inscribed angle at point C on the circumference. Two tracing-paper replicas of the inscribed angle are placed over the central angle — they fit exactly, proving the central angle is twice the inscribed angle.",
+      "svgId": "central-vs-inscribed-angle"
+    }
+  ],
+
+  "leadingQuestions": [
+    "Can you think of circles you see every day? What makes a circle different from a triangle or a rectangle?",
+    "When you fold the circle in different places to make chords, which fold gives you the longest chord? What is special about that fold?",
+    "When you divide circumference by diameter for each of your circles — big and small — what do you notice about the ratio? Is it the same or different?",
+    "Look at the angle at the centre and the angle at the circumference for the same arc. How are they related? Can you express it as a rule?"
+  ],
+
+  "keyMessages": [
+    "A circle is the collection of all points at a fixed distance (radius) from a fixed point (centre). Key parts include: diameter (longest chord, passing through the centre), chord (line segment joining two points on the circle), arc (piece of the circle between two points), tangent (line touching at exactly one point), and secant (line crossing at two points).",
+    "The ratio of circumference to diameter is the same for every circle, regardless of size. This constant ratio is called pi, written as the symbol pi, and is approximately equal to 3.14.",
+    "The angle subtended by an arc at the centre of a circle is always twice the angle subtended by the same arc at any point on the circumference. Angles in the same segment of a circle are always equal."
+  ],
+
+  "misconceptions": [
+    "Larger circles have a larger circumference-to-diameter ratio — in fact, the ratio is always pi (approximately 3.14) regardless of the circle's size",
+    "The diameter and a chord are the same thing — a diameter is a special chord that passes through the centre, and it is always the longest chord in the circle",
+    "A tangent and a secant are the same — a tangent touches the circle at exactly one point while a secant intersects it at two points",
+    "The angle at the centre and the angle at the circumference for the same arc are equal — the central angle is actually twice the inscribed angle"
+  ],
+
+  "dimensions": [
+    { "id": "D1", "name": "Curiosity Sparking", "shortName": "curiosity", "weight": 0.30, "keywords": ["why", "what if", "surprise", "predict", "guess", "wonder", "what do you notice", "same or different", "real life", "around you", "daily life"] },
+    { "id": "D2", "name": "Student Engagement", "shortName": "engagement", "weight": 0.25, "keywords": ["lakshmi", "arjun", "everyone", "what do you think", "come up", "your group", "show me", "try it", "present", "discuss"] },
+    { "id": "D3", "name": "Concept Clarity", "shortName": "clarity", "weight": 0.20, "keywords": ["radius", "diameter", "circumference", "chord", "arc", "tangent", "secant", "pi", "3.14", "centre", "central angle", "inscribed angle", "longest chord", "segment"] },
+    { "id": "D4", "name": "Facilitation Quality", "shortName": "facilitation", "weight": 0.15, "keywords": ["fold", "measure", "cut", "wrap", "thread", "trace", "roll", "observe", "draw", "label", "now let", "next step", "protractor", "compass"] },
+    { "id": "D5", "name": "Questioning & Listening", "shortName": "questioning", "weight": 0.10, "keywords": ["why do you think", "tell me more", "good question", "interesting", "can you explain", "how do you know", "justify", "what did you find"] }
+  ],
+
+  "importanceWeights": { "D1": 0.30, "D2": 0.25, "D3": 0.20, "D4": 0.15, "D5": 0.10 },
+
+  "skills": [
+    { "id": "S1", "name": "Spark", "description": "Creating curiosity, wonder, and mathematical questioning through hands-on discovery with paper folding, thread measurement, and the surprise of pi as a universal constant", "category": "engagement" },
+    { "id": "S2", "name": "Reach", "description": "Engaging every student, especially quiet and disengaged, through group measurement activities, tracing-paper verification, and direct invitations to share observations", "category": "inclusion" }
+  ],
+
+  "archetypes": [
+    { "id": "ignitor", "name": "The Ignitor", "description": "Spark >= 70 AND Reach >= 70", "indicators": ["spark_high", "reach_high"] },
+    { "id": "performer", "name": "The Performer", "description": "Spark >= 60, Reach < 50", "indicators": ["spark_high", "reach_low"] },
+    { "id": "caretaker", "name": "The Caretaker", "description": "Reach >= 60, Spark < 50", "indicators": ["spark_low", "reach_high"] },
+    { "id": "lecturer", "name": "The Lecturer", "description": "Both < 50, Clarity > 60", "indicators": ["spark_low", "reach_low", "clarity_high"] },
+    { "id": "learner", "name": "The Learner", "description": "Both < 40", "indicators": ["spark_low", "reach_low"] }
+  ]
+}

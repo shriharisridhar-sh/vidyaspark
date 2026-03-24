@@ -1,0 +1,11 @@
+{
+  "className": "Class 6 — Government School, Kuppam",
+  "studentCount": "40 (5 in simulation)",
+  "context": "Rural government school in Andhra Pradesh. Students are in grades 4-6 and have limited exposure to formal measurement tools. They use non-standard measures in daily life (hand spans to measure cloth, cups to measure rice). The regular science teacher is watching from the back of the room.",
+  "openingScene": "You walk into the classroom carrying a bunch of colourful flowers, a bag of pens and pencils, two different-shaped glasses, and a measuring scale. The students are seated on benches. Priya is in the front row, already eyeing the flowers curiously. Ravi is in the second row, arms crossed, wondering what flowers have to do with science. Lakshmi is in the back corner with her notebook open. Arjun is near the window, looking outside. Meena is in the middle row, ready to take notes.",
+  "difficultyModifiers": {
+    "easy": { "studentResponsiveness": 0.8, "misconceptionStrength": 0.3 },
+    "medium": { "studentResponsiveness": 0.6, "misconceptionStrength": 0.6 },
+    "hard": { "studentResponsiveness": 0.3, "misconceptionStrength": 0.9 }
+  }
+}
