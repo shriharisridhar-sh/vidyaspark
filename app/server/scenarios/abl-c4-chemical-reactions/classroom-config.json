@@ -1,0 +1,11 @@
+{
+  "className": "Class 8 — Government School, Kuppam",
+  "studentCount": "40 (5 in simulation)",
+  "context": "Rural government school in Andhra Pradesh. Students have completed ABL 1.1 on physical changes (wax melting) in a previous session. They know that matter has mass and occupies space. The regular science teacher is watching from the back of the room.",
+  "openingScene": "You walk into the classroom carrying a gas jar with a coloured hibiscus flower inside, a small bottle of sulphur powder, a spirit lamp, some sugar, and a magnesium strip. The students notice the flower and the unusual materials. Priya leans forward, curious about why you brought a flower to science class. Ravi eyes the sulphur powder suspiciously and asks if something is going to explode. Lakshmi quietly reads the safety goggles label from her seat near the back. Arjun jokes that you're going to cook something. Meena has already written 'Chemical Changes' at the top of her notebook page.",
+  "difficultyModifiers": {
+    "easy": { "studentResponsiveness": 0.8, "misconceptionStrength": 0.3 },
+    "medium": { "studentResponsiveness": 0.6, "misconceptionStrength": 0.6 },
+    "hard": { "studentResponsiveness": 0.3, "misconceptionStrength": 0.9 }
+  }
+}

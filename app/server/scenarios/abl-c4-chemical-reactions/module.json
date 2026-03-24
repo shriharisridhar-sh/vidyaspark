@@ -1,0 +1,119 @@
+{
+  "id": "abl-c4-chemical-reactions",
+  "name": "Chemical Reactions — Physical vs Chemical Changes",
+  "description": "Students discover the difference between physical and chemical changes by observing wax melting (reversible, no new substance) and sulphur burning (irreversible, new substance formed). They learn that chemical changes are permanent, produce new substances, and involve energy changes.",
+  "category": "Chemistry",
+  "subject": "Chemistry",
+  "handbook": "C4 — Chemical Reactions",
+  "ablCode": "ABL 1.2",
+  "difficulty": "medium",
+  "estimatedMinutes": 15,
+  "version": "1.0",
+  "gradeLevel": "8-9",
+  "materials": ["Sulphur powder", "Deflagrating spoon", "Gas jar", "Coloured flower (hibiscus)", "Spirit lamp", "Matchbox", "Sugar", "Spatula", "China dish", "Water", "Magnesium strip", "Tongs", "Safety goggles", "Safety gloves", "Sandpaper"],
+
+  "pointA": {
+    "assumption": "Students think all changes are the same — they cannot distinguish between a physical change (melting wax) and a chemical change (burning sulphur), and believe any change to a substance means it has become something new",
+    "blindspot": "They do not realize that the key difference is whether a new substance with different properties is formed, and whether the change is reversible or permanent"
+  },
+  "pointB": {
+    "insight": "A physical change alters appearance but not composition — no new substance forms and the change is reversible. A chemical change is permanent, produces one or more new substances with different properties, and involves energy being released or absorbed.",
+    "evidence": "Students can explain why melting wax is a physical change (wax re-forms on cooling) while burning sulphur is a chemical change (sulphur dioxide forms, colour of flower fades, sulphur does not re-form)"
+  },
+
+  "tutorial": [
+    {
+      "title": "Learning Objective",
+      "content": "In this experiment, students will learn to distinguish between physical and chemical changes. By comparing wax melting (physical) with sulphur burning (chemical), sugar dissolving vs caramelizing, and cutting vs burning magnesium, students build a concrete framework: physical changes are temporary and reversible with no new substance formed; chemical changes are permanent and irreversible with new substances produced."
+    },
+    {
+      "title": "Materials & Setup",
+      "content": "You need: sulphur powder, a deflagrating spoon, a gas jar with a coloured flower inside, a spirit lamp, matchbox, sugar, a spatula, a china dish, water, a magnesium strip (cleaned with sandpaper), tongs, safety goggles, and safety gloves. Set up the tripod and spirit lamp where students can observe from a safe distance. Remind students not to touch any materials or look directly at burning magnesium."
+    },
+    {
+      "title": "The Procedure",
+      "content": "Activity 1 — Sulphur: Place a coloured flower in a gas jar. Show sulphur powder near the flower (no change). Light the sulphur on a deflagrating spoon and introduce it into the gas jar — fumes form and the flower's colour fades. After cooling, a black residue remains; sulphur does not re-form. Activity 2 — Sugar: Dissolve sugar in water and boil to re-crystallize (physical change). Heat sugar directly on a spatula — it turns brown, then black, releasing fumes (chemical change). Activity 3 — Magnesium: Cut a strip in half (physical). Burn a strip with tongs — bright light, white residue of magnesium oxide forms (chemical)."
+    },
+    {
+      "title": "Key Messages",
+      "content": "1. A chemical change is a permanent, irreversible change where one or more new substances are formed. 2. In a chemical change, the composition of the substance changes and the new products have different properties from the original. 3. Signs of a chemical change include: change in colour, release of gas or fumes, release or absorption of energy (heat, light), and formation of a precipitate. 4. A physical change is temporary and reversible — no new substance is formed."
+    },
+    {
+      "title": "Common Misconceptions",
+      "content": "Students often think any visible change (like melting) is a chemical change. Some believe that if a substance looks different, it must be a new substance — they confuse change in appearance with change in composition. Others think chemical changes can be reversed if you 'try hard enough'. Some students think burning and melting are the same process because both involve heat."
+    }
+  ],
+
+  "procedure": "1. Recap ABL 1.1: We learned that wax melting is a physical change — temporary, reversible, no new substance formed. Now we explore chemical changes. 2. Activity 1 — Sulphur: Place a coloured flower (hibiscus) inside a gas jar. Take sulphur powder on a deflagrating spoon and place it near the flower — the flower colour does not change. Now light the sulphur with the spirit lamp. It burns, releasing fumes (sulphur dioxide). Introduce the burning sulphur into the gas jar. The flower's colour fades. After cooling, a black residue remains on the spoon — sulphur does not re-form. Ask: Why did the flower's colour change? What happened to the sulphur? Is this reversible? 3. Activity 2 — Sugar: Dissolve sugar in water, boil and cool — crystals re-form (physical change). Heat sugar directly on a spatula — it turns brown then black, releasing water vapour and leaving carbon residue (chemical change). Ask: Which was physical and which was chemical? Why? 4. Activity 3 — Magnesium: Cut a magnesium strip in half — same substance, smaller size (physical). Burn a strip with tongs — bright white light, white powder (magnesium oxide) left behind (chemical). Ask: Did we get magnesium back? 5. Activity 4 — Give groups activity cards showing everyday changes (frying egg, rusting nails, burning wood, slicing vegetables, boiling water, melting ice). Groups sort into physical and chemical changes. Discuss answers. 6. Conclude: Chemical changes are permanent, form new substances with different properties, and involve energy changes. Physical changes are temporary and reversible.",
+
+  "canvasSteps": [
+    {
+      "step": 1,
+      "title": "Setup",
+      "description": "A lab table with a gas jar containing a coloured hibiscus flower, sulphur powder on a deflagrating spoon, a spirit lamp, sugar, a spatula, a china dish with water, and a magnesium strip. Safety goggles and gloves are laid out.",
+      "svgId": "setup"
+    },
+    {
+      "step": 2,
+      "title": "Burning Sulphur — Chemical Change",
+      "description": "The sulphur is lit on the deflagrating spoon and placed inside the gas jar. Yellow fumes of sulphur dioxide fill the jar. The coloured flower's petals are visibly fading. A black residue forms on the spoon — the sulphur has been permanently transformed into new substances.",
+      "svgId": "sulphur-burning"
+    },
+    {
+      "step": 3,
+      "title": "Sugar — Physical vs Chemical",
+      "description": "Two paths shown side by side. Left: sugar dissolved in water and re-crystallized after boiling and cooling (physical change — sugar recovered). Right: sugar heated directly on a spatula turning brown then black with fumes rising (chemical change — carbon residue, sugar gone forever).",
+      "svgId": "sugar-comparison"
+    },
+    {
+      "step": 4,
+      "title": "The Evidence — New Substances Formed",
+      "description": "A summary view: the faded flower, the black sulphur residue, the caramelized sugar turning to carbon, and the white magnesium oxide powder. Labels highlight the signs of chemical change: new colour, new substance, energy released, irreversible. Students sort activity cards into physical and chemical change columns.",
+      "svgId": "evidence-summary"
+    }
+  ],
+
+  "leadingQuestions": [
+    "What happened to the colour of the flower after the burning sulphur was placed inside the gas jar? Why do you think that happened?",
+    "When we melted wax it became solid again on cooling. When we burned sulphur, did we get sulphur back on cooling? What does that tell us?",
+    "Sugar dissolved in water can be recovered by evaporation. But when we heated sugar directly, could we get sugar back? What is the difference?",
+    "What are the signs that tell you a chemical change has taken place?"
+  ],
+
+  "keyMessages": [
+    "A chemical change is a permanent, irreversible change in which one or more new substances with different properties are formed",
+    "Signs of a chemical change include change in colour, release of gas or fumes, release or absorption of energy, and formation of new substances",
+    "A physical change is temporary and reversible — only the appearance changes, no new substance is formed",
+    "Burning, rusting, and curdling are chemical changes; melting, boiling, and dissolving are physical changes"
+  ],
+
+  "misconceptions": [
+    "Any visible change to a substance means it is a chemical change — students confuse change in appearance with change in composition",
+    "Melting and burning are the same process because both involve heating a substance",
+    "Chemical changes can be reversed if you cool the substance down or try hard enough",
+    "If a substance changes colour it must always be a chemical change — ignoring physical colour changes like dissolving paint"
+  ],
+
+  "dimensions": [
+    { "id": "D1", "name": "Curiosity Sparking", "shortName": "curiosity", "weight": 0.30, "keywords": ["why", "what if", "surprise", "predict", "guess", "wonder", "prove", "how", "what happened"] },
+    { "id": "D2", "name": "Student Engagement", "shortName": "engagement", "weight": 0.25, "keywords": ["lakshmi", "arjun", "everyone", "what do you think", "come up", "come and see", "observe carefully", "write down"] },
+    { "id": "D3", "name": "Concept Clarity", "shortName": "clarity", "weight": 0.20, "keywords": ["chemical change", "physical change", "new substance", "reversible", "irreversible", "permanent", "temporary", "composition", "properties"] },
+    { "id": "D4", "name": "Facilitation Quality", "shortName": "facilitation", "weight": 0.15, "keywords": ["observe", "notice", "look carefully", "compare", "see for yourself", "now watch", "safe distance", "do not touch"] },
+    { "id": "D5", "name": "Questioning & Listening", "shortName": "questioning", "weight": 0.10, "keywords": ["why do you think", "tell me more", "good question", "interesting", "what else", "who can explain", "can you give an example"] }
+  ],
+
+  "importanceWeights": { "D1": 0.30, "D2": 0.25, "D3": 0.20, "D4": 0.15, "D5": 0.10 },
+
+  "skills": [
+    { "id": "S1", "name": "Spark", "description": "Creating curiosity, wonder, and scientific questioning", "category": "engagement" },
+    { "id": "S2", "name": "Reach", "description": "Engaging every student, especially quiet and disengaged", "category": "inclusion" }
+  ],
+
+  "archetypes": [
+    { "id": "ignitor", "name": "The Ignitor", "description": "Spark >= 70 AND Reach >= 70", "indicators": ["spark_high", "reach_high"] },
+    { "id": "performer", "name": "The Performer", "description": "Spark >= 60, Reach < 50", "indicators": ["spark_high", "reach_low"] },
+    { "id": "caretaker", "name": "The Caretaker", "description": "Reach >= 60, Spark < 50", "indicators": ["spark_low", "reach_high"] },
+    { "id": "lecturer", "name": "The Lecturer", "description": "Both < 50, Clarity > 60", "indicators": ["spark_low", "reach_low", "clarity_high"] },
+    { "id": "learner", "name": "The Learner", "description": "Both < 40", "indicators": ["spark_low", "reach_low"] }
+  ]
+}

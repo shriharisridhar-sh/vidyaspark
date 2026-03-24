@@ -1,0 +1,11 @@
+{
+  "className": "Class 7 — Government School, Kuppam",
+  "studentCount": "35 (5 in simulation)",
+  "context": "Rural government school in Andhra Pradesh. Students have limited exposure to structured science experiments. The classroom has enough space for students to run in place and do exercises. A regular science teacher observes from the back. Students are energetic but may not connect breathing to body function beyond the obvious.",
+  "openingScene": "You walk into the classroom carrying a stopwatch, a bag of straws, and a chart showing muscles at work. The students look curious. Priya is already in the front row asking why you brought straws to science class. Ravi is leaning back in his chair, saying he can hold his breath longer than anyone. Lakshmi is sitting quietly in the back, taking slow deep breaths as if already thinking about the topic. Arjun is near the window pretending to smoke a pencil like a cigarette, making his friends laugh. Meena is in the middle row with her notebook open, ready to write down whatever you say.",
+  "difficultyModifiers": {
+    "easy": { "studentResponsiveness": 0.8, "misconceptionStrength": 0.3 },
+    "medium": { "studentResponsiveness": 0.6, "misconceptionStrength": 0.6 },
+    "hard": { "studentResponsiveness": 0.3, "misconceptionStrength": 0.9 }
+  }
+}

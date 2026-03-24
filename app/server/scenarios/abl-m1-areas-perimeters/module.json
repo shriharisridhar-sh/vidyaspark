@@ -1,0 +1,117 @@
+{
+  "id": "abl-m1-areas-perimeters",
+  "name": "Areas and Perimeters — Discovering Formulas Through Hands-On Exploration",
+  "description": "Students discover the concept of area by counting unit squares on graph paper, then derive area formulas for rectangles, squares, triangles, parallelograms, trapeziums, and circles using geoboards and cardboard cutouts. They also learn perimeter by deconstructing shapes made from sticks. The key insight: area formulas are not arbitrary — they emerge naturally from rearranging shapes into simpler ones.",
+  "category": "Mathematics",
+  "subject": "Mathematics",
+  "handbook": "M1 — Areas and Perimeters",
+  "ablCode": "ABL 4.1, 4.2, 4.3 & 4.4",
+  "difficulty": "medium",
+  "estimatedMinutes": 15,
+  "version": "1.0",
+  "gradeLevel": "6-8",
+  "materials": ["Graph paper (1 cm squares)", "Geoboard with rubber bands", "Cardboard sheets", "Coloured paper sheets", "Scissors", "Ruler", "Pencil/pen", "Adhesive", "Protractor/compass", "White paper sheets"],
+
+  "pointA": {
+    "assumption": "Students think area is just a number you get from a formula — they memorize length x breadth without understanding why it works, and believe each shape has an unrelated formula",
+    "blindspot": "They don't realize that ALL area formulas connect back to counting unit squares, and that complex shapes can be rearranged into simpler ones (rectangles) to derive their formulas"
+  },
+  "pointB": {
+    "insight": "Every area formula comes from the same idea — counting how many unit squares fit inside a shape. Parallelograms become rectangles, two triangles form a parallelogram, and even a circle can be cut into sectors that approximate a rectangle",
+    "evidence": "Students can physically rearrange cardboard cutouts — sliding a triangle from one side of a parallelogram to form a rectangle, combining two identical triangles into a parallelogram, and arranging 16 circle sectors into a near-rectangle — to derive each formula themselves"
+  },
+
+  "tutorial": [
+    {
+      "title": "Learning Objective",
+      "content": "This session covers ABL 4.1 through 4.4 from the Agastya M1 handbook. Students progress from understanding what area means (counting unit squares on graph paper) to deriving area formulas for rectangles, squares, right triangles (using geoboard), then parallelograms, general triangles, and trapeziums (using cardboard cutouts), and finally circles (by cutting sectors and rearranging into a rectangle)."
+    },
+    {
+      "title": "Materials & Setup",
+      "content": "Divide the class into groups of 3-4 students. Each group needs: graph paper (1 cm grid), a geoboard with rubber bands, cardboard sheets, coloured paper, scissors, ruler, compass, adhesive, and pencil. The Ignator should have pre-cut cardboard shapes (parallelogram, triangle, trapezium) and a coloured paper circle divided into 16 equal sectors for demonstration."
+    },
+    {
+      "title": "The Procedure — Part 1: What is Area? (ABL 4.1)",
+      "content": "Step 1: Show models of different sizes and ask which is bigger — how do you know? Introduce area as the space inside a closed flat surface, measured in square units. Step 2: On graph paper, draw a rectangle by joining grid points. Count the unit squares inside — that count IS the area. Step 3: Draw an irregular closed figure. Use the half-square rules: more than half counts as 1, exactly half counts as 0.5, less than half counts as 0."
+    },
+    {
+      "title": "The Procedure — Part 2: Geoboard Exploration (ABL 4.2) & Cardboard Cutouts (ABL 4.3)",
+      "content": "Geoboard: Form rectangles, squares, and right triangles on the geoboard. Count unit squares to fill observation tables. Students discover: rectangle = length x breadth, square = side x side, right triangle = 1/2 x base x height. Cardboard: Cut a parallelogram from cardboard, slice off the triangle from one end, slide it to the other end — it becomes a rectangle. So area of parallelogram = base x height. Combine two identical triangles to form a parallelogram — so triangle = 1/2 x base x height. Similarly for trapezium: two identical trapeziums form a parallelogram with base (a+b), so area = 1/2 x (a+b) x height."
+    },
+    {
+      "title": "Common Misconceptions",
+      "content": "1. Students confuse area with perimeter — thinking the boundary length IS the area. 2. Students memorize formulas without understanding where they come from. 3. Students think parallelogram area = side x side (using slant side instead of height). 4. Students believe the area of a triangle is base x height (forgetting the 1/2 factor). 5. Students think you need different methods for each shape — not realizing all formulas trace back to rectangles and counting squares."
+    }
+  ],
+
+  "procedure": "PART 1 — What is Area? (ABL 4.1): 1. Compare sizes of objects (palms, models) — ask how do you know which is bigger? Introduce area as space inside a closed flat surface, measured in square units. 2. On graph paper, draw a rectangle. Count unit squares inside — that is the area in sq cm. 3. Draw an irregular closed figure. Apply half-square rules: >half counts as 1, exactly half as 0.5, <half as 0. PART 2 — Geoboard Exploration (ABL 4.2): 1. Form rectangles on geoboard. Count squares, measure length and breadth, fill table. Discover: area = length x breadth. 2. Form squares on geoboard. Count squares, measure side, fill table. Discover: area = side x side. 3. Form right triangles on geoboard. Count squares, measure base and height, fill table. Discover: area = 1/2 x base x height. PART 3 — Cardboard Cutouts (ABL 4.3): 1. Draw parallelogram on graph paper, cut cardboard replica. Draw the height line. Cut triangle from one end, slide to other end — forms rectangle. Area of parallelogram = base x height. 2. Make two identical cardboard triangles. Arrange to form parallelogram. Area of triangle = 1/2 x base x height. 3. Make two identical cardboard trapeziums. Arrange to form parallelogram with base (a+b). Area of trapezium = 1/2 x (a+b) x height. PART 4 — Area of Circle (ABL 4.4): 1. Draw circle on coloured paper. Cut it out. 2. Fold in half repeatedly to divide into 16 equal sectors. Cut along creases. 3. Arrange 16 pieces alternating up/down to form approximate parallelogram. 4. Explain: with more pieces this approaches a rectangle with length = half circumference = pi x r, and height = radius = r. 5. Area = length x breadth = pi x r x r = pi x r^2.",
+
+  "canvasSteps": [
+    {
+      "step": 1,
+      "title": "Counting Unit Squares",
+      "description": "A graph paper grid with a coloured rectangle drawn on it. Each unit square inside the rectangle is highlighted. A counter shows the total number of squares being counted — demonstrating that area is simply the count of unit squares inside a shape.",
+      "svgId": "counting-squares"
+    },
+    {
+      "step": 2,
+      "title": "Geoboard Discoveries",
+      "description": "A geoboard showing a rectangle, a square, and a right triangle formed with rubber bands. Each shape has its dimensions labelled and unit squares visible inside. Below each shape, the formula emerges: L x B, S x S, and 1/2 x b x h.",
+      "svgId": "geoboard-formulas"
+    },
+    {
+      "step": 3,
+      "title": "Rearranging into Rectangles",
+      "description": "Three cardboard transformations shown side by side: (1) A parallelogram with a triangle cut from one end and slid to the other to form a rectangle. (2) Two identical triangles combined to form a parallelogram. (3) Two identical trapeziums arranged to form a parallelogram. Each shows the formula derivation.",
+      "svgId": "cardboard-rearrange"
+    },
+    {
+      "step": 4,
+      "title": "Circle Becomes a Rectangle",
+      "description": "A coloured circle divided into 16 equal sectors. The sectors are shown being rearranged alternating point-up and point-down to form an approximate rectangle. Labels show: length = half circumference = pi x r, height = radius = r, so area = pi x r squared.",
+      "svgId": "circle-to-rectangle"
+    }
+  ],
+
+  "leadingQuestions": [
+    "How do you know which shape is bigger — what are you actually comparing when you compare sizes?",
+    "On the geoboard, what do you notice when you multiply the length and breadth of each rectangle? Does it match the number of squares you counted?",
+    "When you cut the triangle off the parallelogram and move it to the other side, what shape do you get? Why does this tell us the area formula?",
+    "If a circle is cut into 16 sectors and rearranged, what shape does it look like? What would happen if we cut it into 32 or 64 pieces instead?"
+  ],
+
+  "keyMessages": [
+    "Area is the amount of space inside a closed flat surface, measured in square units. You can find it by counting unit squares on graph paper — this is the foundation for ALL area formulas.",
+    "Every area formula connects back to the rectangle. A parallelogram becomes a rectangle by sliding a triangle. Two triangles form a parallelogram. Two trapeziums form a parallelogram. Even a circle, cut into enough sectors, approximates a rectangle.",
+    "The key formulas are: Rectangle = length x breadth, Square = side x side, Triangle = 1/2 x base x height, Parallelogram = base x height, Trapezium = 1/2 x (a + b) x height, Circle = pi x radius squared."
+  ],
+
+  "misconceptions": [
+    "Area and perimeter are the same thing — in fact, area measures the space inside a shape (in square units) while perimeter measures the distance around the boundary (in linear units). Two shapes can have the same perimeter but very different areas",
+    "The area of a parallelogram uses the slant side — students must use the perpendicular height, not the slant side. Cutting and rearranging the parallelogram into a rectangle makes this clear: the rectangle's breadth is the height, not the slant",
+    "Each shape has its own unrelated formula — in reality, all area formulas trace back to counting unit squares and rearranging shapes into rectangles. Triangle = half a parallelogram, parallelogram = rearranged rectangle, circle sectors approximate a rectangle"
+  ],
+
+  "dimensions": [
+    { "id": "D1", "name": "Curiosity Sparking", "shortName": "curiosity", "weight": 0.30, "keywords": ["why", "what if", "predict", "guess", "which is bigger", "what do you notice", "what shape do you get", "surprise"] },
+    { "id": "D2", "name": "Student Engagement", "shortName": "engagement", "weight": 0.25, "keywords": ["lakshmi", "arjun", "everyone", "your group", "show me", "try it", "count together", "come up", "compare"] },
+    { "id": "D3", "name": "Concept Clarity", "shortName": "clarity", "weight": 0.20, "keywords": ["square units", "base", "height", "length", "breadth", "unit square", "pi", "radius", "formula", "parallelogram", "trapezium", "rectangle"] },
+    { "id": "D4", "name": "Facilitation Quality", "shortName": "facilitation", "weight": 0.15, "keywords": ["count", "cut", "rearrange", "slide", "place", "draw", "measure", "fill the table", "now let", "next step", "geoboard", "rubber band"] },
+    { "id": "D5", "name": "Questioning & Listening", "shortName": "questioning", "weight": 0.10, "keywords": ["why do you think", "tell me more", "good question", "interesting", "can you explain", "how do you know", "what did you observe"] }
+  ],
+
+  "importanceWeights": { "D1": 0.30, "D2": 0.25, "D3": 0.20, "D4": 0.15, "D5": 0.10 },
+
+  "skills": [
+    { "id": "S1", "name": "Spark", "description": "Creating curiosity, wonder, and mathematical questioning through hands-on discovery of area formulas", "category": "engagement" },
+    { "id": "S2", "name": "Reach", "description": "Engaging every student, especially quiet and disengaged, through group work with geoboards, cardboard, and direct invitations", "category": "inclusion" }
+  ],
+
+  "archetypes": [
+    { "id": "ignitor", "name": "The Ignitor", "description": "Spark >= 70 AND Reach >= 70", "indicators": ["spark_high", "reach_high"] },
+    { "id": "performer", "name": "The Performer", "description": "Spark >= 60, Reach < 50", "indicators": ["spark_high", "reach_low"] },
+    { "id": "caretaker", "name": "The Caretaker", "description": "Reach >= 60, Spark < 50", "indicators": ["spark_low", "reach_high"] },
+    { "id": "lecturer", "name": "The Lecturer", "description": "Both < 50, Clarity > 60", "indicators": ["spark_low", "reach_low", "clarity_high"] },
+    { "id": "learner", "name": "The Learner", "description": "Both < 40", "indicators": ["spark_low", "reach_low"] }
+  ]
+}

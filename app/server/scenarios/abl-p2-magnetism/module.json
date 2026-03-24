@@ -1,0 +1,118 @@
+{
+  "id": "abl-p2-magnetism",
+  "name": "Magnets — Separating Mixtures with a Magnet",
+  "description": "Students discover what a magnet is by using it to separate iron filings from sand and steel pins from plastic toothpicks, learning the difference between magnetic and non-magnetic materials.",
+  "category": "Physics",
+  "subject": "Physics",
+  "handbook": "P2 — Magnetism",
+  "ablCode": "ABL 1.1",
+  "difficulty": "medium",
+  "estimatedMinutes": 15,
+  "version": "1.0",
+  "gradeLevel": "6",
+  "materials": ["Bar magnet", "Iron rod", "Sand", "Iron filings", "China dish", "Steel pins", "Plastic toothpicks", "A4 paper"],
+
+  "pointA": {
+    "assumption": "Students think any metal object can attract iron filings and separate mixtures",
+    "blindspot": "They don't distinguish between magnetic materials and non-magnetic materials, or between a magnet and an ordinary iron rod"
+  },
+  "pointB": {
+    "insight": "A magnet attracts only magnetic materials (iron, steel), not non-magnetic materials (sand, plastic). An iron rod is a magnetic material but is not itself a magnet.",
+    "evidence": "Students can predict which objects a magnet will attract, explain why the iron rod fails to separate the mixture, and classify materials as magnetic or non-magnetic"
+  },
+
+  "tutorial": [
+    {
+      "title": "Learning Objective",
+      "content": "In this experiment, students will discover what a magnet is and learn to distinguish magnetic materials from non-magnetic materials. They will observe that a magnet attracts certain materials (iron filings, steel pins) but not others (sand, plastic), and that an ordinary iron rod cannot do the same."
+    },
+    {
+      "title": "Materials & Setup",
+      "content": "You need: 1 bar magnet, 1 iron rod, sand (100g), iron filings (50g), 1 china dish, 10 steel pins, 10 plastic toothpick pieces, and 1 sheet of A4 paper. Mix the sand and iron filings in the china dish. Mix the steel pins and plastic toothpicks on the A4 paper. Place everything on a table visible to all students."
+    },
+    {
+      "title": "The Procedure",
+      "content": "Step 1: Show students both mixtures and ask them to identify the contents. Step 2: Ask a student to separate each mixture by hand. Step 3: Demonstrate using the bar magnet to separate both mixtures. Step 4: Ask another student to try separating the mixtures using the iron rod. Step 5: Discuss why the magnet worked but the iron rod did not."
+    },
+    {
+      "title": "Key Messages",
+      "content": "1. A magnet is a material or object that attracts magnetic materials. 2. Materials attracted by a magnet (iron, steel) are called magnetic materials. Materials not attracted (sand, plastic) are called non-magnetic materials. 3. A magnet can only be made from a magnetic material, but not all magnetic materials are magnets."
+    },
+    {
+      "title": "Common Misconceptions",
+      "content": "Students often think any metal can act as a magnet. They confuse being a magnetic material (can be attracted) with being a magnet (can attract). They may also think the iron rod should work like the magnet since both are made of metal."
+    }
+  ],
+
+  "procedure": "1. Place all materials on a table visible to all learners. 2. Show the two mixtures: sand mixed with iron filings in the china dish, and steel pins mixed with plastic toothpicks on the A4 paper. 3. Ask students to identify the contents of each mixture. 4. Ask one student to try separating each mixture by hand — note it is easy for pins/toothpicks but very hard for sand/filings. 5. Bring the bar magnet near the sand-iron filings mixture — the iron filings jump to the magnet, separating from the sand. 6. Bring the bar magnet near the pins-toothpicks mixture — the steel pins are attracted, the plastic pieces are not. 7. Now bring the iron rod near both mixtures — nothing is attracted. 8. Ask: Why did the magnet separate the mixtures but the iron rod could not?",
+
+  "canvasSteps": [
+    {
+      "step": 1,
+      "title": "Setup",
+      "description": "Table with two mixtures: a china dish of sand mixed with iron filings, and A4 paper with steel pins mixed among plastic toothpicks. A bar magnet and iron rod sit nearby.",
+      "svgId": "setup"
+    },
+    {
+      "step": 2,
+      "title": "Hand Separation Attempt",
+      "description": "A student tries to separate sand from iron filings by hand — nearly impossible due to tiny particles. Pins and toothpicks are easier to pick apart manually.",
+      "svgId": "hand-separation"
+    },
+    {
+      "step": 3,
+      "title": "Magnet Separates the Mixtures",
+      "description": "Bar magnet held over the china dish — iron filings leap up and cling to the magnet, leaving sand behind. Steel pins are pulled from among the toothpicks.",
+      "svgId": "magnet-separation"
+    },
+    {
+      "step": 4,
+      "title": "Iron Rod Fails",
+      "description": "Iron rod held over both mixtures — nothing happens. Neither iron filings nor steel pins are attracted. The iron rod is a magnetic material but not a magnet.",
+      "svgId": "iron-rod-fail"
+    }
+  ],
+
+  "leadingQuestions": [
+    "What are the contents of each mixture?",
+    "How did the student separate the mixture by hand? Was it easy or difficult?",
+    "What happened when the magnet was brought near the sand and iron filings?",
+    "What happened when the magnet was brought near the steel pins and plastic toothpicks?",
+    "What happened when the iron rod was brought near the mixtures? Why?"
+  ],
+
+  "keyMessages": [
+    "A magnet is a material or object that attracts magnetic materials such as iron and steel",
+    "Materials attracted by a magnet are called magnetic materials; those not attracted are called non-magnetic materials",
+    "A magnet can only be made from a magnetic material, but not every magnetic material is a magnet — an iron rod is magnetic material but cannot attract on its own"
+  ],
+
+  "misconceptions": [
+    "Any metal object can attract iron filings like a magnet does",
+    "An iron rod should work the same as a bar magnet because both are made of metal",
+    "All shiny or heavy objects are magnetic materials"
+  ],
+
+  "dimensions": [
+    { "id": "D1", "name": "Curiosity Sparking", "shortName": "curiosity", "weight": 0.30, "keywords": ["why", "what if", "surprise", "predict", "guess", "wonder"] },
+    { "id": "D2", "name": "Student Engagement", "shortName": "engagement", "weight": 0.25, "keywords": ["lakshmi", "arjun", "everyone", "what do you think", "come up"] },
+    { "id": "D3", "name": "Concept Clarity", "shortName": "clarity", "weight": 0.20, "keywords": ["magnet", "magnetic", "non-magnetic", "attract", "iron", "steel"] },
+    { "id": "D4", "name": "Facilitation Quality", "shortName": "facilitation", "weight": 0.15, "keywords": ["observe", "notice", "look carefully", "bring near", "now let", "watch"] },
+    { "id": "D5", "name": "Questioning & Listening", "shortName": "questioning", "weight": 0.10, "keywords": ["why do you think", "tell me more", "good question", "interesting"] }
+  ],
+
+  "importanceWeights": { "D1": 0.30, "D2": 0.25, "D3": 0.20, "D4": 0.15, "D5": 0.10 },
+
+  "skills": [
+    { "id": "S1", "name": "Spark", "description": "Creating curiosity, wonder, and scientific questioning", "category": "engagement" },
+    { "id": "S2", "name": "Reach", "description": "Engaging every student, especially quiet and disengaged", "category": "inclusion" }
+  ],
+
+  "archetypes": [
+    { "id": "ignitor", "name": "The Ignitor", "description": "Spark >= 70 AND Reach >= 70", "indicators": ["spark_high", "reach_high"] },
+    { "id": "performer", "name": "The Performer", "description": "Spark >= 60, Reach < 50", "indicators": ["spark_high", "reach_low"] },
+    { "id": "caretaker", "name": "The Caretaker", "description": "Reach >= 60, Spark < 50", "indicators": ["spark_low", "reach_high"] },
+    { "id": "lecturer", "name": "The Lecturer", "description": "Both < 50, Clarity > 60", "indicators": ["spark_low", "reach_low", "clarity_high"] },
+    { "id": "learner", "name": "The Learner", "description": "Both < 40", "indicators": ["spark_low", "reach_low"] }
+  ]
+}

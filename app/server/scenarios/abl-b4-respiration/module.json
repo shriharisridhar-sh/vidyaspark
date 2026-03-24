@@ -1,0 +1,121 @@
+{
+  "id": "abl-b4-respiration",
+  "name": "Respiration — Why Do We Need Air?",
+  "description": "Students discover why we need to breathe constantly by holding their breath, measuring how exercise changes breathing rate, observing that the body works even at rest, and experiencing restricted airflow through a straw to understand the effects of smoking on the respiratory system.",
+  "category": "Biology",
+  "subject": "Biology",
+  "handbook": "B4 — Respiration",
+  "ablCode": "ABL 1",
+  "difficulty": "medium",
+  "estimatedMinutes": 15,
+  "version": "1.0",
+  "gradeLevel": "6-8",
+  "materials": ["Stopwatch", "Bell", "Chart of muscles during work", "Instructor observation chart", "Learner observation sheets", "Drinking straws cut to 3-inch lengths"],
+
+  "pointA": {
+    "assumption": "Students think breathing is just a habit or automatic reflex with no real purpose, and that the body only works when we are physically active",
+    "blindspot": "They don't realize that the body needs a constant supply of air to fuel every cell — muscles, brain, heart — even during rest and sleep, and that restricting airflow (as in smoking) harms the entire body"
+  },
+  "pointB": {
+    "insight": "We breathe constantly because every cell in our body needs fresh air to produce energy for work — muscles need more air during exercise, and even at rest the heart, brain, and digestive system keep working",
+    "evidence": "Students can explain why breathing rate increases after exercise, why we breathe even while sleeping, and how smoking damages lungs and restricts the airflow the body depends on"
+  },
+
+  "tutorial": [
+    {
+      "title": "Learning Objective",
+      "content": "In this module, students will discover why we need to breathe all the time. Through four hands-on activities — holding their breath, measuring breathing rate before and after exercise, observing the body at rest, and breathing through a straw — they will understand that the body constantly needs fresh air to function, and that anything restricting airflow (like smoking) is harmful."
+    },
+    {
+      "title": "Materials & Setup",
+      "content": "You need: 1 stopwatch, 1 bell, a chart showing muscles during work, instructor observation charts, learner observation sheets (1 per pair), and drinking straws cut to 3-inch lengths (1 per student). Ensure enough space for students to run in place, jump, and do toe-touches safely. Students with asthma should not attempt the straw-breathing activity."
+    },
+    {
+      "title": "The Procedure",
+      "content": "Activity 1.1: All students pinch their noses and hold their breath as long as possible — record the maximum time. Discuss why we cannot stop breathing. Activity 1.2: Divide into 3 groups (jumping, running on the spot, toe-touches). In pairs, a Scientist counts the Subject's breaths per minute before and after 1 minute of exercise. Compare the increase. Activity 1.3: Students sit completely still for 1 minute, observing their shoulders, chest, and stomach moving as they breathe. Discuss what other work the body does at rest. Activity 1.4: After running for 1 minute, students breathe only through a straw. They experience how restricted airflow feels — this is what smoking does to the body."
+    },
+    {
+      "title": "Key Messages",
+      "content": "1. We need to breathe constantly because our body needs a continuous supply of fresh air to work properly. 2. During exercise, muscles do more work and need more air, so we breathe faster. 3. Even at rest or during sleep, the body keeps working — the heart beats, blood flows, the brain thinks, digestion continues. 4. Smoking damages lungs and air passages, restricting airflow and causing breathlessness, tiredness, and heart problems."
+    },
+    {
+      "title": "Common Misconceptions",
+      "content": "Students often think breathing is just a habit we could stop if we tried hard enough. They may believe the body stops working when we sit still or sleep. They may not connect breathing to energy production in the body. They may think exercise makes us breathe faster simply because we are moving, without understanding that muscles need more air to do more work. They may underestimate the harm of smoking on the respiratory system."
+    }
+  ],
+
+  "procedure": "1. Start by asking students to pinch their noses and hold their breath — time how long they last. Ask: Why can't we stop breathing? 2. Explain that our body needs fresh air constantly to work properly — the brain would be damaged without air even for a few minutes. 3. Divide into 3 groups for exercise (jumping, running on the spot, toe-touches). In pairs, one student counts breaths per minute before exercise, then after 1 minute of exercise. 4. Compare breathing rates — students discover that exercise increases breathing rate because muscles need more air. 5. Have all students sit completely still for 1 minute, observing their own breathing movements. Discuss: What else is the body doing? (Heart beating, blood flowing, digestion, brain thinking.) 6. Conclude that we breathe even at rest because the body is always working. 7. After running for 1 minute, students breathe only through a 3-inch straw. Discuss how uncomfortable this is — this is how a smoker breathes all the time. 8. Ask students to gently bite the straw and breathe — this simulates a heavy smoker with severely damaged lungs. 9. Summarize: We breathe to supply air to every cell. More work means more air. Smoking restricts this vital airflow.",
+
+  "canvasSteps": [
+    {
+      "step": 1,
+      "title": "Setup — The Breath-Holding Challenge",
+      "description": "Classroom scene with students pinching their noses and holding their breath. A stopwatch displays the time. Speech bubbles show students gasping. A question on the board reads: Why can't we stop breathing?",
+      "svgId": "setup"
+    },
+    {
+      "step": 2,
+      "title": "Exercise and Breathing Rate",
+      "description": "Three groups of students performing different exercises — jumping, running on the spot, and toe-touches. Pairs of students with one counting breaths while the other sits after exercising. A bar chart comparing breaths per minute before and after exercise.",
+      "svgId": "exercise-breathing"
+    },
+    {
+      "step": 3,
+      "title": "The Body at Rest",
+      "description": "A student sitting still with eyes closed. Cutaway view showing internal body activity: heart beating, lungs expanding, blood flowing through vessels, stomach digesting food, brain with electrical signals. Arrows show that all these organs need fresh air.",
+      "svgId": "body-at-rest"
+    },
+    {
+      "step": 4,
+      "title": "Breathing Through a Straw — The Smoker's Experience",
+      "description": "Split view: Left side shows a student breathing through a narrow straw after running, looking uncomfortable and breathless. Right side shows a diagram of healthy lungs versus damaged smoker's lungs with narrowed air passages. Labels highlight reduced airflow, breathlessness, and tiredness.",
+      "svgId": "straw-breathing"
+    }
+  ],
+
+  "leadingQuestions": [
+    "How did you feel when you held your breath? Why can't we hold it forever?",
+    "Why do we breathe faster after running or jumping? What is our body doing that needs more air?",
+    "When you sit completely still, is your body really doing nothing? What movements can you observe?",
+    "How did it feel to breathe only through a straw after exercise? Could you do this all day?",
+    "What happens to a person who smokes every day — how does it affect their breathing and energy?"
+  ],
+
+  "keyMessages": [
+    "We need to breathe constantly because our body requires a continuous supply of fresh air to work properly",
+    "During exercise, muscles do more work and need more air, so our breathing rate increases",
+    "Even at rest and during sleep, the body keeps working — the heart beats, blood flows, the brain thinks, and digestion continues — all requiring fresh air",
+    "Smoking damages the lungs and air passages, reducing airflow and causing breathlessness, tiredness, and heart problems"
+  ],
+
+  "misconceptions": [
+    "Breathing is just a habit that we could stop if we tried hard enough",
+    "The body stops working when we sit still or sleep",
+    "We breathe faster after exercise simply because we are moving, not because muscles need more air",
+    "Only the lungs need air — other organs do not depend on breathing",
+    "Smoking only affects the lungs and has no impact on the heart or the rest of the body"
+  ],
+
+  "dimensions": [
+    { "id": "D1", "name": "Curiosity Sparking", "shortName": "curiosity", "weight": 0.30, "keywords": ["why", "what if", "surprise", "predict", "guess", "wonder", "discover", "imagine", "what happens"] },
+    { "id": "D2", "name": "Student Engagement", "shortName": "engagement", "weight": 0.25, "keywords": ["lakshmi", "arjun", "everyone", "what do you think", "your turn", "try it", "hold your breath", "run", "count breaths"] },
+    { "id": "D3", "name": "Concept Clarity", "shortName": "clarity", "weight": 0.20, "keywords": ["breathe", "air", "oxygen", "muscles", "energy", "lungs", "exercise", "smoking", "airflow", "rest", "heart", "brain"] },
+    { "id": "D4", "name": "Facilitation Quality", "shortName": "facilitation", "weight": 0.15, "keywords": ["observe", "count", "record", "compare", "measure", "time", "stopwatch", "pairs", "groups", "scientist", "subject"] },
+    { "id": "D5", "name": "Questioning & Listening", "shortName": "questioning", "weight": 0.10, "keywords": ["why do you think", "tell me more", "good question", "interesting", "what did you notice", "how did you feel"] }
+  ],
+
+  "importanceWeights": { "D1": 0.30, "D2": 0.25, "D3": 0.20, "D4": 0.15, "D5": 0.10 },
+
+  "skills": [
+    { "id": "S1", "name": "Spark", "description": "Creating curiosity, wonder, and scientific questioning", "category": "engagement" },
+    { "id": "S2", "name": "Reach", "description": "Engaging every student, especially quiet and disengaged", "category": "inclusion" }
+  ],
+
+  "archetypes": [
+    { "id": "ignitor", "name": "The Ignitor", "description": "Spark >= 70 AND Reach >= 70", "indicators": ["spark_high", "reach_high"] },
+    { "id": "performer", "name": "The Performer", "description": "Spark >= 60, Reach < 50", "indicators": ["spark_high", "reach_low"] },
+    { "id": "caretaker", "name": "The Caretaker", "description": "Reach >= 60, Spark < 50", "indicators": ["spark_low", "reach_high"] },
+    { "id": "lecturer", "name": "The Lecturer", "description": "Both < 50, Clarity > 60", "indicators": ["spark_low", "reach_low", "clarity_high"] },
+    { "id": "learner", "name": "The Learner", "description": "Both < 40", "indicators": ["spark_low", "reach_low"] }
+  ]
+}
