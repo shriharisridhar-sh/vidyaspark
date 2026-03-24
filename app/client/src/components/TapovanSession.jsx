@@ -12,16 +12,40 @@ import M1TrianglesCanvas from './canvas/M1TrianglesCanvas';
 import M1QuadrilateralsCanvas from './canvas/M1QuadrilateralsCanvas';
 import B1CellMicroscopeCanvas from './canvas/B1CellMicroscopeCanvas';
 import B2PhotosynthesisCanvas from './canvas/B2PhotosynthesisCanvas';
+import P2MagnetismCanvas from './canvas/P2MagnetismCanvas';
+import P4LightCanvas from './canvas/P4LightCanvas';
+import C3AcidsBasesCanvas from './canvas/C3AcidsBasesCanvas';
+import B3DigestionCanvas from './canvas/B3DigestionCanvas';
+import C4ChemicalReactionsCanvas from './canvas/C4ChemicalReactionsCanvas';
+import C5AtomicStructureCanvas from './canvas/C5AtomicStructureCanvas';
+import M1AreasPerimetersCanvas from './canvas/M1AreasPerimetersCanvas';
+import M1CirclesCanvas from './canvas/M1CirclesCanvas';
+import M1SolidsCanvas from './canvas/M1SolidsCanvas';
+import B4RespirationCanvas from './canvas/B4RespirationCanvas';
+import P1MeasurementsCanvas from './canvas/P1MeasurementsCanvas';
+import B5TransportPlantsCanvas from './canvas/B5TransportPlantsCanvas';
 
 const CANVAS_MAP = {
   'abl-p7-force-pressure': P7ForcePressureCanvas,
   'abl-p3-sound': P3SoundCanvas,
+  'abl-p1-measurements': P1MeasurementsCanvas,
+  'abl-p2-magnetism': P2MagnetismCanvas,
+  'abl-p4-light': P4LightCanvas,
   'abl-c1-states-of-matter': C1StatesOfMatterCanvas,
   'abl-c2-separation': C2SeparationCanvas,
+  'abl-c3-acids-bases': C3AcidsBasesCanvas,
+  'abl-c4-chemical-reactions': C4ChemicalReactionsCanvas,
+  'abl-c5-atomic-structure': C5AtomicStructureCanvas,
   'abl-m1-triangles': M1TrianglesCanvas,
   'abl-m1-quadrilaterals': M1QuadrilateralsCanvas,
+  'abl-m1-circles': M1CirclesCanvas,
+  'abl-m1-areas-perimeters': M1AreasPerimetersCanvas,
+  'abl-m1-solids': M1SolidsCanvas,
   'abl-b1-cell-microscope': B1CellMicroscopeCanvas,
   'abl-b2-photosynthesis': B2PhotosynthesisCanvas,
+  'abl-b3-digestion': B3DigestionCanvas,
+  'abl-b4-respiration': B4RespirationCanvas,
+  'abl-b5-transport-plants': B5TransportPlantsCanvas,
 };
 
 /**
